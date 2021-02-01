@@ -1025,12 +1025,12 @@ input:-webkit-autofill:active {
 	background: #3495f9;
 }
 .skin{
-	transform:scale(1.5);
-	-webkit-transform:scale(1.5);  /*兼容-webkit-引擎浏览器*/
-	-moz-transform:scale(1.5);     /*兼容-moz-引擎浏览器*/
+	transform:scale(1);
+	-webkit-transform:scale(1);  /*兼容-webkit-引擎浏览器*/
+	-moz-transform:scale(1);     /*兼容-moz-引擎浏览器*/
 
     transform-origin: top;
-    top: -10px;
+    top: 5px;
 }
 .skinDetail{
 	transform:scale(1.18);
@@ -1078,3 +1078,66 @@ input:-webkit-autofill:active {
 	}
 }
 	
+.nodeSet{
+  padding:0 20px;
+  font-size: 18px;
+  color: #fff;
+}
+.nodeSet .nodeList {
+    text-align: left;
+    margin-top: 13px;
+    cursor: pointer;
+}
+.nodeSet .nodeList .icon {
+    position: relative;
+    padding-left: 28px;
+}
+.nodeSet .nodeList .icon:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #e3e3e3;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+.nodeSet .nodeList .icon.act:before {
+    background: #3495f9;
+    border: 1px solid transparent;
+}
+.nodeSet .nodeList .icon.act:after {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    border-radius: 50%;
+}
+.nodeSet .btn {
+    margin-top: 20px;
+    background: #3495f9;
+    border-radius: 8px;
+    color: #fff;
+    height: 45px;
+    min-width: 288px;
+    padding: 0 20px;
+    text-align: center;
+    line-height: 45px;
+    cursor: pointer;
+}
+
+.nftcontract,
+.valueBox,
+.owner{
+  color: #fff;
+  font-size: 14px;
+}

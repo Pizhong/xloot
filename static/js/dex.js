@@ -732,7 +732,8 @@ function selecrCoinTag(){
 
 function listMyDexOrder(page) {
 	if (!getCookie("token")) {
-		panelShow(0);
+    // panelShow(0);
+    eosLogin()
 		showMsg("请登录再操作");
 		return 
 	}
@@ -899,7 +900,8 @@ function listMyDexOrder(page) {
 
 function listMyDexHistory(page) {
 	if (!getCookie("token")) {
-		panelShow(0);
+    // panelShow(0);
+    eosLogin()
 		showMsg("请登录再操作");
 		return 
 	}

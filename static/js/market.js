@@ -501,9 +501,9 @@ function getMyItem(page) {
 						var msg = JSON.parse(n.meta);
 						var imgClass = '';
 						var gen = '';
-                  		if(n.category == "SKIN"){
-                  			imgClass = 'skin';
-                  		}
+                  if(n.category == "SKIN"){
+                  imgClass = 'skin';
+                  }
 						// console.log("msg:", msg);
 						html += '<div class="c-asset item" style="" id="myItemId_' + n.id + '" onclick="saleMsgShow(' + n.id + ',\'' + n.imageUrl + '\',' + n.nftContractId + ')">';
 						html += '    <div style="background: #2a2c2e;border-radius: 2px;width:100%;height:100%;">';

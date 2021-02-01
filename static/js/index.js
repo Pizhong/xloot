@@ -10,6 +10,11 @@ var gameType = 1;
 var marketCategory = {};
 var activitySaleData = {};
 var activityId = '61PINGANCHARM';
+var nftSaletype = 0;
+var dexListType = 'priceHigh';
+var dexListData = {};
+var dexPage = 0;
+var dexSize = 6;
 
 
 $(function() {
@@ -24,18 +29,29 @@ $(function() {
       
 })
 function init() {
+     
       var html = '';
       html += '<div>';
       html += '      <div class="c-navigationAuth">';
-      html += '            <div class="c-navigationAuth__authBtn c-navigationAuth__authBtn--signUp" translate="" data-analytics-id="signUp_authTabButtonSignUp" onclick="panelShow(1)">' + get_lan("signUp") + '</div>';
-      html += '            <div class="c-navigationAuth__authBtn c-navigationAuth__authBtn--logIn" translate="" data-analytics-id="logIn_authTabButtonLogIn" onclick="eosLogin()">' + get_lan("login") + '</div>';
+      html += '            <div class="c-navigationAuth__authBtn c-navigationAuth__authBtn--signUp" translate="" data-analytics-id="signUp_authTabButtonSignUp" onclick="panelShow(4)" style="display:none;" id="my-wallet">' + get_lan("myWallet") + '</div>';
+      html += '            <div class="c-navigationAuth__authBtn c-navigationAuth__authBtn--logIn" translate="" data-analytics-id="logIn_authTabButtonLogIn" onclick="eosLogin()"  id="my-login">'+ get_lan("login") +'</div>';
       html += '      </div>';
       html += '</div>';
       $("#panelMsg").html(html);
       $("#phonePanelMsg").html(html);
-
-
       loginPanel();
+      if(!getCookie('account')){
+        $('#panelMsg #my-login').show()
+        $('#panelMsg #my-wallet').hide()
+        $('#intPanel').show()
+      }
+      else{
+        $('#panelMsg #my-login').hide()
+        $('#panelMsg #my-wallet').show()
+        $('#intPanel').hide()
+      }
+
+      getDexListData()
 }
 
 function loginPanel() {
@@ -71,32 +87,32 @@ function loginPanel() {
       html2 += '              </div>';
       html2 += '            </label>';
       html2 += '          </div>';
-      html2 += '          <div class="c-authHeader__tab mat-radio-button mat-accent"';
-      html2 += '          data-analytics-id="signUp_authTabButtonSignUp" tabindex="-1" id="mat-radio-2"onclick="panelShow(1)">';
-      html2 += '            <label class="mat-radio-label" for="mat-radio-2-input">';
-      html2 += '              <div class="mat-radio-container">';
-      html2 += '                <div class="mat-radio-outer-circle"></div>';
-      html2 += '                <div class="mat-radio-inner-circle"></div>';
-      html2 += '                <div class="mat-radio-ripple mat-ripple" mat-ripple="">';
-      html2 += '                  <div class="mat-ripple-element mat-radio-persistent-ripple"></div>';
-      html2 += '                </div>';
-      html2 += '                <input class="mat-radio-input cdk-visually-hidden" type="radio" id="mat-radio-2-input"';
-      html2 += '                tabindex="0" name="mat-radio-group-0">';
-      html2 += '              </div>';
-      html2 += '              <div class="mat-radio-label-content">';
-      html2 += '                <span style="display:none">&nbsp;</span>';
-      html2 += '                <mat-icon class="c-authHeader__tabIcon mat-icon notranslate material-icons mat-icon-no-color"';
-      html2 += '                role="img" aria-hidden="true">';
-      html2 += '                  <!-- account_box -->';
-      html2 += '                </mat-icon>';
-      html2 += '                <span translate="">';
-      html2 += '                  <font style="vertical-align: inherit;">';
-      html2 += '                    <font style="vertical-align: inherit;">' + get_lan("signUp") + '</font>';
-      html2 += '                  </font>';
-      html2 += '                </span>';
-      html2 += '              </div>';
-      html2 += '            </label>';
-      html2 += '          </div>';
+      // html2 += '          <div class="c-authHeader__tab mat-radio-button mat-accent"';
+      // html2 += '          data-analytics-id="signUp_authTabButtonSignUp" tabindex="-1" id="mat-radio-2"onclick="panelShow(1)">';
+      // html2 += '            <label class="mat-radio-label" for="mat-radio-2-input">';
+      // html2 += '              <div class="mat-radio-container">';
+      // html2 += '                <div class="mat-radio-outer-circle"></div>';
+      // html2 += '                <div class="mat-radio-inner-circle"></div>';
+      // html2 += '                <div class="mat-radio-ripple mat-ripple" mat-ripple="">';
+      // html2 += '                  <div class="mat-ripple-element mat-radio-persistent-ripple"></div>';
+      // html2 += '                </div>';
+      // html2 += '                <input class="mat-radio-input cdk-visually-hidden" type="radio" id="mat-radio-2-input"';
+      // html2 += '                tabindex="0" name="mat-radio-group-0">';
+      // html2 += '              </div>';
+      // html2 += '              <div class="mat-radio-label-content">';
+      // html2 += '                <span style="display:none">&nbsp;</span>';
+      // html2 += '                <mat-icon class="c-authHeader__tabIcon mat-icon notranslate material-icons mat-icon-no-color"';
+      // html2 += '                role="img" aria-hidden="true">';
+      // html2 += '                  <!-- account_box -->';
+      // html2 += '                </mat-icon>';
+      // html2 += '                <span translate="">';
+      // html2 += '                  <font style="vertical-align: inherit;">';
+      // html2 += '                    <font style="vertical-align: inherit;">' + get_lan("signUp") + '</font>';
+      // html2 += '                  </font>';
+      // html2 += '                </span>';
+      // html2 += '              </div>';
+      // html2 += '            </label>';
+      // html2 += '          </div>';
       html2 += '        </div>';
       html2 += '      </div>';
       html2 += '    </div>';
@@ -169,27 +185,25 @@ function loginPanel() {
 
 
       html2 += '<div class="c-authFooter">';
-      html2 += '      <button class="o-dmButton o-dmButton--blue mat-ripple flex" style="flex:1;" onclick="panelShow(0)">';
+      html2 += '      <button class="o-dmButton o-dmButton--blue mat-ripple flex" style="flex:1;" onclick="eosLogin()">';
       html2 += '            <i class="o-dmButton__icon o-icon o-icon-steam" style="height:28px;">';
-      html2 += '                  <svg t="1566290510060" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6676" width="128" height="128">';
-      html2 += '                        <path d="M735.9 128l0.1 0.1v767.8l-0.1 0.1H288.1l-0.1-0.1V128.1l0.1-0.1h447.8m0.1-64H288c-35.2 0-64 28.8-64 64v768c0 35.2 28.8 64 64 64h448c35.2 0 64-28.8 64-64V128c0-35.2-28.8-64-64-64z" p-id="6677" fill="#ffffff"></path>';
-      html2 += '                        <path d="M800 704H224v64h576v-64zM576 800H448c-17.6 0-32 14.4-32 32s14.4 32 32 32h128c17.6 0 32-14.4 32-32s-14.4-32-32-32z" p-id="6678" fill="#ffffff"></path>';
-      html2 += '                  </svg>';
-      html2 += '            </i>';
-      html2 += '            <span class="o-dmButton__text">' + get_lan("login2") + '</span>';
-      html2 += '      </button>';
-      html2 += '      <span class="c-authFooter__or" style="margin:0 10px;">' + get_lan("msg3") + '</span>';
-
-
-
-      html2 += '      <button class="c-authFooter__button o-dmButton o-dmButton--round o-dmButton--blue mat-ripple" onclick="eosLogin()">';
       html2 += '         <svg t="1566445356488" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2277" width="32" height="32"><path d="M942.427421 234.839536a17.254917 17.254917 0 1 0-28.988261 18.715833 475.626037 475.626037 0 0 1 76.013661 258.559181c0 263.229511-214.145024 477.386038-477.386038 477.386038s-477.386038-214.156527-477.386038-477.386038 214.145024-477.386038 477.386038-477.386039a475.683553 475.683553 0 0 1 166.659492 29.908523 17.254917 17.254917 0 0 0 12.055436-32.335714 511.964892 511.964892 0 1 0 251.64571 202.538216z" fill="#ffffff" p-id="2278"></path><path d="M796.059711 128.365195a482.807533 482.807533 0 0 1 34.969965 28.562639 17.254917 17.254917 0 1 0 23.064073-25.663813c-11.963409-10.755565-24.571002-21.050999-37.47768-30.621726a17.256067 17.256067 0 1 0-20.556358 27.7229zM385.496215 534.22385L261.088263 751.647308l242.144003 144.12457-117.736051-361.548028zM257.614273 707.187138l117.402456-205.172466-42.32056-129.964036-75.081896 335.136502zM621.370931 503.65964l-108.671467-191.736638-110.385456 192.898469 110.523495 339.381212 108.533428-340.543043zM689.332298 373.074428l-40.721605 127.755406 116.447684 205.460049-75.726079-333.215455zM638.223233 533.407117L522.868361 895.35776l239.072628-143.664439L638.223233 533.407117zM673.423264 340.336099L525.514115 130.263235v153.361703l106.232773 187.457419 41.676376-130.746258zM500.413963 282.865722V129.29696L348.708732 340.175053l43.125789 132.448743 108.579442-189.758074z" fill="#ffffff" p-id="2279"></path></svg>';
+
+      html2 += '            </i>';
+      html2 += '            <span class="o-dmButton__text">' + get_lan("login3") + '</span>';
       html2 += '      </button>';
+      // html2 += '      <span class="c-authFooter__or" style="margin:0 10px;">' + get_lan("msg3") + '</span>';
 
 
-      html2 += ' <button class="c-authFooter__button o-dmButton o-dmButton--round o-dmButton--blue mat-ripple" onclick="iostLoginShow()">';
-      html2 += '    <svg t="1583745735750" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1871" width="32" height="32"><path d="M512.7 1022.5c-68.8 0-135.6-13.5-198.5-40.1-60.7-25.7-115.3-62.5-162.1-109.3C105.2 826.3 68.4 771.7 42.7 711c-26.6-62.9-40-129.7-40-198.5 0-68.8 13.5-135.6 40.1-198.5 25.7-60.7 62.5-115.3 109.3-162.1s101.3-83.7 162-109.4c62.9-26.6 129.7-40 198.6-40S648.3 16 711.2 42.6c60.7 25.7 115.3 62.5 162.1 109.3S956.9 253.3 982.6 314c26.6 62.9 40.1 129.7 40.1 198.5 0 68.8-13.5 135.6-40.1 198.5-25.7 60.7-62.5 115.3-109.3 162.1s-101.4 83.6-162.1 109.3c-62.9 26.6-129.7 40.1-198.5 40.1z m0-980c-259.2 0-470 210.8-470 470s210.8 470 470 470 470-210.8 470-470-210.9-470-470-470z" fill="#ffffff" p-id="1872"></path><path d="M520.2 193.3l286.5 165-61.5 48-225-132-160.4 100.5 88.5 59 52.7-30.9 62.7 34.9-43.5 36 54 37.4 45-28.4 58.5 28.8-45 31.1 198 105-304.5 183-332.9-186v-85.5L512 746.7l177.7-99.9-106.5-65.1-43.5 30-65.9-40.5 38.2-24-62.4-40-32.5 24.8-70.8-41.2 34.5-21.5-169.5-91.5z" fill="#ffffff" p-id="1873"></path></svg>';
-      html2 += ' </button>';
+
+      // html2 += '      <button class="c-authFooter__button o-dmButton o-dmButton--round o-dmButton--blue mat-ripple" onclick="eosLogin()">';
+      // html2 += '         <svg t="1566445356488" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2277" width="32" height="32"><path d="M942.427421 234.839536a17.254917 17.254917 0 1 0-28.988261 18.715833 475.626037 475.626037 0 0 1 76.013661 258.559181c0 263.229511-214.145024 477.386038-477.386038 477.386038s-477.386038-214.156527-477.386038-477.386038 214.145024-477.386038 477.386038-477.386039a475.683553 475.683553 0 0 1 166.659492 29.908523 17.254917 17.254917 0 0 0 12.055436-32.335714 511.964892 511.964892 0 1 0 251.64571 202.538216z" fill="#ffffff" p-id="2278"></path><path d="M796.059711 128.365195a482.807533 482.807533 0 0 1 34.969965 28.562639 17.254917 17.254917 0 1 0 23.064073-25.663813c-11.963409-10.755565-24.571002-21.050999-37.47768-30.621726a17.256067 17.256067 0 1 0-20.556358 27.7229zM385.496215 534.22385L261.088263 751.647308l242.144003 144.12457-117.736051-361.548028zM257.614273 707.187138l117.402456-205.172466-42.32056-129.964036-75.081896 335.136502zM621.370931 503.65964l-108.671467-191.736638-110.385456 192.898469 110.523495 339.381212 108.533428-340.543043zM689.332298 373.074428l-40.721605 127.755406 116.447684 205.460049-75.726079-333.215455zM638.223233 533.407117L522.868361 895.35776l239.072628-143.664439L638.223233 533.407117zM673.423264 340.336099L525.514115 130.263235v153.361703l106.232773 187.457419 41.676376-130.746258zM500.413963 282.865722V129.29696L348.708732 340.175053l43.125789 132.448743 108.579442-189.758074z" fill="#ffffff" p-id="2279"></path></svg>';
+      // html2 += '      </button>';
+
+
+      // html2 += ' <button class="c-authFooter__button o-dmButton o-dmButton--round o-dmButton--blue mat-ripple" onclick="iostLoginShow()">';
+      // html2 += '    <svg t="1583745735750" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1871" width="32" height="32"><path d="M512.7 1022.5c-68.8 0-135.6-13.5-198.5-40.1-60.7-25.7-115.3-62.5-162.1-109.3C105.2 826.3 68.4 771.7 42.7 711c-26.6-62.9-40-129.7-40-198.5 0-68.8 13.5-135.6 40.1-198.5 25.7-60.7 62.5-115.3 109.3-162.1s101.3-83.7 162-109.4c62.9-26.6 129.7-40 198.6-40S648.3 16 711.2 42.6c60.7 25.7 115.3 62.5 162.1 109.3S956.9 253.3 982.6 314c26.6 62.9 40.1 129.7 40.1 198.5 0 68.8-13.5 135.6-40.1 198.5-25.7 60.7-62.5 115.3-109.3 162.1s-101.4 83.6-162.1 109.3c-62.9 26.6-129.7 40.1-198.5 40.1z m0-980c-259.2 0-470 210.8-470 470s210.8 470 470 470 470-210.8 470-470-210.9-470-470-470z" fill="#ffffff" p-id="1872"></path><path d="M520.2 193.3l286.5 165-61.5 48-225-132-160.4 100.5 88.5 59 52.7-30.9 62.7 34.9-43.5 36 54 37.4 45-28.4 58.5 28.8-45 31.1 198 105-304.5 183-332.9-186v-85.5L512 746.7l177.7-99.9-106.5-65.1-43.5 30-65.9-40.5 38.2-24-62.4-40-32.5 24.8-70.8-41.2 34.5-21.5-169.5-91.5z" fill="#ffffff" p-id="1873"></path></svg>';
+      // html2 += ' </button>';
 
       // html2 +='        <div class="c-authFooter">';
       // html2 +='          <div class="c-authFooter__button c-authFooter__button--fluid">';
@@ -824,7 +838,7 @@ function getHtml(type) {
                   // html += '              </i>';
                   // html += '              FAQ';
                   // html += '            </a>';
-                  if (getCookie("token")) {
+                  if (getCookie("token") || getCookie('account')) {
                         // html += '            <a class="c-dropdown__item mat-menu-item" onclick="getMyKYC()">';
                         // html += '              <i class="c-dropdown__icon o-icon" inlinesvg="icon-logout.svg">';
                         // html += '                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">';
@@ -909,6 +923,20 @@ function getHtml(type) {
                         html += '                <img src="images/exit.png" alt="" style="height:24px;">';
                         html += '              </i>';
                         html += '              ' + get_lan("logOut") + '';
+                        html += '            </div>';
+
+                        html += '            <div class="c-dropdown__item mat-menu-item" onclick="window.location.href=\'../index.html\'">';
+                        html += '              <i class="c-dropdown__icon o-icon" inlinesvg="icon-logout.svg">';
+                        html += '                <img src="images/exit.png" alt="" style="height:24px;">';
+                        html += '              </i>';
+                        html += '              ' + get_lan("index") + '';
+                        html += '            </div>';
+
+                        html += '            <div class="c-dropdown__item mat-menu-item" onclick="panelShow(\'nodePanel\')">';
+                        html += '              <i class="c-dropdown__icon o-icon" inlinesvg="icon-logout.svg">';
+                        html += '                <img src="images/exit.png" alt="" style="height:24px;">';
+                        html += '              </i>';
+                        html += '              ' + get_lan("node") + '';
                         html += '            </div>';
                   } else {
                         html += '            <button class="c-dropdown__item mat-menu-item" onclick="panelShow(\'forget\')">';
@@ -1048,7 +1076,99 @@ function getHtml(type) {
                   //       html += '</div>';
                   //       return html;
                   //       break;
+            case "4":
+            case  4 :
+                  html += '<div class="cdk-overlay-backdrop cdk-overlay-dark-backdrop cdk-overlay-backdrop-showing"></div>';
+                  html += '      <div class="cdk-global-overlay-wrapper" dir="ltr" style="justify-content: center; align-items: center;">';
+                  html += '        <div id="cdk-overlay-8" class="cdk-overlay-pane" style="max-width: 80vw; pointer-events: auto; position: static;">';
+                  html += '          <div tabindex="0" class="cdk-visually-hidden cdk-focus-trap-anchor" aria-hidden="true"></div>';
+                  html += '          <div aria-modal="true" class="mat-dialog-container ng-tns-c27-23 ng-trigger ng-trigger-dialogContainer"';
+                  html += '          tabindex="-1" id="mat-dialog-5" role="dialog" style="transform:none;0:transform;transform:none;webkit-transform:none;">';
+                  html += '            <div>';
+                  html += '              <div class="c-auth c-auth--dialog">';
 
+
+
+                  html += '<div class="c-auth__inner">';
+                  html += '  <div class="c-authHeader c-authHeader--shadow">';
+                  html += '    <h3 class="c-authHeader__title">';
+                  html += '      <span>' + get_lan("myWallet") + '</span>&nbsp;&nbsp;&nbsp;&nbsp;';
+                  html += '      <span>' + '('+getCookie('account') +')'+ '</span>';
+                  html += '    </h3>';
+                  html += '    <button class="c-dialogHeader__close" mat-dialog-close="" type="button"';
+                  html += '    data-analytics-id="logIn_close" onclick="$(\'.cdk-overlay-container\').hide()">';
+                  html += '      <img src="images/close.png" alt="" class="mat-icon notranslate material-icons mat-icon-no-color">';
+                  html += '    </button>';
+                  html += '  </div>';
+                  html += '  <div class="c-auth__content">';
+                  html += '  <div class="flex">';
+                  html += '    <div onclick="eosLogin()" style="cursor: pointer;margin:0 8px;">';
+                  html += '      <svg t="1566445356488" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2277" width="48" height="48"><path d="M942.427421 234.839536a17.254917 17.254917 0 1 0-28.988261 18.715833 475.626037 475.626037 0 0 1 76.013661 258.559181c0 263.229511-214.145024 477.386038-477.386038 477.386038s-477.386038-214.156527-477.386038-477.386038 214.145024-477.386038 477.386038-477.386039a475.683553 475.683553 0 0 1 166.659492 29.908523 17.254917 17.254917 0 0 0 12.055436-32.335714 511.964892 511.964892 0 1 0 251.64571 202.538216z" fill="#4daef8" p-id="2278"></path><path d="M796.059711 128.365195a482.807533 482.807533 0 0 1 34.969965 28.562639 17.254917 17.254917 0 1 0 23.064073-25.663813c-11.963409-10.755565-24.571002-21.050999-37.47768-30.621726a17.256067 17.256067 0 1 0-20.556358 27.7229zM385.496215 534.22385L261.088263 751.647308l242.144003 144.12457-117.736051-361.548028zM257.614273 707.187138l117.402456-205.172466-42.32056-129.964036-75.081896 335.136502zM621.370931 503.65964l-108.671467-191.736638-110.385456 192.898469 110.523495 339.381212 108.533428-340.543043zM689.332298 373.074428l-40.721605 127.755406 116.447684 205.460049-75.726079-333.215455zM638.223233 533.407117L522.868361 895.35776l239.072628-143.664439L638.223233 533.407117zM673.423264 340.336099L525.514115 130.263235v153.361703l106.232773 187.457419 41.676376-130.746258zM500.413963 282.865722V129.29696L348.708732 340.175053l43.125789 132.448743 108.579442-189.758074z" fill="#4daef8" p-id="2279"></path></svg>';
+                  html += '    </div>';
+                  html += '    <span>'+getCookie('eos')+'</span>'
+                  html += '   </div>'
+                  html += '  </div>'
+
+                  html += '</div></div></div></div></div>';
+                  return html;
+                  break;
+            case "nodePanel":
+                  html += '<div class="cdk-overlay-backdrop cdk-overlay-dark-backdrop cdk-overlay-backdrop-showing"></div>';
+                  html += '      <div class="cdk-global-overlay-wrapper" dir="ltr" style="justify-content: center; align-items: center;">';
+                  html += '        <div id="cdk-overlay-8" class="cdk-overlay-pane" style="max-width: 80vw; pointer-events: auto; position: static;">';
+                  html += '          <div tabindex="0" class="cdk-visually-hidden cdk-focus-trap-anchor" aria-hidden="true"></div>';
+                  html += '          <div aria-modal="true" class="mat-dialog-container ng-tns-c27-23 ng-trigger ng-trigger-dialogContainer"';
+                  html += '          tabindex="-1" id="mat-dialog-5" role="dialog" style="transform:none;0:transform;transform:none;webkit-transform:none;">';
+                  html += '            <div>';
+                  html += '              <div class="c-auth c-auth--dialog">';
+
+
+
+                  html += '<div class="c-auth__inner">';
+                  html += '  <div class="c-authHeader c-authHeader--shadow">';
+                  html += '    <h3 class="c-authHeader__title">';
+                  html += '      <span>' + get_lan("selectNode") + '</span>&nbsp;&nbsp;&nbsp;&nbsp;';
+                  html += '    </h3>';
+                  html += '    <button class="c-dialogHeader__close" mat-dialog-close="" type="button"';
+                  html += '    data-analytics-id="logIn_close" onclick="$(\'.cdk-overlay-container\').hide()">';
+                  html += '      <img src="images/close.png" alt="" class="mat-icon notranslate material-icons mat-icon-no-color">';
+                  html += '    </button>';
+                  html += '  </div>';
+                  html += '  <div class="c-auth__content">';
+                  html += '  <div class="flex">';
+                  html += '      <div class="nodeSet">';
+
+
+                  $.each(API_ENDPOINTS2,function(i,n){
+                    var active = '';
+                    var index = getCookie("nodeIndex") || nodeIndex;
+                    console.log(i,i == 0, i == "0")
+                    if(i == index){
+                      active = 'act';
+                    }
+
+                    html += '        <div class="nodeList" onclick="selectionNode('+ i +')">';
+                    html += '          <div class="icon '+ active +'">';
+                    html += '            <span>节点'+ (i + 1) +'：</span>';
+                    html += '            <span>https://'+ n +'</span>';
+                    html += '          </div>';
+                    html += '        </div>';
+
+
+                  })
+
+
+                  html += '        <div class="btn" onclick="setNode()">确认</div>';
+                  html += '      </div>';
+                  html += '    </div>';
+                  html += '  </div>';
+                  html += '</div>';
+                  html += '   </div>'
+                  html += '  </div>'
+
+                  html += '</div></div></div></div></div>';
+                  return html;
+                  break;  
             case "forget":
                   html += '<div class="cdk-overlay-backdrop cdk-overlay-dark-backdrop cdk-overlay-backdrop-showing"></div>';
                   html += '      <div class="cdk-global-overlay-wrapper" dir="ltr" style="justify-content: center; align-items: center;">';
@@ -4324,4 +4444,298 @@ function buyActivityShow() {
       $("#buyShopMoneyShow").html(price);
       $("#buyShopOkShow").show();
       $("#buyShopOkAction").attr('onclick','buyActivityTagGo()');
+}
+
+function selectionNode(num){
+  $(".nodeList .icon").removeClass('act');
+  $(".nodeList .icon").eq(num).addClass('act');
+  nodeIndex = num;
+}
+
+function setNode(){
+  setCookie('nodeIndex',nodeIndex);
+  // network = ScatterJS.Network.fromJson({
+  //   blockchain: 'eos',
+  //   host: get_random_api2(),
+  //   // host: 'nodes.eos42.io',https://mainnet.eoscannon.io
+  //   protocol: 'https',
+  //   port: 443,
+  //   chainId: chainId
+  // })
+  window.location.reload();
+}
+
+
+function selectSortType(self,num){
+  dexListType = num;
+  getDexListData();
+  $(".selectTypeBtn .selectBox").html($(self).html());
+}
+
+
+function getDexListData() {
+  var loadHtml = '<div class="flex"><div style="padding:30px;background: rgba(0,0,0,0.7);color:#fff;text-align: center;border-radius: 10px;"><img src="imgs/loading.gif" alt=""><br><div style="margin-top:13px;">加载中...</div></div></div>'
+  $(".list").html(loadHtml);
+  // var api = get_random_api();
+  var api = 'https://' + get_random_api2();
+  dexPage = 0;
+  var limit = 1000;
+  var selfData = {};
+  var nftcontract = getCookie("nftcontract") || 'xlootshovel1';
+  if(nftSaletype == 0){
+    // dexListType
+  }else{
+    
+  }
+
+  // dexListType = 3;
+  switch (String(dexListType)) {
+    case 'idLow':
+      //price Positive  价格正序
+
+      selfData = {
+        json: true,
+        code: nftcontract,
+        scope: getCookie("account"),
+        table: 'tokens',
+        index_position: 1,
+        key_type:'i64',
+        lower_bound: '',
+        limit: limit,
+        reverse: false,
+        show_payer: false,
+      }
+      break;
+
+    case 'levelHigh':
+
+      //price Reverse  价格反序
+      selfData = {
+        json: true,
+        code: nftcontract,
+        scope: getCookie("account"),
+        table: 'tokens',
+        index_position: 3,
+        key_type:'i64',
+        lower_bound: '',
+        limit: limit,
+        reverse: true,
+        show_payer: false,
+      }
+      
+      break;
+    case 'levelLow':
+
+      //price Reverse  价格反序
+      selfData = {
+        json: true,
+        code: nftcontract,
+        scope: getCookie("account"),
+        table: 'tokens',
+        index_position: 3,
+        key_type:'i64',
+        lower_bound: '',
+        limit: limit,
+        reverse: false,
+        show_payer: false,
+      }
+      
+      break;
+
+    case 'sale':
+      //合约价格  价格正序
+      selfData = {
+        json: true,
+        code: dexContractName,
+        scope: getCookie("account"),
+        table: 'accmarkets',
+        // index_position: 3,
+        lower_bound: '',
+        // key_type: 'i64',
+        limit: limit,
+        reverse: true,
+        show_payer: false,
+      }
+      break;
+    case 'idHigh':
+    default:
+      //我的资产
+      selfData = {
+        json: true,
+        code: nftcontract,
+        scope: getCookie("account"),
+        table: 'tokens',
+        index_position: 1,
+        key_type:'i64',
+        lower_bound: '',
+        limit: limit,
+        reverse: true,
+        show_payer: false,
+      }
+
+      break;
+  }
+
+  $.post(api + "/v1/chain/get_table_rows", JSON.stringify(selfData),
+    function(data, status) {
+      console.log(data,'data');
+      dexListData.content = [];
+      dexListData.more = data["more"];
+      dexListData.next_key = data["next_key"];
+      for (x in data["rows"]) {
+        var obj = data["rows"][x];
+        dexListData.content[x] = obj;
+        // console.log("priceShow:",obj.price);
+      }
+      dexListData.totalElements = data["rows"].length;
+      dexListData.size = dexSize;
+      dexListData.totalPages = Math.ceil(data["rows"].length / dexSize);
+      // console.log("dexMsg:",dexListData);
+      getMarketList(dexPage);
+    }, "json");
+}
+
+function getMarketList(page) {
+  dexPage = page;
+  console.log(page,'page');
+  var data = dexListData;
+
+  var obj = dexListData.content;
+  var html = '';
+  var html2 = '';
+  var loadHtml = '<div class="flex"><div style="padding:30px;background: rgba(0,0,0,0.7);color:#fff;text-align: center;border-radius: 10px;"><img src="imgs/loading.gif" alt=""><br><div style="margin-top:13px;">加载中...</div></div></div>'
+  $(".list").html(loadHtml);
+  $.each(obj, function(i, n) {
+
+    if (i >= dexPage * dexSize && ((dexPage + 1) * dexSize) > i) {
+        
+
+      if(nftSaletype == 1){
+        console.log("shjjj:", i, dexPage * dexSize, ((dexPage + 1) * dexSize))
+        var tokenid = n.tokenid;
+        var nftcontract = n.nftcontract;
+        
+        html += '<div class="c-asset item" style="" id="myItemId_' + tokenid + '" onclick="saleMsgShow(' + tokenid + ',\'' + n.imageUrl +')">';
+        html += '   <div style="background: #2a2c2e;border-radius: 2px;width:100%;height:100%;">';
+        html += '     <div class="flex" style="line-height:17px;padding:0 10px;">';
+        html += '      <div style="color: rgba(0, 0, 0,0);text-align: center;position: relative;overflow: hidden;">';
+        html += '        <img class="c-asset__img '+ 'skin' +'" style="height: 153x;max-height: 156px;width:153px;" loading="auto" alt="" src="' + n.imageUrl + '">';
+        html += '      <div>--</div>';
+        html += '      <div>合约：' + n.nftcontract + '</div>';
+        html += '      <div >面值：<span class="value">--</span></div>';
+        html += '      <div >拥有者：' + n.owner + '</div>';
+        html += '      </div>';
+				html += '     </div>';
+				html += '    </div>';
+				html += '</div>';
+
+
+        // html += '<a id="nft_' + tokenid + '" href="nftAssets.html?tokenid=' + tokenid + '&nftcontract=' + nftcontract + '&type=1&owner=' + n.owner + '">';
+        // html += '  <div class="item">';
+        // html += '    <div class="nftImgs"></div>';
+        // html += '    <div class="parvalue flex">售价：' + getUniteSalePriceShow(n.price) + '</div>';
+
+        // html += '    <div class="itemMsg">';
+        // html += '      <div class="title">--</div>';
+        // html += '      <div class="nftcontract">合约：' + n.nftcontract + '</div>';
+        // html += '      <div class="valueBox">面值：<span class="value">--</span></div>';
+        // html += '      <div class="owner">拥有者：' + n.owner + '</div>';
+
+        // html += '    </div>';
+        // html += '  </div>';
+        // html += '</a>';
+        getNftMsg(n);
+      }else{
+
+        var tokenid = n.id;
+        var nftcontract = getCookie("nftcontract") || 'xlootshovel1';
+        
+        html += '<div class="c-asset item" style="" id="myItemId_' + tokenid + '" onclick="saleMsgShow(' + tokenid + ',\'' + n.imageUrl +')">';
+        html += '   <div style="background: #2a2c2e;border-radius: 2px;width:100%;height:100%;">';
+        html += '     <div class="flex" style="line-height:17px;padding:0 10px;">';
+        html += '      <div style="color: rgba(0, 0, 0,0);text-align: center;position: relative;overflow: hidden;">';
+        html += '        <img class="c-asset__img '+ 'skin' +'" style="height: 153px;max-height: 153px;width:156px;" loading="auto" alt="" src="' + n.imageUrl + '">';
+        html += '      <div>--</div>';
+        html += '      <div class="nftcontract">合约：' + nftcontract + '</div>';
+        html += '      <div class="valueBox">面值：<span class="value">'+n.parvalue+'</span></div>';
+        html += '      <div class="owner">拥有者：' + n.owner + '</div>'
+        html += '      </div>';
+				html += '     </div>';
+				html += '    </div>';
+				html += '</div>';
+        
+
+        // html += '<a id="nft_' + tokenid + '" href="nftAssets.html?tokenid=' + tokenid + '&nftcontract=' + nftcontract + '&type=0&owner=' + n.owner + '">';
+        // html += '  <div class="item">';
+        // html += '    <div class="nftImgs"><img src="'+ n.imageUrl +'?v='+ new Date().getTime() +'"></div>';
+        // // html += '    <div class="parvalue flex">售价：' + getUniteSalePriceShow(n.price) + '</div>';
+
+        // html += '    <div class="itemMsg">';
+        // html += '      <div class="title">'+ n.title +' ( 品质：'+ n.quality +' )</div>';
+        // html += '      <div class="nftcontract">合约：' + nftcontract + '</div>';
+        // html += '      <div class="valueBox">面值：<span class="value">'+ n.parvalue +'</span></div>';
+        // html += '      <div class="owner">拥有者：' + n.owner + '</div>';
+
+        // html += '    </div>';
+        // html += '  </div>';
+        // html += '</a>';
+      }
+      
+    }
+
+
+  })
+
+  $("#myItem").html(html);
+  if(html == ''){
+    $("#myItem").html('<div class="flex" style="height:150px;font-size: 20px;">没有对应的资产</div>');
+    $(".Pagination").html('');
+    return
+  }
+  html2 += '<div class="Pagination-pages">';
+  var num = 10,
+    startIndex, endIndex, total;
+  total = dexListData.totalPages;
+  if (total < num) {
+    num = total;
+  }
+  if (page > 5) {
+    if (total <= page + 5) {
+      startIndex = page - (num - (total - page));
+      endIndex = startIndex + 10;
+    } else {
+      startIndex = page - 5;
+      endIndex = page + 5;
+    }
+  } else {
+    startIndex = 0;
+    endIndex = num;
+  }
+  for (var i = startIndex; i < endIndex; i++) {
+    if (i == page) {
+      html2 += '<div class="Pagination-page active" onclick="getMarketList(' + i + ')">' + (i + 1) + '</div>';
+    } else {
+      html2 += '<div class="Pagination-page" onclick="getMarketList(' + i + ')">' + (i + 1) + '</div>';
+    }
+  }
+  html2 += '</div>';
+  html2 += '<div>';
+  if (page == 0) {
+    html2 += '  <div class="Pagination-button disabled">';
+  } else {
+    html2 += '  <div class="Pagination-button" onclick="getMarketList(' + (page - 1) + ')">';
+  }
+  html2 += '      上一页';
+  html2 += '  </div>';
+
+  if (page == total - 1 || total == 0) {
+    html2 += '  <div class="Pagination-button disabled">';
+  } else {
+    html2 += '  <div class="Pagination-button" onclick="getMarketList(' + (page + 1) + ')">';
+  }
+  html2 += '      下一页';
+  html2 += '  </div>';
+  html2 += '</div>'
+  $(".Pagination").html(html2);
+
 }

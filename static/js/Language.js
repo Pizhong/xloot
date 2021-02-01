@@ -9,6 +9,7 @@ var cn = {
     'login':'登录',
     'login2':'手机号登录',
     'login3':'EOS账号登录',
+    'myWallet':'我的钱包',
     'signUp':'注册',
     'signUp2':'手机号注册',
     'signUp3':'EOS账号注册',
@@ -47,6 +48,12 @@ var cn = {
     'transactionRecord':'交易记录',
     'rechargeRecord':'充值记录',
     'withdrawalRecord':'提现记录',
+    'index':'首页',
+    'myAssets':'我的资产',
+    'node':'节点',
+    'selectNode':'选择节点',
+
+
 
     'input':'请输入手机号码!',
     'input2':'请输入验证码!',

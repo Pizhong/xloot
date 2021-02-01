@@ -1,4 +1,6 @@
 var loot = {};
+var nodeIndex = 0;
+
 var iostPendingStaus = true;
 var iostSuccessStaus = true;
 var prepareRechargeType;
@@ -24,6 +26,27 @@ var chainId, lootcontractName, network, xpetcontractName;
 // })
 
 //
+
+const API_ENDPOINTS2 = [
+  'eospush.tokenpocket.pro',
+  'eos.blockeden.cn',
+  'eos.greymass.com',
+  'nodes.get-scatter.com',
+  // 'mainnet.meet.one',
+  'api.eossweden.se',
+  'api.eoslaomao.com',
+];
+function get_random_api2() {
+  // const index = Math.floor(Math.random() * API_ENDPOINTS2.length);
+
+  var index = getCookie("nodeIndex") || nodeIndex;
+  // var node = 'https://'+API_ENDPOINTS2[index];
+  var node = API_ENDPOINTS2[index];
+
+  // var node = 'https://api-kylin.eosasia.one';
+  // console.log(index,node);
+  return node;
+}
 const dexContractName = 'Contract3CAQnJQbhfeBfsVqqi76ERsv8YKWexnTuLcjRFrPtbek';
 const iostContractName = 'ContractBgWwzLsEb323Gt9cHb1aYVSzKepAQPuVVDHSsLRHSSBe';
 xpetcontractName = "xpetpetstore";
@@ -32,20 +55,28 @@ eosNFTcontractName = "xpetnftcore1";
 chainId = 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906';
 network = ScatterJS.Network.fromJson({
   blockchain: 'eos',
-  host: 'api.eosn.io',
+  host: get_random_api2(),
   // host: 'nodes.eos42.io',https://mainnet.eoscannon.io
   protocol: 'https',
   port: 443,
   chainId: chainId
 })
 
+const API_ENDPOINTS = [
+  'https://eospush.tokenpocket.pro',
+  'https://eos.blockeden.cn',
+  'https://eos.greymass.com',
+  // 'https://mainnet.meet.one',
+  'https://api.eossweden.se',
+  'https://api.eoslaomao.com'
 
+];
 
 var isDev = true;
 const EOS_CONFIG = {
   chainId: chainId, // 32 byte (64 char) hex string
   keyProvider: '', // WIF string or array of keys..
-  httpEndpoint: network.protocol + '://' + network.host,
+  httpEndpoint: network.protocol + '://' + get_random_api2(),
   mockTransactions: () => null, // or 'fail'
   expireInSeconds: 3600,
   broadcast: true,
@@ -202,8 +233,8 @@ $(function() {
     } else {
 
       html2 += '  <div class="c-sidebar__login">';
-      html2 += '    <div class="o-dmButton o-dmButton--green o-dmButton--fluid" onclick="panelShow(0)">' + get_lan("login") + '</div>';
-      html2 += '    <div class="o-dmButton o-dmButton--blue o-dmButton--fluid" onclick="panelShow(1)">' + get_lan("signUp") + '</div>';
+      html2 += '    <div class="o-dmButton o-dmButton--green o-dmButton--fluid" onclick="eosLogin()">' + get_lan("login") + '</div>';
+      // html2 += '    <div class="o-dmButton o-dmButton--blue o-dmButton--fluid" onclick="panelShow(1)">' + get_lan("signUp") + '</div>';
       html2 += '  </div>';
       html2 += '  <ul class="c-sidebar__list">';
       html2 += '    <li class="c-sidebar__item" onclick="panelShow(\'forget\')">';
@@ -244,6 +275,27 @@ $(function() {
 
   connectEOS();
 })
+function get_random_api() {
+  const index = Math.floor(Math.random() * API_ENDPOINTS.length);
+  return API_ENDPOINTS[index];
+}
+
+function getUserToken(name){
+  console.log(name);
+  var api = get_random_api() ;
+  $.post(api + "/v1/chain/get_currency_balance",'{"code":"eosio.token","symbol":"EOS","account":"'+ name +'"}',
+  function(data,status){
+    // var num = Number(parseFloat(data[0])).toFixed(8) || "0.00000000";
+    var num = data[0] || "0.00000000";
+    console.log(num);
+    setCookie('eos',num)
+  }, "json");
+}
+
+
+
+
+
 var amount = '';
 
 function getUserMsg() {
@@ -745,7 +797,8 @@ function checkScatter(fun) {
         loot.publicKey = user.publicKey
       }
       loot.bomber = user.name;
-      fun(user.name);
+      // fun(user.name);
+      fun(user)
     } else {
       const requiredFields = {
         accounts: [network]
@@ -765,7 +818,7 @@ function checkScatter(fun) {
             loot.publicKey = identity.publicKey;
           }
           loot.bomber = user.name;
-          fun(user.name);
+          fun(user);
         }).catch(error => {
           eosErrorShow(error);
         });
@@ -823,6 +876,7 @@ function pubKeySign(eosName) {
       const pubKey = data.permissions[0].required_auth.keys[0].key;
       loot.publicKey = pubKey;
       eosSign(eosName);
+      console.log(111111);
     });
   }
 
@@ -830,22 +884,48 @@ function pubKeySign(eosName) {
 
 function eosSign(eosName) {
 
-  var pubKey = loot.publicKey;
-  const scatter = getScatter();
-  const whatfor = "Login";
-  const account = eosName;
-  const isHash = false;
-  scatter.getArbitrarySignature(pubKey, eosName, whatfor, isHash).then(signature => {
-    // alert("pubKey, eosName, whatfor, isHash:",pubKey, eosName, whatfor, isHash)
-    // setInvitor(eosName);
-    eosSignLogin(eosName, signature);
-  }).catch(error => {
-    console.log("error:", error);
-    alert(error.message);
-  });
-  // eosSignLogin(eosName,"signature");
-  // setInvitor(eosName);
+  console.log(eosName);
+  if(!isNaN(eosName.name)){
+    showMsg("请选择不是全数字的eos账号登录LOOTDEX")
+    return
+  }
+  if(getCookie("account") == ''){
+    setCookie("account",eosName.name);
+    setTimeout(()=>{
+      window.location.reload();
+    },1000)
+    // window.location.reload();
+  }else{
+    setCookie("account",eosName.name);
+    
+  }
+  $('#panelMsg #my-login').show()
+
+  getUserToken(eosName.name);
+  
+
+  
 }
+
+
+// function eosSign(eosName) {
+
+//   var pubKey = loot.publicKey;
+//   const scatter = getScatter();
+//   const whatfor = "Login";
+//   const account = eosName;
+//   const isHash = false;
+//   scatter.getArbitrarySignature(pubKey, eosName, whatfor, isHash).then(signature => {
+//     // alert("pubKey, eosName, whatfor, isHash:",pubKey, eosName, whatfor, isHash)
+//     // setInvitor(eosName);
+//     eosSignLogin(eosName, signature);
+//   }).catch(error => {
+//     console.log("error:", error);
+//     alert(error.message);
+//   });
+//   // eosSignLogin(eosName,"signature");
+//   // setInvitor(eosName);
+// }
 
 function eosSignLogin(eosName, sign) {
   var pubKey = loot.publicKey;
@@ -1171,7 +1251,8 @@ function exit() {
   setCookie("token", '');
   setCookie("id", '');
   setCookie('eos', false);
-
+  setCookie("account",'');
+  setCookie('eos','')
 
   if(getCookie("customerType") == "IOST" || getCookie("customerType") == "PC"){
     setCookie('account', '');
@@ -3569,3 +3650,4 @@ function IsPC() {
 //             break;
 //     }
 // }
+

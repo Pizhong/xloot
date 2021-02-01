@@ -9,11 +9,17 @@ $(function(){
 	// getSupportGame();
 
  	$("body").on("click", ".rightBox .NavItem", function() {
- 	  var has = $(".rightBox .NavItem").hasClass("c-exchangeMobileTabs--headerShow");
- 	  $(".rightBox .NavItem").removeClass("active");
- 	  $(this).addClass("active");
- 	  listCommonTokenSelect($(this).attr("data-num"))
- 	})
+    var has = $(".rightBox .NavItem").hasClass("c-exchangeMobileTabs--headerShow");
+    if (!getCookie("token")) {
+      showMsg("请登录再操作");    
+      eosLogin()
+      
+      return 
+    }
+ 	   $(".rightBox .NavItem").removeClass("active");
+ 	   $(this).addClass("active");
+     // listCommonTokenSelect($(this).attr("data-num"))
+})
 })
 
 
