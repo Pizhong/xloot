@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title set-lan="title"></title>
+    <link rel="shortcut icon" href="./images/loot.png">
+    <meta name="viewport" content="width=device-width,width=395px,minimum-scale=0.36, user-scalable=no">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/balance.css">
+    <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="js/eos16.0.0.min.js"></script>
+    <script type="text/javascript" src="js/iost.min.js"></script>
+    <script type="text/javascript" src="js/scatterjs-core.min.js"></script>
+    <script type="text/javascript" src="js/scatterjs-plugin-eosjs.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/balance.js"></script>
+    <script type="text/javascript" src="js/getToken.js"></script>
+    <script type="text/javascript" src="js/Language.js"></script>
+  </head>
+  <body>
+ <body>
+  <app-root ng-version="8.2.3">
+    <simple-notifications class="c-notifications">
+      <div class="c-notification__wrapper top right">
+        
+      </div>
+    </simple-notifications>
+    <mat-sidenav-container class="mat-drawer-container mat-sidenav-container mat-drawer-container-explicit-backdrop">
+      
+      <div class="mat-drawer-backdrop ng-star-inserted">
+      </div>
+      <div class="cdk-visually-hidden cdk-focus-trap-anchor" aria-hidden="true">
+      </div>
+      <mat-sidenav class="c-sidebar mat-drawer mat-sidenav ng-tns-c1-0 ng-trigger ng-trigger-transform mat-drawer-over mat-sidenav-fixed ng-star-inserted"
+      mode="over" role="navigation" tabindex="-1" style="bottom:0px;top:0px;box-shadow:none;visibility:hidden;0:bottom;1:top;2:box-shadow;3:visibility;bottom:0px;box-shadow:none;top:0px;visibility:hidden;webkit-box-shadow:none;">
+        <div class="mat-drawer-inner-container">
+          <app-sidebar>
+            <div class="c-sidebar__wrap">
+              
+              
+              <div class="c-sidebar__inner ng-star-inserted" style="">
+                <div class="c-sidebar__user">
+                  <user-avatar>
+                    <div class="c-user__logo">
+                      <figure class="c-user__figure">
+                        
+                        <img class="c-user__img ng-star-inserted" draggable="false" alt="13553522743"
+                        src="https://s3.amazonaws.com/dmarket-images-stage/3a043a13-6f4d-4d15-8257-be01a4bf4138.jpg">
+                        
+                      </figure>
+                    </div>
+                  </user-avatar>
+                  <p class="c-sidebar__userText">
+                    13553522743@163.com
+                  </p>
+                </div>
+              </div>
+              <ul class="c-sidebar__list">
+                
+                <li class="c-sidebar__item ng-star-inserted" style="">
+                  <button aria-label="My items sidebar button" class="c-sidebar__link" data-analytics-id="sidebar_itemsTab">
+                    <i class="c-sidebar__icon o-icon" inlinesvg="icon-my-items.svg">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.625 4H6.375C5.23601 3.99955 4.14175 4.43312 3.32478 5.20858C2.50781 5.98403 2.03254 7.04022 2 8.15267V18.6565C2 18.8329 2.03557 19.0076 2.10467 19.1706C2.17377 19.3336 2.27505 19.4817 2.40273 19.6065C2.53041 19.7312 2.68199 19.8302 2.84881 19.8977C3.01563 19.9652 3.19443 20 3.375 20H20.5C20.8771 20.0013 21.2408 19.8637 21.5188 19.6148C21.7968 19.3658 21.9686 19.0237 22 18.6565V8.15267C21.9675 7.04022 21.4922 5.98403 20.6752 5.20858C19.8583 4.43312 18.764 3.99955 17.625 4ZM3.875 8.15267C3.90543 7.51439 4.17859 6.9102 4.641 6.45838C5.10341 6.00656 5.72176 5.73966 6.375 5.70992H17.625C17.9697 5.70992 18.3111 5.77627 18.6295 5.90516C18.948 6.03406 19.2374 6.22299 19.4812 6.46116C19.7249 6.69933 19.9183 6.98208 20.0502 7.29327C20.1821 7.60445 20.25 7.93798 20.25 8.27481H3.875V8.15267ZM13.5 10.1069V11.9389C13.5 12.1154 13.4644 12.2901 13.3953 12.4531C13.3262 12.6161 13.225 12.7642 13.0973 12.8889C12.9696 13.0137 12.818 13.1127 12.6512 13.1802C12.4844 13.2477 12.3056 13.2824 12.125 13.2824C11.9444 13.2824 11.7656 13.2477 11.5988 13.1802C11.432 13.1127 11.2804 13.0137 11.1527 12.8889C11.025 12.7642 10.9238 12.6161 10.8547 12.4531C10.7856 12.2901 10.75 12.1154 10.75 11.9389V10.1069H13.5ZM3.875 18.2901V17.4351V16.871V16.5V16.0916V14.9924V14.6078V14V13.5267V12.4275V11.9389V11.3796V11.084V10.1069H8.875V11.6947C8.83795 12.4978 9.11408 13.2848 9.64766 13.8969C10.1812 14.5089 10.9326 14.9004 11.75 14.9924C12.1809 15.0262 12.6143 14.9722 13.0228 14.834C13.4313 14.6957 13.806 14.4762 14.1232 14.1892C14.4404 13.9022 14.6932 13.5541 14.8656 13.1667C15.0381 12.7794 15.1264 12.3613 15.125 11.9389V10.1069H20.25V11.084V11.5613V11.9389V12.5496V13.6488V14V14.356V15.1145V16.2137V17V17.358V17.6794V18.29L3.875 18.2901Z">
+                        </path>
+                      </svg>
+                    </i>
+                    <span class="c-sidebar__text" translate="">
+                      My items
+                    </span>
+                  </button>
+                </li>
+                <li class="c-sidebar__item">
+                  <button aria-label="Market sidebar button" class="c-sidebar__link" data-analytics-id="sidebar_offersTab">
+                    <mat-icon class="c-sidebar__icon mat-icon notranslate material-icons mat-icon-no-color"
+                    role="img" aria-hidden="true">
+                      shopping_cart
+                    </mat-icon>
+                    <span class="c-sidebar__text" translate="">
+                      Market
+                    </span>
+                  </button>
+                </li>
+                
+                
+                <li class="c-sidebar__item ng-star-inserted" style="">
+                  <a aria-label="Balance sidebar button" class="c-sidebar__link" data-analytics-id="sidebar_balance"
+                  href="/balance">
+                    <mat-icon class="c-sidebar__icon mat-icon notranslate material-icons mat-icon-no-color"
+                    role="img" aria-hidden="true">
+                      credit_card
+                    </mat-icon>
+                    <span class="c-sidebar__text" translate="">
+                      Balance
+                    </span>
+                  </a>
+                </li>
+                <li class="c-sidebar__item ng-star-inserted" style="">
+                  <a aria-label="History sidebar link" class="c-sidebar__link" href="/history">
+                    <i class="c-sidebar__icon o-icon" inlinesvg="icon-history.svg">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19.7656 7.48665L14.5656 2.23665C14.4152 2.08481 14.212 2 14 2H5.6C4.716 2 4 2.72288 4 3.61538V20.3846C4 21.2771 4.716 22 5.6 22H18.4C19.284 22 20 21.2771 20 20.3846V8.05769C20 7.84365 19.916 7.6385 19.7656 7.48665ZM17.3656 13.8787L14.1656 17.1095C14.0096 17.267 13.8048 17.3462 13.6 17.3462C13.3952 17.3462 13.1904 17.267 13.0344 17.1095L10.4 14.4498L7.7656 17.1095C7.4528 17.4253 6.9472 17.4253 6.6344 17.1095C6.3216 16.7937 6.3216 16.2832 6.6344 15.9674L9.8344 12.7367C10.1472 12.4208 10.6528 12.4208 10.9656 12.7367L13.6 15.3964L16.2344 12.7367C16.5472 12.4208 17.0528 12.4208 17.3656 12.7367C17.6784 13.0525 17.6784 13.5629 17.3656 13.8787ZM14.4 8.46154C13.9584 8.46154 13.6 8.09969 13.6 7.65385V3.53785L18.4768 8.46154H14.4Z">
+                        </path>
+                      </svg>
+                    </i>
+                    <span class="c-sidebar__text" translate="">
+                      History
+                    </span>
+                  </a>
+                </li>
+                <li class="c-sidebar__item ng-star-inserted" style="">
+                  <a aria-label="Account settings sidebar link" class="c-sidebar__link"
+                  href="/account-settings">
+                    <mat-icon class="c-sidebar__icon mat-icon notranslate material-icons mat-icon-no-color"
+                    role="img" aria-hidden="true">
+                      settings
+                    </mat-icon>
+                    <span class="c-sidebar__text" translate="">
+                      Account settings
+                    </span>
+                  </a>
+                </li>
+                <li class="c-sidebar__item">
+                  <a aria-label="Subscription sidebar link" class="c-sidebar__link" href="/subscription">
+                    <i class="c-sidebar__icon o-icon" inlinesvg="icon-rocket.svg">
+                      <svg width="24px" height="24px" viewBox="0 0 16 23" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.00005 0.599609C8.00005 0.599609 3.20005 3.79961 3.20005 10.9996C3.20005 11.1267 3.21097 11.254 3.2188 11.3809C2.39155 12.0497 0.800049 13.4824 0.800049 14.6355C0.800049 16.0907 2.25474 18.9996 2.25474 18.9996L4.89536 15.698L5.60005 17.3996H10.4L11.1047 15.698L13.7454 18.9996C13.7454 18.9996 15.2 16.0907 15.2 14.6355C15.2 13.4824 13.6086 12.0497 12.7813 11.3809C12.7891 11.254 12.8 11.1267 12.8 10.9996C12.8 3.79961 8.00005 0.599609 8.00005 0.599609ZM8.00005 6.19961C8.88405 6.19961 9.60005 6.91561 9.60005 7.79961C9.60005 8.68361 8.88405 9.39961 8.00005 9.39961C7.11605 9.39961 6.40005 8.68361 6.40005 7.79961C6.40005 6.91561 7.11605 6.19961 8.00005 6.19961ZM5.93442 18.1996C5.72722 18.4668 5.60005 18.7739 5.60005 19.1059C5.60005 20.6283 8.00005 22.1996 8.00005 22.1996C8.00005 22.1996 10.4 20.6491 10.4 19.1059C10.4 18.7739 10.2736 18.4676 10.0672 18.1996H9.39067C9.40507 18.2612 9.44067 18.3161 9.44067 18.3809C9.44067 19.4681 8.00005 20.0121 8.00005 20.0121C8.00005 20.0121 6.55942 19.4681 6.55942 18.3809C6.55942 18.3169 6.59502 18.2612 6.60942 18.1996H5.93442Z"
+                        fill="#FFBB55">
+                        </path>
+                      </svg>
+                    </i>
+                    <span class="c-sidebar__text" translate="">
+                      Subscription
+                    </span>
+                  </a>
+                </li>
+                <li class="c-sidebar__item">
+                  <button aria-label="Open language dialog" class="c-sidebar__link">
+                    <i class="c-sidebar__icon o-icon" inlinesvg="icon-language.svg">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM18.92 8H15.97C15.65 6.75 15.19 5.55 14.59 4.44C16.43 5.07 17.96 6.35 18.92 8ZM12 4.04C12.83 5.24 13.48 6.57 13.91 8H10.09C10.52 6.57 11.17 5.24 12 4.04ZM4.26 14C4.1 13.36 4 12.69 4 12C4 11.31 4.1 10.64 4.26 10H7.64C7.56 10.66 7.5 11.32 7.5 12C7.5 12.68 7.56 13.34 7.64 14H4.26ZM5.08 16H8.03C8.35 17.25 8.81 18.45 9.41 19.56C7.57 18.93 6.04 17.66 5.08 16V16ZM8.03 8H5.08C6.04 6.34 7.57 5.07 9.41 4.44C8.81 5.55 8.35 6.75 8.03 8V8ZM12 19.96C11.17 18.76 10.52 17.43 10.09 16H13.91C13.48 17.43 12.83 18.76 12 19.96ZM14.34 14H9.66C9.57 13.34 9.5 12.68 9.5 12C9.5 11.32 9.57 10.65 9.66 10H14.34C14.43 10.65 14.5 11.32 14.5 12C14.5 12.68 14.43 13.34 14.34 14ZM14.59 19.56C15.19 18.45 15.65 17.25 15.97 16H18.92C17.96 17.65 16.43 18.93 14.59 19.56V19.56ZM16.36 14C16.44 13.34 16.5 12.68 16.5 12C16.5 11.32 16.44 10.66 16.36 10H19.74C19.9 10.64 20 11.31 20 12C20 12.69 19.9 13.36 19.74 14H16.36Z">
+                        </path>
+                      </svg>
+                    </i>
+                    <span class="c-sidebar__text" translate="">
+                      Language
+                    </span>
+                  </button>
+                </li>
+                <li class="c-sidebar__item">
+                  <redeem-flow-button class="c-sidebar__link">
+                    <i class="c-sidebar__icon o-icon" inlinesvg="icon-redeem.svg">
+                      <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.538 4C2.688 4 2 4.716 2 5.6v4.988h1.818c.118.593.565 1.414.91 1.883H2V18.4c0 .884.688 1.6 1.538 1.6h4.826v-4.706c-.029.03.03-.028 0 0l.909-.941.909.941V20h10.28c.85 0 1.538-.716 1.538-1.6v-5.93h-7.273c-.454-.47-1.027-1.289-.909-1.882H22V5.6c0-.884-.689-1.6-1.538-1.6h-10.28v1.684c-.264.057-.662.085-.91.198-.246-.113-.645-.14-.908-.198V4H3.538zm3.847 3.2c.593 0 1.129.24 1.538.623.41-.383.945-.623 1.538-.623 1.273 0 2.308 1.077 2.308 2.4 0 1.22-.883 2.22-2.018 2.37l1.024 1.064c.3.313.3.819 0 1.132a.752.752 0 0 1-.544.234.752.752 0 0 1-.544-.234L8.923 12.33 7.16 14.166a.752.752 0 0 1-.544.234.752.752 0 0 1-.543-.234.822.822 0 0 1 0-1.132l1.023-1.064c-1.135-.15-2.018-1.15-2.018-2.37 0-1.323 1.035-2.4 2.308-2.4zm0 1.6c-.425 0-.77.358-.77.8 0 .442.345.8.77.8h.769v-.8c0-.442-.345-.8-.77-.8zm3.076 0c-.424 0-.769.358-.769.8v.8h.77c.424 0 .769-.358.769-.8 0-.442-.345-.8-.77-.8zm5.385 7.2c.425 0 .77.358.77.8 0 .442-.345.8-.77.8-.425 0-.77-.358-.77-.8 0-.442.345-.8.77-.8zm3.077 0c.425 0 .77.358.77.8 0 .442-.345.8-.77.8-.424 0-.77-.358-.77-.8 0-.442.346-.8.77-.8z">
+                        </path>
+                      </svg>
+                    </i>
+                    <span class="c-sidebar__text" translate="">
+                      Redeem code
+                    </span>
+                  </redeem-flow-button>
+                </li>
+                <li class="c-sidebar__item c-sidebar__item--details">
+                  <button aria-label="Show footer" class="c-sidebar__link">
+                    <i class="c-sidebar__icon o-icon" inlinesvg="icon-details.svg">
+                      <svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 .25a5.75 5.75 0 1 0 0 11.5A5.75 5.75 0 0 0 6 .25zm.75 9.06a.75.75 0 0 1-1.5 0v-4.3a.75.75 0 0 1 1.5 0v4.3zm0-6.59a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0z">
+                        </path>
+                      </svg>
+                    </i>
+                    <span class="c-sidebar__text" translate="">
+                      Terms, Privacy &amp; More
+                    </span>
+                  </button>
+                </li>
+                <li class="c-sidebar__item">
+                  <a aria-label="FAQ sidebar link" class="c-sidebar__link" href="/faq">
+                    <i class="c-sidebar__icon o-icon" inlinesvg="icon-faq.svg">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM11.5903 11.8514C11.3619 12.1977 11.2477 12.6356 11.2477 13.1653H13.4972C13.4972 12.8394 13.5816 12.5644 13.7505 12.3403C13.9193 12.106 14.1875 11.8208 14.5549 11.4847C14.8628 11.1995 15.1111 10.95 15.2998 10.7361C15.4984 10.512 15.6623 10.2421 15.7914 9.92639C15.9305 9.61065 16 9.24398 16 8.82639C16 7.94028 15.6524 7.24768 14.9572 6.74861C14.2719 6.24954 13.3582 6 12.216 6C11.2427 6 10.3985 6.17824 9.68343 6.53472C8.97827 6.8912 8.41713 7.39537 8 8.04722L9.80261 9.13195C10.0509 8.77546 10.3538 8.50046 10.7114 8.30694C11.0788 8.10324 11.496 8.00139 11.9628 8.00139C12.4494 8.00139 12.8367 8.11343 13.1248 8.3375C13.4227 8.55139 13.5717 8.84676 13.5717 9.22361C13.5717 9.48843 13.4922 9.72778 13.3333 9.94167C13.1844 10.1454 12.946 10.4 12.6182 10.7056C12.1713 11.1231 11.8287 11.5051 11.5903 11.8514ZM11.352 16.6028C11.63 16.8676 11.9727 17 12.3799 17C12.7871 17 13.1248 16.8676 13.3929 16.6028C13.671 16.3278 13.8101 15.9968 13.8101 15.6097C13.8101 15.2227 13.676 14.9019 13.4078 14.6472C13.1397 14.3824 12.797 14.25 12.3799 14.25C11.9628 14.25 11.6201 14.3824 11.352 14.6472C11.0838 14.9019 10.9497 15.2227 10.9497 15.6097C10.9497 15.9968 11.0838 16.3278 11.352 16.6028Z">
+                        </path>
+                      </svg>
+                    </i>
+                    <span class="c-sidebar__text" translate="">
+                      FAQ
+                    </span>
+                  </a>
+                </li>
+                <li class="c-sidebar__item">
+                  <a aria-label="Blog sidebar link" class="c-sidebar__link" href="https://dmarket.com/blog"
+                  rel="noreferrer nofollow noopener" target="_blank">
+                    <i class="c-sidebar__icon o-icon" inlinesvg="icon-blog.svg">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17 2L14.5 4.5L19.5 9.5L22 7L17 2ZM12.8919 6.17155C12.4854 6.15967 12.0736 6.29633 11.7461 6.58008L11.7445 6.57682C10.8628 7.45849 9.5 7.83333 7.83333 7.83333C6.46667 7.83333 5.56098 8.67493 5.08431 10.2666C3.65598 15.0391 2.54272 18.4389 2.16439 19.6139L2.16927 19.6156C2.06344 19.8331 2 20.075 2 20.3333C2 20.4817 2.02602 20.6223 2.06185 20.7598L8.72852 14.0931C8.69268 13.9556 8.66667 13.815 8.66667 13.6667C8.66667 12.7458 9.4125 12 10.3333 12C10.7933 12 11.21 12.1866 11.5117 12.4883C11.8134 12.7899 12 13.2067 12 13.6667C12 14.5875 11.2542 15.3333 10.3333 15.3333C10.185 15.3333 10.0444 15.3073 9.9069 15.2715L3.24023 21.9382C3.37773 21.974 3.51833 22 3.66667 22C3.925 22 4.16694 21.9374 4.38444 21.8324L4.38607 21.8356C5.56107 21.4573 8.9609 20.3457 13.7334 18.9173C15.3251 18.4398 16.1667 17.5333 16.1667 16.1667C16.1667 14.5 16.5415 13.1372 17.4232 12.2555L17.4199 12.2539C17.9874 11.5989 17.9676 10.6099 17.3451 9.98828L15.6784 8.32162L14.0117 6.65495C13.7005 6.3437 13.2985 6.18342 12.8919 6.17155Z">
+                        </path>
+                      </svg>
+                    </i>
+                    <span class="c-sidebar__text" translate="">
+                      Blog
+                    </span>
+                  </a>
+                </li>
+                <li class="c-sidebar__item">
+                  <a aria-label="about us sidebar link" class="c-sidebar__link" href="/about-us">
+                    <i class="c-sidebar__icon o-icon" inlinesvg="icon-partnership.svg">
+                      <svg width="24" height="24" viewBox="-2 -2 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20ZM11.5716 7.33688L10.4755 3.96353C10.3259 3.50287 9.67415 3.50287 9.52447 3.96353L8.4284 7.33688C8.36146 7.54289 8.16949 7.68237 7.95287 7.68237H4.40592C3.92156 7.68237 3.72017 8.30218 4.11203 8.58688L6.98157 10.6717C7.15682 10.7991 7.23015 11.0247 7.16321 11.2307L6.06714 14.6041C5.91746 15.0648 6.4447 15.4478 6.83656 15.1631L9.70611 13.0783C9.88135 12.9509 10.1186 12.9509 10.2939 13.0783L13.1634 15.1631C13.5553 15.4478 14.0825 15.0648 13.9329 14.6041L12.8368 11.2307C12.7699 11.0247 12.8432 10.7991 13.0184 10.6717L15.888 8.58688C16.2798 8.30218 16.0784 7.68237 15.5941 7.68237H12.0471C11.8305 7.68237 11.6385 7.54289 11.5716 7.33688Z"
+                        fill="#8DD294">
+                        </path>
+                      </svg>
+                    </i>
+                    <span class="c-sidebar__text" translate="">
+                      About us
+                    </span>
+                  </a>
+                </li>
+                <li class="c-sidebar__item">
+                  <a aria-label="Open live chat" class="c-sidebar__link">
+                    <mat-icon class="c-sidebar__icon mat-icon notranslate material-icons mat-icon-no-color"
+                    role="img" aria-hidden="true">
+                      forum
+                    </mat-icon>
+                    <span class="c-sidebar__text" translate="">
+                      Chat with us
+                    </span>
+                  </a>
+                </li>
+                
+                <li class="c-sidebar__item ng-star-inserted" style="">
+                  <button aria-label="Log out sidebar button" class="c-sidebar__link">
+                    <i class="c-sidebar__icon o-icon" inlinesvg="icon-logout.svg">
+                      <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 3H5C3.895 3 3 3.895 3 5V19C3 20.105 3.895 21 5 21H19C20.105 21 21 20.105 21 19V5C21 3.895 20.105 3 19 3ZM19.707 12.707L16.407 16.007C16.212 16.202 15.956 16.3 15.7 16.3C15.444 16.3 15.188 16.202 14.993 16.007C14.602 15.616 14.602 14.984 14.993 14.593L16.586 13H9C8.447 13 8 12.553 8 12C8 11.447 8.447 11 9 11H16.586L14.993 9.407C14.602 9.016 14.602 8.384 14.993 7.993C15.384 7.602 16.016 7.602 16.407 7.993L19.707 11.293C20.098 11.684 20.098 12.316 19.707 12.707Z">
+                        </path>
+                      </svg>
+                    </i>
+                    <span class="c-sidebar__text" translate="">
+                      Log out
+                    </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </app-sidebar>
+        </div>
+      </mat-sidenav>
+      <div class="cdk-visually-hidden cdk-focus-trap-anchor" aria-hidden="true">
+      </div>
+      <mat-sidenav-content class="mat-drawer-content mat-sidenav-content" style="
+      /* display: none; */
+      ">
+        
+        <app-header class="c-exchangeHeader__wrap" _nghost-dmarket-c3="">
+          
+          <header _ngcontent-dmarket-c3="" class="c-exchangeHeader c-exchangeHeader--main ng-star-inserted">
+            <div _ngcontent-dmarket-c3="" class="c-exchangeHeader__inner">
+              <button _ngcontent-dmarket-c3="" aria-label="button menu" class="c-exchangeHeader__menu">
+                <mat-icon _ngcontent-dmarket-c3="" class="mat-icon notranslate material-icons mat-icon-no-color"
+                role="img" aria-hidden="true">
+                  menu
+                </mat-icon>
+              </button>
+              <h2 _ngcontent-dmarket-c3="" class="c-exchangeHeader__title c-exchangeHeader__title--line">
+                <a _ngcontent-dmarket-c3="" class="c-exchangeHeader__titleLink" href="/">
+                  <img src="images/logo.png" alt="" style="height:20px;margin-right: 10px;">
+                  <span style="color: #ffb661;" ="" class="c-exchangeHeader__titleText">
+                    LOOT
+                  </span>
+                </a>
+              </h2>
+              <div class="c-exchangeHeader__nav">
+            <div class="c-exchangeHeader__actions">
+              <!-- <div class="c-exchangeHeader__button" onclick="panelShow('about')">
+                  <img src="images/about.png" alt="" style="height:24px;">
+              </div> -->
+              <!-- <div class="c-exchangeHeader__button" onclick="getKYC(1)">
+                  <img src="images/withdraw.png" alt="" style="height:24px;">
+              </div>
+              <button class="c-exchangeHeader__button" onclick="getKYC(0)">
+                  <img src="images/recharge.png" alt="" style="height:24px;">
+              </button> -->
+              <button class="c-exchangeHeader__button" onclick="panelShow(3)">
+                <i class="o-icon" inlinesvg="icon-language.svg">
+                  <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM18.92 8H15.97C15.65 6.75 15.19 5.55 14.59 4.44C16.43 5.07 17.96 6.35 18.92 8ZM12 4.04C12.83 5.24 13.48 6.57 13.91 8H10.09C10.52 6.57 11.17 5.24 12 4.04ZM4.26 14C4.1 13.36 4 12.69 4 12C4 11.31 4.1 10.64 4.26 10H7.64C7.56 10.66 7.5 11.32 7.5 12C7.5 12.68 7.56 13.34 7.64 14H4.26ZM5.08 16H8.03C8.35 17.25 8.81 18.45 9.41 19.56C7.57 18.93 6.04 17.66 5.08 16V16ZM8.03 8H5.08C6.04 6.34 7.57 5.07 9.41 4.44C8.81 5.55 8.35 6.75 8.03 8V8ZM12 19.96C11.17 18.76 10.52 17.43 10.09 16H13.91C13.48 17.43 12.83 18.76 12 19.96ZM14.34 14H9.66C9.57 13.34 9.5 12.68 9.5 12C9.5 11.32 9.57 10.65 9.66 10H14.34C14.43 10.65 14.5 11.32 14.5 12C14.5 12.68 14.43 13.34 14.34 14ZM14.59 19.56C15.19 18.45 15.65 17.25 15.97 16H18.92C17.96 17.65 16.43 18.93 14.59 19.56V19.56ZM16.36 14C16.44 13.34 16.5 12.68 16.5 12C16.5 11.32 16.44 10.66 16.36 10H19.74C19.9 10.64 20 11.31 20 12C20 12.69 19.9 13.36 19.74 14H16.36Z">
+                    </path>
+                  </svg>
+                </i>
+              </button>
+            </div>
+            <div class="c-navigationControls c-navigationControls--exchange">
+              <div id="panelMsg"><div class="c-navigationControls__balance ng-star-inserted" tabindex="0" data-analytics-id="navigation_balance">  <div class="c-dropdown">    <div class="c-dropdown__current">      <div class="c-dropdown__currentValue">        <img src="images/loot.png" alt="" style="width:18px;height:18px;margin-right:10px;">        <span class="c-dropdown__currentTitle ng-star-inserted" id="lootMoney">9985.3401</span>      </div>    </div>  </div></div></div>
+
+              
+              <div class="c-navigationControls__user" onclick="panelShow(2)">
+                <div aria-haspopup="true" class="c-user c-user--header c-dropdown">
+                  <div class="c-user__logo">
+                    <figure class="c-user__figure">
+                      <img alt="User avatar" class="c-user__img" draggable="false" src="images/userAvatar.jpg">
+                    </figure>
+                  </div>
+                  <svg class="c-user__arrow mat-icon notranslate material-icons mat-icon-no-color" t="1566287544986" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5805" width="128" height="128"><path d="M836.802183 342.264666c-8.381992-8.381992-22.351978-8.381992-30.73397 0l-293.369714 293.369713-294.766712-293.369713c-8.381992-8.381992-22.351978-8.381992-30.73397 0-8.381992 8.381992-8.381992 22.351978 0 30.73397l310.133697 308.736698c8.381992 8.381992 22.351978 8.381992 30.73397 0l308.736699-308.736698c8.381992-8.381992 8.381992-22.351978 0-30.73397z" fill="#ffffff" p-id="5806"></path></svg>
+                  
+                  <mat-menu class="" xposition="after" yposition="below">
+                  </mat-menu>
+                </div>
+              </div>
+            </div>
+          </div>
+            </div>
+          </header>
+        </app-header>
+        
+        <div style="
+        /* display: none; */
+        ">
+          <router-outlet>
+          </router-outlet>
+          <app-user-setting class="ng-star-inserted">
+            <div class="l-container l-container--sm" style="
+            /* display: none; */
+            ">
+
+
+<app-balance class="ng-star-inserted">
+  <div class="l-container l-container--sm">
+    <app-crumbs>
+      <ul class="c-breadcrumb">
+        
+        <li class="c-breadcrumb__item ng-star-inserted">
+          <a href="/">
+            LOOT
+          </a>
+        </li>
+        
+        <li class="c-breadcrumb__item ng-star-inserted">
+          
+          
+          <span class="ng-star-inserted">
+            钱包
+          </span>
+        </li>
+      </ul>
+    </app-crumbs>
+    <div class="c-balance">
+      <h1 class="c-balance__title" translate="">
+        钱包
+      </h1>
+      <!-- <h2 class="c-balanceForm__title" translate="">
+        Choose the required operation with your balance
+      </h2> -->
+
+
+
+        <div class="c-balanceForm__wrapper">
+          <div class="c-balanceForm">
+            <form class="c-balanceForm__group ng-pristine ng-valid ng-touched" novalidate="">
+              <div class="c-balanceForm__field">
+                <mat-button-toggle-group aria-label="Choose operation" class="mat-button-toggle-group mat-button-toggle-group-appearance-standard ng-untouched ng-pristine ng-valid"
+                formcontrolname="operationType" role="group" aria-disabled="false">
+                  <mat-button-toggle class="mat-button-toggle mat-button-toggle-checked mat-button-toggle-appearance-standard"
+                  value="deposit" data-analytics-id="balancePage_depositTab" tabindex="-1"
+                  id="mat-button-toggle-1" onclick="showBalanceType(this,0)">
+                    <button class="mat-button-toggle-button" type="button" id="mat-button-toggle-1-button"
+                    tabindex="0" aria-pressed="true" name="mat-button-toggle-group-0" style="width:100%;">
+                      <div class="mat-button-toggle-label-content">
+                        充值
+                      </div>
+                    </button>
+                    <div class="mat-button-toggle-focus-overlay">
+                    </div>
+                    <div class="mat-button-toggle-ripple mat-ripple" matripple="">
+                    </div>
+                  </mat-button-toggle>
+                  <mat-button-toggle class="mat-button-toggle mat-button-toggle-appearance-standard"
+                  value="withdraw" data-analytics-id="balancePage_withdrawTab" tabindex="-1"
+                  id="mat-button-toggle-2" onclick="showBalanceType(this,1)">
+                    <button class="mat-button-toggle-button" type="button" id="mat-button-toggle-2-button"
+                    tabindex="0" aria-pressed="false" name="mat-button-toggle-group-0" style="width:100%;">
+                      <div class="mat-button-toggle-label-content">
+                        提现
+                      </div>
+                    </button>
+                    <div class="mat-button-toggle-focus-overlay">
+                    </div>
+                    <div class="mat-button-toggle-ripple mat-ripple" matripple="">
+                    </div>
+                  </mat-button-toggle>
+                </mat-button-toggle-group>
+              </div>  
+
+              <div class="c-balanceForm__fields ng-star-inserted">
+                <div class="c-balanceForm__field">
+                  <p class="c-balanceForm__label" translate="">
+                    你的余额
+                  </p>
+                  <strong>
+                    <price-with-icon>
+                      <dm-currency-icon>
+                        <span class="o-currencies--USD">
+                        </span>
+                      </dm-currency-icon>
+                      <strong id="myBalanceMoneyShow"></strong>
+                    </price-with-icon>
+                  </strong>
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+
+<!--  start -->
+<div class="c-balanceForm__field" style="padding-bottom: 0;"  id="balanceDepositShow">
+
+
+  <div class="c-authForm ">
+    <p class="c-authInfo__text">
+      您好 ，你正进行掠宝(https://www.xloot.io)会员充值操作
+      <br>
+    </p>
+    <div class="ng-pristine ng-invalid ng-touched">
+      <div class="c-authForm__field mat-form-field mat-primary mat-form-field-type-mat-input mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label  mat-form-field-invalid mat-form-field-hide-placeholder">
+        <div class="mat-form-field-wrapper">
+          <div class="mat-form-field-flex" style="padding-top: 0;">
+            <input type="text" id="rechargeNum" placeholder="充值金额" style="background: none;border:0;height:100%;width:100%;font-size:20px;"
+            maxlength="4" minlength="3" oninput="returnRechargeMsg()">
+            <span>
+              元
+            </span>
+          </div>
+          <div class="mat-form-field-subscript-wrapper">
+            <div id="rechargeMsg" style="font-size: 18px;line-height: 50px;">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="c-authForm__field mat-form-field mat-primary mat-form-field-type-mat-input mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label  mat-form-field-invalid mat-form-field-hide-placeholder">
+        <div class="mat-form-field-wrapper flex" style="justify-content: flex-start;flex-wrap: wrap;">
+          <div class="flex payImg active" style="margin:0 10px 10px 0;" data="1"
+          onclick="paySelect(this)">
+            <img src="images/pay02.png" alt="">
+          </div>
+          <div class="flex payImg" style="margin:0 10px 10px 0;" data="2" onclick="paySelect(this)">
+            <img src="images/pay03.png" alt="">
+          </div>
+          <div class="flex payImg" style="margin:0 10px 10px 0;" data="0" onclick="paySelect(this)">
+            <img src="images/pay01.png" alt="">
+          </div>
+          <div class="flex payImg" style="margin:0 10px 10px 0;" data="3" onclick="paySelect(this)">
+            <img src="images/pay04.png" alt="">
+          </div>
+          <div class="flex payImg" style="margin:0 10px 10px 0;" data="4" onclick="paySelect(this)">
+            <img src="images/pay05.png" alt="">
+          </div>
+          <div style="flex:1">
+          </div>
+        </div>
+      </div>
+      <p class="c-authInfo__text" id="noPayMsg" style="border: 1px solid #e86359;padding: 15px;color: #e86359;display:none;">
+        由于您所在地区的监管限制，请选择其他付费方式，或稍后再试。
+      </p>
+      <p>
+      </p>
+      <div>
+        <button class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple"
+        type="submit" onclick="checkRechargeType()">
+          <span>
+            立即充值
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="balanceWithdrawtShow" style="display: none;">
+  <div class="c-auth__content" style="max-width:100%;padding-left:0;padding-right:0;">
+  <div class="c-authForm">
+    <p class="c-authInfo__text" id="oldWithdrawal" style="border: 1px solid #dfe647; padding: 15px; color:#dfe647;display:none;">
+      您的请求已受理，相应金额将于24小时内转到您的指定收款地址上，请耐心等待。
+    </p>
+    <!-- <p class="c-authInfo__text">
+      您好
+    </p> -->
+    <div novalidate="" class="ng-pristine ng-invalid ng-touched">
+      <div class="c-authForm__field mat-form-field mat-primary mat-form-field-type-mat-input mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label  mat-form-field-invalid mat-form-field-hide-placeholder">
+        <div class="mat-form-field-wrapper">
+          <div class="mat-form-field-flex" style="padding-top: 0;">
+            <input type="text" id="withdrawNum" placeholder="提现金额" style="background: none;border:0;height:100%;width:100%;font-size:20px;"
+            maxlength="4" minlength="3">
+            <span class="o-currencies--USD">
+            </span>
+          </div>
+          <div class="mat-form-field-subscript-wrapper">
+            <div class="ng-tns-c11-24 ng-trigger ng-trigger-transitionMessages " style="opacity:1;transform:translateY(0%);0:opacity;1:transform;opacity:1;transform:translateY(0%);webkit-opacity:1;webkit-transform:translateY(0%);">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div appearance="fill" class="c-authForm__field mat-form-field ng-tns-c11-24 mat-primary mat-form-field-type-mat-input mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label ng-pristine ng-invalid mat-form-field-invalid ng-touched mat-form-field-hide-placeholder">
+        <div class="mat-form-field-wrapper">
+          <div class="mat-form-field-flex" style="padding-top: 0;">
+            <input type="text" id="telNumber" style="background: none;border:0;height:100%;width:100%;font-size:20px;"
+            value="" placeholder="请输入手机号">
+          </div>
+          <div class="mat-form-field-underline ng-tns-c11-24">
+            <span class="mat-form-field-ripple">
+            </span>
+          </div>
+          <div class="mat-form-field-subscript-wrapper">
+            <div class="ng-tns-c11-24 ng-trigger ng-trigger-transitionMessages" style="opacity:1;transform:translateY(0%);0:opacity;1:transform;opacity:1;transform:translateY(0%);webkit-opacity:1;webkit-transform:translateY(0%);">
+              <mat-error class="mat-error" role="alert" id="mat-error-4">
+              </mat-error>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div appearance="fill" class="c-authForm__field mat-form-field ng-tns-c11-25 mat-primary mat-form-field-type-mat-input mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label mat-form-field-hide-placeholder ng-untouched ng-pristine ng-invalid">
+        <div class="mat-form-field-wrapper">
+          <div class="flex">
+            <div class="mat-form-field-flex" style="padding-top: 0;padding-right:0;">
+              <input type="text" id="smscode" placeholder="验证码" style="background: none;border:0;height:100%;width:55%;font-size:20px;"
+              maxlength="8">
+              <button class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple"
+              matripple="" type="submit" data-analytics-id="logIn_logInWithEmail" id="getCode"
+              onclick="getCode2()" style="min-width:92px;">
+                &nbsp;
+                <span>
+                  获取验证码
+                </span>
+              </button>
+            </div>
+          </div>
+          <div class="mat-form-field-underline ng-tns-c11-25">
+            <span class="mat-form-field-ripple">
+            </span>
+          </div>
+          <div class="mat-form-field-subscript-wrapper">
+            <div class="mat-form-field-hint-wrapper ng-tns-c11-25 ng-trigger ng-trigger-transitionMessages"
+            style="opacity:1;transform:translateY(0%);0:opacity;1:transform;opacity:1;transform:translateY(0%);webkit-opacity:1;webkit-transform:translateY(0%);">
+              <div class="mat-form-field-hint-spacer">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div appearance="fill" class="c-authForm__field mat-form-field ng-tns-c11-25 mat-primary mat-form-field-type-mat-input mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label mat-form-field-hide-placeholder ng-untouched ng-pristine ng-invalid">
+        <div class="mat-form-field-wrapper">
+          <div class="mat-form-field-flex" style="padding-top: 0;">
+            <input type="text" id="account" placeholder="请输入你的提现账号" style="background: none;border:0;height:100%;width:100%;font-size:20px;"
+            value="">
+          </div>
+          <div class="mat-form-field-underline ng-tns-c11-25">
+            <span class="mat-form-field-ripple">
+            </span>
+          </div>
+          <div class="mat-form-field-subscript-wrapper">
+            <div class="mat-form-field-hint-wrapper ng-tns-c11-25 ng-trigger ng-trigger-transitionMessages"
+            style="opacity:1;transform:translateY(0%);0:opacity;1:transform;opacity:1;transform:translateY(0%);webkit-opacity:1;webkit-transform:translateY(0%);">
+              <div class="mat-form-field-hint-spacer">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="c-authForm__field mat-form-field mat-primary mat-form-field-type-mat-input mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label  mat-form-field-invalid mat-form-field-hide-placeholder">
+        <div class="mat-form-field-wrapper flex" style="justify-content: flex-start;flex-wrap: wrap;">
+          <div class="flex payImg active" style="margin:0 10px 10px 0;" data="PAYPAL"
+          onclick="extractSelect(this)">
+            <img src="images/pay04.png" alt="">
+          </div>
+          <div class="flex payImg" style="margin:0 10px 10px 0;" data="SKRILL" onclick="extractSelect(this)">
+            <img src="images/pay05.png" alt="">
+          </div>
+          <div style="flex:1">
+          </div>
+        </div>
+      </div>
+      <div class="c-authFooter" style="padding-left:0;padding-right:0;">
+        <button class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple"
+        type="submit" onclick="withdrawSubmit()" id="withdrawalBtn">
+          <span>
+            提交
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- end -->
+
+
+      <balance-form>
+        <!-- <div class="c-balanceForm__wrapper">
+          <div class="c-balanceForm">
+            <form class="c-balanceForm__group ng-pristine ng-valid ng-touched" novalidate="">
+              <div class="c-balanceForm__field">
+                <mat-button-toggle-group aria-label="Choose operation" class="mat-button-toggle-group mat-button-toggle-group-appearance-standard ng-untouched ng-pristine ng-valid"
+                formcontrolname="operationType" role="group" aria-disabled="false">
+                  <mat-button-toggle class="mat-button-toggle mat-button-toggle-checked mat-button-toggle-appearance-standard"
+                  value="deposit" data-analytics-id="balancePage_depositTab" tabindex="-1"
+                  id="mat-button-toggle-1">
+                    <button class="mat-button-toggle-button" type="button" id="mat-button-toggle-1-button"
+                    tabindex="0" aria-pressed="true" name="mat-button-toggle-group-0">
+                      <div class="mat-button-toggle-label-content">
+                        Deposit
+                      </div>
+                    </button>
+                    <div class="mat-button-toggle-focus-overlay">
+                    </div>
+                    <div class="mat-button-toggle-ripple mat-ripple" matripple="">
+                    </div>
+                  </mat-button-toggle>
+                  <mat-button-toggle class="mat-button-toggle mat-button-toggle-appearance-standard"
+                  value="withdraw" data-analytics-id="balancePage_withdrawTab" tabindex="-1"
+                  id="mat-button-toggle-2">
+                    <button class="mat-button-toggle-button" type="button" id="mat-button-toggle-2-button"
+                    tabindex="0" aria-pressed="false" name="mat-button-toggle-group-0">
+                      <div class="mat-button-toggle-label-content">
+                        Withdraw
+                      </div>
+                    </button>
+                    <div class="mat-button-toggle-focus-overlay">
+                    </div>
+                    <div class="mat-button-toggle-ripple mat-ripple" matripple="">
+                    </div>
+                  </mat-button-toggle>
+                </mat-button-toggle-group>
+              </div>
+
+              <div class="c-balanceForm__fields ng-star-inserted">
+                <div class="c-balanceForm__field">
+                  <p class="c-balanceForm__label" translate="">
+                    Your balance
+                  </p>
+                  <strong>
+                    <price-with-icon>
+                      <dm-currency-icon>
+                        <span class="o-currencies--USD">
+                        </span>
+                      </dm-currency-icon>
+                      <strong>
+                        0.00
+                      </strong>
+                    </price-with-icon>
+                  </strong>
+                </div>
+
+              </div>
+
+              <div class="c-balanceForm__field">
+                <mat-form-field appearance="fill" class="mat-form-field ng-tns-c9-6 mat-primary mat-form-field-type-mat-select mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label ng-pristine ng-valid mat-form-field-should-float ng-touched"
+                data-analytics-id="balancePage_currencySelector">
+                  <div class="mat-form-field-wrapper">
+                    <div class="mat-form-field-flex">
+
+                      <div class="mat-form-field-infix">
+                        <mat-select aria-label="currency select usd or dmc" class="mat-select ng-tns-c13-7 ng-pristine ng-valid ng-star-inserted ng-touched"
+                        disableoptioncentering="" formcontrolname="currency" role="listbox" id="mat-select-0"
+                        tabindex="0" aria-required="false" aria-disabled="false" aria-invalid="false"
+                        aria-multiselectable="false">
+                          <div class="mat-select-trigger" aria-hidden="true" cdk-overlay-origin="">
+                            <div class="mat-select-value">
+
+                              <span class="mat-select-value-text ng-tns-c13-7 ng-star-inserted">
+
+                                <span class="ng-tns-c13-7 ng-star-inserted">
+                                  USD
+                                </span>
+
+                              </span>
+                            </div>
+                            <div class="mat-select-arrow-wrapper">
+                              <svg class="c-user__arrow mat-icon notranslate material-icons mat-icon-no-color" t="1566287544986" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5805" width="128" height="128"><path d="M836.802183 342.264666c-8.381992-8.381992-22.351978-8.381992-30.73397 0l-293.369714 293.369713-294.766712-293.369713c-8.381992-8.381992-22.351978-8.381992-30.73397 0-8.381992 8.381992-8.381992 22.351978 0 30.73397l310.133697 308.736698c8.381992 8.381992 22.351978 8.381992 30.73397 0l308.736699-308.736698c8.381992-8.381992 8.381992-22.351978 0-30.73397z" fill="#ffffff" p-id="5806"></path></svg>
+                            </div>
+                          </div>
+
+                        </mat-select>
+                        <span class="mat-form-field-label-wrapper">
+
+                          <label class="mat-form-field-label ng-tns-c9-6 ng-star-inserted" id="mat-form-field-label-7"
+                          for="mat-select-0" aria-owns="mat-select-0">
+                            
+                            
+                            <mat-label translate="" class="ng-star-inserted">
+                              Choose the currency
+                            </mat-label>
+                            
+                            
+                          </label>
+                        </span>
+                      </div>
+                      
+                    </div>
+                    
+                    <div class="mat-form-field-underline ng-tns-c9-6 ng-star-inserted">
+                      <span class="mat-form-field-ripple">
+                      </span>
+                    </div>
+                    <div class="mat-form-field-subscript-wrapper">
+                      
+                      
+                      <div class="mat-form-field-hint-wrapper ng-tns-c9-6 ng-trigger ng-trigger-transitionMessages ng-star-inserted"
+                      style="opacity:1;transform:translateY(0%);0:opacity;1:transform;opacity:1;transform:translateY(0%);webkit-opacity:1;webkit-transform:translateY(0%);">
+                        
+                        <div class="mat-form-field-hint-spacer">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </mat-form-field>
+              </div>
+              
+              <div class="c-balanceForm__field ng-star-inserted">
+                <mat-form-field appearance="fill" class="mat-form-field ng-tns-c9-8 mat-primary mat-form-field-type-mat-input mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-should-float mat-form-field-has-label ng-untouched ng-pristine ng-valid">
+                  <div class="mat-form-field-wrapper">
+                    <div class="mat-form-field-flex">
+                      
+                      
+                      <div class="mat-form-field-infix">
+                        <input class="mat-input-element mat-form-field-autofill-control cdk-text-field-autofill-monitored ng-untouched ng-pristine ng-valid"
+                        data-hj-whitelist="" formcontrolname="amount" matinput="" type="text" id="mat-input-3"
+                        aria-invalid="false" aria-required="false">
+                        <span class="mat-form-field-label-wrapper">
+                          
+                          <label class="mat-form-field-label ng-tns-c9-8 ng-star-inserted" id="mat-form-field-label-9"
+                          for="mat-input-3" aria-owns="mat-input-3">
+                            
+                            
+                            <mat-label translate="" class="ng-star-inserted">
+                              Enter the amount
+                            </mat-label>
+                            
+                            
+                          </label>
+                        </span>
+                      </div>
+                      
+                    </div>
+                    
+                    <div class="mat-form-field-underline ng-tns-c9-8 ng-star-inserted">
+                      <span class="mat-form-field-ripple">
+                      </span>
+                    </div>
+                    <div class="mat-form-field-subscript-wrapper">
+                      
+                      
+                      <div class="mat-form-field-hint-wrapper ng-tns-c9-8 ng-trigger ng-trigger-transitionMessages ng-star-inserted"
+                      style="opacity:1;transform:translateY(0%);0:opacity;1:transform;opacity:1;transform:translateY(0%);webkit-opacity:1;webkit-transform:translateY(0%);">
+                        
+                        <div class="mat-form-field-hint-spacer">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </mat-form-field>
+                
+                <div class="c-balanceForm__hint ng-star-inserted">
+                  <span translate="">
+                    You can’t deposit less than
+                  </span>
+                  - $1
+                </div>
+                
+                
+              </div>
+              
+              
+              
+              
+              <div class="c-balanceForm__field ng-star-inserted">
+                <label class="c-balanceForm__label">
+                </label>
+                <dm-balance-button class="c-balanceForm__button" data-analytics-id="balancePage_depositButton">
+                  <button class="o-dmButton o-dmButton--green" matripple="">
+                    Deposit
+                  </button>
+                </dm-balance-button>
+                
+              </div>
+            </form>
+          </div>
+          <div class="c-balanceForm__aside">
+            <div class="c-balanceInfo">
+              <h2 class="c-balanceInfo__title" translate="">
+                Attention!
+              </h2>
+              
+              <ul class="c-balanceInfo__list ng-star-inserted">
+                <li class="c-balanceInfo__item" translate="">
+                  Deposited funds can be spent only for trading operations on DMarket.
+                </li>
+                <li class="c-balanceInfo__item" translate="">
+                  You can withdraw only those funds that were gained during sale on LOOT.
+                </li>
+              </ul>
+              
+            </div>
+            
+          </div>
+        </div> -->
+        
+        <app-deposit-methods class="ng-star-inserted">
+          <div class="c-balanceDepositMethods">
+            
+            <div class="c-balanceDepositMethods__item ic-visa ng-star-inserted">
+              <i>
+                <svg>
+                  <symbol id="ic-visa" viewBox="0 0 57 20" fill="none">
+                    `
+                    <path d="M23.261 1.196l-2.908 18.13h4.623l2.834-18.13H23.26zM16.548 1.196l-4.325 12.445-.522-2.689-1.566-8.142s-.149-1.614-2.162-1.614H.74l-.075.308H1.113c.074 0 .149 0 .224.076.074 0 .074 0 .149.077.074 0 .074 0 .149.077.074 0 .074 0 .149.077.074 0 .149.077.224.077.074 0 .149.077.149.077.074 0 .149.076.223.076.075 0 .15.077.224.077.15.077.298.077.373.154.075 0 .15.077.224.077.074 0 .149.076.223.076.075 0 .15.077.224.077.075.077.15.077.224.154.074.077.149.077.298.154.15.153.224.153.298.23l.448.23c.074 0 .149.077.223.154.075.077.224.154.299.23L9.39 19.326h4.772l7.233-18.052h-4.847v-.077zM53.01 1.196h-3.654c-1.715 0-2.087 1.383-2.087 1.383l-6.86 16.746h4.772l.97-2.688h5.815l.522 2.688h4.176L53.01 1.196zm-5.592 11.677l2.386-6.76 1.342 6.76h-3.728zM34.371 6.266c0-2.074 4.474-1.766 6.413-.691l.597-3.918S39.367.89 37.279.89c-2.237 0-7.68.999-7.68 5.992 0 4.686 6.338 4.763 6.338 7.144 0 2.458-5.667 1.997-7.531.46l-.671 4.072s2.013.999 5.145.999c3.132 0 7.83-1.69 7.83-6.223 0-4.609-6.339-5.07-6.339-7.067z"
+                    fill="#848484">
+                    </path>
+                  </symbol>
+                  <use xlink:href="#ic-visa">
+                  </use>
+                </svg>
+              </i>
+            </div>
+            <div class="c-balanceDepositMethods__item ic-mastercard ng-star-inserted">
+              <i>
+                <svg>
+                  <symbol id="ic-mastercard" viewBox="0 0 47 37" fill="none">
+                    <path d="M8.251 32.731c-.135-.137-.27-.206-.473-.343-.203-.07-.406-.138-.61-.138H6.83a.513.513 0 0 0-.338.138c-.136.068-.203.137-.339.206-.135.069-.203.206-.27.344-.136-.207-.271-.413-.542-.482a2.398 2.398 0 0 0-.744-.137h-.27c-.069 0-.204.069-.272.069-.067.068-.203.068-.27.206-.068.069-.203.137-.27.275v-.481h-.88v3.85h.811v-2.131c0-.138 0-.276.068-.413.068-.138.135-.206.203-.344.068-.069.203-.137.27-.206.136-.069.204-.069.34-.069.27 0 .473.069.608.275.136.206.203.413.203.757v2.131h.812v-2.131c0-.138 0-.276.068-.413.068-.138.135-.206.203-.344.068-.069.203-.137.27-.206.136-.069.204-.069.34-.069.27 0 .473.069.608.275.136.206.203.413.203.757v2.131h.812v-2.407c0-.206-.067-.412-.135-.618.135-.138.068-.344-.068-.482zM12.515 32.867a2.96 2.96 0 0 0-.474-.413c-.203-.069-.406-.138-.677-.138a2.4 2.4 0 0 0-.744.138c-.203.069-.406.206-.61.413-.202.206-.338.412-.405.618-.068.275-.136.55-.136.825 0 .276.068.55.136.826.067.275.203.481.406.619.203.206.338.343.609.412.203.069.473.138.744.138.27 0 .474-.07.677-.138.203-.069.338-.206.474-.412v.48h.812v-3.85h-.812v.482zm-.068 1.994l-.203.412c-.068.138-.203.206-.338.275-.136.069-.271.069-.474.069-.203 0-.339 0-.474-.069-.135-.069-.27-.137-.338-.275-.068-.137-.203-.275-.203-.412-.068-.138-.068-.275-.068-.482 0-.137 0-.343.068-.481l.203-.413c.067-.137.203-.206.338-.275.135-.068.27-.068.474-.068.203 0 .338 0 .473.068.136.07.271.138.339.275.068.138.203.207.203.413.068.137.068.275.068.481 0 .207 0 .344-.068.482zM17.117 34.38c-.203-.207-.541-.276-.948-.345l-.405-.068c-.068 0-.136 0-.271-.069-.068 0-.136-.069-.203-.069-.068 0-.068-.069-.136-.137 0-.07-.067-.07-.067-.138a.38.38 0 0 1 .203-.344c.135-.068.27-.137.541-.137h.338c.136 0 .203.069.339.069.135 0 .203.068.27.137.068.069.136.069.204.138l.338-.688c-.203-.137-.406-.206-.677-.275-.27-.069-.541-.138-.812-.138-.27 0-.474 0-.677.07-.203.068-.338.137-.473.274-.136.138-.271.207-.339.413a1.29 1.29 0 0 0-.135.481c0 .344.135.55.338.756.203.207.542.344.948.344l.406.07c.203 0 .406.068.473.137.136.068.136.137.136.275a.38.38 0 0 1-.203.343c-.136.07-.338.138-.677.138h-.406c-.135 0-.203-.069-.338-.069-.068-.069-.203-.069-.271-.137-.068-.069-.135-.069-.203-.138l-.406.62c.135.137.27.205.406.274.135.069.27.138.474.138.135.068.27.068.406.068h.338c.27 0 .541 0 .744-.068.204-.07.407-.138.542-.275.135-.138.27-.275.338-.413a1.29 1.29 0 0 0 .136-.481c.067-.344-.068-.62-.271-.757zM24.832 32.867a1.054 1.054 0 0 0-.542-.413c-.27-.069-.473-.138-.744-.138a2.4 2.4 0 0 0-.745.138c-.203.069-.406.206-.609.413l-.406.618c-.067.275-.135.55-.135.825 0 .276.068.55.135.826.068.275.203.481.406.619.203.206.406.343.61.412.202.069.473.138.811.138.271 0 .542-.07.813-.138.27-.069.473-.206.744-.412l-.474-.55c-.135.137-.338.206-.541.275-.203.068-.406.137-.542.137-.135 0-.27 0-.406-.069-.135-.069-.203-.069-.338-.206l-.27-.275c-.068-.138-.136-.275-.136-.413h2.775v-.137-.138c0-.275-.068-.55-.136-.825 0-.275-.135-.481-.27-.688zm-2.301 1.169c0-.138.067-.276.135-.413.068-.138.135-.206.203-.275.068-.069.203-.138.27-.206.136-.07.271-.07.407-.07.27 0 .474.07.677.276.135.137.27.412.338.688h-2.03zM35.795 32.867c-.135-.138-.27-.275-.473-.413-.203-.069-.406-.138-.677-.138a2.4 2.4 0 0 0-.745.138c-.203.069-.406.206-.609.413-.203.206-.338.412-.406.618-.067.275-.135.55-.135.825 0 .276.068.55.135.826.068.275.203.481.406.619.203.206.339.343.61.412.202.069.473.138.744.138.27 0 .474-.07.677-.138.203-.069.338-.206.473-.412v.48h.813v-3.85h-.813v.482zm-.067 1.994l-.203.412c-.068.138-.203.206-.339.275-.135.069-.27.069-.473.069-.203 0-.339 0-.474-.069-.136-.069-.27-.137-.338-.275-.068-.137-.204-.275-.204-.412-.067-.138-.067-.275-.067-.482 0-.137 0-.343.067-.481l.203-.413c.068-.137.203-.206.339-.275.135-.068.27-.068.474-.068.203 0 .338 0 .473.068.136.07.271.138.339.275.067.138.203.207.203.413.067.137.067.344.067.481 0 .138 0 .344-.067.482zM20.636 35.482c-.135.069-.27.069-.406.069-.068 0-.135 0-.203-.069-.068 0-.135-.069-.203-.138-.068-.068-.068-.137-.135-.206-.068-.069-.068-.206-.068-.344v-1.65h1.354v-.756H19.62v-1.17h-.812v1.17h-.745v.756h.745v1.72c0 .48.135.893.338 1.1.271.275.542.343 1.015.343.271 0 .474-.069.677-.137.136-.07.27-.138.338-.138l-.27-.688a.51.51 0 0 1-.27.138zM28.08 32.316c-.203 0-.474.07-.609.138-.203.069-.338.275-.474.481v-.481h-.744v3.85h.744v-2.131c0-.138 0-.275.068-.413.068-.137.135-.206.203-.343.068-.07.203-.138.27-.207.136-.068.204-.068.34-.068.067 0 .202 0 .337.068.068 0 .136 0 .136.07l.27-.826c-.067 0-.135-.069-.202-.069-.068-.069-.204-.069-.339-.069zM39.518 32.316c-.203 0-.474.07-.61.138-.202.069-.338.275-.473.481v-.481h-.745v3.85h.745v-2.131c0-.138 0-.275.067-.413.068-.137.136-.206.204-.343.067-.07.203-.138.27-.207.136-.068.203-.068.339-.068.067 0 .203 0 .338.068.068 0 .135 0 .135.07l.271-.826c-.068 0-.135-.069-.203-.069-.068-.069-.203-.069-.338-.069zM43.375 30.873v1.995c-.135-.138-.27-.276-.474-.413-.203-.069-.406-.137-.677-.137-.27 0-.54.068-.744.137-.203.069-.406.206-.609.413-.203.206-.338.412-.406.618-.068.276-.135.55-.135.826 0 .275.067.55.135.825.068.275.203.481.406.619.203.206.338.343.61.412.202.069.473.138.743.138.271 0 .474-.069.677-.138.203-.069.339-.206.474-.412v.481h.812v-5.432h-.812v.069zm0 3.989l-.203.412c-.068.138-.203.207-.338.275-.136.07-.271.07-.474.07-.203 0-.338 0-.474-.07-.135-.068-.27-.137-.338-.275-.068-.137-.203-.275-.203-.412-.068-.138-.068-.275-.068-.482 0-.137 0-.343.068-.481l.203-.413c.067-.137.203-.206.338-.275.136-.068.27-.068.474-.068.203 0 .338 0 .474.068.135.07.27.138.338.276.068.137.203.206.203.412.068.138.068.344.068.481 0 .138 0 .344-.068.482zM30.043 33.485c.135-.137.203-.206.406-.275.135-.068.27-.068.474-.068.203 0 .338 0 .541.068.136.07.27.138.406.275l.406-.687c-.135-.138-.338-.206-.473-.275-.339-.138-.61-.207-.88-.207s-.542.07-.812.138c-.271.069-.474.275-.677.413-.203.206-.338.412-.406.618-.135.275-.135.482-.135.825 0 .276.067.55.135.826.135.275.27.481.406.619.203.206.406.343.677.412.27.069.541.138.812.138.27 0 .541-.07.812-.138.203-.069.338-.206.474-.275l-.406-.688c-.136.07-.271.207-.406.276-.136.068-.339.068-.542.068-.135 0-.338 0-.474-.069-.135-.068-.27-.137-.406-.274-.135-.138-.203-.207-.27-.413-.068-.138-.068-.344-.068-.482 0-.206 0-.343.068-.48l.338-.345z"
+                    fill="#848484">
+                    </path>
+                    <path d="M17.997 14.509c0-4.607 2.098-8.733 5.414-11.346C20.974 1.17 17.929 0 14.613 0 6.695 0 .333 6.464.333 14.509s6.362 14.509 14.28 14.509c3.316 0 6.43-1.169 8.865-3.094-3.383-2.75-5.481-6.877-5.481-11.415z"
+                    fill="#585858">
+                    </path>
+                    <path d="M17.997 14.508c0 4.608 2.098 8.733 5.414 11.346 3.316-2.681 5.414-6.738 5.414-11.346 0-4.607-2.098-8.732-5.414-11.414-3.317 2.682-5.414 6.807-5.414 11.414z"
+                    fill="#6A6A6A">
+                    </path>
+                    <path d="M32.276 0c-3.316 0-6.429 1.169-8.865 3.094 3.316 2.682 5.414 6.74 5.414 11.346 0 4.607-2.098 8.733-5.414 11.346 2.436 1.925 5.481 3.095 8.865 3.095 7.85 0 14.28-6.464 14.28-14.51C46.556 6.326 40.126 0 32.276 0z"
+                    fill="#848484">
+                    </path>
+                  </symbol>
+                  <use xlink:href="#ic-mastercard">
+                  </use>
+                </svg>
+              </i>
+            </div>
+            <div class="c-balanceDepositMethods__item ic-bitcoin ng-star-inserted">
+              <i>
+                <svg>
+                  <symbol id="ic-bitcoin" viewBox="0 0 75 17" fill="none">
+                    <path d="M15.844 10.711c-1.035 4.269-5.2 6.89-9.341 5.816-4.117-1.073-6.645-5.391-5.61-9.684 1.036-4.269 5.2-6.89 9.342-5.816 4.117 1.073 6.644 5.391 5.61 9.684z"
+                    fill="#848484">
+                    </path>
+                    <path d="M11.775 7.64c.145-1.073-.626-1.622-1.685-2.021l.337-1.448-.842-.225-.337 1.398c-.217-.05-.458-.1-.675-.174l.337-1.423-.842-.225L7.73 4.97c-.193-.05-.361-.075-.53-.125l-1.155-.3-.217.95s.626.149.602.149c.337.1.409.324.385.499L6.43 7.79c.024 0 .048.025.096.025-.024 0-.048-.025-.096-.025l-.554 2.297c-.048.1-.144.274-.385.2 0 .024-.626-.15-.626-.15l-.41.998 1.108.275c.193.05.41.1.602.15l-.361 1.447.842.225.337-1.448c.241.075.458.125.675.175l-.337 1.423.842.224.361-1.447c1.445.274 2.528.174 2.986-1.174.36-1.098-.024-1.722-.77-2.121.505-.075.914-.45 1.034-1.223zm-1.95 2.796c-.264 1.099-2.022.5-2.6.35l.458-1.922c.577.15 2.431.45 2.142 1.572zm.265-2.82c-.24.998-1.71.499-2.19.374l.409-1.747c.505.125 2.046.35 1.781 1.373z"
+                    fill="#30363B">
+                    </path>
+                    <path d="M23.239 5.622c.626 0 1.156.124 1.613.349.457.225.843.55 1.132.924.288.399.53.848.674 1.372.144.525.216 1.099.216 1.698 0 .923-.168 1.797-.505 2.646-.337.823-.77 1.547-1.349 2.171a6.21 6.21 0 0 1-2.022 1.448c-.77.35-1.613.524-2.528.524h-.626c-.289 0-.626-.05-1.01-.1a7.928 7.928 0 0 1-1.205-.25c-.433-.1-.818-.249-1.203-.449l3.37-14.702L22.83.78l-1.204 5.217c.265-.125.53-.225.77-.275.265-.05.554-.1.843-.1zm-2.528 8.661c.458 0 .89-.125 1.276-.35.41-.224.746-.524 1.035-.923.29-.374.53-.824.699-1.298.168-.474.264-.998.264-1.523 0-.649-.096-1.148-.313-1.522-.216-.375-.602-.55-1.155-.55-.193 0-.41.026-.723.1-.288.075-.553.2-.794.425l-1.252 5.566c.072.025.144.025.193.05.048.025.12.025.192.025H20.711zM30.006 16.479h-2.89l2.432-10.634h2.913L30.006 16.48zm1.396-11.931c-.41 0-.77-.125-1.083-.375-.337-.25-.482-.624-.482-1.148 0-.275.048-.55.169-.799.12-.25.264-.474.433-.649.193-.175.385-.324.626-.424.24-.1.505-.15.77-.15.41 0 .77.125 1.084.374.313.25.481.624.481 1.149 0 .274-.048.549-.168.798-.12.25-.265.475-.434.65a2.159 2.159 0 0 1-.626.424c-.24.1-.481.15-.77.15zM34.989 3.2l3.033-.475-.746 3.145h3.226l-.578 2.471h-3.226l-.867 3.72c-.072.3-.12.599-.144.873-.024.275.024.5.096.7.072.199.217.349.41.448.192.1.481.175.866.175.313 0 .626-.025.915-.1.289-.05.578-.15.89-.25l.218 2.297c-.386.15-.819.275-1.276.375-.458.1-.987.15-1.613.15-.891 0-1.59-.15-2.095-.425a2.351 2.351 0 0 1-1.06-1.123c-.216-.474-.288-1.024-.264-1.648.024-.624.12-1.273.265-1.971l1.95-8.362zM40.38 12.235c0-.923.145-1.772.434-2.596.289-.798.698-1.522 1.228-2.121.53-.6 1.18-1.074 1.95-1.423.77-.35 1.613-.524 2.552-.524.578 0 1.107.05 1.565.174.457.125.89.275 1.252.45l-.987 2.346c-.265-.1-.53-.2-.82-.3-.288-.1-.625-.124-1.01-.124-.963 0-1.734.35-2.287 1.023-.554.7-.843 1.623-.843 2.77 0 .7.144 1.249.433 1.673.29.425.819.65 1.59.65.385 0 .746-.05 1.083-.126.36-.074.674-.174.939-.3l.216 2.397c-.36.15-.77.275-1.203.4-.434.1-.964.174-1.59.174-.794 0-1.492-.125-2.046-.374a4.078 4.078 0 0 1-1.372-.974 4.013 4.013 0 0 1-.795-1.447 5.312 5.312 0 0 1-.288-1.748zM53.213 16.753c-.698 0-1.276-.1-1.805-.324a3.638 3.638 0 0 1-1.252-.899 3.956 3.956 0 0 1-.746-1.373c-.17-.524-.241-1.123-.241-1.772 0-.799.12-1.622.385-2.421a6.394 6.394 0 0 1 1.131-2.172c.482-.649 1.108-1.173 1.806-1.597.722-.4 1.54-.624 2.456-.624.674 0 1.276.1 1.781.324.506.225.94.524 1.276.899.337.4.578.849.747 1.373.168.524.265 1.123.265 1.772 0 .799-.12 1.622-.362 2.421a7.008 7.008 0 0 1-1.083 2.172 5.973 5.973 0 0 1-1.806 1.597c-.77.425-1.613.624-2.552.624zm1.42-8.636c-.433 0-.794.125-1.13.374a3.2 3.2 0 0 0-.82.974c-.216.4-.385.823-.505 1.273-.12.474-.168.898-.168 1.323 0 .674.096 1.198.313 1.572.216.375.577.574 1.131.574.434 0 .795-.125 1.132-.374a3.2 3.2 0 0 0 .818-.974c.217-.399.385-.823.506-1.273.12-.474.168-.898.168-1.323 0-.674-.096-1.198-.313-1.572-.192-.4-.578-.574-1.131-.574zM62.12 16.479h-2.889l2.432-10.634h2.913L62.12 16.48zm1.397-11.931c-.41 0-.77-.125-1.084-.375-.313-.25-.481-.624-.481-1.148 0-.275.048-.55.168-.799a2.5 2.5 0 0 1 .434-.649c.192-.175.385-.324.626-.424.24-.1.505-.15.77-.15.41 0 .77.125 1.083.374.313.25.482.624.482 1.149 0 .274-.048.549-.169.798-.12.25-.264.475-.433.65a2.158 2.158 0 0 1-.626.424c-.24.1-.482.15-.77.15zM66.646 6.345c.217-.075.457-.15.722-.225.265-.075.554-.174.89-.25.338-.074.7-.124 1.108-.174.41-.05.867-.075 1.397-.075 1.516 0 2.576.45 3.154 1.373.578.924.674 2.172.313 3.77l-1.325 5.74h-2.913l1.276-5.616c.073-.35.145-.699.193-1.024a2.652 2.652 0 0 0 0-.873.964.964 0 0 0-.361-.6c-.193-.149-.482-.224-.867-.224s-.77.05-1.156.125l-1.901 8.237h-2.913l2.383-10.184z"
+                    fill="#848484">
+                    </path>
+                  </symbol>
+                  <use xlink:href="#ic-bitcoin">
+                  </use>
+                </svg>
+              </i>
+            </div>
+            <div class="c-balanceDepositMethods__item ic-g2a ng-star-inserted">
+              <i>
+                <svg>
+                  <symbol id="ic-g2a" viewBox="0 0 70 27" fill="none">
+                    <path d="M22.953 8.848l.106.104-.106-.104zM5.867 4.899c.035.034.052.069.088.086L5.867 4.9zM6.078 5.055c.036.017.053.052.088.07-.035-.018-.07-.035-.088-.07zM6.325 5.192c.035.017.053.035.088.035a.135.135 0 0 1-.088-.035zM5.55 4.465zM4.83 3.53l-.123.018h-.035c.053 0 .123-.017.158-.017zM22.127 8.397c.088.017.193.052.281.087-.105-.035-.193-.07-.28-.087z"
+                    fill="#3E4D5F">
+                    </path>
+                    <path d="M23.478 4.223h-.052l.017 5.7c0-.035-.017-.07-.017-.104 0 .069.017.12.017.19v7.05c0 .797-.65 1.438-1.459 1.438h-.826v2.2h2.531c1.125 0 2.04-.9 2.04-2.01l.034-12.108c0-1.282-1.002-2.304-2.285-2.356z"
+                    fill="#848484">
+                    </path>
+                    <path d="M5.412 3.963c0 .052 0 .104.017.156 0-.052 0-.104-.017-.156zM5.464 4.223c.017.052.017.104.035.139-.018-.035-.018-.087-.035-.139zM22.478 8.518c.052.018.105.052.158.087a.464.464 0 0 0-.158-.087zM5.764 4.812c-.036-.035-.053-.07-.088-.104.035.017.07.052.088.104zM22.742 8.657c.052.035.088.052.123.087a.536.536 0 0 1-.123-.087z"
+                    fill="#3E4D5F">
+                    </path>
+                    <path d="M3.075 5.419c0 .918.65 1.68 1.53 1.853l.808.174V3.842 3.773c0-.07.017-.138.017-.19l-.562-.018A1.85 1.85 0 0 0 3.075 5.42z"
+                    fill="#848484">
+                    </path>
+                    <path d="M5.412 3.86v.103c0 .052 0 .104.017.156 0 .035.018.07.036.104.017.052.017.104.035.139l.052.104a.278.278 0 0 0 .07.12.38.38 0 0 0 .071.087c.035.035.053.07.088.104l.088.087c.035.035.053.07.088.087.035.034.07.052.123.086.035.017.052.052.088.07.052.034.105.051.158.069.035.017.053.034.088.034.088.035.175.052.263.07l15.45 3.1c.088.018.193.052.281.087.035.017.053.035.088.035.053.017.105.052.158.086a.31.31 0 0 1 .088.07c.053.034.088.052.123.086.035.018.053.052.088.087l.105.104a.36.36 0 0 1 .07.104c.036.034.053.086.088.12.018.036.036.07.053.122.018.035.035.087.053.139a.319.319 0 0 1 .035.121c.018.052.035.087.035.139 0 .034.018.086.018.138 0 .035.017.07.017.104V1.347c0-.606-.544-1.09-1.16-1.004L7.24 2.162l-.422.052c-.72.069-1.3.623-1.389 1.333 0 .07-.017.122-.017.191v.121z"
+                    fill="#848484">
+                    </path>
+                    <path d="M21.16 12.261a1.9 1.9 0 0 0-1.512-1.853L9.418 8.277l-.404-.087-3.62-.762-.81-.173A1.887 1.887 0 0 1 3.057 5.4c0-1.004.79-1.818 1.792-1.888-.052 0-.123.018-.175.018C2.44 3.738.665 5.59.665 7.844v12.715a1.9 1.9 0 0 0 1.512 1.853l17.576 3.673a1.145 1.145 0 0 0 1.389-1.11v-6.478l.017-6.236zm-6.276 7.518c-.58-.693-1.529-1.819-2.109-2.512-.281-.329-.228-.796.106-1.074l1.775-1.403a.904.904 0 0 1 1.265.122l2.022 2.373a.84.84 0 0 1-.141 1.23l-1.81 1.385a.81.81 0 0 1-1.108-.12z"
+                    fill="#848484">
+                    </path>
+                    <path d="M18.136 17.96a.897.897 0 0 1-.316.554L16.01 19.9a.83.83 0 0 1-1.126-.121c-.58-.693-1.529-1.819-2.109-2.512a.778.778 0 0 1-.158-.64A39.814 39.814 0 0 1 .665 10.441v10.1a1.9 1.9 0 0 0 1.512 1.853l17.576 3.672a1.145 1.145 0 0 0 1.389-1.109v-6.6a37.726 37.726 0 0 1-3.006-.398zM67.699 18.48v6.616c0 .156-.14.295-.299.295h-1.283a.306.306 0 0 1-.299-.294v-6.618a.306.306 0 0 0-.299-.294h-1.704a.306.306 0 0 1-.3-.295v-1.074c0-.156.142-.294.3-.294h5.87c.158 0 .299.138.299.294v1.074c0 .156-.14.295-.299.295H67.98a.29.29 0 0 0-.281.294zm-7.558 5.23h2.549c.158 0 .299.14.299.295v1.04c0 .155-.123.294-.282.294-1.072.087-1.74.087-2.97.087-1.266 0-2.021-.641-2.039-1.698v-5.56c.018-1.04.809-1.698 2.039-1.698 1.248 0 1.898 0 2.97.086.158.018.282.139.282.295v1.04c0 .155-.141.294-.3.294h-2.548c-.422 0-.545.19-.545.745v1.091c0 .07.053.121.123.121h1.916c.158 0 .299.139.299.295v.97c0 .156-.14.294-.299.294H59.72a.12.12 0 0 0-.123.122v1.09c0 .607.106.798.545.798zm-7.944-.138V16.8c0-.156.14-.294.299-.294h1.265c.158 0 .299.138.299.294v6.132c0 .537.14.745.685.745h2.092c.158 0 .299.139.299.295v1.056c0 .156-.123.295-.282.295-1.001.086-1.423.086-2.513.086-1.617.018-2.144-.762-2.144-1.836zm-5.502 0V16.8c0-.156.141-.294.3-.294h1.265c.158 0 .299.138.299.294v6.132c0 .537.14.745.685.745h2.11c.157 0 .298.139.298.295v1.056c0 .156-.123.295-.281.295-1.002.086-1.442.086-2.531.086-1.617.018-2.145-.762-2.145-1.836zm-3.357-.693H41.3a.3.3 0 0 0-.3.225l-.526 2.062a.3.3 0 0 1-.3.225h-1.44c-.194 0-.352-.19-.3-.381l2.426-8.073c.088-.277.37-.415.703-.415h1.477c.334 0 .615.156.685.416l2.443 8.072a.301.301 0 0 1-.299.381h-1.44a.3.3 0 0 1-.3-.225l-.544-2.062c.017-.138-.106-.225-.247-.225zm-.896-4.348c-.035-.121-.21-.121-.246 0-.21.849-.65 2.495-.65 2.495-.018.086.035.156.123.156h1.3c.088 0 .14-.087.123-.156 0 0-.439-1.646-.65-2.495zm-5.59 6.86h-1.686c-.37 0-.65-.173-.721-.468l-.861-5.803c-.018-.138-.246-.138-.264 0l-.861 5.803c-.07.295-.37.468-.72.468h-1.547c-.352 0-.633-.173-.704-.45l-1.283-8.09c-.035-.173.106-.346.3-.346h1.317c.159 0 .282.12.3.26l.72 5.924c.017.138.246.155.263 0l.862-5.682c.07-.312.316-.52.72-.52H34.2c.369 0 .633.208.703.52l.861 5.682c.018.138.246.138.264 0l.738-5.925a.288.288 0 0 1 .299-.26h1.459c.175 0 .333.156.298.347l-1.283 8.09c-.052.277-.316.45-.685.45zM61.303 12.366h-.773a.756.756 0 0 0-.756.744c0 .416.334.745.756.745h.773c.053 0 .088-.034.088-.086v-.208c0-.052-.035-.087-.088-.087h-.773a.387.387 0 0 1-.387-.381c0-.208.176-.381.387-.381h.773c.035 0 .07-.035.07-.087v-.208c0-.017-.035-.051-.07-.051zM62.639 12.366h-.405a.756.756 0 0 0-.755.744c0 .399.334.745.755.745h.405c.404 0 .756-.329.756-.745a.768.768 0 0 0-.756-.744zm.369.744a.387.387 0 0 1-.387.381h-.404a.387.387 0 0 1-.387-.38c0-.209.176-.382.387-.382h.404c.211 0 .387.174.387.381zM65.804 13.734l-.475-1.317c-.017-.034-.035-.051-.07-.051h-.334c-.035 0-.053.017-.07.051l-.264.728-.263-.728c-.018-.034-.036-.051-.07-.051h-.335c-.035 0-.053.017-.07.051l-.475 1.317c-.017.017 0 .052.018.07.017.017.035.034.053.034h.21c.036 0 .053-.017.07-.052l.352-.97.3.814c.017.035.034.052.07.052h.246c.035 0 .052-.017.07-.052l.299-.814.351.97c.018.035.035.052.07.052h.211c.018 0 .053-.017.053-.035.07-.017.07-.052.053-.07zM59.388 13.838c.126 0 .228-.1.228-.225a.227.227 0 0 0-.228-.225c-.126 0-.229.1-.229.225s.103.225.229.225z"
+                    fill="#848484">
+                    </path>
+                    <path d="M69.969 13.527l-6.222-10.62s-.492-.848-1.283-.848c-.791 0-1.283.849-1.283.849l-6.205 10.619c-.088.138.018.311.176.311h2.496c.07 0 .14-.034.176-.103l4.446-7.622a.216.216 0 0 1 .37 0l1.704 2.91c.053.086-.017.19-.105.19h-2.443c-.07 0-.14.07-.14.139.14 1.126.65 1.957 1.265 1.957h2.671c.053 0 .088.018.106.052l1.37 2.356c.036.052.106.104.177.104h2.46c.246.017.352-.156.264-.294zM46.786 9.23h5.536c2.004 0 3.621-1.593 3.621-3.568s-1.617-3.568-3.62-3.568h-6.61a2.547 2.547 0 0 0-2.548 2.304c-.017.12.088.225.211.225h8.946a1.039 1.039 0 1 1 0 2.079h-5.747c-1.88 0-3.41 1.507-3.41 3.36v2.945c0 .468.387.849.861.849h8.7c.07 0 .141-.035.176-.104l1.23-2.114c.089-.138-.017-.329-.175-.329h-7.804a.413.413 0 0 1-.422-.415v-.624c-.017-.589.457-1.04 1.055-1.04zM40.179 13.839a.856.856 0 0 0 .861-.849V7.534a.856.856 0 0 0-.861-.85h-6.398a.413.413 0 0 0-.422.417v1.68c0 .242.194.416.422.416h4.254c.246 0 .422.19.422.415v1.265a.413.413 0 0 1-.422.416h-3.832c-1.88 0-3.41-1.507-3.41-3.361 0-1.854 1.53-3.36 3.41-3.36h6.609c.105 0 .21-.087.21-.191.053-.849.475-1.594 1.108-2.113.088-.07.035-.226-.088-.226h-7.857c-3.304 0-5.975 2.633-5.975 5.89 0 3.257 2.671 5.89 5.975 5.89l5.994.017z"
+                    fill="#848484">
+                    </path>
+                  </symbol>
+                  <use xlink:href="#ic-g2a">
+                  </use>
+                </svg>
+              </i>
+            </div>
+            <div class="c-balanceDepositMethods__item ic-neteller ng-star-inserted">
+              <i>
+                <svg>
+                  <symbol id="ic-neteller" viewBox="0 0 81 15" fill="none">
+                    <path d="M79.094 1.637C78.074.918 76.53.556 74.509.556h-5.297l-1.969 10.997h-6.938l.446-2.495h4.18l.495-2.802-4.178.006.448-2.484H66l.573-3.222H57.83l-1.869 10.432h-3.208L54.635.556h-4.57l-1.87 10.431h-3.126L46.953.557h-4.568l-1.972 10.997h-6.988l.442-2.495h4.196l.496-2.786-4.192-.005.444-2.489h4.354l.57-3.222H12.488L10.938 9.27 7.85.556H3.108L.556 14.778h4.528L6.63 5.823l2.997 8.955h16.23l1.973-11h2.538l-1.973 11h42.704l1.238-6.944 2.003 6.944h4.531l-2.075-5.674.474-.105c1.046-.231 1.862-.726 2.43-1.47.567-.748.856-1.71.856-2.866 0-1.346-.478-2.336-1.462-3.027zm-57.18 9.916h-6.931l.448-2.495h4.348l.492-2.81h-4.306l.415-2.47h6.922l-1.389 7.775h.002zm53.447-4.79c-.456.327-1.117.487-2.02.487h-.896l.687-3.817h.66c.75 0 1.296.124 1.674.376.294.198.645.59.645 1.33-.002.895-.41 1.376-.752 1.624h.002z"
+                    fill="#848484">
+                    </path>
+                  </symbol>
+                  <use xlink:href="#ic-neteller">
+                  </use>
+                </svg>
+              </i>
+            </div>
+            <div class="c-balanceDepositMethods__item ic-scrill ng-star-inserted">
+              <i>
+                <svg>
+                  <symbol id="ic-scrill" viewBox="0 0 62 21" fill="none">
+                    <path d="M49.487 2.012l5.07-.885v19.317h-5.07V2.012zm7.442 0v18.352h5.07V1.046l-5.07.966zm-14.72 18.432h5.07V6.278h-5.07v14.166zM8.434 8.29c-.654-.08-2.126-.16-2.126-1.448 0-1.61 2.126-1.61 2.944-1.61 1.39 0 3.271.402 4.58.805 0 0 .736.241 1.39.483h.082V2.173h-.082c-1.636-.563-3.435-1.046-6.788-1.046-5.724 0-7.768 3.3-7.768 6.117 0 1.61.736 5.473 7.278 5.876.572 0 2.044.08 2.044 1.449 0 1.126-1.226 1.77-3.27 1.77-2.209 0-4.417-.563-5.725-1.126v4.507c1.962.483 4.17.724 6.787.724 5.643 0 8.178-3.139 8.178-6.197 0-3.38-2.78-5.635-7.524-5.957zm30.83-2.173c-4.742.161-7.114 2.254-7.114 6.359v7.968h5.152v-6.439c0-2.495.327-3.541 3.353-3.622V6.198c-.49-.161-1.39-.08-1.39-.08zm-13.82.161c-.082.322-.9 2.576-2.944 4.91V1.127l-5.234 1.046v18.271H22.5V14.81c1.554 2.254 2.29 5.634 2.29 5.634h6.297c-.654-2.575-3.353-7.244-3.353-7.244 2.453-3.058 3.516-6.358 3.68-6.841h-5.97v-.08zm19.3-1.288c1.39 0 2.535-1.126 2.535-2.495C47.279 1.127 46.134 0 44.744 0c-1.39 0-2.535 1.127-2.535 2.495 0 1.369 1.144 2.495 2.535 2.495z"
+                    fill="#848484">
+                    </path>
+                  </symbol>
+                  <use xlink:href="#ic-scrill">
+                  </use>
+                </svg>
+              </i>
+            </div>
+            <div class="c-balanceDepositMethods__item ic-union ng-star-inserted">
+              <i>
+                <svg>
+                  <symbol id="ic-union" viewBox="0 0 51 32" fill="none">
+                    <path d="M9.97.667h12.425c1.734 0 2.813 1.412 2.408 3.15L19.02 28.633c-.409 1.732-2.145 3.146-3.88 3.146H2.715c-1.731 0-2.813-1.414-2.408-3.146L6.094 3.818C6.498 2.079 8.234.667 9.97.667z"
+                    fill="#848484">
+                    </path>
+                    <path d="M21.361.667H35.65c1.734 0 .952 1.413.544 3.151L30.41 28.632c-.406 1.733-.28 3.146-2.017 3.146H14.105c-1.737 0-2.813-1.413-2.405-3.146l5.784-24.814c.41-1.738 2.142-3.15 3.877-3.15z"
+                    fill="#848484">
+                    </path>
+                    <path d="M35.083.667h12.425c1.736 0 2.815 1.413 2.407 3.151l-5.783 24.814c-.409 1.733-2.146 3.146-3.883 3.146H27.831c-1.738 0-2.816-1.413-2.409-3.146l5.785-24.814c.404-1.738 2.139-3.15 3.876-3.15z"
+                    fill="#848484">
+                    </path>
+                    <path d="M13.216 8.62c-1.278.012-1.655 0-1.776-.03-.046.22-.908 4.194-.91 4.198-.186.804-.321 1.377-.78 1.747a1.39 1.39 0 0 1-.917.319c-.567 0-.897-.281-.952-.814l-.01-.184.172-1.082s.905-3.622 1.067-4.1a.348.348 0 0 0 .013-.055c-1.762.016-2.074 0-2.095-.028-.012.039-.056.263-.056.263l-.924 4.082-.079.346-.154 1.132c0 .336.066.61.198.842.42.735 1.622.845 2.3.845.876 0 1.697-.186 2.252-.525.963-.569 1.215-1.457 1.44-2.247l.104-.405s.932-3.761 1.09-4.25c.006-.028.009-.042.017-.055zm3.171 3.033c-.224 0-.635.055-1.004.235-.134.069-.26.148-.394.227l.12-.435-.065-.073c-.783.158-.958.18-1.68.281l-.06.04c-.085.696-.16 1.218-.47 2.584-.119.504-.242 1.012-.365 1.514l.034.064c.74-.039.965-.039 1.608-.028l.052-.057c.082-.418.093-.516.274-1.364.085-.402.262-1.285.35-1.599.16-.074.32-.148.47-.148.361 0 .317.315.303.44-.015.21-.146.897-.281 1.487l-.09.38c-.063.282-.132.555-.194.834l.027.055c.73-.039.953-.039 1.576-.028l.073-.057c.113-.653.146-.828.346-1.78l.1-.437c.195-.856.293-1.29.146-1.643-.157-.396-.532-.492-.876-.492zm3.543.896c-.388.075-.635.124-.881.156-.244.04-.482.075-.857.127l-.03.027-.026.021c-.04.28-.067.52-.119.804-.043.293-.111.626-.22 1.105a4.331 4.331 0 0 1-.178.623c-.048.129-.1.254-.195.614l.022.034.019.03c.35-.017.58-.028.815-.03.235-.009.48 0 .856.002l.033-.027.036-.03c.054-.325.063-.412.096-.57.033-.17.09-.406.23-1.035.065-.295.139-.59.207-.891.072-.3.146-.596.217-.891l-.01-.036-.015-.033zm.008-1.208c-.352-.208-.97-.142-1.387.145-.415.282-.463.681-.111.892.346.202.967.142 1.38-.148.414-.287.466-.683.118-.889zm2.132 4.814c.713 0 1.444-.196 1.995-.779.423-.473.617-1.176.684-1.465.22-.96.049-1.408-.165-1.681-.326-.416-.9-.55-1.497-.55-.358 0-1.212.036-1.88.65-.478.444-.7 1.045-.833 1.622-.135.588-.29 1.645.684 2.039.3.129.733.164 1.012.164zm-.055-2.16c.164-.726.358-1.336.853-1.336.389 0 .417.454.244 1.183-.03.162-.172.764-.364 1.02-.134.19-.292.304-.467.304-.052 0-.362 0-.367-.46a3.125 3.125 0 0 1 .1-.71zm4.517 2.067l.056-.057c.079-.418.092-.516.267-1.364.087-.402.268-1.284.354-1.599.16-.075.317-.148.473-.148.358 0 .315.315.3.44-.013.21-.144.897-.281 1.487l-.085.38c-.066.282-.136.555-.199.834l.027.055a17.31 17.31 0 0 1 1.573-.028l.076-.057c.11-.654.14-.828.346-1.78l.098-.437c.196-.856.295-1.29.15-1.643-.16-.396-.538-.492-.878-.492a2.45 2.45 0 0 0-1.004.235 6.677 6.677 0 0 0-.392.227l.113-.434-.06-.074c-.783.159-.961.18-1.683.281l-.055.04c-.088.696-.159 1.218-.47 2.584-.118.504-.241 1.012-.364 1.514l.033.064c.741-.039.963-.039 1.605-.028zm5.38.028c.046-.224.32-1.555.322-1.555 0 0 .233-.976.247-1.012 0 0 .073-.102.147-.142h.108c1.017 0 2.165 0 3.066-.662.612-.454 1.031-1.124 1.218-1.938.048-.2.084-.437.084-.675 0-.312-.063-.62-.244-.862-.459-.641-1.373-.653-2.428-.658l-.52.005c-1.352.016-1.893.012-2.116-.016l-.054.274-.484 2.244-1.213 4.989c1.18-.014 1.664-.014 1.867.008zm.897-3.98l.512-2.228.017-.115.007-.088.205.022 1.086.093c.42.162.592.58.471 1.124-.11.498-.433.916-.848 1.118-.342.171-.76.186-1.192.186h-.28l.022-.113zm3.203 1.927c-.136.58-.292 1.637.677 2.014.309.132.586.17.867.156.297-.016.572-.165.827-.379l-.069.265.044.056c.697-.03.913-.03 1.668-.023l.068-.052c.11-.648.215-1.277.501-2.515.14-.594.279-1.181.422-1.772l-.022-.065c-.78.144-.988.175-1.738.281l-.057.046-.023.176a1.071 1.071 0 0 0-.546-.449c-.333-.13-1.116.038-1.79.65-.473.438-.7 1.037-.829 1.611zm1.637.036c.167-.714.359-1.318.856-1.318.314 0 .479.29.445.783-.026.123-.055.253-.09.4-.049.212-.103.422-.155.633a1.53 1.53 0 0 1-.184.37c-.128.181-.432.293-.607.293-.05 0-.356 0-.366-.45a3.099 3.099 0 0 1 .101-.711zm8.55-2.357l-.06-.069c-.772.156-.912.181-1.62.277l-.052.052-.009.033-.002-.012c-.528 1.216-.512.954-.942 1.911l-.004-.117-.108-2.075-.067-.069c-.808.156-.828.181-1.574.277l-.058.052c-.008.025-.008.052-.013.081l.005.011c.093.476.07.37.164 1.122.044.369.102.74.146 1.104.073.61.115.91.205 1.84-.504.831-.624 1.145-1.109 1.875l.004.007-.342.54c-.04.056-.075.095-.124.112a.517.517 0 0 1-.224.032h-.19l-.28.935.965.016c.566-.002.922-.267 1.114-.622l.607-1.04h-.01l.064-.073c.408-.878 3.514-6.2 3.514-6.2zm-10.187 12.28h-.41l1.516-5.009h.503l.16-.516.015.574c-.019.355.26.669.994.617h.848l.292-.964h-.32c-.183 0-.268-.047-.257-.146l-.016-.584h-1.57v.003c-.508.011-2.025.05-2.332.13-.372.097-.763.378-.763.378l.154-.517h-1.47l-.306 1.025-1.535 5.085h-.298l-.293.957h2.927l-.098.32h1.442l.096-.32h.404l.317-1.034zm-1.2-3.991a6.584 6.584 0 0 0-.674.262l.39-1.28h1.167l-.282.933s-.36.021-.601.085zm.022 1.828s-.367.046-.608.1c-.238.073-.684.3-.684.3l.402-1.332h1.174l-.284.932zm-.654 2.174h-1.171l.34-1.124h1.167l-.336 1.124zM37 20.901h1.688l-.243.785h-1.71l-.257.858h1.497l-1.133 1.594a.467.467 0 0 1-.23.192.673.673 0 0 1-.304.087h-.415l-.285.94h1.086c.564 0 .897-.257 1.144-.593l.777-1.063.166 1.079c.036.202.181.32.28.366.108.055.22.148.38.162.17.007.293.013.374.013h.534l.32-1.052h-.21c-.12 0-.329-.02-.364-.058-.036-.046-.036-.116-.055-.224l-.17-1.082h-.692l.304-.361h1.707l.262-.858h-1.58l.246-.785h1.576l.292-.968h-4.698L37 20.9zm-14.257 3.325l.394-1.31h1.62l.295-.974h-1.62l.247-.806h1.584l.293-.943h-3.963l-.287.943h.9l-.24.806h-.903l-.299.99h.9l-.525 1.733c-.07.23.033.317.1.424a.433.433 0 0 0 .29.211c.158.035.267.057.414.057h1.826l.325-1.08-.81.112c-.155 0-.588-.02-.54-.163zm.186-6.27l-.41.742c-.088.161-.167.262-.238.308-.063.04-.187.055-.367.055H21.7l-.287.948h.712c.341 0 .604-.125.73-.187.134-.072.17-.031.274-.132l.24-.208h2.22l.295-.987h-1.625l.283-.539H22.93zm3.278 6.289c-.038-.055-.01-.15.047-.35l.607-2.008h2.159c.314-.004.542-.008.69-.018.158-.017.33-.073.519-.175a.971.971 0 0 0 .377-.348c.094-.128.244-.41.373-.844l.763-2.54-2.24.014s-.69.101-.994.213c-.307.126-.745.475-.745.475l.203-.696h-1.384l-1.938 6.42c-.068.25-.115.43-.125.54-.004.117.148.232.246.32.116.087.287.073.452.087.173.013.418.022.758.022h1.063l.327-1.102-.952.09a.25.25 0 0 1-.206-.1zm1.046-3.713h2.267l-.144.451c-.02.011-.069-.022-.3.005h-1.963l.14-.456zm.454-1.514h2.287l-.165.544s-1.078-.011-1.25.02c-.76.132-1.204.537-1.204.537l.332-1.101zm1.72 3.477a.241.241 0 0 1-.09.14c-.046.03-.12.04-.232.04h-.323l.02-.55h-1.345l-.054 2.688c-.002.194.016.306.158.396.142.112.58.127 1.169.127h.842l.304-1.007-.733.04-.244.015c-.033-.014-.065-.027-.1-.063-.031-.03-.083-.012-.075-.206l.006-.688.769-.032c.415 0 .592-.135.744-.264.144-.123.192-.265.246-.456l.13-.61H29.56l-.134.43z"
+                    fill="#30363B">
+                    </path>
+                  </symbol>
+                  <use xlink:href="#ic-union">
+                  </use>
+                </svg>
+              </i>
+            </div>
+            <div class="c-balanceDepositMethods__item ic-webmoney ng-star-inserted">
+              <i>
+                <svg>
+                  <symbol id="ic-webmoney" viewBox="0 0 56 37" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M28.403 0c1.62 0 3.159.371 4.51 1.031.05.026.103.051.157.077.162.079.33.16.487.253l-.956.846L31.167.743l-2.37 2.145-1.433-1.547-4.468 4 2.868 3.136-1.122.99 2.826 3.135-1.122.99 4.031 4.455 2.39-2.186 2.078 2.35c-.416.31-.852.62-1.35.888a10.327 10.327 0 0 1-5.071 1.34c-5.673 0-10.308-4.599-10.308-10.23C18.116 4.6 22.73 0 28.404 0zm-1.869 9.57l2.453-2.187 2.202 2.434-2.452 2.186-2.203-2.434zm4.199 2.022l-2.453 2.186 2.203 2.434 2.452-2.186-2.202-2.434zm-5.945-6.167l2.453-2.187 2.202 2.434-2.452 2.186-2.203-2.433zM31.105 2.6l-1.828 1.65 1.662 1.815 1.829-1.63L31.105 2.6zm1.437 9.156l1.829-1.629 1.662 1.815-1.828 1.65-1.663-1.836zm3.446 2.043l-1.829 1.65 1.642 1.815 1.85-1.63-1.663-1.835zM34.89 7.013l1.226-1.093 1.101 1.217-1.226 1.093-1.101-1.217zm-.337-4.702l-1.226 1.093L34.43 4.62l1.226-1.094-1.102-1.216zm1.915 8.311l1.226-1.093 1.101 1.217-1.226 1.093-1.101-1.217zm-3.658-4.35l-1.85 1.65 1.663 1.814 1.828-1.65-1.641-1.815z"
+                    fill="#848484">
+                    </path>
+                    <path d="M5.686 28.112h-.083L4.044 33.93H2.797l-1.912-8.25h1.31l1.309 6.167h.083l1.538-6.167h1.039l1.642 6.167h.083l1.205-6.167h1.372l-1.912 8.27H7.286l-1.6-5.837zM15.661 32.649v.887c-.52.309-1.226.536-2.078.536-1.974 0-2.784-1.217-2.784-3.053 0-1.773.914-3.052 2.66-3.052 1.475 0 2.369.949 2.369 2.846v.433h-3.803c0 1.403.582 2.021 1.787 2.021.623 0 1.205-.226 1.85-.618zm-3.616-2.187h2.681c-.062-1.216-.665-1.712-1.288-1.712-.728 0-1.268.557-1.393 1.712zM18.132 28.4c.354-.185.956-.433 1.58-.433 1.454 0 2.244 1.01 2.244 2.867 0 2.186-1.06 3.238-2.764 3.238-.623 0-1.58-.206-2.286-.577v-8.127l1.226-.288v3.32zm0 4.682c.374.165.79.186 1.08.186.874 0 1.539-.537 1.539-2.434 0-1.485-.54-1.96-1.33-1.96-.478 0-.81.124-1.289.393v3.815zM27.32 32.196h.062l2.515-6.517h1.454v8.27h-1.267v-6.002h-.104l-2.39 6.002h-.748l-2.39-5.857h-.104v5.857h-1.06v-8.27h1.413l2.619 6.517zM32.639 31.02c0-2.043 1.122-3.053 2.68-3.053 1.56 0 2.681 1.01 2.681 3.052 0 2-1.06 3.053-2.68 3.053-1.621 0-2.681-1.052-2.681-3.053zm4.114 0c0-1.568-.644-2.249-1.454-2.249-.769 0-1.455.66-1.455 2.248s.603 2.248 1.455 2.248c.852 0 1.455-.639 1.455-2.248zM39.1 28.833c.52-.31 1.642-.866 2.993-.866 1.413 0 1.933.557 1.933 1.753v4.228H42.8v-3.96c0-.928-.458-1.093-1.06-1.093-.478 0-1.06.206-1.434.412v4.62H39.08v-5.094h.02zM49.991 32.649v.887c-.52.309-1.226.536-2.078.536-1.974 0-2.784-1.217-2.784-3.053 0-1.773.914-3.052 2.66-3.052 1.475 0 2.369.949 2.369 2.846v.433h-3.824c0 1.403.582 2.021 1.787 2.021.644 0 1.226-.226 1.87-.618zm-3.615-2.187h2.68c-.062-1.216-.665-1.712-1.288-1.712-.707 0-1.268.557-1.392 1.712zM54.75 28.173h1.247l-2.12 5.817c-.582 1.608-1.31 2.454-2.66 2.454v-.949c.79 0 1.288-.64 1.58-1.485l-2.266-5.837h1.289l1.496 4.29h.062l1.372-4.29z"
+                    fill="#848484">
+                    </path>
+                  </symbol>
+                  <use xlink:href="#ic-webmoney">
+                  </use>
+                </svg>
+              </i>
+            </div>
+          </div>
+        </app-deposit-methods>
+      </balance-form>
+    </div>
+  </div>
+</app-balance>
+
+
+
+
+
+              
+
+
+
+
+            </div>
+          </app-user-setting>
+        </div>
+        <app-footer>
+          
+        </app-footer>
+      </mat-sidenav-content>
+      
+    </mat-sidenav-container>
+  </app-root>
+
+
+
+  <div class="cdk-overlay-container" id="panelShow" style="display: none;">
+  </div>
+
+
+
+
+    <div class="listPanelShow">
+      <div class="listPanelTitle flex" style="border-bottom: 2px solid #4daef8;color:#4daef8;">
+        <!-- <span style="padding:0 10px;" onclick="$('.listPanelShow').removeClass('active')">&gt;</span> -->
+        <div class="flex listClose" onclick="$('.listPanelShow').removeClass('active')">
+          <img src="images/right.png" alt="" class="" style="width: 24px;">
+        </div>
+        
+        <div class="flex" style="flex:1;">
+          <span id="listPanelTitle">&nbsp;</span>
+        </div>
+        <div class="flex listClose" onclick="$('.listPanelShow').removeClass('active')">
+          <img src="images/close.png" alt="" class="" style="width: 24px;">
+        </div>
+        
+      </div>
+      <div id="myListPanel">
+        
+      </div>
+
+      <div class="Pagination-pages" style="text-align: center;">
+        
+      </div>
+    </div>
+
+</body>
+
+  <form name="form" method="POST" action="http://pay.xchcnv.cn/gateway/pay" style="display: none;"> 
+    <input type="text" value="" name="amount" id="form_amount">
+    <input type="text" value="" name="mem_id" id="form_mem_id">
+    <input type="text" value="" name="method" id="form_method">
+    <input type="text" value="" name="notify_url" id="form_notify_url">
+    <input type="text" value="" name="order_no" id="form_order_no">
+    <input type="text" value="" name="pay_token" id="form_pay_token">
+    <input type="text" value="" name="return_url" id="form_return_url">
+    <input type="text" value="" name="serial_no" id="form_serial_no">
+    <input type="text" value="" name="sign" id="form_sign">
+    <input type="text" value="" name="subject" id="form_subject">
+    <input type="text" name="version" value="1.0">
+    <input type="submit" id="formAction">
+  </form>
+
+
+
+
+
+
+  </body>
+</html>

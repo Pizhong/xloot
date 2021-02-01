@@ -1,0 +1,457 @@
+.clear{
+	height: auto;
+	overflow: hidden;
+}
+
+.leftBox{
+
+}
+.leftBox .gameAdList{
+	color: #fff;
+	padding-bottom: 20px;
+}
+.leftBox .gameAdList .item{
+	padding:10px 12px;
+	font-size: 13px;
+	cursor: pointer;
+}
+.leftBox .gameAdList .item:hover{
+	background: #2a2c2e;
+	/*background: rgba(53,53,53,1);*/
+}
+.leftBox .gameAdList .item .content{
+	height:85px;flex:1;margin-left:16px;
+}
+.leftBox .gameAdList .item h3{
+	font-size:18px;
+}
+.leftBox .gameAdList .item .contentTag{
+	width: 85px;
+	line-height: 26px;
+	margin:5px 5px 0 0;
+	text-align: center;
+	color: #fff;
+	display: inline-block;
+	background: #3d4d43;
+	border-radius: 3px;
+	float: left;
+}
+
+.leftBox .sortList{
+	padding:0 12px 20px;
+	border-top: 2px solid #2a2c2e;
+}
+.leftBox .sortList .item{
+
+	/*display: flex;
+	j*/
+}
+.leftBox .sortList .item .sortBtn{
+	flex:1;
+	color: #fff;
+	background:#2a2c2e;
+	text-align: center;
+	margin:4px;
+	line-height: 50px;
+	border-radius: 3px;
+	cursor: pointer;
+	padding:0 13px;
+}
+.leftBox .sortList .item .sortBtn:hover,
+.leftBox .sortList .item .sortBtn.active{
+	background:#3d4d43;
+}
+
+.leftBox .sortList .item .sortBtn .text{
+	flex:1;
+	text-align: left;
+}
+
+.rightBox .dexListBox{
+	border-top:2px solid #2a2c2e;padding:0 20px;background:#17191a;
+
+}
+
+
+.rightBox .dexListBox .searchMsgShowBox{
+	border-bottom: 1px solid #2a2c2e;
+	color: #fff;
+}
+.rightBox .dexListBox h2{
+	font-size: 13px;
+	line-height: 62px;
+	margin-right: 30px;
+}
+.rightBox .dexListBox h3{
+	font-size: 13px;
+}
+.rightBox .dexListBox .green{
+	color: #89d295
+}
+.rightBox .sortList .sortBtn{
+	color: #fff;
+	text-align: center;
+	cursor: pointer;
+	padding:0 10px;
+	line-height: 26px;
+	margin:0 5px;
+	font-size: 13px;
+}
+.rightBox .sortList .sortBtn:hover,
+.rightBox .sortList .sortBtn.active{
+	background:#3d4d43;
+	border-radius: 3px;
+}
+
+.rightBox .dexTitle,
+.rightBox .dexList{
+	font-size: 13px;
+	color: #fff;
+	padding-right: 10px;
+	margin:0 20px;
+}
+
+.rightBox .dexTitle .owner,
+.rightBox .dexTitle .num,
+.rightBox .dexTitle .price,
+.rightBox .dexTitle .guarant,
+.rightBox .dexTitle .action{
+	color:#7f7f80;
+}
+.rightBox .dexList{
+	/*line-height: 23px;*/
+
+}
+
+.rightBox .dexTitle .item,
+.rightBox .dexList .item{
+	border-bottom:1px solid #2a2c2e;
+}
+.rightBox .dexList .item:last-child{
+	border-bottom:none;
+}
+
+.rightBox .dexTitle .item{
+	padding:10px 0;
+}
+.rightBox .dexList .item{
+	padding:20px 0;
+	align-items: stretch;
+}
+
+.rightBox .dexList .owner,
+.rightBox .dexTitle .owner{
+	flex: 1;
+	color: #ccc;
+}
+.rightBox .dexList .num,
+.rightBox .dexTitle .num{
+	width: 60px;
+}
+.rightBox .dexTitle .price,
+.rightBox .dexList .price{
+	width: 100px;
+}
+.rightBox .dexTitle .guarant,
+.rightBox .dexList .guarant{
+	width: 100px;
+}
+.rightBox .dexList .action,
+.rightBox .dexTitle .action{
+	text-align:right;
+	width: 105px;
+}
+
+.rightBox .dexList .owner{
+	line-height:23px;
+}
+.rightBox .dexList img{
+	margin-right: 5px;
+}
+.rightBox .dexList .star{
+	width:15px;
+}
+.rightBox .dexList .owner .star{
+	margin:0;
+}
+.rightBox .dexList .owner .name{
+	/*font-size: 18px;*/
+	flex:1;
+	margin-left: 10px;
+	color: #fff;
+}
+.rightBox .dexList .guarant{
+	line-height: 28px;
+
+}
+
+
+
+.rightBox .dexList .action .blueBtn{
+    padding: 0 26px;
+    line-height: 38px;
+    /*background: #4daef8;*/
+    background: #3c4145;
+    border-radius: 5px;
+    display: inline-block;
+	cursor: pointer;
+}
+.paginationBox{
+	border-top:1px solid #2a2c2e;
+	text-align: center;
+}
+.paginationBox .pagination{
+	padding:33px 0;
+	/*margin:0 auto;*/
+}
+.paginationBox .pagination li{
+	line-height: 30px;
+	padding:0 13px;
+	margin-right: 8px;
+	color: #fff;
+	font-size: 18px;
+	display: inline-block;
+	margin-bottom: 5px;
+	background: #2a2c2e;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.paginationBox .pagination li:hover,
+.paginationBox .pagination li.active{
+	background: #3d4d43;
+}
+.paginationBox .pagination li.none{
+	background: none;
+}
+
+
+@media (max-width: 767px){
+	.leftBox .c-exchangeHeader__tabs,
+	.rightBox .c-exchangeHeader__tabs{
+		display: block;
+		font-size: 12px;
+	}
+	.rightBox .dexListBox{
+		padding: 0;
+	}
+
+
+	.rightBox .action .blueBtn2{
+	    padding: 0 26px;
+	    line-height: 38px;
+	    /*background: #4daef8;*/
+	    background: #3c4145;
+	    border-radius: 5px;
+	    display: inline-block;
+		cursor: pointer;
+	}
+	.paginationBox{
+		border: none;
+	}
+	/*.leftBox .gameAdList{
+		color: #fff;
+		padding-bottom: 20px;
+	}
+	.leftBox .gameAdList .item{
+		padding:10px 12px;
+		font-size: 16px;
+		cursor: pointer;
+	}
+	.leftBox .gameAdList .item:hover{
+		background: #2a2c2e;
+	}
+	.leftBox .gameAdList .item .content{
+		height:85px;flex:1;margin-left:16px;
+	}
+	.leftBox .gameAdList .item h3{
+		font-size:20px;
+	}
+	.leftBox .gameAdList .item .contentTag{
+		width: 85px;
+		line-height: 26px;
+		margin:5px 5px 0 0;
+		text-align: center;
+		color: #fff;
+		display: inline-block;
+		background: #3d4d43;
+		border-radius: 3px;
+		float: left;
+	}
+
+	.leftBox .sortList{
+		padding:0 12px 20px;
+		border-top: 2px solid #2a2c2e;
+	}
+	.leftBox .sortList .item{
+
+	}
+	.leftBox .sortList .item .sortBtn{
+		flex:1;
+		color: #fff;
+		background:#2a2c2e;
+		text-align: center;
+		margin:4px;
+		line-height: 50px;
+		border-radius: 3px;
+		cursor: pointer;
+		padding:0 13px;
+	}
+	.leftBox .sortList .item .sortBtn:hover,
+	.leftBox .sortList .item .sortBtn.active{
+		background:#3d4d43;
+	}
+
+	.leftBox .sortList .item .sortBtn .text{
+		flex:1;
+		text-align: left;
+	}
+
+	.rightBox .dexListBox{
+		border-top:2px solid #2a2c2e;padding:0 20px;background:#17191a;
+
+	}
+
+
+	.rightBox .dexListBox .searchMsgShowBox{
+		border-bottom: 1px solid #2a2c2e;
+		color: #fff;
+	}
+	.rightBox .dexListBox h2{
+		font-size: 18px;
+		line-height: 62px;
+		margin-right: 30px;
+	}
+	.rightBox .dexListBox h3{
+		font-size: 16px;
+	}
+	.rightBox .dexListBox .green{
+		color: #89d295
+	}
+	.rightBox .sortList .sortBtn{
+		color: #fff;
+		text-align: center;
+		cursor: pointer;
+		padding:0 10px;
+		line-height: 26px;
+		margin:0 5px;
+	}
+	.rightBox .sortList .sortBtn:hover,
+	.rightBox .sortList .sortBtn.active{
+		background:#3d4d43;
+		border-radius: 3px;
+	}
+
+	.rightBox .dexTitle,
+	.rightBox .dexList{
+		font-size: 16px;
+		color: #fff;
+		padding-right: 10px;
+		margin:0 20px;
+	}
+
+	.rightBox .dexTitle .owner,
+	.rightBox .dexTitle .num,
+	.rightBox .dexTitle .price,
+	.rightBox .dexTitle .guarant,
+	.rightBox .dexTitle .action{
+		color:#7f7f80;
+	}
+	.rightBox .dexList{
+	}
+
+	.rightBox .dexTitle .item,
+	.rightBox .dexList .item{
+		border-bottom:1px solid #2a2c2e;
+	}
+	.rightBox .dexList .item:last-child{
+		border-bottom:none;
+	}
+
+	.rightBox .dexTitle .item{
+		padding:10px 0;
+	}
+	.rightBox .dexList .item{
+		padding:20px 0;
+		align-items: stretch;
+	}
+
+	.rightBox .dexList .owner,
+	.rightBox .dexTitle .owner{
+		flex: 1;
+	}
+	.rightBox .dexList .num,
+	.rightBox .dexTitle .num{
+		width: 168px;
+	}
+	.rightBox .dexTitle .price,
+	.rightBox .dexList .price{
+		width: 128px;
+	}
+	.rightBox .dexTitle .guarant,
+	.rightBox .dexList .guarant{
+		width: 128px;
+	}
+	.rightBox .dexList .action,
+	.rightBox .dexTitle .action{
+		text-align:right;
+		width: 128px;
+	}
+
+	.rightBox .dexList .owner{
+		line-height:23px;
+	}
+	.rightBox .dexList img{
+		margin-right: 5px;
+	}
+	.rightBox .dexList .owner .star{
+		margin:0;
+	}
+	.rightBox .dexList .owner .name{
+		font-size: 18px;
+		flex:1;
+		margin-left: 10px;
+	}
+	.rightBox .dexList .guarant{
+		line-height: 28px;
+
+	}
+
+
+
+	.rightBox .dexList .action .blueBtn{
+	    padding: 0 26px;
+	    line-height: 38px;
+	    background: #4daef8;
+	    border-radius: 5px;
+	    display: inline-block;
+		cursor: pointer;
+	}
+	.paginationBox{
+		border-top:1px solid #2a2c2e;
+		text-align: center;
+	}
+	.paginationBox .pagination{
+		padding:33px 0;
+	}
+	.paginationBox .pagination li{
+		line-height: 30px;
+		padding:0 13px;
+		margin-right: 8px;
+		color: #fff;
+		font-size: 18px;
+		display: inline-block;
+		margin-bottom: 5px;
+		background: #2a2c2e;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+
+	.paginationBox .pagination li:hover,
+	.paginationBox .pagination li.active{
+		background: #3d4d43;
+	}
+	.paginationBox .pagination li.none{
+		background: none;
+	}*/
+}

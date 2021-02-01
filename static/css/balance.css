@@ -1,0 +1,478 @@
+
+.c-balance {
+    --ex-field-bg-color:var(--balance-field-bg);display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    color: var(--balance-color);
+    padding: 40px 30px 20px;
+    background: var(--balance-bg);
+    border-radius: 8px;
+    margin-bottom: 30px;
+    min-height: 650px
+}
+
+@media(max-width: 767px) {
+    .c-balance {
+        padding:32px 24px 20px;
+        min-height: initial
+    }
+}
+
+@media(max-width: 360px) {
+    .c-balance {
+        padding:24px 16px 20px
+    }
+}
+
+.c-balance__title {
+    margin-bottom: 24px;
+    font-size: 20px;
+    color: var(--balance-color--accent)
+}
+
+.c-balanceForm {
+    max-width: 500px;
+    padding-right: 60px
+}
+
+.c-balanceForm__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1
+}
+
+@media(max-width: 768px) {
+    .c-balanceForm {
+        padding:0 0 50px
+    }
+
+    .c-balanceForm__wrapper {
+        display: block
+    }
+}
+
+
+
+.c-balanceForm__aside {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+}
+
+.c-balanceForm__group {
+    width: 300px;
+    max-width: 300px
+}
+
+.c-balanceForm__fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px
+}
+
+.c-balanceForm__blockedAmount {
+    margin-top: 14px;
+    font-size: 14px;
+    color: var(--ex-color-primary)
+}
+
+.c-balanceForm__blockedAmountTitle {
+    color: var(--ex-color-white);
+    opacity: .5
+}
+
+.c-balanceForm__field {
+    margin-top: 32px
+}
+
+.c-balanceForm__field .mat-button-toggle {
+    background: 0 0;
+    color: var(--ex-color-primary);
+    -webkit-transition: var(--ex-transition-primary);
+    transition: var(--ex-transition-primary)
+}
+
+.c-balanceForm__field .mat-button-toggle::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    bottom: 0;
+    left: 50%;
+    height: 2px;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    border-radius: var(--ex-radius--round);
+    background-color: var(--ex-color-green);
+    -webkit-transition: var(--ex-transition-primary);
+    transition: var(--ex-transition-primary)
+}
+
+.c-balanceForm__field .mat-button-toggle:hover {
+    background: 0 0
+}
+
+.c-balanceForm__field .mat-button-toggle-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 16px;
+    border: none
+}
+
+/*.c-balanceForm__field .mat-button-toggle-group-appearance-standard .mat-button-toggle+.mat-button-toggle {
+    border: none
+}
+
+.c-balanceForm__field .mat-button-toggle-focus-overlay {
+    display: none
+}*/
+
+.c-balanceForm__field .mat-button-toggle-checked {
+    background: 0 0;
+    color: var(--ex-color-green);
+    border-bottom: 2px solid #8dd294 !important;
+}
+
+.c-balanceForm__field .mat-button-toggle-checked::after {
+    width: 100%
+}
+
+.c-balanceForm__field .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+    line-height: 1;
+    padding: 0 16px 16px;
+    font-size: 14px;
+    text-transform: uppercase
+}
+
+.c-balanceForm__field--disabled {
+    pointer-events: none;
+    opacity: .2
+}
+
+@media(max-width: 767px) {
+    .c-balance__title {
+        margin-bottom:20px
+    }
+
+    .c-balanceForm {
+        padding: 0 0 32px
+    }
+
+    .c-balanceForm__group {
+        width: 100%;
+        max-width: 100%
+    }
+
+    .c-balanceForm__field {
+        display: block;
+        margin-top: 24px
+    }
+}
+
+@media(max-width: 360px) {
+    .c-balanceForm__field .mat-button-toggle-group,.c-balanceForm__fields {
+        grid-gap:8px
+    }
+
+    .c-balanceForm__field {
+        margin-top: 16px
+    }
+}
+
+.c-balanceForm__note {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.6
+}
+
+.c-balanceForm__note p+p {
+    margin-top: 14px
+}
+
+.c-balanceForm__cbCopy {
+    position: relative
+}
+
+.c-balanceForm__cbCopy input {
+    padding-right: 25px;
+    font-size: 14px;
+    pointer-events: none
+}
+
+.c-balanceForm__cbCopyButton {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    color: var(--ex-color-green);
+    cursor: pointer
+}
+
+.c-balanceForm__link {
+    color: var(--ex-color-green);
+    cursor: pointer
+}
+
+.c-balanceForm__link:hover {
+    text-decoration: underline
+}
+
+.c-balanceForm__label {
+    margin-bottom: 12px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: var(--ex-color-white);
+    opacity: .5
+}
+
+.c-balanceForm__hint {
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--ex-color-white);
+    opacity: .5;
+    white-space: nowrap;
+    -webkit-transition: var(--ex-transition-primary);
+    transition: var(--ex-transition-primary)
+}
+
+.c-balanceForm__hintValue {
+    color: var(--ex-color-primary)
+}
+
+.c-balanceForm__hint--caution {
+    color: var(--balance-color--caution)
+}
+
+.c-balanceForm__hint--invalid {
+    color: var(--balance-color--invalid)
+}
+
+.c-balanceForm__notice {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 20px;
+    color: var(--ex-color-orange);
+    border: 1px solid currentColor;
+    border-radius: var(--ex-radius--primary);
+    line-height: 1.3;
+    margin-top: 28px
+}
+
+.c-balanceForm__notice--caution {
+    color: var(--ex-color-orangeInt)
+}
+
+@media(max-width: 767px) {
+    .c-balanceForm__label {
+        margin-bottom:8px;
+        font-size: 12px
+    }
+
+    .c-balanceForm__notice {
+        padding: 12px
+    }
+}
+
+.c-balanceForm__noticeText {
+    color: var(--ex-color-primary);
+    margin-left: 20px;
+    font-size: 14px
+}
+
+.c-balanceForm__button {
+    display: block;
+    margin-top: 32px
+}
+
+@media(max-width: 767px) {
+    .c-balanceForm__noticeText {
+        margin-left:12px
+    }
+
+    .c-balanceForm__button {
+        margin: 0
+    }
+}
+
+.c-balanceForm__button .c-dialogHistoryFilters__item .mat-checkbox-layout,.c-balanceForm__button .c-footer__button,.c-balanceForm__button .o-dmButton,.c-dialogHistoryFilters__item .c-balanceForm__button .mat-checkbox-layout {
+    width: 100%;
+    text-align: center;
+    text-transform: capitalize;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    overflow: hidden
+}
+
+.c-balanceInfo {
+    padding-top: 116px;
+    margin-bottom: 40px
+}
+
+@media(max-width: 768px) {
+    .c-balanceInfo {
+        -webkit-box-ordinal-group:3;
+        -ms-flex-order: 2;
+        order: 2;
+        margin: 35px 0;
+        padding-top: 0
+    }
+}
+
+.c-balanceInfo__title {
+    text-transform: uppercase;
+    font-size: 14px
+}
+
+.c-balanceInfo__list {
+    max-width: 350px;
+    padding-top: 32px
+}
+
+.c-balanceInfo__item {
+    position: relative;
+    padding-left: 22px;
+    color: var(--balance-color--text);
+    font-size: 14px;
+    line-height: 20px
+}
+
+.c-balanceInfo__item:not(:last-child) {
+    margin-bottom: 24px
+}
+
+@media(max-width: 767px) {
+    .c-balanceInfo__list {
+        padding-top:24px
+    }
+
+    .c-balanceInfo__item:not(:last-child) {
+        margin-bottom: 16px
+    }
+}
+
+.c-balanceInfo__item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 6px;
+    height: 6px;
+    border-radius: var(--ex-radius--round);
+    background-color: var(--balance-color--accent)
+}
+
+.c-balanceWithdrawMethods__title {
+    text-transform: uppercase;
+    font-size: 14px
+}
+
+.c-balanceWithdrawMethods__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: 10px
+}
+
+.c-balanceWithdrawMethods__listItem {
+    -webkit-box-flex: 33%;
+    -ms-flex: 33% 0 0;
+    flex: 33% 0 0;
+    min-width: 100px;
+    margin-top: 15px;
+    text-align: center
+}
+
+@media(max-width: 768px) {
+    .c-balanceInfo__list {
+        max-width:100%
+    }
+
+    .c-balanceWithdrawMethods__listItem {
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1
+    }
+}
+
+.c-balanceWithdrawMethods__icon {
+    height: 36px
+}
+
+.c-balanceWithdrawMethods__icon svg {
+    max-width: 100%;
+    height: 100%
+}
+
+.c-balanceWithdrawMethods__fee {
+    font-size: 14px;
+    margin-top: 8px
+}
+
+.c-balanceDepositMethods {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: wrap;
+    flex-flow: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding-top: 50px;
+    opacity: .3
+}
+
+@media(max-width: 991px) {
+    .c-balanceDepositMethods {
+        -webkit-box-pack:center;
+        -ms-flex-pack: center;
+        justify-content: center
+    }
+
+    .c-history__cell:nth-child(3),.c-history__cell:nth-child(6),.c-history__cell:nth-child(7) {
+        display: none
+    }
+}
+
+@media(max-width: 768px) {
+    .c-balanceDepositMethods {
+        padding-top:32px
+    }
+}
+
+@media(max-width: 767px) {
+    .c-balanceDepositMethods {
+        padding-top:18px
+    }
+}
+
+.c-balanceDepositMethods__item {
+    margin: 10px 0
+}
+
+.c-balanceDepositMethods__item:not(:last-child) {
+    margin-right: 25px
+}
+
+.c-balanceDepositMethods__item svg {
+    width: 100%;
+    height: 100%;
+    max-width: 100%
+}

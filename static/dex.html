@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <title set-lan="title">
+    </title>
+    <link rel="shortcut icon" href="./images/loot.png">
+    <meta name="viewport" content="width=device-width,width=421px,minimum-scale=0.36, user-scalable=no">
+    <link rel="stylesheet" href="css/style.css?v=0.1.1">
+    <link rel="stylesheet" href="css/index.css?v=0.1.1">
+    <link rel="stylesheet" href="css/common.css?v=0.1.1">
+    <link rel="stylesheet" href="css/dex.css?v=0.1.1">
+    <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="js/eos16.0.0.min.js"></script>
+    <script type="text/javascript" src="js/iost.min.js"></script>
+    <script type="text/javascript" src="js/scatterjs-core.min.js"></script>
+    <script type="text/javascript" src="js/scatterjs-plugin-eosjs.min.js"></script>
+    <script type="text/javascript" src="js/common.js?v=0.1.1"></script>
+    <script type="text/javascript" src="js/index.js?v=0.1.1"></script>
+    <script type="text/javascript" src="js/dex.js?v=0.1.1"></script>
+    <script type="text/javascript" src="domove/js/gameShow.js?v=0.1.1"></script>
+    <script type="text/javascript" src="js/getToken.js?v=0.1.1"></script>
+    <script type="text/javascript" src="js/Language.js?v=0.1.1"></script>
+  </head>
+  
+  <body>
+    <div id="menuPanel">
+      <mat-sidenav-container class="mat-drawer-container mat-sidenav-container mat-drawer-container-explicit-backdrop mat-drawer-transition mat-drawer-opened">
+        <!---->
+        <div class="mat-drawer-backdrop ng-star-inserted mat-drawer-shown">
+        </div>
+        <div class="cdk-visually-hidden cdk-focus-trap-anchor" aria-hidden="true"
+        tabindex="0">
+        </div>
+        <mat-sidenav class="c-sidebar mat-drawer mat-sidenav ng-tns-c1-0 ng-trigger ng-trigger-transform mat-drawer-over mat-sidenav-fixed ng-star-inserted"
+        mode="over" role="navigation" tabindex="-1" style="bottom:0px;top:0px;transform:none;visibility:visible;0:bottom;1:top;2:transform;3:visibility;bottom:0px;top:0px;transform:none;visibility:visible;">
+          <div class="mat-drawer-inner-container">
+            <div>
+              <div class="c-sidebar__wrap">
+              </div>
+            </div>
+          </div>
+        </mat-sidenav>
+        <div class="cdk-visually-hidden cdk-focus-trap-anchor" aria-hidden="true"
+        tabindex="0">
+        </div>
+        <!---->
+      </mat-sidenav-container>
+      <div id="menuPanel2" style="width:122px;height:100%;position: absolute;right:0;top:0;"></div>
+    </div>
+    <!-- menu end -->
+
+
+    <!-- phoneMenu start -->
+  <div class="c-exchangeHeader c-exchangeHeader--main ng-star-inserted c-exchangeHeader--homePage c-exchangeHeader--visible" style="">
+    <div _ngcontent-dmarket-c3="" class="c-exchangeHeader__inner">
+      <button _ngcontent-dmarket-c3="" aria-label="button menu" class="c-exchangeHeader__menu">
+        <svg t="1584790771385" class="mat-icon notranslate material-icons mat-icon-no-color" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4430" width="24" height="24"><path d="M128 469.333333m40.533333 0l686.933334 0q40.533333 0 40.533333 40.533334l0 4.266666q0 40.533333-40.533333 40.533334l-686.933334 0q-40.533333 0-40.533333-40.533334l0-4.266666q0-40.533333 40.533333-40.533334Z" fill="#ffffff" p-id="4431"></path><path d="M128 682.666667m40.533333 0l686.933334 0q40.533333 0 40.533333 40.533333l0 4.266667q0 40.533333-40.533333 40.533333l-686.933334 0q-40.533333 0-40.533333-40.533333l0-4.266667q0-40.533333 40.533333-40.533333Z" fill="#ffffff" p-id="4432"></path><path d="M128 256m40.533333 0l686.933334 0q40.533333 0 40.533333 40.533333l0 4.266667q0 40.533333-40.533333 40.533333l-686.933334 0q-40.533333 0-40.533333-40.533333l0-4.266667q0-40.533333 40.533333-40.533333Z" fill="#ffffff" p-id="4433"></path>
+        </svg>
+      </button>
+      <!-- <img src="images/xlogo.png" style="height: 35px;"> -->
+      <h2 _ngcontent-dmarket-c3="" class="c-exchangeHeader__title c-exchangeHeader__title--line">
+      </h2>
+      <div _ngcontent-dmarket-c3="" class="c-exchangeHeader__nav">
+
+        <div class="c-navigationControls c-navigationControls--exchange">
+          <!---->
+          <!---->
+          <div id="phonePanelMsg"></div>
+          <!-- <div class="ng-star-inserted">
+            <div class="c-navigationAuth">
+              <button class="c-navigationAuth__authBtn c-navigationAuth__authBtn--signUp"
+              translate="" data-analytics-id="signUp_authTabButtonSignUp">
+                Sign up
+              </button>
+              <button class="c-navigationAuth__authBtn c-navigationAuth__authBtn--logIn"
+              translate="" data-analytics-id="logIn_authTabButtonLogIn">
+                Log in
+              </button>
+            </div>
+          </div> -->
+          <div class="c-navigationControls__user">
+            <div aria-haspopup="true" class="c-user c-user--header c-dropdown">
+              <user-avatar>
+                <div class="c-user__logo">
+                  <figure class="c-user__figure">
+                    <!---->
+                    <img alt="User avatar" class="c-user__img ng-star-inserted" draggable="false"
+                    src="images/userAvatar.jpg">
+                    <!---->
+                  </figure>
+                </div>
+              </user-avatar>
+              <svg class="o-icon c-user__arrow">
+                
+              </svg>
+              <mat-menu class="" xposition="after" yposition="below">
+                <!---->
+              </mat-menu>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- phoneMenu end -->
+    <!-- header end -->
+    <div class="c-exchange">
+      <div class="c-exchangeHeader">
+        <div class="c-exchangeHeader__inner c-exchangeHeader__inner--user">
+          <div class="c-exchangeHeader__tabs">
+            <h2 class="c-exchangeHeader__title" style="width: 168px;">
+              <i class="c-exchangeHeader__titleLogo o-icon" inlinesvg="icon-logo.svg">
+                <img src="images/xlogo.png" alt="" style="height:42px;">
+              </i>
+            </h2>
+          </div>
+          <div class="c-exchangeHeader__tabs c-exchangeHeader__tabs--mobile">
+            <div class="c-exchangeMobileTabs c-exchangeMobileTabs--market c-exchangeMobileTabs--headerShow">
+              <div class="c-exchangeMobileTabs__list">
+                <div class="c-exchangeMobileTabs__item" data-num="1">
+                  <i class="c-exchangeMobileTabs__icon o-icon o-icon-sell">
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M11.99 2C6.47 2 2 6.50015 2 12.045C2 17.5898 6.47 22.09 11.99 22.09C17.52 22.09 22 17.5898 22 12.045C22 6.50015 17.52 2 11.99 2ZM12 20.081C7.58 20.081 4 16.4849 4 12.045C4 7.6051 7.58 4.009 12 4.009C16.42 4.009 20 7.6051 20 12.045C20 16.4849 16.42 20.081 12 20.081Z">
+                      </path>
+                      <path d="M12.5 7.02246H11V12.9506L16.25 16.0629L17 14.8477L12.5 12.2096V7.02246Z">
+                      </path>
+                    </svg>
+                  </i>
+                  <strong class="c-exchangeMobileTabs__title">
+                    <font style="vertical-align: inherit;" set-lan="nav2">
+                      &nbsp;
+                    </font>
+                  </strong>
+                </div>
+                <div class="c-exchangeMobileTabs__item" data-num="0">
+                  <i class="c-exchangeMobileTabs__icon o-icon o-icon-items">
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3 3.35083V21.4318H21V3.35083H3ZM11 19.4228H5V13.3958H11V19.4228ZM11 11.3868H5V5.35983H11V11.3868ZM19 19.4228H13V13.3958H19V19.4228ZM19 11.3868H13V5.35983H19V11.3868Z">
+                      </path>
+                    </svg>
+                  </i>
+                  <strong class="c-exchangeMobileTabs__title">
+                    <font style="vertical-align: inherit;" set-lan="nav">
+                      &nbsp;
+                    </font>
+                  </strong>
+                </div>
+                <div class="c-exchangeMobileTabs__item c-exchangeMobileTabs__item--active" data-num="2">
+                  <i class="c-exchangeMobileTabs__icon o-icon o-icon-market">
+                    <img src="images/logo.png" alt="" style="height:100%;">
+                    <!-- <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.8039 11.128L16.6224 4.08137C16.487 3.86353 16.298 3.68248 16.0725 3.55483C15.8471 3.42719 15.5925 3.35704 15.3322 3.35083H7.03134C6.75619 3.35821 6.48797 3.43699 6.25411 3.57912H6.26966C6.05776 3.70277 5.88545 3.88202 5.77223 4.09659L4.21777 6.76002C4.10571 6.94691 4.04663 7.15969 4.04663 7.37641C4.04663 7.59312 4.10571 7.80591 4.21777 7.9928L6.09866 11.1737C6.22039 11.3927 6.27947 11.6399 6.26966 11.889C6.27096 12.144 6.20682 12.3952 6.08312 12.6196L4.17113 15.7852C4.05908 15.9721 4 16.1849 4 16.4016C4 16.6183 4.05908 16.8311 4.17113 17.018L5.72559 19.6814C5.84376 19.8925 6.01497 20.0706 6.22302 20.1989H6.26966C6.50352 20.341 6.77174 20.4198 7.04689 20.4272H15.3788C15.641 20.43 15.8992 20.3636 16.1262 20.2351C16.3532 20.1066 16.5407 19.9206 16.669 19.6967L20.7883 12.6348C20.9243 12.4065 20.9972 12.1476 20.9999 11.8834C21.0026 11.6192 20.9351 11.3589 20.8039 11.128ZM15.8918 12.65L14.1819 15.5722C14.0465 15.79 13.8575 15.971 13.632 16.0987C13.4066 16.2263 13.152 16.2965 12.8917 16.3027C12.8917 16.3027 9.68655 16.3058 9.47185 16.3027C9.25715 16.2996 9.04544 16.2529 8.85006 16.1657C8.65469 16.0785 10.933 12.6348 10.933 12.6348C11.0695 12.4034 11.1413 12.141 11.1413 11.8738C11.1413 11.6066 11.0695 11.3442 10.933 11.1128C10.933 11.1128 8.66317 7.70516 8.83452 7.62753C9.00587 7.5499 9.37858 7.49056 9.37858 7.49056H12.8295C13.0917 7.48777 13.3499 7.55412 13.5769 7.68266C13.8039 7.8112 13.9914 7.99718 14.1197 8.2211L15.8451 11.128C15.9775 11.3482 16.0512 11.5974 16.0593 11.8527C16.0675 12.1081 16.0099 12.3613 15.8918 12.5891V12.65Z">
+                    </path>
+                    </svg> -->
+                  </i>
+                  <strong class="c-exchangeMobileTabs__title">
+                    <font style="vertical-align: inherit;" set-lan="nav3">
+                      &nbsp;
+                    </font>
+                  </strong>
+                </div>
+                <div class="c-exchangeMobileTabs__item" data-num="3" onclick="buyActivityMsgShow()">
+                  <i class="c-exchangeMobileTabs__icon o-icon o-icon-market">
+                    <img src="images/sale.png" alt="" style="height:100%;">
+                  </i>
+                  <strong class="c-exchangeMobileTabs__title">
+                    <font style="vertical-align: inherit;" set-lan="nav4">
+                      &nbsp;
+                    </font>
+                  </strong>
+                </div>
+              </div>
+              <i class="c-exchangeMobileTabs__arrow o-icon" inlinesvg="icon-double-arrows.svg">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.9855 12.6362L12.0909 16.5695L8.19636 12.6362L7 13.8471L12.0909 18.9999L17.1818 13.8471L15.9855 12.6362Z">
+                  </path>
+                  <path d="M15.9855 5L12.0909 8.93326L8.19636 5L7 6.2109L12.0909 11.3636L17.1818 6.2109L15.9855 5Z">
+                  </path>
+                </svg>
+              </i>
+            </div>
+          </div>
+        </div>
+        <div class="c-exchangeHeader__inner c-exchangeHeader__inner--market">
+          <!-- <h2 class="c-exchangeHeader__title">
+            <i class="c-exchangeHeader__titleLogo o-icon" inlinesvg="icon-logo.svg">
+              <img src="images/xlogo.png" alt="" style="height:42px;">
+            </i>
+          </h2> -->
+
+          <a class="NavItem" href="index.html">
+            <span class="c-exchangeHeader__titleText" style="padding-top:18px;">NFT资产</span>
+          </a>
+          <a class="NavItem active" href="dex.html">
+            <span class="c-exchangeHeader__titleText" style="padding-top:18px;">代币交易（IOST）</span>
+          </a>
+          <a class="NavItem goldLink" href="gold.html" style="display: none;">
+            <span class="c-exchangeHeader__titleText" style="padding-top:18px;">金币/账号</span>
+          </a>
+
+          <div class="c-exchangeHeader__nav" style="flex:1">
+            <div style="flex:1;"></div>
+            <div class="c-exchangeHeader__actions">
+              <!-- <div class="c-exchangeHeader__button" onclick="panelShow('about')">
+              <img src="images/about.png" alt="" style="height:24px;">
+              </div> -->
+              <!-- <div class="c-exchangeHeader__button" onclick="getKYC(1)">
+              <img src="images/withdraw.png" alt="" style="height:24px;">
+              </div>
+              <button class="c-exchangeHeader__button" onclick="getKYC(0)">
+              <img src="images/recharge.png" alt="" style="height:24px;">
+              </button> -->
+              <!-- <button class="c-exchangeHeader__button" onclick="panelShow(3)">
+              <i class="o-icon" inlinesvg="icon-language.svg">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM18.92 8H15.97C15.65 6.75 15.19 5.55 14.59 4.44C16.43 5.07 17.96 6.35 18.92 8ZM12 4.04C12.83 5.24 13.48 6.57 13.91 8H10.09C10.52 6.57 11.17 5.24 12 4.04ZM4.26 14C4.1 13.36 4 12.69 4 12C4 11.31 4.1 10.64 4.26 10H7.64C7.56 10.66 7.5 11.32 7.5 12C7.5 12.68 7.56 13.34 7.64 14H4.26ZM5.08 16H8.03C8.35 17.25 8.81 18.45 9.41 19.56C7.57 18.93 6.04 17.66 5.08 16V16ZM8.03 8H5.08C6.04 6.34 7.57 5.07 9.41 4.44C8.81 5.55 8.35 6.75 8.03 8V8ZM12 19.96C11.17 18.76 10.52 17.43 10.09 16H13.91C13.48 17.43 12.83 18.76 12 19.96ZM14.34 14H9.66C9.57 13.34 9.5 12.68 9.5 12C9.5 11.32 9.57 10.65 9.66 10H14.34C14.43 10.65 14.5 11.32 14.5 12C14.5 12.68 14.43 13.34 14.34 14ZM14.59 19.56C15.19 18.45 15.65 17.25 15.97 16H18.92C17.96 17.65 16.43 18.93 14.59 19.56V19.56ZM16.36 14C16.44 13.34 16.5 12.68 16.5 12C16.5 11.32 16.44 10.66 16.36 10H19.74C19.9 10.64 20 11.31 20 12C20 12.69 19.9 13.36 19.74 14H16.36Z">
+              </path>
+              </svg>
+              </i>
+              </button> -->
+            </div>
+            <div class="c-navigationControls c-navigationControls--exchange">
+              <div id="panelMsg">
+              </div>
+              <div class="c-navigationControls__user" onclick="panelShow(2)">
+                <div aria-haspopup="true" class="c-user c-user--header c-dropdown">
+                  <div class="c-user__logo">
+                    <figure class="c-user__figure">
+                      <img alt="User avatar" class="c-user__img" draggable="false" src="images/userAvatar.jpg">
+                    </figure>
+                  </div>
+                  <svg class="c-user__arrow mat-icon notranslate material-icons mat-icon-no-color"
+                  t="1566287544986" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                  p-id="5805" width="128" height="128">
+                    <path d="M836.802183 342.264666c-8.381992-8.381992-22.351978-8.381992-30.73397 0l-293.369714 293.369713-294.766712-293.369713c-8.381992-8.381992-22.351978-8.381992-30.73397 0-8.381992 8.381992-8.381992 22.351978 0 30.73397l310.133697 308.736698c8.381992 8.381992 22.351978 8.381992 30.73397 0l308.736699-308.736698c8.381992-8.381992 8.381992-22.351978 0-30.73397z"
+                    fill="#ffffff" p-id="5806">
+                    </path>
+                  </svg>
+                  <mat-menu class="" xposition="after" yposition="below">
+                  </mat-menu>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="c-exchange__container">
+        <!-- left -->
+        <div class="c-exchange__side c-exchange__side--user leftBox">
+          <div class="c-exchangeHeader__inner c-exchangeHeader__inner--user" style="z-index: 1;">
+            <div class="c-exchangeHeader__tabs">
+              <div class="c-exchangeTabs">
+                <div class="c-exchangeTabs__item c-exchangeTabs__item--active" style="padding:0 20px;">
+                  <strong class="c-exchangeTabs__title">
+                    <font style="vertical-align: inherit;">常用代币</font>
+                  </strong>
+                </div>
+                
+
+                <div style="padding:0 20px;flex:1;">
+                  
+                    <div class="selecrCoinTag" onclick="selecrCoinTag()" style="display: none;">
+                      <!-- <b style="">脂肪含量：</b>
+                      <em>全脂</em>
+                      <span>X</span> -->
+                    </div>
+                </div>
+                <!-- <div class="c-exchangeTabs__item" style="padding:0 20px;">
+
+                </div> -->
+
+
+              </div>
+            </div>
+          </div>
+          <div class="c-exchange__inner" style="border-top:2px solid #2a2c2e;padding:0;">
+            <!-- loading -->
+            <div id="myItemLoadingShow" style="display: none;">
+              <div class="c-exchange__loading c-exchange__loading--more" style="top: 68px;">
+                <div class="c-exchange__spinner mat-spinner mat-progress-spinner mat-primary mat-progress-spinner-indeterminate-animation" mode="indeterminate" role="progressbar" style="width: 100px; height: 100px;">
+                  <svg focusable="false" preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" style="width: 100px; height: 100px;">
+                    <circle cx="50%" cy="50%" r="45" style="animation-name: mat-progress-spinner-stroke-rotate-100; stroke-dasharray: 282.743px; stroke-width: 10%;">
+                    </circle>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <!--  -->
+            <!-- <div class="MyDexList">
+              <span class="dexBtn">自选</span>
+              <span class="dexBtn">XPC</span>
+              <span class="dexBtn active">XPT</span>
+              <span class="dexBtn">XPS</span>
+              <span class="dexBtn">TIME</span>
+              <span class="dexBtn">VOST</span>
+              <span class="dexBtn">DOR</span>
+            </div> -->
+            
+            <!-- <div class="searchDexBox flex">
+              <div class="searchDex flex">
+                <svg class="mat-icon notranslate material-icons mat-icon-no-color" t="1566971226709" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2863" width="32" height="32"><path d="M602.304 603.456c9.088-7.68 33.728 4.928 55.04 28.096l270.144 293.12c21.312 23.168 23.04 54.912 3.968 70.976-19.2 16-50.112 8.768-69.248-16.192L620.48 662.4c-19.072-24.96-27.2-51.456-18.176-59.008z" fill="#ffffff" p-id="2864"></path><path d="M560 633.472a288 288 0 1 0-288-498.816 288 288 0 0 0 288 498.816z m32 55.424a352 352 0 1 1-352-609.664 352 352 0 0 1 352 609.664z" fill="#ffffff" p-id="2865"></path></svg>
+                <input type="text" placeholder="搜索代币名称" value="">
+              </div>
+              <span class="searchBtn">搜索</span>
+            </div> -->
+
+
+            <!-- <div class="dexList">
+              <div class="item flex">
+                <span class="coin" style="color:#7f7f80;">
+                  币种
+                  <img src="images/sort.png" alt="">
+                </span>
+                <span class="newPrice" style="color:#7f7f80;"></span>
+              </div>
+            </div> -->
+            <div class="c-exchange__inventory">
+              <div class="c-assetList">
+                <div class="с-virtualscroll с-virtualscroll-placeholder--large">
+
+
+
+                  <div class="dexAdList">
+                    <!-- <div class="item flex">
+                      <img src="images/gameList_01.png" alt="">
+                      <div class="content">
+                        <h3>暗黑终结者</h3>
+                        <ul class="clear">
+                          <li class="contentTag">账号</li><li class="contentTag">道具</li><li class="contentTag">游戏币</li>
+                          <li class="contentTag">首充号</li><li class="contentTag">代练</li><li class="contentTag">礼包</li>
+                        </ul>
+                      </div>
+                    </div> -->
+                  </div>
+
+
+
+
+                  <!-- <div class="dexList" id="listCommonToken">
+                    <div class="item flex">
+                      <span class="coin">
+                        <img src="images/startIcon.png" alt="">
+                        XPC
+                      </span>
+                      <span class="newPrice">0.00200</span>
+                    </div>
+                    <div class="item flex">
+                      <span class="coin">
+                        <img src="images/startIconSelect.png" alt="">
+                        XPT
+                      </span>
+                      <span class="newPrice">0.0200</span>
+                    </div>
+                  </div> -->
+
+                </div>
+                  
+              </div>
+                
+            </div>
+              
+            <div id="intPanel" class="c-auth" style="z-index: 99;display: none;"></div>
+          </div>
+        </div>
+        <!-- right -->
+        <div class="c-exchange__side c-exchange__side--market c-exchange__side--active rightBox">
+          
+          <div class="c-exchange__inner c-exchange__inner--market">
+
+            <div class="c-exchangeHeader__inner" style="z-index: 1;background:#17191a;">
+              <div class="c-exchangeHeader__tabs">
+                <div class="c-exchangeTabs">
+                  <h2 class="NavItem active" onclick="listDexOrder(0)">
+                    <span class="c-exchangeTabs__title">代币市场</span>
+                  </h2>
+                  <h2 class="NavItem" onclick="listMyDexOrder(0)">
+                    <span class="c-exchangeTabs__title">我的单据</span>
+                  </h2>
+                  <h2 class="NavItem" onclick="listMyDexHistory(0)">
+                    <span class="c-exchangeTabs__title">成交记录</span>
+                  </h2>
+                  <!-- <h2 class="NavItem">
+                    <span class="c-exchangeTabs__title">成交记录</span>
+                  </h2> -->
+
+                  <h2 class="NavItem" style="flex:1;"></h2>
+                  <h2 class="NavItem">
+                    <span style="background:rgba(13,168,139,.18);padding:5px;color:#0da88b;">手续费 0.25%</span>
+                    <span class="entrustBtn" onclick="dexEntrustShow()">挂 单</span>
+                  </h2>
+                </div>
+              </div>
+            </div>
+            <div class="c-exchange__inner dexListBox" style="">
+                
+              <!-- loading -->
+              <div id="saleMarketLoadingShow" style="display: none;">
+                <div class="c-exchange__loading c-exchange__loading--more" style="top: 128px;">
+                  <div class="c-exchange__spinner mat-spinner mat-progress-spinner mat-primary mat-progress-spinner-indeterminate-animation" mode="indeterminate" role="progressbar" style="width: 100px; height: 100px;">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" style="width: 100px; height: 100px;">
+                      <circle cx="50%" cy="50%" r="45" style="animation-name: mat-progress-spinner-stroke-rotate-100; stroke-dasharray: 282.743px; stroke-width: 10%;">
+                      </circle>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+                
+              <div class="c-exchange__inventory">
+
+
+                <div class="c-assetList">
+
+
+
+                  <div class="с-virtualscroll с-virtualscroll-placeholder--large" style="padding-right: 5px;">
+                    <!-- 选择代币 -->
+                    <div id="dexSelectOrderBox" style="text-align: center;">
+
+                      <!-- <div class="flex">
+                        <div class="flex" style="background: #2a2c2e;padding:8px;">
+                          <img src="https://tp-statics.cdn.bcebos.com/website-token/1562832692330-ABCT-0711-01.jpg" style="width: 50px;border-radius: 50%">
+                          <div>
+                            <div style="color: #848484;">代币</div>
+                            <div>TIME/IOST</div>
+                          </div>
+                          <svg class="c-user__arrow mat-icon notranslate material-icons mat-icon-no-color" t="1566287544986" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5805" width="128" height="128">
+                            <path d="M836.802183 342.264666c-8.381992-8.381992-22.351978-8.381992-30.73397 0l-293.369714 293.369713-294.766712-293.369713c-8.381992-8.381992-22.351978-8.381992-30.73397 0-8.381992 8.381992-8.381992 22.351978 0 30.73397l310.133697 308.736698c8.381992 8.381992 22.351978 8.381992 30.73397 0l308.736699-308.736698c8.381992-8.381992 8.381992-22.351978 0-30.73397z" fill="#ffffff" p-id="5806">
+                            </path>
+                          </svg>
+                        </div>
+                        <div style="flex:1;"></div>
+                      </div> -->
+
+
+
+
+
+                      <div class="flex">
+                        
+                        <div class="c-assetFilters" style="margin-right:-15px;">
+                          <div class="c-assetFilters__inner">
+                            <filter-game-selector class="c-assetFilters__item c-assetFilters__item--game">
+                              <mat-form-field class="mat-form-field mat-primary mat-form-field-type-mat-select mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label mat-form-field-should-float">
+                                <div class="mat-form-field-wrapper" onclick="coinTypeShow()">
+                                  <div class="mat-form-field-flex">
+                                    <div class="mat-form-field-infix">
+                                      <mat-select class="mat-select">
+                                        <div class="mat-select-trigger">
+                                          <div class="mat-select-value">
+                                            <span class="mat-select-value-text ng-tns-c12-6">
+                                              <span class="ng-tns-c12-6">
+                                                <font style="vertical-align: inherit;" id="coinNameShow">
+                                                  全部代币
+                                                </font>
+                                              </span>
+                                            </span>
+                                          </div>
+                                          <div class="mat-select-arrow-wrapper">
+                                            <svg class="c-user__arrow mat-icon notranslate material-icons mat-icon-no-color" t="1566287544986" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5805" width="128" height="128">
+                                              <path d="M836.802183 342.264666c-8.381992-8.381992-22.351978-8.381992-30.73397 0l-293.369714 293.369713-294.766712-293.369713c-8.381992-8.381992-22.351978-8.381992-30.73397 0-8.381992 8.381992-8.381992 22.351978 0 30.73397l310.133697 308.736698c8.381992 8.381992 22.351978 8.381992 30.73397 0l308.736699-308.736698c8.381992-8.381992 8.381992-22.351978 0-30.73397z" fill="#ffffff" p-id="5806">
+                                              </path>
+                                            </svg>
+                                          </div>
+                                        </div>
+                                      </mat-select>
+                                      <span class="mat-form-field-label-wrapper">
+                                        <label class="mat-form-field-label ng-tns-c11-5" id="mat-form-field-label-3" for="mat-select-1" aria-owns="mat-select-1">
+                                          <mat-label>
+                                            <font style="vertical-align: inherit;">代币名称</font>
+                                          </mat-label>
+                                        </label>
+                                      </span>
+                                    </div>
+                                  </div>
+                                  <div class="mat-form-field-underline ng-tns-c11-5">
+                                    <span class="mat-form-field-ripple">
+                                    </span>
+                                  </div>
+                                  <div class="mat-form-field-subscript-wrapper">
+                                    <div class="mat-form-field-hint-wrapper ng-tns-c11-5 ng-trigger ng-trigger-transitionMessages" style="opacity:1;transform:translateY(0%);0:opacity;1:transform;opacity:1;transform:translateY(0%);webkit-opacity:1;webkit-transform:translateY(0%);">
+                                      <div class="mat-form-field-hint-spacer">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </mat-form-field>
+                            </filter-game-selector>
+                          </div>
+                        </div>
+                        <div style="flex:1"></div>
+                        <div style="margin:0 10px 10px;display: inline-block;">
+
+                          <div class="flex" style="border: 1px solid #3495f9;border-radius: 10px;overflow:hidden;">
+                            <div class="dexSelectOrderBtn active" onclick="listDexOrderType('SELL',this)">
+                              买单
+                            </div>
+                            <div class="dexSelectOrderBtn" onclick="listDexOrderType('BUY',this)">
+                              卖单
+                            </div>
+                          </div>
+                        </div>
+                        <div style="flex:1"></div>
+
+                      </div>
+                        
+
+                    </div>
+
+                    <div class="dexTitle">
+                      <div class="item flex">
+                        <!-- <span class="owner" style="color:#7f7f80;">广告方</span>
+                        <span class="num" style="color:#7f7f80;">限额</span>
+                        <span class="price" style="color:#7f7f80;">单价</span>
+                        <span class="total" style="color:#7f7f80;">总值 ( USD )</span>
+                        <span class="action" style="color:#7f7f80;">
+                          交易 
+                        </span> -->
+                      </div>
+                    </div>
+
+                    <div class="dexList">
+                      <!-- <div class="item flex">
+                        <span class="owner flex">
+                          <div class="radius"></div>
+                          <span class="name">xpetbenson</span>
+                        </span>
+                        <span class="num">10000 DOR</span>
+                        <span class="price">1.00 IOST</span>
+                        <span class="action"><span class="blueBtn">购买</span></span>
+                      </div>
+                      <div class="item flex">
+                        <span class="owner flex">
+                          <div class="radius"></div>
+                          <span class="name">xpetuser1</span>
+                        </span>
+                        <span class="num">10000 TIME</span>
+                        <span class="price">100.00 IOST</span>
+                        <span class="action"><span class="blueBtn">购买</span></span>
+                      </div>
+                      <div class="item flex">
+                        <span class="owner flex">
+                          <div class="radius"></div>
+                          <span class="name">xpetuser2</span>
+                        </span>
+                        <span class="num">10000 XXX</span>
+                        <span class="price">0.98 IOST</span>
+                        <span class="action"><span class="blueBtn">购买</span></span>
+                      </div>
+                      <div class="item flex">
+                        <span class="owner flex">
+                          <div class="radius"></div>
+                          <span class="name">xpetuser2</span>
+                        </span>
+                        <span class="num">10000 XXX</span>
+                        <span class="price">0.98 IOST</span>
+                        <span class="action"><span class="blueBtn">购买</span></span>
+                      </div>
+                      <div class="item flex">
+                        <span class="owner flex">
+                          <div class="radius"></div>
+                          <span class="name">xpetuser2</span>
+                        </span>
+                        <span class="num">10000 XXX</span>
+                        <span class="price">0.98 IOST</span>
+                        <span class="action"><span class="blueBtn">购买</span></span>
+                      </div>
+                      <div class="item flex">
+                        <span class="owner flex">
+                          <div class="radius"></div>
+                          <span class="name">xpetuser2</span>
+                        </span>
+                        <span class="num">10000 XXX</span>
+                        <span class="price">0.98 IOST</span>
+                        <span class="action"><span class="blueBtn">购买</span></span>
+                      </div>
+                      <div class="item flex">
+                        <span class="owner flex">
+                          <div class="radius"></div>
+                          <span class="name">xpetuser2</span>
+                        </span>
+                        <span class="num">10000 XXX</span>
+                        <span class="price">0.98 IOST</span>
+                        <span class="action"><span class="blueBtn">购买</span></span>
+                      </div>
+                      <div class="item flex">
+                        <span class="owner flex">
+                          <div class="radius"></div>
+                          <span class="name">xpetuser2</span>
+                        </span>
+                        <span class="num">10000 XXX</span>
+                        <span class="price">0.98 IOST</span>
+                        <span class="action"><span class="blueBtn">购买</span></span>
+                      </div> -->
+                    </div>
+
+
+                    <div class="paginationBox">
+                      <ul class="pagination">
+                        <!-- <li class="disabled"><span><</span></li>
+                        <li class="active"><span>1</span></li>
+                        <li><span>2</span></li>
+                        <li><span>3</span></li>
+                        <li class="none"><span>...</span></li>
+                        <li><span>52</span></li>
+                        <li><span>></span></li> -->
+                      </ul>
+                    </div>
+
+                  </div>
+                    
+
+
+                </div>
+                  
+
+
+
+              </div>
+
+            </div>
+              
+          </div>
+        </div>
+      </div>
+      <div style="padding:10px 20px;">
+        <div class="с-exchangeNotification" id="footerMsg" style="margin-bottom: 0px;text-align: center;">
+          &nbsp;
+        </div>
+      </div>
+    </div>
+    <!-- <div class="cdk-overlay-container" id="panelShow" style="display:
+    none;"> -->
+    <div class="cdk-overlay-container" id="panelShow">
+
+    </div>
+    <div class="listPanelShow">
+      <div class="listPanelTitle flex" style="border-bottom: 2px solid #4daef8;color:#4daef8;">
+        <!-- <span style="padding:0 10px;" onclick="$('.listPanelShow').removeClass('active')">&gt;</span> -->
+        <div class="flex listClose" onclick="$('.listPanelShow').removeClass('active')">
+          <img src="images/right.png" alt="" class="" style="width: 24px;">
+        </div>
+        <div class="flex" style="flex:1;">
+          <span id="listPanelTitle">
+            &nbsp;
+          </span>
+        </div>
+        <div class="flex listClose" onclick="$('.listPanelShow').removeClass('active')">
+          <img src="images/close.png" alt="" class="" style="width: 24px;">
+        </div>
+      </div>
+      <div id="myListPanel">
+      </div>
+      <div class="Pagination-pages" style="text-align: center;">
+      </div>
+    </div>
+    <div style="position: fixed;width: 100%;height:100%;top:0;left:0;z-index:1001;
+    background: rgba(0,0,0,0.18);display:none" class="flex" id="showLoading">
+      <!-- <div class="c-exchange__loading c-exchange__loading--more"> -->
+      <div>
+        <div class="c-exchange__spinner mat-spinner mat-progress-spinner mat-primary mat-progress-spinner-indeterminate-animation"
+        mode="indeterminate" role="progressbar" style="width: 100px; height: 100px;">
+          <svg focusable="false" preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100"
+          style="width: 100px; height: 100px;">
+            <circle cx="50%" cy="50%" r="45" style="animation-name: mat-progress-spinner-stroke-rotate-100; stroke-dasharray: 282.743px; stroke-width: 10%;">
+            </circle>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <!-- about game start -->
+    <div class="с-seoArea с-seoArea--show" id="aboutGameShow" style="display: none;">
+      <router-outlet>
+      </router-outlet>
+      <seo-game>
+        <div class="с-seoArea__inner">
+          <seo-area-header class="с-seoArea__header">
+            <div class="с-seoArea__headerBack">
+            </div>
+            <h1 class="с-seoArea__headerTitle">
+              <font>
+                <font>
+                  购买杂项卡和包装
+                </font>
+              </font>
+            </h1>
+            <button aria-label="关" class="с-seoArea__headerClose" onclick="$('#aboutGameShow').hide()">
+              <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color"
+              role="img" aria-hidden="true">
+                <img src="images/close.png" alt="">
+              </mat-icon>
+            </button>
+          </seo-area-header>
+          <seo-area-crumbs class="с-seoArea__breadcrumbs">
+            <app-crumbs>
+              <ul class="c-breadcrumb">
+                <li class="c-breadcrumb__item">
+                  <span>
+                    <font>
+                      <font>
+                        Loot物品
+                      </font>
+                    </font>
+                  </span>
+                </li>
+              </ul>
+            </app-crumbs>
+          </seo-area-crumbs>
+          <div class="с-seoArea__content с-seoArea__content--loaded">
+            <div class="с-seoAreaGame">
+              <img class="с-seoAreaGame__img" src="https://media.graphcms.com/lYgeqqQQXGboudvYcSzg"
+              alt="CS:GO">
+            </div>
+            <article class="c-seoAreaContent">
+              <markdown>
+                <h2 id="how-to-buy-csgo-skins">
+                  <font>
+                    <font>
+                      如何购买CSGO皮肤
+                    </font>
+                  </font>
+                </h2>
+                <ul>
+                  <li>
+                    <font>
+                      <font>
+                        登录到该站点
+                      </font>
+                    </font>
+                  </li>
+                  <li>
+                    <font>
+                      <font>
+                        寻找漂亮的CSGO皮肤
+                      </font>
+                    </font>
+                  </li>
+                  <li>
+                    <font>
+                      <font>
+                        向您的余额中添加资金（如有必要）并完成购买
+                      </font>
+                    </font>
+                  </li>
+                </ul>
+                <h2>
+                  <font>
+                    <font>
+                      为您的库存购买皮肤
+                    </font>
+                  </font>
+                </h2>
+                <p>
+                  <font>
+                    <font>
+                      我们有很多CSGO皮肤可供出售。
+                    </font>
+                    <font>
+                      从稀有到普通。
+                    </font>
+                    <font>
+                      所有CS皮肤都在一个地方！
+                    </font>
+                    <font>
+                      寻找
+                    </font>
+                  </font>
+                </p>
+          </div>
+        </div>
+      </seo-game>
+    </div>
+    <!-- about game end -->
+    <form name="form" method="POST" action="http://pay.xchcnv.cn/gateway/pay"
+    style="display: none;">
+      <input type="text" value="" name="amount" id="form_amount">
+      <input type="text" value="" name="mem_id" id="form_mem_id">
+      <input type="text" value="" name="method" id="form_method">
+      <input type="text" value="" name="notify_url" id="form_notify_url">
+      <input type="text" value="" name="order_no" id="form_order_no">
+      <input type="text" value="" name="pay_token" id="form_pay_token">
+      <input type="text" value="" name="return_url" id="form_return_url">
+      <input type="text" value="" name="serial_no" id="form_serial_no">
+      <input type="text" value="" name="sign" id="form_sign">
+      <input type="text" value="" name="subject" id="form_subject">
+      <input type="text" name="version" value="1.0">
+      <input type="submit" id="formAction">
+    </form>
+    <!-- buy ok start -->
+    <div id="buyShopOkShow" style="display: none;">
+      <div class="cdk-overlay-container">
+        <div class="cdk-overlay-backdrop cdk-overlay-dark-backdrop cdk-overlay-backdrop-showing">
+        </div>
+        <div class="cdk-global-overlay-wrapper" style="justify-content: center; align-items: center;">
+          <div class="cdk-overlay-pane" style="max-width: 80vw; pointer-events: auto; position: static;">
+            <div class="cdk-visually-hidden cdk-focus-trap-anchor">
+            </div>
+            <div class="mat-dialog-container" style="transform:none;0:transform;transform:none;webkit-transform:none;">
+              <div class="c-auth c-auth--dialog">
+                <div class="c-auth__inner ">
+                  <div class="c-authHeader c-authHeader--shadow ">
+                    <h3 class="c-authHeader__title" id="dexEntrustMsgTitle"></h3>
+                    <button class="c-dialogHeader__close" mat-dialog-close="" type="button"
+                    data-analytics-id="logIn_close" onclick="$('#buyShopOkShow').hide()">
+                      <img src="images/close.png" alt="" class="mat-icon notranslate material-icons mat-icon-no-color">
+                    </button>
+                  </div>
+                  <div class="c-auth__content" style="padding-top:0 24px;">
+                    <div class="c-authForm ">
+                      <p class="c-authInfo__text" style="line-height: 80px;" id="buyShopMoneyShow"></p>
+                      <div class="flex">
+                        <div class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple"
+                        onclick="acceptEntrust()" id="buyShopOkAction">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+<div id="menuPhonePanel">
+  <mat-sidenav-container class="mat-drawer-container mat-sidenav-container mat-drawer-container-explicit-backdrop mat-drawer-transition mat-drawer-opened" style="height: 100%;background: none;">
+    <mat-sidenav class="c-sidebar mat-drawer mat-sidenav ng-tns-c1-0 ng-trigger ng-trigger-transform mat-drawer-over mat-sidenav-fixed ng-star-inserted" mode="over" role="navigation" tabindex="-1" style="bottom:0px;top:0px;transform:none;visibility:visible;0:bottom;1:top;2:transform;3:visibility;bottom:0px;top:0px;transform:none;visibility:visible;width: 370px;">
+      <div class="mat-drawer-inner-container">
+        <div style="height:100%;">
+          <div class="c-sidebar__wrap" style="padding:10px">
+
+
+            <div class="c-exchange__side c-exchange__side--user leftBox dexListBox">
+              <div class="c-exchangeHeader__inner c-exchangeHeader__inner--user" style="z-index: 1;">
+                <div class="c-exchangeHeader__tabs">
+                  <div class="c-exchangeTabs">
+                    <div class="c-exchangeTabs__item c-exchangeTabs__item--active" style="padding:0 20px;">
+                      <strong class="c-exchangeTabs__title">
+                        <font style="vertical-align: inherit;">常用代币</font>
+                      </strong>
+                    </div>
+                    
+
+                    <div style="padding:0 20px;flex:1;">
+                      
+                        <div class="selecrCoinTag" onclick="selecrCoinTag()" style="display: none;">
+                          <!-- <b>已选代币：</b><em>guild_token</em><span>X</span> -->
+                        </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="c-exchange__inner" style="border-top:2px solid #2a2c2e;padding:0;padding-bottom: 50px;">
+                <!-- loading -->
+                <div id="myItemLoadingShow" style="display: none;">
+                  <div class="c-exchange__loading c-exchange__loading--more" style="top: 68px;">
+                    <div class="c-exchange__spinner mat-spinner mat-progress-spinner mat-primary mat-progress-spinner-indeterminate-animation" mode="indeterminate" role="progressbar" style="width: 100px; height: 100px;">
+                      <svg focusable="false" preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100" style="width: 100px; height: 100px;">
+                        <circle cx="50%" cy="50%" r="45" style="animation-name: mat-progress-spinner-stroke-rotate-100; stroke-dasharray: 282.743px; stroke-width: 10%;">
+                        </circle>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div class="c-exchange__inventory">
+                  <div class="c-assetList">
+                    <div class="с-virtualscroll с-virtualscroll-placeholder--large">
+
+                      <div class="dexAdList">  <div class="item flex" onclick="listDexOrderSymbol('abct',this)">    <img src="https://tp-statics.cdn.bcebos.com/website-token/1562832692330-ABCT-0711-01.jpg" alt="" style="width:68px;height:68px;border-radius:50%;">    <div class="content">      <h3>ABCT</h3>      <ul class="clear">     <li class="about">ABCT是IOSTABC回馈广大投票用户推出的权益代币，投票给IOSTABC就可以免费获得，早参与早受益</li>      </ul>    </div>  </div>  <div class="item flex active" onclick="listDexOrderSymbol('guild_token',this)">    <img src="https://tp-statics.tokenpocket.pro/token/tokenpocket-1592805571416.png" alt="" style="width:68px;height:68px;border-radius:50%;">    <div class="content">      <h3>GT</h3>      <ul class="clear">      <li class="about">清风链游公会权益积分，可用于兑换公会专属福利、特殊权益</li>      </ul>    </div>  </div>  <div class="item flex" onclick="listDexOrderSymbol('idt',this)">    <img src="https://tp-statics.cdn.bcebos.com/website-token/1566190116217-IDICE.81e2ab1.png" alt="" style="width:68px;height:68px;border-radius:50%;">    <div class="content">      <h3>IDT</h3>      <ul class="clear">      <li class="about">IOSTWIN新游戏代币</li>      </ul>    </div>  </div>  <div class="item flex" onclick="listDexOrderSymbol('lgc',this)">    <img src="https://tp-statics.tokenpocket.pro/token/1569807594515-759ec9419b571e4ba43b8c0969c2fc1.jpg" alt="" style="width:68px;height:68px;border-radius:50%;">    <div class="content">      <h3>LGC</h3>      <ul class="clear">      <li class="about">乐鸽LGC是社交新零售共享平台，基于数字积分发行的代币</li>      </ul>    </div>  </div>  <div class="item flex" onclick="listDexOrderSymbol('lol',this)">    <img src="https://tp-statics.tokenpocket.pro/token/1565958347481-1565339124475-coinmetal.png" alt="" style="width:68px;height:68px;border-radius:50%;">    <div class="content">      <h3>LOL</h3>      <ul class="clear">     <li class="about">基于区块链技术的社交数字货币。具有转账费用低，安全，去中心化特点。是海外抖音Bermi的原生代币目前已有百万用户</li>      </ul>    </div>  </div>  <div class="item flex" onclick="listDexOrderSymbol('mango',this)">    <img src="https://tp-statics.cdn.bcebos.com/website-token/1561713324695-200X200.png" alt="" style="width:68px;height:68px;border-radius:50%;">    <div class="content">      <h3>MANGO</h3>      <ul class="clear">     <li class="about">Mango是一个专业的DAPP生态，致力于成为全球区块链游戏的精品和行业标杆，让区块链玩家在获取游戏乐趣的同时还可获得高额收益</li>      </ul>    </div>  </div>  <div class="item flex" onclick="listDexOrderSymbol('tpt',this)">    <img src="https://dapp.mytokenpocket.vip/token-logo/EOS_tokendapppub_TPT.png" alt="" style="width:68px;height:68px;border-radius:50%;">    <div class="content">      <h3>TPT</h3>      <ul class="clear">     <li class="about">token of TokenPocket Ecosystem</li>      </ul>    </div>  </div>  <div class="item flex" onclick="listDexOrderSymbol('vost',this)">    <img src="https://tp-statics.tokenpocket.pro/token/1558079138607-VOST.png" alt="" style="width:68px;height:68px;border-radius:50%;">    <div class="content">      <h3>VOST</h3>      <ul class="clear">     <li class="about">猎币矿池IOST矿权</li>      </ul>    </div>  </div>  <div class="item flex" onclick="listDexOrderSymbol('win',this)">    <img src="https://tp-statics.cdn.bcebos.com/website-token/1563687964864-WIN.png" alt="" style="width:68px;height:68px;border-radius:50%;">    <div class="content">      <h3>WIN</h3>      <ul class="clear">     <li class="about">WIN是IOSTWIN游戏平台发行的代币，总量为10亿个。无众筹，全部由用户投注挖矿产出</li>      </ul>    </div>  </div>  <div class="item flex" onclick="listDexOrderSymbol('xpc',this)">    <img src="https://xpet-game-1251625178.file.myqcloud.com/images/XPC128.png" alt="" style="width:68px;height:68px;border-radius:50%;">    <div class="content">      <h3>XPC</h3>      <ul class="clear">      <li class="about">《怪兽世界》是全球首个跨链加密宠物策略对战游戏。XPet怪兽总量上限100万个，始祖宠(0代)限量1000个。XPet的宠物拥有价值存储/价值萃取/价值夺取的能力。</li>      </ul>    </div>  </div></div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </mat-sidenav>
+    <div class="cdk-visually-hidden cdk-focus-trap-anchor" aria-hidden="true" tabindex="0">
+    </div>
+    <!---->
+  </mat-sidenav-container>
+  <div id="menuPhonePanel2" onclick="coinTypeHide()" style="width:62px;height:100%;position: absolute;right:0;top:0;"></div>
+</div>
+
+
+
+    <!-- <div class="dexEntrustBtn" onclick="dexEntrustShow()">挂 单</div> -->
+  </body>
+
+</html>

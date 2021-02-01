@@ -1,0 +1,2482 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <title set-lan="title">
+    </title>
+    <link rel="shortcut icon" href="./images/loot.png">
+    <meta name="viewport" content="width=device-width,width=421px,minimum-scale=0.36, user-scalable=no">
+    <link rel="stylesheet" href="css/style.css?v=0.1.1">
+    <link rel="stylesheet" href="css/index.css?v=0.1.1">
+    <link rel="stylesheet" href="css/common.css?v=0.1.1">
+    <script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="js/eos16.0.0.min.js"></script>
+    <script type="text/javascript" src="js/iost.min.js"></script>
+    <script type="text/javascript" src="js/scatterjs-core.min.js"></script>
+    <script type="text/javascript" src="js/scatterjs-plugin-eosjs.min.js"></script>
+    <script type="text/javascript" src="js/common.js?v=0.1.1"></script>
+    <script type="text/javascript" src="js/index.js?v=0.1.1"></script>
+    <script type="text/javascript" src="js/market.js?v=0.1.1"></script>
+    <script type="text/javascript" src="domove/js/gameShow.js?v=0.1.1"></script>
+    <script type="text/javascript" src="js/getToken.js?v=0.1.1"></script>
+    <script type="text/javascript" src="js/Language.js?v=0.1.1"></script>
+    <style type="text/css">
+      
+
+.selecrCoinTag{
+    position: relative;
+    float: left;
+    /*height:30px;*/
+    line-height:46px;
+    font-size: 13px;
+    vertical-align: top;
+    /*padding: 0 40px 0 10px;*/
+    padding: 0 9px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 1px solid rgba(13,168,139,.18);
+    background: rgba(13,168,139,.18);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-left: 7px;
+}
+.selecrCoinTag b{
+    color: #0da88b;
+  font-weight: 400;
+}
+.selecrCoinTag em{
+  /*e4393c*/
+  /*3495f9*/
+    color: #3495f9;
+    font-style: normal;
+    text-transform:uppercase;
+}
+.selecrCoinTag span{
+    color: #3495f9;
+    display: block;
+    position: absolute;
+    width:30px;
+    height:30px;
+    right: -1px;
+    top: -1px;
+    text-align: center;
+}
+
+.selecrCoinTag:hover {
+    /*border-color: #3495f9;
+    text-decoration: none;
+    background: rgba(13,168,139,.28)*/
+
+    border-color: rgb(13,168,139);
+    background: rgba(13,168,139,.36);
+}
+
+.selecrCoinTag:hover span {color: #fff;background-color: #3495f9;}
+
+
+
+    </style>
+  </head>
+  
+  <body>
+    <div id="menuPanel">
+      <mat-sidenav-container class="mat-drawer-container mat-sidenav-container mat-drawer-container-explicit-backdrop mat-drawer-transition mat-drawer-opened">
+        <!---->
+        <div class="mat-drawer-backdrop ng-star-inserted mat-drawer-shown">
+        </div>
+        <div class="cdk-visually-hidden cdk-focus-trap-anchor" aria-hidden="true"
+        tabindex="0">
+        </div>
+        <mat-sidenav class="c-sidebar mat-drawer mat-sidenav ng-tns-c1-0 ng-trigger ng-trigger-transform mat-drawer-over mat-sidenav-fixed ng-star-inserted"
+        mode="over" role="navigation" tabindex="-1" style="bottom:0px;top:0px;transform:none;visibility:visible;0:bottom;1:top;2:transform;3:visibility;bottom:0px;top:0px;transform:none;visibility:visible;">
+          <div class="mat-drawer-inner-container">
+            <div>
+              <div class="c-sidebar__wrap">
+              </div>
+            </div>
+          </div>
+        </mat-sidenav>
+        <div class="cdk-visually-hidden cdk-focus-trap-anchor" aria-hidden="true"
+        tabindex="0">
+        </div>
+        <!---->
+      </mat-sidenav-container>
+      <div id="menuPanel2" style="width:122px;height:100%;position: absolute;right:0;top:0;"></div>
+    </div>
+    <!-- menu end -->
+
+
+    <!-- phoneMenu start -->
+  <div class="c-exchangeHeader c-exchangeHeader--main ng-star-inserted c-exchangeHeader--homePage c-exchangeHeader--visible" style="">
+    <div _ngcontent-dmarket-c3="" class="c-exchangeHeader__inner">
+      <button _ngcontent-dmarket-c3="" aria-label="button menu" class="c-exchangeHeader__menu">
+        <svg t="1584790771385" class="mat-icon notranslate material-icons mat-icon-no-color" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4430" width="24" height="24"><path d="M128 469.333333m40.533333 0l686.933334 0q40.533333 0 40.533333 40.533334l0 4.266666q0 40.533333-40.533333 40.533334l-686.933334 0q-40.533333 0-40.533333-40.533334l0-4.266666q0-40.533333 40.533333-40.533334Z" fill="#ffffff" p-id="4431"></path><path d="M128 682.666667m40.533333 0l686.933334 0q40.533333 0 40.533333 40.533333l0 4.266667q0 40.533333-40.533333 40.533333l-686.933334 0q-40.533333 0-40.533333-40.533333l0-4.266667q0-40.533333 40.533333-40.533333Z" fill="#ffffff" p-id="4432"></path><path d="M128 256m40.533333 0l686.933334 0q40.533333 0 40.533333 40.533333l0 4.266667q0 40.533333-40.533333 40.533333l-686.933334 0q-40.533333 0-40.533333-40.533333l0-4.266667q0-40.533333 40.533333-40.533333Z" fill="#ffffff" p-id="4433"></path>
+        </svg>
+      </button>
+      <h2 _ngcontent-dmarket-c3="" class="c-exchangeHeader__title c-exchangeHeader__title--line">
+      </h2>
+      <div _ngcontent-dmarket-c3="" class="c-exchangeHeader__nav">
+
+        <div class="c-navigationControls c-navigationControls--exchange">
+          <!---->
+          <!---->
+          <div id="phonePanelMsg"></div>
+          <!-- <div class="ng-star-inserted">
+            <div class="c-navigationAuth">
+              <button class="c-navigationAuth__authBtn c-navigationAuth__authBtn--signUp"
+              translate="" data-analytics-id="signUp_authTabButtonSignUp">
+                Sign up
+              </button>
+              <button class="c-navigationAuth__authBtn c-navigationAuth__authBtn--logIn"
+              translate="" data-analytics-id="logIn_authTabButtonLogIn">
+                Log in
+              </button>
+            </div>
+          </div> -->
+          <div class="c-navigationControls__user">
+            <div aria-haspopup="true" class="c-user c-user--header c-dropdown">
+              <user-avatar>
+                <div class="c-user__logo">
+                  <figure class="c-user__figure">
+                    <!---->
+                    <img alt="User avatar" class="c-user__img ng-star-inserted" draggable="false"
+                    src="images/userAvatar.jpg">
+                    <!---->
+                  </figure>
+                </div>
+              </user-avatar>
+              <svg class="o-icon c-user__arrow">
+                
+              </svg>
+              <mat-menu class="" xposition="after" yposition="below">
+                <!---->
+              </mat-menu>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- phoneMenu end -->
+    <!-- header end -->
+    <div class="c-exchange">
+      <div class="c-exchangeHeader">
+        <div class="c-exchangeHeader__inner c-exchangeHeader__inner--user">
+          <div class="c-exchangeHeader__tabs">
+            <h2 class="c-exchangeHeader__title" style="width: 168px;">
+              <i class="c-exchangeHeader__titleLogo o-icon" inlinesvg="icon-logo.svg">
+                <img src="images/xlogo.png" alt="" style="height:42px;">
+              </i>
+            </h2>
+          </div>
+          <div class="c-exchangeHeader__tabs c-exchangeHeader__tabs--mobile">
+            <div class="c-exchangeMobileTabs c-exchangeMobileTabs--market c-exchangeMobileTabs--headerShow">
+              <div class="c-exchangeMobileTabs__list">
+                <!-- <div class="c-exchangeMobileTabs__item" data-num="1">
+                  <i class="c-exchangeMobileTabs__icon o-icon o-icon-sell">
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M11.99 2C6.47 2 2 6.50015 2 12.045C2 17.5898 6.47 22.09 11.99 22.09C17.52 22.09 22 17.5898 22 12.045C22 6.50015 17.52 2 11.99 2ZM12 20.081C7.58 20.081 4 16.4849 4 12.045C4 7.6051 7.58 4.009 12 4.009C16.42 4.009 20 7.6051 20 12.045C20 16.4849 16.42 20.081 12 20.081Z">
+                      </path>
+                      <path d="M12.5 7.02246H11V12.9506L16.25 16.0629L17 14.8477L12.5 12.2096V7.02246Z">
+                      </path>
+                    </svg>
+                  </i>
+                  <strong class="c-exchangeMobileTabs__title">
+                    <font style="vertical-align: inherit;" set-lan="nav2">
+                      &nbsp;
+                    </font>
+                  </strong>
+                </div>
+                <div class="c-exchangeMobileTabs__item" data-num="0">
+                  <i class="c-exchangeMobileTabs__icon o-icon o-icon-items">
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3 3.35083V21.4318H21V3.35083H3ZM11 19.4228H5V13.3958H11V19.4228ZM11 11.3868H5V5.35983H11V11.3868ZM19 19.4228H13V13.3958H19V19.4228ZM19 11.3868H13V5.35983H19V11.3868Z">
+                      </path>
+                    </svg>
+                  </i>
+                  <strong class="c-exchangeMobileTabs__title">
+                    <font style="vertical-align: inherit;" set-lan="nav">
+                      &nbsp;
+                    </font>
+                  </strong>
+                </div> -->
+
+
+
+                <!-- <div class="c-exchangeMobileTabs__item c-exchangeMobileTabs__item--active" data-num="2">
+                  <i class="c-exchangeMobileTabs__icon o-icon o-icon-market">
+                    <img src="images/logo.png" alt="" style="height:100%;">
+                  </i>
+                  <strong class="c-exchangeMobileTabs__title">
+                    <font style="vertical-align: inherit;" set-lan="nav3">
+                      &nbsp;
+                    </font>
+                  </strong>
+                </div>
+                <div class="c-exchangeMobileTabs__item" data-num="3" onclick="buyActivityMsgShow()">
+                  <i class="c-exchangeMobileTabs__icon o-icon o-icon-market">
+                    <img src="images/sale.png" alt="" style="height:100%;">
+                  </i>
+                  <strong class="c-exchangeMobileTabs__title">
+                    <font style="vertical-align: inherit;" set-lan="nav4">
+                      &nbsp;
+                    </font>
+                  </strong>
+                </div> -->
+              </div>
+              <i class="c-exchangeMobileTabs__arrow o-icon" inlinesvg="icon-double-arrows.svg">
+                <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.9855 12.6362L12.0909 16.5695L8.19636 12.6362L7 13.8471L12.0909 18.9999L17.1818 13.8471L15.9855 12.6362Z">
+                  </path>
+                  <path d="M15.9855 5L12.0909 8.93326L8.19636 5L7 6.2109L12.0909 11.3636L17.1818 6.2109L15.9855 5Z">
+                  </path>
+                </svg>
+              </i>
+            </div>
+          </div>
+        </div>
+        <div class="c-exchangeHeader__inner c-exchangeHeader__inner--market">
+          <!-- <h2 class="c-exchangeHeader__title">
+            <i class="c-exchangeHeader__titleLogo o-icon" inlinesvg="icon-logo.svg">
+              <img src="images/xlogo.png" alt="" style="height:42px;">
+            </i>
+          </h2> -->
+
+          <a class="NavItem active" href="index.html">
+            <span class="c-exchangeHeader__titleText" style="padding-top:18px;">NFT资产</span>
+          </a>
+          <a class="NavItem" href="dex.html">
+            <span class="c-exchangeHeader__titleText" style="padding-top:18px;">代币交易（IOST）</span>
+          </a>
+          <a class="NavItem goldLink" href="gold.html" style="display: none;">
+            <span class="c-exchangeHeader__titleText" style="padding-top:18px;">金币/账号</span>
+          </a>
+          
+          <div class="c-exchangeHeader__nav" style="flex:1">
+            <div style="flex:1;"></div>
+            <div class="c-exchangeHeader__actions">
+              <!-- <div class="c-exchangeHeader__button" onclick="panelShow('about')">
+              <img src="images/about.png" alt="" style="height:24px;">
+              </div> -->
+              <!-- <div class="c-exchangeHeader__button" onclick="getKYC(1)">
+              <img src="images/withdraw.png" alt="" style="height:24px;">
+              </div>
+              <button class="c-exchangeHeader__button" onclick="getKYC(0)">
+              <img src="images/recharge.png" alt="" style="height:24px;">
+              </button> -->
+              <!-- <button class="c-exchangeHeader__button" onclick="panelShow(3)">
+              <i class="o-icon" inlinesvg="icon-language.svg">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM18.92 8H15.97C15.65 6.75 15.19 5.55 14.59 4.44C16.43 5.07 17.96 6.35 18.92 8ZM12 4.04C12.83 5.24 13.48 6.57 13.91 8H10.09C10.52 6.57 11.17 5.24 12 4.04ZM4.26 14C4.1 13.36 4 12.69 4 12C4 11.31 4.1 10.64 4.26 10H7.64C7.56 10.66 7.5 11.32 7.5 12C7.5 12.68 7.56 13.34 7.64 14H4.26ZM5.08 16H8.03C8.35 17.25 8.81 18.45 9.41 19.56C7.57 18.93 6.04 17.66 5.08 16V16ZM8.03 8H5.08C6.04 6.34 7.57 5.07 9.41 4.44C8.81 5.55 8.35 6.75 8.03 8V8ZM12 19.96C11.17 18.76 10.52 17.43 10.09 16H13.91C13.48 17.43 12.83 18.76 12 19.96ZM14.34 14H9.66C9.57 13.34 9.5 12.68 9.5 12C9.5 11.32 9.57 10.65 9.66 10H14.34C14.43 10.65 14.5 11.32 14.5 12C14.5 12.68 14.43 13.34 14.34 14ZM14.59 19.56C15.19 18.45 15.65 17.25 15.97 16H18.92C17.96 17.65 16.43 18.93 14.59 19.56V19.56ZM16.36 14C16.44 13.34 16.5 12.68 16.5 12C16.5 11.32 16.44 10.66 16.36 10H19.74C19.9 10.64 20 11.31 20 12C20 12.69 19.9 13.36 19.74 14H16.36Z">
+              </path>
+              </svg>
+              </i>
+              </button> -->
+            </div>
+            <div class="c-navigationControls c-navigationControls--exchange">
+              <div id="panelMsg">
+              </div>
+              <div class="c-navigationControls__user" onclick="panelShow(2)">
+                <div aria-haspopup="true" class="c-user c-user--header c-dropdown">
+                  <div class="c-user__logo">
+                    <figure class="c-user__figure">
+                      <img alt="User avatar" class="c-user__img" draggable="false" src="images/userAvatar.jpg">
+                    </figure>
+                  </div>
+                  <svg class="c-user__arrow mat-icon notranslate material-icons mat-icon-no-color"
+                  t="1566287544986" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                  p-id="5805" width="128" height="128">
+                    <path d="M836.802183 342.264666c-8.381992-8.381992-22.351978-8.381992-30.73397 0l-293.369714 293.369713-294.766712-293.369713c-8.381992-8.381992-22.351978-8.381992-30.73397 0-8.381992 8.381992-8.381992 22.351978 0 30.73397l310.133697 308.736698c8.381992 8.381992 22.351978 8.381992 30.73397 0l308.736699-308.736698c8.381992-8.381992 8.381992-22.351978 0-30.73397z"
+                    fill="#ffffff" p-id="5806">
+                    </path>
+                  </svg>
+                  <mat-menu class="" xposition="after" yposition="below">
+                  </mat-menu>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="selectNFTBox">
+        <div style="margin-top:10px;display: inline-block;">
+          <div class="flex" style="border: 1px solid #3495f9;border-radius: 10px;overflow:hidden;">
+            <div class="dexSelectOrderBtn active" onclick="Navtab2(2,this)">
+              NFT市场
+            </div>
+            <div class="dexSelectOrderBtn" onclick="Navtab2(0,this)">
+              我的NFT
+            </div>
+          </div>
+        </div>
+      </div>
+        
+
+
+
+      <div class="c-exchange__container">
+
+        <!-- left -->
+        <div class="c-exchange__side c-exchange__side--user leftBox">
+          <!-- <div class="c-exchangeHeader__inner c-exchangeHeader__inner--user" style="z-index: 1;">
+            <div class="c-exchangeHeader__tabs">
+              
+              <div class="c-exchangeTabs">
+                <div class="c-exchangeTabs__item c-exchangeTabs__item--active" data-analytics-id="userTabs_itemsTab"
+                onclick="Navtab(0)">
+                  <i class="c-exchangeTabs__icon o-icon o-icon-items">
+                    <svg width="14" height="14" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0 0v14h14V0H0zm6.222 12.444H1.556V7.778h4.666v4.666zm0-6.222H1.556V1.556h4.666v4.666zm6.222 6.222H7.778V7.778h4.666v4.666zm0-6.222H7.778V1.556h4.666v4.666z">
+                      </path>
+                    </svg>
+                  </i>
+                  <strong class="c-exchangeTabs__title">
+                    <font style="vertical-align: inherit;" set-lan="nav">
+                      &nbsp;
+                    </font>
+                  </strong>
+                </div>
+                <div class="c-exchangeTabs__item" data-analytics-id="userTabs_offersTab"
+                onclick="Navtab(1)">
+                  <i class="c-exchangeTabs__icon o-icon o-icon-sell">
+                    <svg width="11" height="11" viewBox="0 0 11 11" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5.495.084A5.414 5.414 0 0 0 .084 5.5a5.414 5.414 0 0 0 5.411 5.417A5.42 5.42 0 0 0 10.917 5.5 5.42 5.42 0 0 0 5.495.084zm.006 9.75A4.332 4.332 0 0 1 1.167 5.5a4.332 4.332 0 0 1 4.334-4.333A4.332 4.332 0 0 1 9.834 5.5a4.332 4.332 0 0 1-4.333 4.334z">
+                      </path>
+                      <path d="M5.771 2.791H4.96v3.25l2.844 1.707.406-.667-2.438-1.446V2.791z">
+                      </path>
+                    </svg>
+                  </i>
+                  <strong class="c-exchangeTabs__title">
+                    <font style="vertical-align: inherit;" set-lan="nav2">
+                      &nbsp;
+                    </font>
+                  </strong>
+                </div>
+              </div>
+            </div>
+          </div> -->
+            <div class="c-exchangeHeader__inner c-exchangeHeader__inner--user" style="z-index: 1;background:#17191a;">
+              <div class="c-exchangeHeader__tabs">
+                <div class="c-exchangeTabs">
+                  <h2 class="NavItem active" onclick="Navtab(0)">
+                    <span class="c-exchangeTabs__title" set-lan="nav">&nbsp;</span>
+                  </h2>
+                  <h2 class="NavItem" onclick="Navtab(1)">
+                    <span class="c-exchangeTabs__title" set-lan="nav2">&nbsp;</span>
+                  </h2>
+                </div>
+              </div>
+            </div>
+
+
+
+
+          <div class="c-exchange__inner" style="border-top:2px solid #2a2c2e;">
+            <filters class="c-exchange__filters">
+              <div class="c-assetFilters">
+                <div class="c-assetFilters__inner">
+                  <filter-game-selector class="c-assetFilters__item c-assetFilters__item--game">
+                    <mat-form-field appearance="fill" class="mat-form-field ng-tns-c11-3 mat-primary mat-form-field-type-mat-select mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label ng-untouched ng-pristine ng-valid mat-form-field-should-float">
+                      <div class="mat-form-field-wrapper" onclick="panelShow('myGame')">
+                        <div class="mat-form-field-flex">
+                          <div class="mat-form-field-infix">
+                            <mat-select class="mat-select ng-tns-c12-4 ng-untouched ng-pristine ng-valid"
+                            disableoptioncentering="" role="listbox" id="mat-select-0" tabindex="0"
+                            aria-labelledby="mat-form-field-label-1" aria-required="false" aria-disabled="false"
+                            aria-invalid="false" aria-multiselectable="false">
+                              <div class="mat-select-trigger" aria-hidden="true" cdk-overlay-origin="">
+                                <div class="mat-select-value">
+                                  <span class="mat-select-value-text ng-tns-c12-4">
+                                    <span class="ng-tns-c12-4">
+                                      <font style="vertical-align: inherit;" id="MyGame" set-lan="gameAll">
+                                        &nbsp;
+                                      </font>
+                                    </span>
+                                  </span>
+                                </div>
+                                <div class="mat-select-arrow-wrapper">
+                                  <!-- <div class="mat-select-arrow">
+                                  </div> -->
+                                  <svg class="c-user__arrow mat-icon notranslate material-icons mat-icon-no-color"
+                                  t="1566287544986" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                  p-id="5805" width="128" height="128">
+                                    <path d="M836.802183 342.264666c-8.381992-8.381992-22.351978-8.381992-30.73397 0l-293.369714 293.369713-294.766712-293.369713c-8.381992-8.381992-22.351978-8.381992-30.73397 0-8.381992 8.381992-8.381992 22.351978 0 30.73397l310.133697 308.736698c8.381992 8.381992 22.351978 8.381992 30.73397 0l308.736699-308.736698c8.381992-8.381992 8.381992-22.351978 0-30.73397z"
+                                    fill="#ffffff" p-id="5806">
+                                    </path>
+                                  </svg>
+                                </div>
+                              </div>
+                            </mat-select>
+                            <span class="mat-form-field-label-wrapper">
+                              <label class="mat-form-field-label ng-tns-c11-3" id="mat-form-field-label-1"
+                              for="mat-select-0" aria-owns="mat-select-0">
+                                <mat-label>
+                                  <font style="vertical-align: inherit;" set-lan="game">
+                                    &nbsp;
+                                  </font>
+                                </mat-label>
+                              </label>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="mat-form-field-underline ng-tns-c11-3">
+                          <span class="mat-form-field-ripple">
+                          </span>
+                        </div>
+                        <div class="mat-form-field-subscript-wrapper">
+                          <div class="mat-form-field-hint-wrapper ng-tns-c11-3 ng-trigger ng-trigger-transitionMessages"
+                          style="opacity:1;transform:translateY(0%);0:opacity;1:transform;opacity:1;transform:translateY(0%);webkit-opacity:1;webkit-transform:translateY(0%);">
+                            <div class="mat-form-field-hint-spacer">
+                            </div>
+                          </div>
+                        </div>
+    
+                        <!-- 选择器弹框 -->
+                        <!-- <div class="mat-option" style="background: #35373a;top: 58px;z-index: 999;position: absolute;width: 100%;">          <span class="mat-option-text" onclick="MyGameTextShow(this,5)"><font>XPET</font></span>        </div> -->
+                        
+                      </div>
+                    </mat-form-field>
+                  </filter-game-selector>
+                  <!-- <div class="c-assetFilters__item o-filter o-filter--search o-filter--active"> -->
+                    <!-- 寻找 -->
+                  <!-- <div class="c-assetFilters__item o-filter o-filter--search">
+                    <button class="o-filter__searchButton">
+                      <svg class="mat-icon notranslate material-icons mat-icon-no-color" t="1566971226709"
+                      viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                      p-id="2863" width="32" height="32">
+                        <path d="M602.304 603.456c9.088-7.68 33.728 4.928 55.04 28.096l270.144 293.12c21.312 23.168 23.04 54.912 3.968 70.976-19.2 16-50.112 8.768-69.248-16.192L620.48 662.4c-19.072-24.96-27.2-51.456-18.176-59.008z"
+                        fill="#ffffff" p-id="2864">
+                        </path>
+                        <path d="M560 633.472a288 288 0 1 0-288-498.816 288 288 0 0 0 288 498.816z m32 55.424a352 352 0 1 1-352-609.664 352 352 0 0 1 352 609.664z"
+                        fill="#ffffff" p-id="2865">
+                        </path>
+                      </svg>
+                    </button>
+                    <label class="o-filter__search ng-untouched ng-pristine ng-valid">
+                      <input class="o-filter__searchInput ng-untouched ng-pristine ng-valid"
+                      formcontrolname="title" type="search" placeholder="Search">
+                      <button class="o-filter__searchClear">
+                        <mat-icon class="o-filter__icon mat-icon notranslate material-icons mat-icon-no-color"
+                        role="img" aria-hidden="true">
+                        </mat-icon>
+                      </button>
+                    </label>
+                  </div> -->
+
+                  <div class="c-assetFilters__item">
+                    <button class="o-filter o-filter--refresh mat-ripple" onclick="refresh()">
+                      <svg t="1566971809618" class="o-filter__icon mat-icon notranslate material-icons mat-icon-no-color"
+                      viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                      p-id="4252" width="32" height="32">
+                        <path d="M834.2 531.9c0 187.7-152.2 339.9-339.9 339.9S154.4 719.7 154.4 531.9c0-187.7 152.2-339.9 339.9-339.9 124.8 0 233.6 67.5 292.7 167.7h63.8c-64.1-132.5-199.4-224.1-356.5-224.1C275.4 135.6 98 313.1 98 531.9s177.4 396.3 396.3 396.3 396.3-177.4 396.3-396.3c0-4.9-0.6-9.7-0.7-14.6 0 0-1.4-28.9-28.7-28.9-30.6 0-27.6 28.9-27.6 28.9 0.1 4.9 0.6 9.7 0.6 14.6z"
+                        fill="#ffffff" p-id="4253">
+                        </path>
+                        <path d="M853.9 101.1C843 100 833.1 108 832 119l-21.6 213.7c-1.1 10.9-11 19-21.9 17.9L574.8 329c-10.9-1.1-20.8 6.9-21.9 17.9l-1.5 14.8c-1.1 10.9 6.9 20.8 17.9 21.9L783 405.2c10.9 1.1 19.9 2 19.9 2s9 0.9 19.9 2l14.8 1.5c10.9 1.1 20.8-6.9 21.9-17.9l27.1-268.3c1.1-10.9-6.9-20.8-17.9-21.9l-14.8-1.5z"
+                        fill="#ffffff" p-id="4254">
+                        </path>
+                      </svg>
+                    </button>
+                  </div>
+                  <!-- <div class="c-assetFilters__item">
+                  <img class="c-assetFilters__item gameItem" src="images/game_01.png" alt="">
+                  </div> -->
+                </div>
+              </div>
+            </filters>
+            <user-notifications class="ng-star-inserted">
+              <div class="с-exchangeNotification" style="display: none;" id="myItemMsg">
+                <p></p>
+              </div>
+            </user-notifications>
+            <div class="c-exchange__inventory">
+              <div class="c-assetList">
+                <div class="c-assetList__empty">
+                </div>
+                <div class="с-virtualscroll с-virtualscroll-placeholder--large" id="myItemScroll">
+                  <!-- <div _ngcontent-c9="" class="od-scroll-container assetlist" style="width:
+                  0px; height: 0px; background: url(&quot;data:image/svg+xml,%3Csvg width='133'
+                  height='128' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2' y='1' opacity='.5'
+                  width='127' height='122' rx='2' fill='%232A2C2E'/%3E%3C/svg%3E&quot;) repeat;"
+                  id="myItem"> -->
+                  <div _ngcontent-c9="" class="od-scroll-container myAssetlist" style="background: url(&quot;data:image/svg+xml,%3Csvg width='187' height='235' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='5' y='5' opacity='.5' width='190' height='240' rx='2' fill='%232A2C2E'/%3E%3C/svg%3E&quot;) repeat;"
+                  id="myItem">
+                    <!-- myItem start -->
+                    <!-- <div class="c-asset item" style="" id="saleItemId_8162" onclick="buyMsgShow('100.0000
+                    EOS',8162,'https://easytrade-1254037028.file.myqcloud.com/xpet/db2226569a6535eb75ba490ff0760d77.png')">
+                    <div style="background: #2a2c2e;border-radius: 2px;width:100%;height:100%;">
+                    <div class="flex" style="line-height: 39px;padding:0 10px;">
+                    <div style="flex:1">
+                    <span style="color:#89d295;font-weight: bolder;">
+                    评分:
+                    </span>
+                    <span>
+                    178
+                    </span>
+                    </div>
+                    <div>
+                    <span style="color:#89d295;font-weight: bolder;">
+                    LV.
+                    </span>
+                    <span>
+                    1
+                    </span>
+                    </div>
+                    </div>
+                    <div class="flex" style="height: 39px;">
+                    <div style="margin-right:7px;">
+                    <svg t="1566445356488" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="2277" width="28" height="28">
+                    <path d="M942.427421 234.839536a17.254917 17.254917 0 1 0-28.988261 18.715833 475.626037 475.626037 0 0 1 76.013661 258.559181c0 263.229511-214.145024 477.386038-477.386038 477.386038s-477.386038-214.156527-477.386038-477.386038 214.145024-477.386038 477.386038-477.386039a475.683553 475.683553 0 0 1 166.659492 29.908523 17.254917 17.254917 0 0 0 12.055436-32.335714 511.964892 511.964892 0 1 0 251.64571 202.538216z"
+                    fill="#89d295" p-id="2278">
+                    </path>
+                    <path d="M796.059711 128.365195a482.807533 482.807533 0 0 1 34.969965 28.562639 17.254917 17.254917 0 1 0 23.064073-25.663813c-11.963409-10.755565-24.571002-21.050999-37.47768-30.621726a17.256067 17.256067 0 1 0-20.556358 27.7229zM385.496215 534.22385L261.088263 751.647308l242.144003 144.12457-117.736051-361.548028zM257.614273 707.187138l117.402456-205.172466-42.32056-129.964036-75.081896 335.136502zM621.370931 503.65964l-108.671467-191.736638-110.385456 192.898469 110.523495 339.381212 108.533428-340.543043zM689.332298 373.074428l-40.721605 127.755406 116.447684 205.460049-75.726079-333.215455zM638.223233 533.407117L522.868361 895.35776l239.072628-143.664439L638.223233 533.407117zM673.423264 340.336099L525.514115 130.263235v153.361703l106.232773 187.457419 41.676376-130.746258zM500.413963 282.865722V129.29696L348.708732 340.175053l43.125789 132.448743 108.579442-189.758074z"
+                    fill="#89d295" p-id="2279">
+                    </path>
+                    </svg>
+                    </div>
+                    <span>
+                    100.0000 EOS
+                    </span>
+                    </div>
+                    <div style="color: rgba(0, 0, 0,0);text-align: center;">
+                    <img class="c-asset__img" style="height: 95px;max-height: 95px;" loading="auto"
+                    alt="Golden Seekling" src="https://easytrade-1254037028.file.myqcloud.com/xpet/db2226569a6535eb75ba490ff0760d77.png">
+                    </div>
+                    <div class="flex">
+                    <div class="shopAssetMsgBox">
+                    怪兽 EOS#8162
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="c-asset item" style="" id="saleItemId_8160" onclick="buyMsgShow('99.0000 EOS',8160,'https://easytrade-1254037028.file.myqcloud.com/xpet/350afa797f6827d57e2bcb9020b66df7.png')">
+                    <div style="background: #2a2c2e;border-radius: 2px;width:100%;height:100%;">
+                    <div class="flex" style="line-height: 39px;padding:0 10px;">
+                    <div style="flex:1">
+                    <span style="color:#89d295;font-weight: bolder;">
+                    评分:
+                    </span>
+                    <span>
+                    7622
+                    </span>
+                    </div>
+                    <div>
+                    <span style="color:#89d295;font-weight: bolder;">
+                    LV.
+                    </span>
+                    <span>
+                    31
+                    </span>
+                    </div>
+                    </div>
+                    <div class="flex" style="height: 39px;">
+                    <div style="margin-right:7px;">
+                    <svg t="1566445356488" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                    xmlns="http://www.w3.org/2000/svg" p-id="2277" width="28" height="28">
+                    <path d="M942.427421 234.839536a17.254917 17.254917 0 1 0-28.988261 18.715833 475.626037 475.626037 0 0 1 76.013661 258.559181c0 263.229511-214.145024 477.386038-477.386038 477.386038s-477.386038-214.156527-477.386038-477.386038 214.145024-477.386038 477.386038-477.386039a475.683553 475.683553 0 0 1 166.659492 29.908523 17.254917 17.254917 0 0 0 12.055436-32.335714 511.964892 511.964892 0 1 0 251.64571 202.538216z"
+                    fill="#89d295" p-id="2278">
+                    </path>
+                    <path d="M796.059711 128.365195a482.807533 482.807533 0 0 1 34.969965 28.562639 17.254917 17.254917 0 1 0 23.064073-25.663813c-11.963409-10.755565-24.571002-21.050999-37.47768-30.621726a17.256067 17.256067 0 1 0-20.556358 27.7229zM385.496215 534.22385L261.088263 751.647308l242.144003 144.12457-117.736051-361.548028zM257.614273 707.187138l117.402456-205.172466-42.32056-129.964036-75.081896 335.136502zM621.370931 503.65964l-108.671467-191.736638-110.385456 192.898469 110.523495 339.381212 108.533428-340.543043zM689.332298 373.074428l-40.721605 127.755406 116.447684 205.460049-75.726079-333.215455zM638.223233 533.407117L522.868361 895.35776l239.072628-143.664439L638.223233 533.407117zM673.423264 340.336099L525.514115 130.263235v153.361703l106.232773 187.457419 41.676376-130.746258zM500.413963 282.865722V129.29696L348.708732 340.175053l43.125789 132.448743 108.579442-189.758074z"
+                    fill="#89d295" p-id="2279">
+                    </path>
+                    </svg>
+                    </div>
+                    <span>
+                    99.0000 EOS
+                    </span>
+                    </div>
+                    <div style="color: rgba(0, 0, 0,0);text-align: center;">
+                    <img class="c-asset__img" style="height: 95px;max-height: 95px;" loading="auto"
+                    alt="Golden Seekling" src="https://easytrade-1254037028.file.myqcloud.com/xpet/350afa797f6827d57e2bcb9020b66df7.png">
+                    </div>
+                    <div class="flex">
+                    <div class="shopAssetMsgBox">
+                    怪兽 EOS#8160
+                    </div>
+                    </div>
+                    </div>
+                    </div> -->
+                    <!-- myItem end -->
+                  </div>
+                </div>
+              </div>
+              <div id="myItemLoadingShow" style="display: none;">
+                <div class="c-exchange__loading c-exchange__loading--more">
+                  <div class="c-exchange__spinner mat-spinner mat-progress-spinner mat-primary mat-progress-spinner-indeterminate-animation"
+                  mode="indeterminate" role="progressbar" style="width: 100px; height: 100px;">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100"
+                    style="width: 100px; height: 100px;">
+                      <circle cx="50%" cy="50%" r="45" style="animation-name: mat-progress-spinner-stroke-rotate-100; stroke-dasharray: 282.743px; stroke-width: 10%;">
+                      </circle>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="intPanel" class="c-auth" style="z-index: 99;display: none;">
+            </div>
+            <!-- -->
+            <!-- <div class="c-exchange__sum">
+            <div class="c-exchangeSum c-exchangeSum--zero">
+            <proposes-hide-button class="c-exchangeSum__hideButton">
+            <button mat-fab="" class="mat-fab mat-accent">
+            <span class="mat-button-wrapper">
+            <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color"
+            role="img" aria-hidden="true">
+            </mat-icon>
+            </span>
+            <div class="mat-button-ripple mat-ripple mat-button-ripple-round">
+            </div>
+            <div class="mat-button-focus-overlay">
+            </div>
+            </button>
+            </proposes-hide-button>
+            <description class="c-exchangeSum__description">
+            </description>
+            </div>
+            </div>
+            <div class="c-exchange__propose">
+            <div class="c-assetList c-assetList--sm">
+            <div class="c-assetList__empty">
+            </div>
+            <div class="с-virtualscroll с-virtualscroll-placeholder--small"
+            _nghost-c9="">
+            <div _ngcontent-c9="" class="od-scroll-container" style="width: 0px; height: 0px; background: url(&quot;data:image/svg+xml,%3Csvg width='100' height='94' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2' y='1' opacity='.5' width='94' height='88' rx='2' fill='%232A2C2E'/%3E%3C/svg%3E&quot;) repeat;">
+            <div _ngcontent-c9="">
+            <div _ngcontent-c9="">
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div> -->
+            <!-- user button -->
+            <div class="c-exchange__buttons c-exchange__buttons--user" style="display: none;">
+              <div class="c-exchangeButtons">
+                <button class="c-exchangeButtons__item c-exchangeButtons__item--filters o-dmButton o-dmButton--primary o-dmButton--round">
+                  <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color"
+                  role="img" aria-hidden="true">
+                  </mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- right -->
+        <div class="c-exchange__side c-exchange__side--market c-exchange__side--active rightBox">
+          <div class="c-exchange__inner c-exchange__inner--market">
+            <filters class="c-exchange__filters">
+              <div class="game-banners">
+                <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
+                  <div class="swiper-wrapper swiper-wrapper--placeholders" style="transform: translate3d(0px, 0px, 0px);overflow-y: hidden;overflow-x: auto;"
+                  id="lootMarketCategory">
+                    <!-- <div class="game-banners__container swiper-slide swiper-slide-active"
+                    style="margin-right: 4px;" onclick="gameTypeSelect(this,0)">
+                    <div class="game-banners__inner game-banners--Game">
+                    <img class="game-banners__logo" src="domove/imgs/gameLogo_07.jpg" alt="XPET">
+                    <img class="game-banners__bg" src="domove/imgs/gamePic_07.jpg" alt="XPET">
+                    <span class="game-banners__title" set-lan="gameName">&nbsp;</span>
+                    </div>
+                    </div>
+                    <div class="game-banners__container swiper-slide swiper-slide-active"
+                    style="margin-right: 4px;" onclick="gameTypeSelect(this,1)">
+                    <div class="game-banners__inner game-banners--Game">
+                    <img class="game-banners__logo" src="domove/imgs/gameLogo_01.jpg" alt="CS:GO">
+                    <img class="game-banners__bg" src="domove/imgs/gamePic_01.jpg" alt="CS:GO">
+                    <span class="game-banners__title" set-lan="gameName2">&nbsp;</span>
+                    </div>
+                    </div>
+                    <div class="game-banners__container swiper-slide swiper-slide-next"
+                    style="margin-right: 4px;" onclick="gameTypeSelect(this,2)">
+                    <div class="game-banners__inner game-banners--Game">
+                    <img class="game-banners__logo" src="domove/imgs/gameLogo_02.jpg" alt="Dota 2">
+                    <img class="game-banners__bg" src="domove/imgs/gamePic_02.jpg" alt="Dota 2">
+                    <span class="game-banners__title" set-lan="gameName3">&nbsp;</span>
+                    </div>
+                    </div>
+                    <div class="game-banners__container swiper-slide"
+                    style="margin-right: 4px;" onclick="gameTypeSelect(this,3)">
+                    <div class="game-banners__inner game-banners--Game">
+                    <img class="game-banners__logo" src="domove/imgs/gameLogo_03.jpg" alt="DMarket">
+                    <img class="game-banners__bg" src="domove/imgs/gamePic_03.jpg" alt="DMarket">
+                    <span class="game-banners__title" set-lan="gameName4">&nbsp;</span>
+                    </div>
+                    </div>
+                    <div class="game-banners__container swiper-slide"
+                    style="margin-right: 4px;" onclick="gameTypeSelect(this,4)">
+                    <div class="game-banners__inner game-banners--Game">
+                    <img class="game-banners__logo" src="domove/imgs/gameLogo_04.jpg" alt="Misc">
+                    <img class="game-banners__bg" src="domove/imgs/gamePic_04.jpg" alt="Misc">
+                    <span class="game-banners__title" set-lan="gameName5">&nbsp;</span>
+                    </div>
+                    </div> -->
+                    <!-- <div class="game-banners__container swiper-slide" style="margin-right:
+                    4px;">
+                    <div class="game-banners__inner game-banners--Game">
+                    <img class="game-banners__logo" src="domove/imgs/gameLogo_05.svg" alt="How to exchange skins">
+                    <img class="game-banners__bg" src="domove/imgs/gamePic_05.jpg" alt="How to exchange skins">
+                    <span class="game-banners__title"> How to exchange skins </span>
+                    </div>
+                    </div>
+                    <div class="game-banners__container swiper-slide"
+                    style="margin-right: 4px;">
+                    <div class="game-banners__inner game-banners--Game">
+                    <img class="game-banners__logo" src="domove/imgs/gameLogo_06.png" alt="Misc">
+                    <img class="game-banners__bg" src="domove/imgs/gamePic_06.jpg" alt="Misc">
+                    <span class="game-banners__title"> Add your game to DMarket </span>
+                    <span class="game-banners__subText"> Add game </span>
+                    </div>
+                    </div> -->
+                  </div>
+                  <span class="swiper-notification" aria-live="assertive" aria-atomic="true">
+                  </span>
+                </div>
+                <!-- <button class="game-banners__next game-banners__next--marketSide
+                prevent-game-banners-global-hiding swiper-button-disabled" tabindex="0"
+                role="button" aria-label="Next slide" aria-disabled="true">
+                <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color"
+                role="img" aria-hidden="true">
+                >
+                </mat-icon>
+                </button> -->
+              </div>
+              <div class="c-assetFilters">
+                <div class="c-assetFilters__inner">
+                  <filter-game-selector class="c-assetFilters__item c-assetFilters__item--game">
+                    <mat-form-field class="mat-form-field mat-primary mat-form-field-type-mat-select mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label mat-form-field-should-float">
+                      <div class="mat-form-field-wrapper" onclick="gameTypeShow()">
+                        <div class="mat-form-field-flex">
+                          <div class="mat-form-field-infix">
+                            <mat-select class="mat-select">
+                              <div class="mat-select-trigger">
+                                <div class="mat-select-value">
+                                  <span class="mat-select-value-text ng-tns-c12-6">
+                                    <span class="ng-tns-c12-6">
+                                      <font style="vertical-align: inherit;" id="gameNameShow">
+                                        --
+                                      </font>
+                                    </span>
+                                  </span>
+                                </div>
+                                <div class="mat-select-arrow-wrapper">
+                                  <!-- <div class="mat-select-arrow">
+                                  </div> -->
+                                  <svg class="c-user__arrow mat-icon notranslate material-icons mat-icon-no-color"
+                                  t="1566287544986" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                  p-id="5805" width="128" height="128">
+                                    <path d="M836.802183 342.264666c-8.381992-8.381992-22.351978-8.381992-30.73397 0l-293.369714 293.369713-294.766712-293.369713c-8.381992-8.381992-22.351978-8.381992-30.73397 0-8.381992 8.381992-8.381992 22.351978 0 30.73397l310.133697 308.736698c8.381992 8.381992 22.351978 8.381992 30.73397 0l308.736699-308.736698c8.381992-8.381992 8.381992-22.351978 0-30.73397z"
+                                    fill="#ffffff" p-id="5806">
+                                    </path>
+                                  </svg>
+                                </div>
+                              </div>
+                            </mat-select>
+                            <span class="mat-form-field-label-wrapper">
+                              <label class="mat-form-field-label ng-tns-c11-5" id="mat-form-field-label-3"
+                              for="mat-select-1" aria-owns="mat-select-1">
+                                <mat-label>
+                                  <font style="vertical-align: inherit;" set-lan="game">
+                                    &nbsp;
+                                  </font>
+                                </mat-label>
+                              </label>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="mat-form-field-underline ng-tns-c11-5">
+                          <span class="mat-form-field-ripple">
+                          </span>
+                        </div>
+                        <div class="mat-form-field-subscript-wrapper">
+                          <div class="mat-form-field-hint-wrapper ng-tns-c11-5 ng-trigger ng-trigger-transitionMessages"
+                          style="opacity:1;transform:translateY(0%);0:opacity;1:transform;opacity:1;transform:translateY(0%);webkit-opacity:1;webkit-transform:translateY(0%);">
+                            <div class="mat-form-field-hint-spacer">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </mat-form-field>
+                  </filter-game-selector>
+                  <!-- <div class="c-assetFilters__item o-filter o-filter--search">
+                  <button class="o-filter__searchButton">
+                  <svg class="mat-icon notranslate material-icons mat-icon-no-color" t="1566971226709" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2863" width="32" height="32"><path d="M602.304 603.456c9.088-7.68 33.728 4.928 55.04 28.096l270.144 293.12c21.312 23.168 23.04 54.912 3.968 70.976-19.2 16-50.112 8.768-69.248-16.192L620.48 662.4c-19.072-24.96-27.2-51.456-18.176-59.008z" fill="#ffffff" p-id="2864"></path><path d="M560 633.472a288 288 0 1 0-288-498.816 288 288 0 0 0 288 498.816z m32 55.424a352 352 0 1 1-352-609.664 352 352 0 0 1 352 609.664z" fill="#ffffff" p-id="2865"></path></svg>
+                  </button>
+                  <label class="o-filter__search ng-untouched ng-pristine ng-valid">
+                  <input class="o-filter__searchInput ng-untouched ng-pristine ng-valid" formcontrolname="title" type="search" placeholder="Search">
+                  <button class="o-filter__searchClear">
+                  <mat-icon class="o-filter__icon mat-icon notranslate material-icons mat-icon-no-color" role="img" aria-hidden="true">
+                  </mat-icon>
+                  </button>
+                  </label>
+                  </div> -->
+                  <!-- <div class="c-assetFilters__item c-assetFilters__item--inlineFilters">
+                  <div class="c-filters c-filters--inline">
+                  <div class="c-filters__item">
+                  <price-range class="c-filters__priceRange">
+                  <form class="o-priceRange ng-touched ng-dirty ng-valid" novalidate="">
+                  <label class="o-priceRange__item">
+                  <mat-form-field appearance="fill" class="mat-form-field ng-tns-c11-117 mat-primary mat-form-field-type-mat-input mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label ng-touched ng-dirty ng-valid mat-form-field-should-float">
+                  <div class="mat-form-field-wrapper">
+                  <div class="mat-form-field-flex">
+                  <div class="mat-form-field-infix">
+                  <dm-currency-icon class="mat-form-field-icon">
+                  <span class="o-currencies--USD">
+                  </span>
+                  </dm-currency-icon>
+                  <input class="mat-input-element mat-form-field-autofill-control cdk-text-field-autofill-monitored ng-touched ng-dirty ng-valid"
+                  formcontrolname="priceFrom" matinput="" placeholder="0" id="lowPrice"
+                  aria-invalid="false" aria-required="false">
+                  <span class="mat-form-field-label-wrapper">
+                  <label class="mat-form-field-label ng-tns-c11-117" id="mat-form-field-label-37"
+                  for="mat-input-17" aria-owns="mat-input-17">
+                  <mat-label set-lan="from">
+                  &nbsp;
+                  </mat-label>
+                  </label>
+                  </span>
+                  </div>
+                  </div>
+                  <div class="mat-form-field-underline ng-tns-c11-117">
+                  <span class="mat-form-field-ripple">
+                  </span>
+                  </div>
+                  <div class="mat-form-field-subscript-wrapper">
+                  <div class="mat-form-field-hint-wrapper ng-tns-c11-117 ng-trigger ng-trigger-transitionMessages"
+                  style="opacity:1;transform:translateY(0%);0:opacity;1:transform;opacity:1;transform:translateY(0%);webkit-opacity:1;webkit-transform:translateY(0%);">
+                  <div class="mat-form-field-hint-spacer">
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  </mat-form-field>
+                  </label>
+                  <label class="o-priceRange__item">
+                  <mat-form-field appearance="fill" class="mat-form-field ng-tns-c11-118 mat-primary mat-form-field-type-mat-input mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label ng-touched ng-dirty ng-valid mat-form-field-should-float">
+                  <div class="mat-form-field-wrapper">
+                  <div class="mat-form-field-flex">
+                  <div class="mat-form-field-infix">
+                  <dm-currency-icon class="mat-form-field-icon">
+                  <span class="o-currencies--USD">
+                  </span>
+                  </dm-currency-icon>
+                  <input class="mat-input-element mat-form-field-autofill-control cdk-text-field-autofill-monitored ng-touched ng-dirty ng-valid"
+                  formcontrolname="priceTo" matinput="" placeholder="" id="highPrice"
+                  aria-invalid="false" aria-required="false">
+                  <span class="mat-form-field-label-wrapper">
+                  <label class="mat-form-field-label ng-tns-c11-118 mat-empty mat-form-field-empty"
+                  id="mat-form-field-label-39" for="mat-input-18" aria-owns="mat-input-18">
+                  <mat-label set-lan="to">
+                  &nbsp;</mat-label>
+                  </label>
+                  </span>
+                  </div>
+                  </div>
+                  <div class="mat-form-field-underline ng-tns-c11-118">
+                  <span class="mat-form-field-ripple">
+                  </span>
+                  </div>
+                  <div class="mat-form-field-subscript-wrapper">
+                  <div class="mat-form-field-hint-wrapper ng-tns-c11-118 ng-trigger ng-trigger-transitionMessages"
+                  style="opacity:1;transform:translateY(0%);0:opacity;1:transform;opacity:1;transform:translateY(0%);webkit-opacity:1;webkit-transform:translateY(0%);">
+                  <div class="mat-form-field-hint-spacer">
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  </mat-form-field>
+                  </label>
+                  </form>
+                  </price-range>
+                  </div>
+                  <dm-advanced-filters class="c-filters__list">
+                  <dm-autocomplete-filter>
+                  <mat-accordion class="mat-accordion"></mat-accordion>
+                  <div class="c-filters__item o-select">
+                  <div cdkoverlayorigin="" class="o-select__current">
+                  <strong class="o-select__currentTitle">
+                  Choose exterior
+                  </strong>
+                  <svg class="o-select__currentArrow mat-icon notranslate material-icons mat-icon-no-color" t="1566287544986" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5805" width="128" height="128"><path d="M836.802183 342.264666c-8.381992-8.381992-22.351978-8.381992-30.73397 0l-293.369714 293.369713-294.766712-293.369713c-8.381992-8.381992-22.351978-8.381992-30.73397 0-8.381992 8.381992-8.381992 22.351978 0 30.73397l310.133697 308.736698c8.381992 8.381992 22.351978 8.381992 30.73397 0l308.736699-308.736698c8.381992-8.381992 8.381992-22.351978 0-30.73397z" fill="#ffffff" p-id="5806"></path></svg>
+                  </div>
+                  <overlay class="ng-tns-c16-119"></overlay>
+                  </div>
+                  </dm-autocomplete-filter>
+                  <dm-autocomplete-filter>
+                  <mat-accordion class="mat-accordion"></mat-accordion>
+                  <div class="c-filters__item o-select">
+                  <div cdkoverlayorigin="" class="o-select__current">
+                  <strong class="o-select__currentTitle">
+                  Choose items category
+                  </strong>
+                  <svg class="o-select__currentArrow mat-icon notranslate material-icons mat-icon-no-color" t="1566287544986" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5805" width="128" height="128"><path d="M836.802183 342.264666c-8.381992-8.381992-22.351978-8.381992-30.73397 0l-293.369714 293.369713-294.766712-293.369713c-8.381992-8.381992-22.351978-8.381992-30.73397 0-8.381992 8.381992-8.381992 22.351978 0 30.73397l310.133697 308.736698c8.381992 8.381992 22.351978 8.381992 30.73397 0l308.736699-308.736698c8.381992-8.381992 8.381992-22.351978 0-30.73397z" fill="#ffffff" p-id="5806"></path></svg>
+                  </div>
+                  <overlay class="ng-tns-c16-120"></overlay>
+                  </div>
+                  </dm-autocomplete-filter>
+                  </dm-advanced-filters>
+                  </div>
+                  </div> -->
+                  <!-- 价格 -->
+                  <!-- <div class="c-assetFilters__item c-assetFilters__item--game selectBoxShow">
+                    <mat-form-field class="mat-form-field mat-primary mat-form-field-type-mat-select mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label mat-form-field-should-float">
+                      <div class="mat-form-field-wrapper">
+                        <div class="mat-form-field-flex">
+                          <div class="mat-form-field-infix">
+                            <mat-select class="mat-select">
+                              <div class="mat-select-trigger">
+                                <div class="mat-select-value">
+                                  <span class="mat-select-value-text ng-tns-c12-6">
+                                    <span class="ng-tns-c12-6">
+                                      <font class="selectTag" style="vertical-align: inherit;" id="priceTagShow">
+                                        由低到高
+                                      </font>
+                                    </span>
+                                  </span>
+                                </div>
+                                <div class="mat-select-arrow-wrapper">
+                                  <svg class="c-user__arrow mat-icon notranslate material-icons mat-icon-no-color"
+                                  t="1566287544986" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                  p-id="5805" width="128" height="128">
+                                    <path d="M836.802183 342.264666c-8.381992-8.381992-22.351978-8.381992-30.73397 0l-293.369714 293.369713-294.766712-293.369713c-8.381992-8.381992-22.351978-8.381992-30.73397 0-8.381992 8.381992-8.381992 22.351978 0 30.73397l310.133697 308.736698c8.381992 8.381992 22.351978 8.381992 30.73397 0l308.736699-308.736698c8.381992-8.381992 8.381992-22.351978 0-30.73397z"
+                                    fill="#ffffff" p-id="5806">
+                                    </path>
+                                  </svg>
+                                </div>
+                              </div>
+                            </mat-select>
+                            <span class="mat-form-field-label-wrapper">
+                              <label class="mat-form-field-label ng-tns-c11-5" id="mat-form-field-label-3"
+                              for="mat-select-1" aria-owns="mat-select-1">
+                                <mat-label>
+                                  <font style="vertical-align: inherit;">
+                                    价格
+                                  </font>
+                                </mat-label>
+                              </label>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="mat-form-field-underline ng-tns-c11-5">
+                          <span class="mat-form-field-ripple">
+                          </span>
+                        </div>
+                        <div class="mat-form-field-subscript-wrapper">
+                          <div class="mat-form-field-hint-wrapper ng-tns-c11-5 ng-trigger ng-trigger-transitionMessages"
+                          style="opacity:1;transform:translateY(0%);0:opacity;1:transform;opacity:1;transform:translateY(0%);webkit-opacity:1;webkit-transform:translateY(0%);">
+                            <div class="mat-form-field-hint-spacer">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="c-popover selectBox">
+                        <div class="o-select__list">
+                          <div class="o-select__item mat-ripple" onclick="priceTypeSelect(this)">
+                            <strong class="o-select__itemTitle">
+                              <font class="selectTag" style="vertical-align: inherit;">
+                                由低到高
+                              </font>
+                            </strong>
+                          </div>
+                          <div class="o-select__item mat-ripple" onclick="priceTypeSelect(this)">
+                            <strong class="o-select__itemTitle">
+                              <font class="selectTag" style="vertical-align: inherit;">
+                                由高到低
+                              </font>
+                            </strong>
+                          </div>
+                        </div>
+                      </div>
+                    </mat-form-field>
+                  </div> -->
+                  <!-- 代数 -->
+
+                  <!-- <div class="c-assetFilters__item c-assetFilters__item--game selectBoxShow">
+                    <mat-form-field class="mat-form-field mat-primary mat-form-field-type-mat-select mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label mat-form-field-should-float">
+                      <div class="mat-form-field-wrapper">
+                        <div class="mat-form-field-flex">
+                          <div class="mat-form-field-infix">
+                            <mat-select class="mat-select">
+                              <div class="mat-select-trigger">
+                                <div class="mat-select-value">
+                                  <span class="mat-select-value-text ng-tns-c12-6">
+                                    <span class="ng-tns-c12-6">
+                                      <font class="selectTag" style="vertical-align: inherit;" id="genTagShow">
+                                        所有
+                                      </font>
+                                    </span>
+                                  </span>
+                                </div>
+                                <div class="mat-select-arrow-wrapper">
+                                  <svg class="c-user__arrow mat-icon notranslate material-icons mat-icon-no-color"
+                                  t="1566287544986" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                  p-id="5805" width="128" height="128">
+                                    <path d="M836.802183 342.264666c-8.381992-8.381992-22.351978-8.381992-30.73397 0l-293.369714 293.369713-294.766712-293.369713c-8.381992-8.381992-22.351978-8.381992-30.73397 0-8.381992 8.381992-8.381992 22.351978 0 30.73397l310.133697 308.736698c8.381992 8.381992 22.351978 8.381992 30.73397 0l308.736699-308.736698c8.381992-8.381992 8.381992-22.351978 0-30.73397z"
+                                    fill="#ffffff" p-id="5806">
+                                    </path>
+                                  </svg>
+                                </div>
+                              </div>
+                            </mat-select>
+                            <span class="mat-form-field-label-wrapper">
+                              <label class="mat-form-field-label ng-tns-c11-5" id="mat-form-field-label-3"
+                              for="mat-select-1" aria-owns="mat-select-1">
+                                <mat-label>
+                                  <font style="vertical-align: inherit;">
+                                    代数
+                                  </font>
+                                </mat-label>
+                              </label>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="mat-form-field-underline ng-tns-c11-5">
+                          <span class="mat-form-field-ripple">
+                          </span>
+                        </div>
+                        <div class="mat-form-field-subscript-wrapper">
+                          <div class="mat-form-field-hint-wrapper ng-tns-c11-5 ng-trigger ng-trigger-transitionMessages"
+                          style="opacity:1;transform:translateY(0%);0:opacity;1:transform;opacity:1;transform:translateY(0%);webkit-opacity:1;webkit-transform:translateY(0%);">
+                            <div class="mat-form-field-hint-spacer">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="c-popover selectBox">
+                        <div class="o-select__list">
+                          <div class="o-select__item mat-ripple" onclick="genTypeSelect(this)">
+                            <strong class="o-select__itemTitle">
+                              <font class="selectTag" style="vertical-align: inherit;">
+                                所有
+                              </font>
+                            </strong>
+                          </div>
+                          <div class="o-select__item mat-ripple" onclick="genTypeSelect(this)">
+                            <strong class="o-select__itemTitle">
+                              <font class="selectTag" style="vertical-align: inherit;">
+                                0代
+                              </font>
+                            </strong>
+                          </div>
+                          <div class="o-select__item mat-ripple" onclick="genTypeSelect(this)">
+                            <strong class="o-select__itemTitle">
+                              <font class="selectTag" style="vertical-align: inherit;">
+                                1代
+                              </font>
+                            </strong>
+                          </div>
+                          <div class="o-select__item mat-ripple" onclick="genTypeSelect(this)">
+                            <strong class="o-select__itemTitle">
+                              <font class="selectTag" style="vertical-align: inherit;">
+                                2代
+                              </font>
+                            </strong>
+                          </div>
+                          <div class="o-select__item mat-ripple" onclick="genTypeSelect(this)">
+                            <strong class="o-select__itemTitle">
+                              <font class="selectTag" style="vertical-align: inherit;">
+                                3代
+                              </font>
+                            </strong>
+                          </div>
+                          <div class="o-select__item mat-ripple" onclick="genTypeSelect(this)">
+                            <strong class="o-select__itemTitle">
+                              <font class="selectTag" style="vertical-align: inherit;">
+                                4代
+                              </font>
+                            </strong>
+                          </div>
+                          <div class="o-select__item mat-ripple" onclick="genTypeSelect(this)">
+                            <strong class="o-select__itemTitle">
+                              <font class="selectTag" style="vertical-align: inherit;">
+                                X代
+                              </font>
+                            </strong>
+                          </div>
+                        </div>
+                      </div>
+                    </mat-form-field>
+                  </div> -->
+
+                  <!-- 性别 -->
+
+                  <!-- <div class="c-assetFilters__item c-assetFilters__item--game selectBoxShow">
+                    <mat-form-field class="mat-form-field mat-primary mat-form-field-type-mat-select mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label mat-form-field-should-float">
+                      <div class="mat-form-field-wrapper">
+                        <div class="mat-form-field-flex">
+                          <div class="mat-form-field-infix">
+                            <mat-select class="mat-select">
+                              <div class="mat-select-trigger">
+                                <div class="mat-select-value">
+                                  <span class="mat-select-value-text ng-tns-c12-6">
+                                    <span class="ng-tns-c12-6">
+                                      <font class="selectTag" style="vertical-align: inherit;" id="sexTagShow">
+                                        所有
+                                      </font>
+                                    </span>
+                                  </span>
+                                </div>
+                                <div class="mat-select-arrow-wrapper">
+                                  <svg class="c-user__arrow mat-icon notranslate material-icons mat-icon-no-color"
+                                  t="1566287544986" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                  p-id="5805" width="128" height="128">
+                                    <path d="M836.802183 342.264666c-8.381992-8.381992-22.351978-8.381992-30.73397 0l-293.369714 293.369713-294.766712-293.369713c-8.381992-8.381992-22.351978-8.381992-30.73397 0-8.381992 8.381992-8.381992 22.351978 0 30.73397l310.133697 308.736698c8.381992 8.381992 22.351978 8.381992 30.73397 0l308.736699-308.736698c8.381992-8.381992 8.381992-22.351978 0-30.73397z"
+                                    fill="#ffffff" p-id="5806">
+                                    </path>
+                                  </svg>
+                                </div>
+                              </div>
+                            </mat-select>
+                            <span class="mat-form-field-label-wrapper">
+                              <label class="mat-form-field-label ng-tns-c11-5" id="mat-form-field-label-3"
+                              for="mat-select-1" aria-owns="mat-select-1">
+                                <mat-label>
+                                  <font style="vertical-align: inherit;">
+                                    性别
+                                  </font>
+                                </mat-label>
+                              </label>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="mat-form-field-underline ng-tns-c11-5">
+                          <span class="mat-form-field-ripple">
+                          </span>
+                        </div>
+                        <div class="mat-form-field-subscript-wrapper">
+                          <div class="mat-form-field-hint-wrapper ng-tns-c11-5 ng-trigger ng-trigger-transitionMessages"
+                          style="opacity:1;transform:translateY(0%);0:opacity;1:transform;opacity:1;transform:translateY(0%);webkit-opacity:1;webkit-transform:translateY(0%);">
+                            <div class="mat-form-field-hint-spacer">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="c-popover selectBox">
+                        <div class="o-select__list">
+                          <div class="o-select__item mat-ripple" onclick="sexTypeSelect(this)">
+                            <strong class="o-select__itemTitle">
+                              <font class="selectTag" style="vertical-align: inherit;">
+                                所有
+                              </font>
+                            </strong>
+                          </div>
+                          <div class="o-select__item mat-ripple" onclick="sexTypeSelect(this)">
+                            <strong class="o-select__itemTitle">
+                              <font class="selectTag" style="vertical-align: inherit;">
+                                雄性
+                              </font>
+                            </strong>
+                          </div>
+                          <div class="o-select__item mat-ripple" onclick="sexTypeSelect(this)">
+                            <strong class="o-select__itemTitle">
+                              <font class="selectTag" style="vertical-align: inherit;">
+                                雌性
+                              </font>
+                            </strong>
+                          </div>
+                        </div>
+                      </div>
+                    </mat-form-field>
+                  </div> -->
+
+                  <!-- <div class="c-filters__item o-select" style="margin:0 4px 0 0;">
+                  <div class="o-select__current">
+                  <strong class="o-select__currentTitle">
+                  <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">
+                  选择外观
+                  </font>
+                  </font>
+                  </strong>
+                  <svg class="o-select__currentArrow mat-icon notranslate material-icons mat-icon-no-color" t="1566287544986" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5805" width="128" height="128"><path d="M836.802183 342.264666c-8.381992-8.381992-22.351978-8.381992-30.73397 0l-293.369714 293.369713-294.766712-293.369713c-8.381992-8.381992-22.351978-8.381992-30.73397 0-8.381992 8.381992-8.381992 22.351978 0 30.73397l310.133697 308.736698c8.381992 8.381992 22.351978 8.381992 30.73397 0l308.736699-308.736698c8.381992-8.381992 8.381992-22.351978 0-30.73397z" fill="#ffffff" p-id="5806"></path></svg>
+                  </div>
+                  <div class="c-popover selectBox">
+                  <div class="o-select__list">
+                  <div class="o-select__item mat-ripple">
+                  <strong class="o-select__itemTitle">
+                  <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">
+                  日期：最旧的优先
+                  </font>
+                  </font>
+                  </strong>
+                  </div>
+                  <div class="o-select__item mat-ripple">
+                  <strong class="o-select__itemTitle">
+                  <font style="vertical-align: inherit;">
+                  <font style="vertical-align: inherit;">
+                  价格：最低优先
+                  </font>
+                  </font>
+                  </strong>
+                  </div>
+                  </div>
+                  </div>
+                  </div> -->
+                  <!-- 刷新 -->
+                  <!-- <div class="c-assetFilters__item">
+                    <button class="o-filter o-filter--refresh mat-ripple" onclick="getSaleMarket(0)">
+                      <svg t="1566971809618" class="o-filter__icon mat-icon notranslate material-icons mat-icon-no-color"
+                      viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                      p-id="4252" width="32" height="32">
+                        <path d="M834.2 531.9c0 187.7-152.2 339.9-339.9 339.9S154.4 719.7 154.4 531.9c0-187.7 152.2-339.9 339.9-339.9 124.8 0 233.6 67.5 292.7 167.7h63.8c-64.1-132.5-199.4-224.1-356.5-224.1C275.4 135.6 98 313.1 98 531.9s177.4 396.3 396.3 396.3 396.3-177.4 396.3-396.3c0-4.9-0.6-9.7-0.7-14.6 0 0-1.4-28.9-28.7-28.9-30.6 0-27.6 28.9-27.6 28.9 0.1 4.9 0.6 9.7 0.6 14.6z"
+                        fill="#ffffff" p-id="4253">
+                        </path>
+                        <path d="M853.9 101.1C843 100 833.1 108 832 119l-21.6 213.7c-1.1 10.9-11 19-21.9 17.9L574.8 329c-10.9-1.1-20.8 6.9-21.9 17.9l-1.5 14.8c-1.1 10.9 6.9 20.8 17.9 21.9L783 405.2c10.9 1.1 19.9 2 19.9 2s9 0.9 19.9 2l14.8 1.5c10.9 1.1 20.8-6.9 21.9-17.9l27.1-268.3c1.1-10.9-6.9-20.8-17.9-21.9l-14.8-1.5z"
+                        fill="#ffffff" p-id="4254">
+                        </path>
+                      </svg>
+                    </button>
+                  </div> -->
+                  <div class="selecrCoinTag">
+                    <b>不动产</b>
+                    <!-- <em>idt</em> -->
+                    <!-- <span>X</span> -->
+                  </div>
+                  <div class="selecrCoinTag">
+                    <b>游戏</b>
+                    <!-- <em>idt</em> -->
+                    <!-- <span>X</span> -->
+                  </div>
+                  <div class="selecrCoinTag">
+                    <b>版权</b>
+                    <!-- <em>idt</em> -->
+                    <!-- <span>X</span> -->
+                  </div>
+                  <div class="selecrCoinTag">
+                    <b>加密艺术品</b>
+                    <!-- <em>idt</em> -->
+                    <!-- <span>X</span> -->
+                  </div>
+                  <span class="c-assetFilters__spacer">
+                  </span>
+                  <!-- <filter-game-selector class="c-assetFilters__item c-assetFilters__item--game">
+                  <mat-form-field appearance="fill" class="mat-form-field ng-tns-c11-5 mat-primary mat-form-field-type-mat-select mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label ng-untouched ng-pristine ng-valid mat-form-field-should-float">
+                  <div class="mat-form-field-wrapper">
+                  <div class="mat-form-field-flex">
+                  <div class="mat-form-field-infix">
+                  <mat-select class="mat-select ng-tns-c12-6 ng-untouched ng-pristine ng-valid" disableoptioncentering="" role="listbox" id="mat-select-1" tabindex="0" aria-labelledby="mat-form-field-label-3" aria-required="false" aria-disabled="false" aria-invalid="false" aria-multiselectable="false">
+                  <div class="mat-select-trigger" aria-hidden="true" cdk-overlay-origin="">
+                  <div class="mat-select-value">
+                  <span class="mat-select-value-text ng-tns-c12-6">
+                  <span class="ng-tns-c12-6">
+                  <font style="vertical-align: inherit;" set-lan="sortBy3">
+                  &nbsp;
+                  </font>
+                  </span>
+                  </span>
+                  </div>
+                  <div class="mat-select-arrow-wrapper">
+                  <svg class="c-user__arrow mat-icon notranslate material-icons mat-icon-no-color" t="1566287544986" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5805" width="128" height="128"><path d="M836.802183 342.264666c-8.381992-8.381992-22.351978-8.381992-30.73397 0l-293.369714 293.369713-294.766712-293.369713c-8.381992-8.381992-22.351978-8.381992-30.73397 0-8.381992 8.381992-8.381992 22.351978 0 30.73397l310.133697 308.736698c8.381992 8.381992 22.351978 8.381992 30.73397 0l308.736699-308.736698c8.381992-8.381992 8.381992-22.351978 0-30.73397z" fill="#ffffff" p-id="5806"></path></svg>
+                  </div>
+                  </div>
+                  </mat-select>
+                  <span class="mat-form-field-label-wrapper">
+                  <label class="mat-form-field-label ng-tns-c11-5" id="mat-form-field-label-3" for="mat-select-1" aria-owns="mat-select-1">
+                  <mat-label>
+                  <font style="vertical-align: inherit;" set-lan="sortBy">
+                  &nbsp;
+                  </font>
+                  </mat-label>
+                  </label>
+                  </span>
+                  </div>
+                  </div>
+                  <div class="mat-form-field-underline ng-tns-c11-5">
+                  <span class="mat-form-field-ripple">
+                  </span>
+                  </div>
+                  <div class="mat-form-field-subscript-wrapper">
+                  <div class="mat-form-field-hint-wrapper ng-tns-c11-5 ng-trigger ng-trigger-transitionMessages" style="opacity:1;transform:translateY(0%);0:opacity;1:transform;opacity:1;transform:translateY(0%);webkit-opacity:1;webkit-transform:translateY(0%);">
+                  <div class="mat-form-field-hint-spacer">
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+                  </mat-form-field>
+                  </filter-game-selector> -->
+                  <!-- 筛选条件 -->
+                  <!-- <div class="c-assetFilters__item" onclick="showGameMsg()">
+                  <button aria-label="Seo区按钮" class="o-filter mat-ripple">
+                  <i class="o-icon o-filter__icon" inlinesvg="icon-seo-area.svg">
+                  <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <g>
+                  <rect x="4" y="3" width="16" height="18" rx="1" stroke="currentColor"
+                  fill-opacity="0" stroke-width="2">
+                  </rect>
+                  <path d="M12 2H18C19.1046 2 20 2.89543 20 4V20C20 21.1046 19.1046 22 18 22H12V2Z">
+                  </path>
+                  </g>
+                  </svg>
+                  </i>
+                  </button>
+                  </div> -->
+                  <!-- <span class="c-assetFilters__spacer">
+                  </span> -->
+                  <!-- <div class="c-assetFilters__item">
+                  <button class="o-filter mat-ripple">
+                  <i class="o-icon o-filter__icon" inlinesvg="icon-seo-area.svg">
+                  <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <g>
+                  <rect x="4" y="3" width="16" height="18" rx="1" stroke="currentColor"
+                  fill-opacity="0" stroke-width="2">
+                  </rect>
+                  <path d="M12 2H18C19.1046 2 20 2.89543 20 4V20C20 21.1046 19.1046 22 18 22H12V2Z">
+                  </path>
+                  </g>
+                  </svg>
+                  </i>
+                  </button>
+                  </div> -->
+                </div>
+              </div>
+            </filters>
+            <!-- <div>
+              <div class="c-chosenFilters">
+              </div>
+            </div> -->
+            <div class="c-exchange__inventory">
+              <div class="c-assetList">
+                <div class="c-assetList__empty">
+                </div>
+                <div class="с-virtualscroll с-virtualscroll-placeholder--large" id="getSaleMarketScroll">
+                  <div _ngcontent-c9="" class="od-scroll-container" style="width: 640px; height:auto; background: url(&quot;data:image/svg+xml,%3Csvg width='185' height='235' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='5' y='5' opacity='.5' width='190' height='240' rx='2' fill='%232A2C2E'/%3E%3C/svg%3E&quot;) repeat;">
+                    <div style="transform: translateY(0px);" id="getSaleMarket" class="assetlist">
+                      <!-- <div class="c-asset item" style="" id="saleItemId_8162">
+                      <div style="background: #2a2c2e;border-radius: 2px;width:100%;height:100%;">
+                      <div class="flex" style="line-height: 39px;padding:0 10px;">
+                      <div style="flex:1">
+                      <span style="color:#89d295;font-weight: bolder;">评分:</span>
+                      <span>178</span>
+                      </div>
+                      <div>
+                      <span style="color:#89d295;font-weight: bolder;">LV.</span>
+                      <span>11</span>
+                      </div>
+                      </div>
+                      <div class="flex" style="height: 39px;">
+                      <div style="margin-right:7px;">
+                      <svg t="1566445356488" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2277" width="28" height="28">
+                      <path d="M942.427421 234.839536a17.254917 17.254917 0 1 0-28.988261 18.715833 475.626037 475.626037 0 0 1 76.013661 258.559181c0 263.229511-214.145024 477.386038-477.386038 477.386038s-477.386038-214.156527-477.386038-477.386038 214.145024-477.386038 477.386038-477.386039a475.683553 475.683553 0 0 1 166.659492 29.908523 17.254917 17.254917 0 0 0 12.055436-32.335714 511.964892 511.964892 0 1 0 251.64571 202.538216z" fill="#89d295" p-id="2278"></path>
+                      <path d="M796.059711 128.365195a482.807533 482.807533 0 0 1 34.969965 28.562639 17.254917 17.254917 0 1 0 23.064073-25.663813c-11.963409-10.755565-24.571002-21.050999-37.47768-30.621726a17.256067 17.256067 0 1 0-20.556358 27.7229zM385.496215 534.22385L261.088263 751.647308l242.144003 144.12457-117.736051-361.548028zM257.614273 707.187138l117.402456-205.172466-42.32056-129.964036-75.081896 335.136502zM621.370931 503.65964l-108.671467-191.736638-110.385456 192.898469 110.523495 339.381212 108.533428-340.543043zM689.332298 373.074428l-40.721605 127.755406 116.447684 205.460049-75.726079-333.215455zM638.223233 533.407117L522.868361 895.35776l239.072628-143.664439L638.223233 533.407117zM673.423264 340.336099L525.514115 130.263235v153.361703l106.232773 187.457419 41.676376-130.746258zM500.413963 282.865722V129.29696L348.708732 340.175053l43.125789 132.448743 108.579442-189.758074z" fill="#89d295" p-id="2279"></path>
+                      </svg>
+                      </div>
+                      <span>100.0000 EOS</span>
+                      </div>
+                      <div style="color: rgba(0, 0, 0,0);text-align: center;">
+                      <img class="c-asset__img" style="height: 95px;max-height: 95px;" loading="auto" alt="Golden Seekling" src="https://easytrade-1254037028.file.myqcloud.com/xpet/db2226569a6535eb75ba490ff0760d77.png">
+                      </div>
+                      <div class="flex"><div class="shopAssetMsgBox">名字环境设计</div></div>
+                      </div>
+                      </div> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- loading -->
+              <div style="display: none;" id="saleMarketLoadingShow">
+                <div class="c-exchange__loading c-exchange__loading--more">
+                  <div class="c-exchange__spinner mat-spinner mat-progress-spinner mat-primary mat-progress-spinner-indeterminate-animation"
+                  mode="indeterminate" role="progressbar" style="width: 100px; height: 100px;">
+                    <svg focusable="false" preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100"
+                    style="width: 100px; height: 100px;">
+                      <circle cx="50%" cy="50%" r="45" style="animation-name: mat-progress-spinner-stroke-rotate-100; stroke-dasharray: 282.743px; stroke-width: 10%;">
+                      </circle>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="c-exchange__sum c-exchange__sum--market">
+            <div class="c-exchangeSum c-exchangeSum--market">
+            <proposes-hide-button class="c-exchangeSum__hideButton">
+            <button mat-fab="" class="mat-fab mat-accent">
+            <span class="mat-button-wrapper">
+            <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color"
+            role="img" aria-hidden="true">
+            </mat-icon>
+            </span>
+            <div class="mat-button-ripple mat-ripple mat-button-ripple-round">
+            </div>
+            <div class="mat-button-focus-overlay">
+            </div>
+            </button>
+            </proposes-hide-button>
+            <description class="c-exchangeSum__description">
+            <p>
+            <span>
+            <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">
+            如果购买，您将被要求支付
+            </font>
+            </font>
+            </span>
+            <strong class="c-exchangeSum__text c-exchangeSum__text--market">
+            <price-with-icon>
+            <dm-currency-icon>
+            <span class="o-currencies--USD">
+            </span>
+            </dm-currency-icon>
+            <strong>
+            <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">
+            45.23
+            </font>
+            </font>
+            </strong>
+            </price-with-icon>
+            </strong>
+            </p>
+            </description>
+            <div class="c-exchangeSum__count">
+            <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">
+            （19）
+            </font>
+            </font>
+            </div>
+            <div class="c-exchangeSum__price">
+            <dm-currency-icon>
+            <span class="o-currencies--USD">
+            </span>
+            </dm-currency-icon>
+            <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">
+            45.23
+            </font>
+            </font>
+            </div>
+            </div>
+            </div>
+            <div class="c-exchange__propose">
+            <div class="c-assetList c-assetList--sm">
+            <div class="c-assetList__empty">
+            </div>
+            <div class="с-virtualscroll с-virtualscroll-placeholder--small"
+            _nghost-c9="">
+            <div _ngcontent-c9="" class="od-scroll-container" style="width: 588px; height: 376px; background: url(&quot;data:image/svg+xml,%3Csvg width='113' height='94' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='2' y='1' opacity='.5' width='107' height='88' rx='2' fill='%232A2C2E'/%3E%3C/svg%3E&quot;) repeat;">
+            <div _ngcontent-c9="">
+            <div _ngcontent-c9="">
+            </div>
+            </div>
+            <div _nghost-c19="" style="transform: translateY(0px);" id="getMyShop">
+            </div>
+            </div>
+            </div>
+            </div>
+            </div> -->
+            <div class="c-exchange__buttons" style="padding-top: 16px;display: none;">
+              <div class="c-exchangeButtons" style="display: none;">
+                <!-- <exchange-button class="c-exchangeButtons__item c-exchangeButtons__item--exchange">
+                <flow-button class="o-flowButton" icname="icon-exchange">
+                <dm-button data-analytics-id="exchange_startButton">
+                <button class="o-dmButton mat-ripple o-dmButton--violet"
+                type="undefined">
+                <i class="o-dmButton__icon o-icon o-icon-exchange">
+                <svg width="14" height="24" viewBox="0 0 14 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.353 12l-.995 1.057 3.939 4.193H2v1.5h9.296l-3.938 4.192L8.353 24 14 18l-5.647-6zM5.647 0l.995 1.058L2.704 5.25H12v1.5H2.704l3.938 4.193L5.647 12 0 6l5.647-6z">
+                </path>
+                </svg>
+                </i>
+                <span class="o-dmButton__text o-dmButton__text--value">
+                <strong class="o-dmButton__textCaption">
+                <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">
+                交换
+                </font>
+                </font>
+                </strong>
+                <span class="o-dmButton__sum">
+                <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">
+                0 x 19项
+                </font>
+                </font>
+                </span>
+                </span>
+                </button>
+                </dm-button>
+                </flow-button>
+                </exchange-button>
+                <flow-button class="c-exchangeButtons__item c-exchangeButtons__item--target"
+                color="orange" icname="icon-target">
+                <dm-button data-analytics-id="targetsCreate_startButton">
+                <button class="o-dmButton mat-ripple o-dmButton--orange"
+                type="undefined">
+                <i class="o-dmButton__icon o-icon o-icon-target">
+                <svg width="37" height="37" viewBox="0 0 37 37" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.526 12.868a5.998 5.998 0 0 0-8.039 5.642 6 6 0 1 0 11.926-.943l-2.783 1.099a3.149 3.149 0 1 1-2.94-3.295l1.836-2.503z"
+                clip-rule="evenodd" fill-rule="evenodd">
+                </path>
+                <path d="M19.269 6.537c-.26-.017-.521-.025-.785-.025-6.624 0-11.997 5.372-11.997 12 0 6.627 5.373 12 12 12 6.628 0 12-5.373 12-12 0-1.1-.147-2.164-.424-3.175l-2.98 1.176a8.821 8.821 0 0 1-8.593 10.819c-4.871 0-8.824-3.95-8.824-8.82a8.821 8.821 0 0 1 12.575-7.983l.746-1.017-3.718-2.975z"
+                clip-rule="evenodd" fill-rule="evenodd">
+                </path>
+                <path d="M35.219.065l-12.306 6.3 3.829 3.046-5.428 6.822 12.306-6.3-3.828-3.046L35.219.065z">
+                </path>
+                </svg>
+                </i>
+                <span class="o-dmButton__text o-dmButton__text--value">
+                <strong class="o-dmButton__textCaption">
+                <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">
+                目标|
+                </font>
+                <font style="vertical-align: inherit;">
+                出价
+                </font>
+                </font>
+                </strong>
+                <span class="o-dmButton__sum">
+                <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">
+                19项
+                </font>
+                </font>
+                </span>
+                </span>
+                </button>
+                </dm-button>
+                </flow-button> -->
+                <flow-button class="c-exchangeButtons__item c-exchangeButtons__item--buy"
+                color="green" icname="icon-buy">
+                  <dm-button data-analytics-id="buy_startButton">
+                    <button class="o-dmButton mat-ripple o-dmButton--green" type="undefined">
+                      <i class="o-dmButton__icon o-icon o-icon-buy">
+                        <svg width="18" height="17" viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M5.893 14.72c-1.048 0-1.905.828-1.905 1.84s.857 1.84 1.905 1.84c1.049 0 1.906-.828 1.906-1.84s-.857-1.84-1.906-1.84zM.176 0v1.84h1.906l3.43 6.992-1.334 2.208c-.095.276-.19.644-.19.92 0 1.012.857 1.84 1.905 1.84H17.33v-1.84H6.275c-.096 0-.191-.092-.191-.184v-.092l.858-1.564h7.051c.763 0 1.335-.368 1.62-.92l3.431-5.98c.19-.184.19-.276.19-.46 0-.552-.38-.92-.952-.92H4.178L3.32 0H.176zm15.247 14.72c-1.048 0-1.906.828-1.906 1.84s.858 1.84 1.906 1.84 1.906-.828 1.906-1.84-.858-1.84-1.906-1.84z">
+                          </path>
+                        </svg>
+                      </i>
+                      <span class="o-dmButton__text o-dmButton__text--value">
+                        <strong class="o-dmButton__textCaption">
+                          <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;" set-lan="buy">
+                              &nbsp;
+                            </font>
+                          </font>
+                        </strong>
+                        <span class="o-dmButton__sum">
+                          <dm-currency-icon>
+                            <span class="o-currencies--USD">
+                            </span>
+                          </dm-currency-icon>
+                          <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">
+                              45.23
+                            </font>
+                          </font>
+                        </span>
+                      </span>
+                    </button>
+                  </dm-button>
+                </flow-button>
+                <flow-button class="c-exchangeButtons__item c-exchangeButtons__item--equaliser"
+                icname="icon-equaliser">
+                  <dm-button data-analytics-id="equaliser_startButton">
+                    <button class="o-dmButton mat-ripple o-dmButton--round o-dmButton--primary"
+                    type="undefined">
+                      <i class="o-dmButton__icon o-icon o-icon-equaliser">
+                        <svg width="24" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M12 0a2 2 0 0 0-1.73 1H2v2h2l-4 8a5 5 0 0 0 10 0L6 3h4.271A2 2 0 0 0 13 3.732 2 2 0 0 0 13.73 3H18l-4 8a5 5 0 0 0 10 0l-4-8h2V1h-8.271A2 2 0 0 0 12 0zM5 5.021L7.988 11H2.012L5 5.021zm14 0L21.988 11h-5.976L19 5.021z"
+                          fill="#fff">
+                          </path>
+                        </svg>
+                      </i>
+                      <span class="o-dmButton__text">
+                        <strong class="o-dmButton__textCaption">
+                        </strong>
+                        <span class="o-dmButton__sum">
+                        </span>
+                      </span>
+                    </button>
+                  </dm-button>
+                </flow-button>
+                <button class="c-exchangeButtons__item c-exchangeButtons__item--filters o-dmButton o-dmButton--primary o-dmButton--round">
+                  <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color"
+                  role="img" aria-hidden="true">
+                    filter_list
+                  </mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="padding:10px 20px;">
+        <div class="с-exchangeNotification" id="footerMsg" style="margin-bottom: 0px;text-align: center;">
+          &nbsp;
+        </div>
+      </div>
+    </div>
+    <!-- <div class="cdk-overlay-container" id="panelShow" style="display:
+    none;"> -->
+    <div class="cdk-overlay-container" id="panelShow">
+
+      
+      <!-- detail start -->
+      <!-- <div class="cdk-overlay-backdrop cdk-overlay-dark-backdrop cdk-overlay-backdrop-showing">
+      </div> -->
+      <!-- <div class="cdk-global-overlay-wrapper" dir="ltr" style="justify-content:
+      center; align-items: center;">
+      <div id="cdk-overlay-5" class="cdk-overlay-pane" style="max-width: 80vw; pointer-events: auto; position: static;">
+      <div tabindex="0" class="cdk-visually-hidden cdk-focus-trap-anchor" aria-hidden="true">
+      </div>
+      <mat-dialog-container aria-modal="true" class="mat-dialog-container ng-tns-c29-42 ng-trigger ng-trigger-dialogContainer"
+      tabindex="-1" id="mat-dialog-5" role="dialog" style="transform:none;0:transform;transform:none;webkit-transform:none;">
+      <asset-description>
+      <asset-description-layout>
+      <div class="c-dialog c-dialog--preview">
+      <div class="c-dialogHeader c-dialogHeader--back">
+      <nav class="c-dialogHeader__nav">
+      <mat-icon class="c-dialogHeader__back mat-icon notranslate material-icons mat-icon-no-color"
+      role="img" aria-hidden="true">arrow_back</mat-icon>
+      <ul class="c-dialogHeader__navList">
+      <li class="ng-tns-c30-43">
+      <a class="c-dialogHeader__navLink active">Item details</a>
+      </li>
+      <li class="ng-tns-c30-43">
+      <a class="c-dialogHeader__navLink">Sales history</a>
+      </li>
+      </ul>
+      </nav>
+      <div class="c-dialogHeader__inner">
+      <button class="c-dialogHeader__close" mat-dialog-close="" type="button" data-analytics-id="logIn_close" onclick="$('.cdk-overlay-container').hide()">    <img src="images/close.png" alt="" class="mat-icon notranslate material-icons mat-icon-no-color">
+      </button>
+      </div>
+      </div>
+      <div class="c-dialog__body c-dialog__body--preview"
+      scrollspy="">
+      <div class="spiedSection" id="itemsDetails">
+      <div class="c-assetPreview">
+      <div class="c-assetPreview__inner">
+      <div class="c-assetPreview__figure c-assetPreview__figure--dota2-skins">
+      <div class="u-game--dota2" style="color: rgb(228, 174, 57);">
+      <img class="c-assetPreview__img" src="https://steamcommunity-a.akamaihd.net/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KW1Zwwo4NUX4oFJZEHLbXK9QlSPcU7pw1SR0nCCOCsxcTsUk9gLBdDpKPqLwZy2MzJYylL_8ikjb-IlufxDLbekm5dpscj2b-Zp9yn0VC2rxFuNWH7dYOSJgY4aAuG_1W8lO_og8O5u5jKzHB9-n51ZVJK5r8"
+      alt="Dark Artistry Cape">
+      </div>
+      </div>
+      <asset-action-button>
+      <div class="c-assetPreviewButtons">
+      <div class="c-assetPreviewButtons__item">
+      <a class="c-assetPreviewButtons__button mat-flat-button" >
+      <span class="mat-button-wrapper">
+      View at Steam
+      </span>
+      <div class="mat-button-ripple mat-ripple">
+      </div>
+      <div class="mat-button-focus-overlay">
+      </div>
+      </a>
+      </div>
+      </div>
+      </asset-action-button>
+      </div>
+      <div class="c-assetPreview__inner">
+      <h3 class="c-assetPreview__title">
+      Dark Artistry Cape&nbsp;
+      </h3>
+      <asset-card-price>
+      <div class="c-assetPreviewParam c-assetPreviewParam--market">
+      <strong class="c-assetPreviewParam__label">
+      Price:
+      </strong>
+      <div class="c-assetPreviewParam__value">
+      <span class="c-assetPreviewParam__number">
+      <dm-currency-icon>
+      <span class="o-currencies--USD">
+      </span>
+      </dm-currency-icon>
+      115.50
+      </span>
+      <asset-discount-badge>
+      <div class="o-assetBadge o-assetBadge--discount">
+      -29%
+      </div>
+      </asset-discount-badge>
+      </div>
+      </div>
+      </asset-card-price>
+      <asset-card-price viewtype="suggested">
+      <div class="c-assetPreviewParam c-assetPreviewParam--suggested">
+      <strong class="c-assetPreviewParam__label">
+      Suggested price:
+      </strong>
+      <div class="c-assetPreviewParam__value">
+      <span class="c-assetPreviewParam__number">
+      <dm-currency-icon>
+      <span class="o-currencies--USD">
+      </span>
+      </dm-currency-icon>
+      164.92
+      </span>
+      </div>
+      </div>
+      </asset-card-price>
+      <asset-trade-lock>
+      </asset-trade-lock>
+      <asset-params>
+      <div class="c-assetPreviewParam">
+      <strong class="c-assetPreviewParam__label">
+      Hero:
+      </strong>
+      <span class="c-assetPreviewParam__value c-assetPreviewParam__value--hero">
+      Invoker
+      </span>
+      </div>
+      <div class="c-assetPreviewParam">
+      <strong class="c-assetPreviewParam__label">
+      Owner’s Blockchain ID:
+      </strong>
+      <span class="c-assetPreviewParam__value c-assetPreviewParam__value--ownersBlockchainId">
+      336a0a11d10935838cddc10ec423f5b7d3f6f777a1f83636d76ce17ace8fb2f0
+      </span>
+      </div>
+      <div class="c-assetPreviewParam">
+      <strong class="c-assetPreviewParam__label">
+      Rarity:
+      </strong>
+      <span class="c-assetPreviewParam__value c-assetPreviewParam__value--rarity">
+      Immortal
+      </span>
+      </div>
+      </asset-params>
+      </div>
+      </div>
+      </div>
+      <div class="spiedSection" id="salesHistory">
+      <asset-sales-history>
+      <div class="c-assetPreview__titleBlock">
+      <p class="c-assetPreview__title">
+      Sales History
+      </p>
+      <sales-range-selector>
+      <button class="c-assetPreviewHistory__date c-assetPreviewHistory__date--active">
+      7D
+      </button>
+      <button class="c-assetPreviewHistory__date">
+      1M
+      </button>
+      <button class="c-assetPreviewHistory__date">
+      6M
+      </button>
+      <button class="c-assetPreviewHistory__date">
+      1Y
+      </button>
+      </sales-range-selector>
+      </div>
+      <sales-chart>
+      <div class="sales-chart">
+      <div class="chartjs-size-monitor">
+      <div class="chartjs-size-monitor-expand">
+      <div class="">
+      </div>
+      </div>
+      <div class="chartjs-size-monitor-shrink">
+      <div class="">
+      </div>
+      </div>
+      </div>
+      <canvas basechart="" class="chartjs-render-monitor" style="display: block; width: 547px; height: 273px;"
+      width="547" height="273">
+      </canvas>
+      <div class="chartInfo">
+      </div>
+      <div id="chartjs-tooltip" class="center" style="opacity: 0; min-width: 85px; position: absolute; left: 130.987px; top: 8.11781px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 12px; font-style: normal; padding: 6px; pointer-events: none; z-index: 9999;">
+      <div>
+      <p class="price">
+      $116.26
+      </p>
+      <p>
+      4 Feb 2020
+      </p>
+      <p>
+      4 items
+      </p>
+      </div>
+      </div>
+      </div>
+      </sales-chart>
+      <last-sales>
+      <p class="c-assetPreview__title">
+      Recent sales
+      </p>
+      <table class="c-assetPreview__table">
+      <tr class="c-assetPreview__row--header">
+      <td class="c-assetPreview__cell">
+      Date/Time
+      </td>
+      <td class="c-assetPreview__cell">
+      Selling price
+      </td>
+      </tr>
+      <tr class="c-assetPreview__row">
+      <td class="c-assetPreview__cell">
+      9 Feb 2020 20:50
+      </td>
+      <td class="c-assetPreview__cell">
+      115.80
+      </td>
+      </tr>
+      <tr class="c-assetPreview__row">
+      <td class="c-assetPreview__cell">
+      9 Feb 2020 20:50
+      </td>
+      <td class="c-assetPreview__cell">
+      115.80
+      </td>
+      </tr>
+      <tr class="c-assetPreview__row">
+      <td class="c-assetPreview__cell">
+      9 Feb 2020 20:50
+      </td>
+      <td class="c-assetPreview__cell">
+      115.80
+      </td>
+      </tr>
+      </table>
+      </last-sales>
+      </asset-sales-history>
+      </div>
+      </div>
+      <div class="c-dialog__footer">
+      <div class="c-dialog__buttons c-dialog__buttons--preview">
+      <asset-action-button>
+      <div class="c-assetPreviewButtons">
+      </div>
+      </asset-action-button>
+      </div>
+      </div>
+      </div>
+      </asset-description-layout>
+      </asset-description>
+      </mat-dialog-container>
+      <div tabindex="0" class="cdk-visually-hidden cdk-focus-trap-anchor" aria-hidden="true">
+      </div>
+      </div>
+      </div> -->
+      <!-- detail end -->
+      <!-- shuxing start -->
+      <!-- <div class="cdk-overlay-backdrop cdk-overlay-dark-backdrop cdk-overlay-backdrop-showing">
+      </div>
+      <div class="cdk-global-overlay-wrapper" dir="ltr" style="justify-content: center; align-items: center;">
+      <div id="cdk-overlay-8" class="cdk-overlay-pane" style="max-width: 80vw; pointer-events: auto; position: static;">
+      <div tabindex="0" class="cdk-visually-hidden cdk-focus-trap-anchor" aria-hidden="true">
+      </div>
+      <div aria-modal="true" class="mat-dialog-container ng-tns-c27-23 ng-trigger ng-trigger-dialogContainer"
+      tabindex="-1" id="mat-dialog-5" role="dialog" style="transform:none;0:transform;transform:none;webkit-transform:none;">
+      <div>
+      <div class="c-auth c-auth--dialog">
+      <div class="c-auth__inner">
+      <div class="c-authHeader c-authHeader--shadow">
+      <h3 class="c-authHeader__title">
+      <span>
+      上架物品
+      </span>
+      </h3>
+      <button class="c-dialogHeader__close" mat-dialog-close="" type="button"
+      data-analytics-id="logIn_close" onclick="$('.cdk-overlay-container').hide()">
+      <img src="images/close.png" alt="" class="mat-icon notranslate material-icons mat-icon-no-color">
+      </button>
+      </div>
+      <div class="c-dialog__body c-dialog__body--preview" scrollspy="">
+      <div class="spiedSection" id="itemsDetails">
+      <div class="c-assetPreview">
+      <div class="c-assetPreview__inner">
+      <div class="c-assetPreview__figure c-assetPreview__figure--dota2-skins">
+      <div style="color: rgb(228, 174, 57);">
+      <img class="c-assetPreview__img" src="https://easytrade-1254037028.file.myqcloud.com/xpet/b9c91202bcbb16402021fd277ac1a941.png"
+      alt="Dark Artistry Cape">
+      </div>
+      </div>
+      </div>
+      <div class="c-assetPreview__inner">
+      <h3 class="c-assetPreview__title">
+      怪兽 EOS#8158&nbsp;
+      </h3>
+      <div class="c-assetPreviewParam">
+      <strong class="c-assetPreviewParam__label">
+      金丹:
+      </strong>
+      <span class="c-assetPreviewParam__value c-assetPreviewParam__value--hero">
+      1
+      </span>
+      </div>
+      <div class="c-assetPreviewParam">
+      <strong class="c-assetPreviewParam__label">
+      游戏属性:
+      </strong>
+      <span class="c-assetPreviewParam__value c-assetPreviewParam__value--hero">
+      总点数：224
+      </span>
+      </div>
+      <asset-trade-lock>
+      </asset-trade-lock>
+      <asset-params>
+      <div class="c-assetPreviewParam">
+      <strong class="c-assetPreviewParam__label">
+      货主:
+      </strong>
+      <span class="c-assetPreviewParam__value c-assetPreviewParam__value--hero">
+      xpetuser1111
+      </span>
+      </div>
+      <div class="" style="margin-top:20px">
+      </div>
+      </asset-params>
+      </div>
+      </div>
+      </div>
+      <div class="c-authForm__field mat-form-field mat-primary mat-form-field-type-mat-input mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label  mat-form-field-invalid mat-form-field-hide-placeholder">
+      <div class="msgline"></div>
+      <p class="c-assetPreview__title" style="padding:10px 0;">
+      属性
+      </p>
+      <div class="mat-form-field-wrapper flex" style="justify-content: flex-start;flex-wrap: wrap;">
+      <div class="attrBox">
+      <div class="type">名称</div>
+      <div class="header">EOD怪兽#5652</div>
+      <div class="sub">775712中的1</div>
+      </div>
+      <div class="attrBox">
+      <div class="type">幸运</div>
+      <div class="header">无</div>
+      <div class="sub">775712中的1</div>
+      </div>
+      <div class="attrBox">
+      <div class="type">变异</div>
+      <div class="header">否</div>
+      <div class="sub">775712中的1</div>
+      </div>
+      <div class="attrBox">
+      <div class="type">代数</div>
+      <div class="header">33</div>
+      <div class="sub">775712中的1</div>
+      </div>
+      <div class="attrBox">
+      <div class="type">速度</div>
+      <div class="header">快速</div>
+      <div class="sub">775712中的1</div>
+      </div>
+      <div style="flex:1">
+      </div>
+      </div>
+      </div>
+      <div class="c-authForm__field mat-form-field mat-primary mat-form-field-type-mat-input mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label  mat-form-field-invalid mat-form-field-hide-placeholder">
+      <div class="msgline"></div>
+      <p class="c-assetPreview__title" style="padding:10px 0;">
+      技能
+      </p>
+      <div class="mat-form-field-wrapper flex" style="justify-content: flex-start;flex-wrap: wrap;">
+      <div class="flex skillImgsBox">
+      <img src="https://xpet.io/images/skill/BLOODTHIRSTY.jpg" alt="" style="">
+      <img src="https://xpet.io/images/skill/BLOODTHIRSTY.jpg" alt="" style="">
+      <img src="https://xpet.io/images/skill/BLOODTHIRSTY.jpg" alt="" style="">
+      <img src="https://xpet.io/images/skill/BLOODTHIRSTY.jpg" alt="" style="">
+      <img src="https://xpet.io/images/skill/BLOODTHIRSTY.jpg" alt="" style="">
+      <img src="https://xpet.io/images/skill/BLOODTHIRSTY.jpg" alt="" style="">
+      <img src="https://xpet.io/images/skill/BLOODTHIRSTY.jpg" alt="" style="">
+      </div>
+      <div style="flex:1">
+      </div>
+      </div>
+      </div>
+      <div appearance="fill" class="c-authForm__field mat-form-field mat-primary mat-form-field-type-mat-input mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label mat-form-field-invalid mat-form-field-hide-placeholder">
+      <div class="msgline"></div>
+      <div class="mat-form-field-wrapper" style="margin: 0 auto;">
+      <div class="mat-form-field-flex" style="padding-top: 0;">
+      <input type="text" id="lootNum" placeholder="请输入上架金额" style="background: none;border:0;height:100%;width:100%;font-size:20px;"
+      maxlength="11">
+      <span style="padding-left: 15px;">
+      EOS
+      </span>
+      </div>
+      </div>
+      </div>
+      <div class="" style="margin:0 auto 20px;width:100%;">
+      <div style="margin: 0 auto;" onclick="saleGo()">
+      <button class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple"
+      type="submit" data-analytics-id="logIn_logInWithEmail">
+      <svg t="1566885363220" class="mat-icon notranslate material-icons mat-icon-no-color"
+      viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+      p-id="2873" width="32" height="32">
+      <path d="M207.977931 224.750345l63.770483 387.001379c9.463172 0.494345 18.996966 1.377103 28.495448 1.377104 180.082759 0.070621 360.236138 0.070621 540.354207 0 36.687448 0 45.479724-10.840276 50.846897-47.492414 13.135448-89.935448 28.460138-179.553103 43.04331-269.27669 2.295172-14.230069 6.426483-28.177655 8.015448-42.443034 2.471724-22.457379-11.581793-28.848552-30.861241-28.848552l-140.958897-0.105931h-33.82731l13.170758-54.448552c63.134897 0 124.433655-1.588966 185.661794 0.494345 52.082759 1.730207 73.092414 46.150621 66.030344 92.513103-17.302069 112.993103-35.239724 225.880276-53.106758 338.802759-6.426483 40.536276-43.926069 69.067034-91.171311 69.102345-180.118069 0.141241-360.236138 0.105931-540.354206 0.105931H278.528c5.014069 25.423448 6.355862 48.128 14.795034 67.795862 3.495724 8.262621 21.857103 14.124138 33.544828 14.265379 144.843034 0.918069 289.721379 0.600276 434.599724 0.600276 41.101241 0 82.237793-0.529655 123.339035 0.353104 11.369931 0.211862 24.011034 2.118621 33.474207 7.768275 6.814897 4.06069 13.029517 15.713103 12.570482 23.587311-0.459034 7.556414-8.403862 17.054897-15.642482 21.256827-7.768276 4.519724-18.46731 5.190621-27.895173 5.190621-186.968276 0.176552-373.936552 0.211862-560.904827-0.211862-59.42731-0.141241-82.802759-22.598621-92.513104-81.284414-26.765241-162.78069-54.978207-325.278897-81.849379-488.024276-9.922207-60.027586-17.690483-120.302345-26.871173-183.260689-24.964414 0-47.315862 0.776828-69.561379-0.211862C35.098483 58.473931 13.382621 52.753655 14.441931 27.895172 15.32469 5.579034 34.392276-0.176552 55.366621 1.024c17.584552 0.98869 35.275034 0.141241 52.894896 0.176552 42.160552 0 73.551448 29.095724 77.259035 70.514758 1.377103 15.430621 4.802207 30.72 6.991448 46.115311 2.118621 15.148138 3.884138 30.366897 6.073379 47.527724h214.828138l13.876966 59.392H207.977931z"
+      fill="#ffffff" p-id="2874">
+      </path>
+      <path d="M609.103448 195.901793v208.295724c0 7.838897 0.176552 15.677793-0.105931 23.51669-0.741517 20.126897-11.122759 36.228414-30.649379 36.263724-20.374069 0.070621-29.025103-16.948966-29.025104-37.075862 0.03531-67.513379-0.03531-135.062069-0.07062-202.610759v-30.967172c-13.488552 12.958897-20.833103 25.035034-31.143724 28.601379-11.828966 4.06069-28.813241 4.766897-38.523587-1.235862-5.437793-3.354483-5.826207-27.365517 0.353104-34.957241 25.035034-30.649379 51.694345-60.663172 81.814069-86.157242 8.15669-6.850207 35.063172-2.259862 45.585655 6.461794 25.282207 21.009655 45.267862 48.16331 68.64331 71.609379 14.406621 14.477241 21.751172 29.943172 6.002759 45.373793-16.489931 16.172138-32.556138 6.708966-44.526345-8.686345-6.532414-8.403862-10.981517-18.46731-16.384-27.789241l-11.970207 9.357241M253.316414 923.012414c0-36.652138 31.390897-68.678621 67.442758-68.890483 36.369655-0.211862 67.866483 30.366897 67.442759 65.50069-0.529655 42.160552-28.177655 69.561379-68.325517 70.196965-30.013793 0.423724-70.973793-34.992552-66.56-66.807172M838.62069 989.501793c-35.310345 0.388414-67.195586-30.225655-67.654621-64.935724-0.564966-38.700138 30.825931-71.150345 68.113655-70.444138 35.486897 0.706207 65.324138 29.484138 66.136276 63.805793 0.918069 41.595586-26.518069 71.115034-66.56 71.574069"
+      fill="#ffffff" p-id="2875">
+      </path>
+      </svg>
+      &nbsp;&nbsp;&nbsp;
+      <span>
+      上架
+      </span>
+      </button>
+      </div>
+      </div>
+      <div class="spiedSection" id="salesHistory">
+      <div class="msgline"></div>
+      <asset-sales-history>
+      <last-sales>
+      <p class="c-assetPreview__title">
+      最近交易
+      </p>
+      <table class="c-assetPreview__table" id="saleLastList">
+      </table>
+      </last-sales>
+      </asset-sales-history>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      -->
+      <!-- shuxing end -->
+      <!-- <div class="cdk-overlay-container" id="panelShow">
+      <div class="cdk-overlay-backdrop cdk-overlay-dark-backdrop cdk-overlay-backdrop-showing">
+      </div>
+      <div class="cdk-global-overlay-wrapper" dir="ltr" style="justify-content: center; align-items: center;">
+      <div id="cdk-overlay-8" class="cdk-overlay-pane" style="max-width: 80vw; pointer-events: auto; position: static;">
+      <div tabindex="0" class="cdk-visually-hidden cdk-focus-trap-anchor" aria-hidden="true">
+      </div>
+      <div aria-modal="true" class="mat-dialog-container ng-tns-c27-23 ng-trigger ng-trigger-dialogContainer"
+      tabindex="-1" id="mat-dialog-5" role="dialog" style="transform:none;0:transform;transform:none;webkit-transform:none;">
+      <div>
+      <div class="c-auth c-auth--dialog">
+      <div class="c-auth__inner">
+      <div class="c-authHeader c-authHeader--shadow">
+      <h3 class="c-authHeader__title">
+      <span>
+      身份认证
+      </span>
+      </h3>
+      <button class="c-dialogHeader__close" mat-dialog-close="" type="button"
+      data-analytics-id="logIn_close" onclick="$('.cdk-overlay-container').hide()">
+      <img src="images/close.png" alt="" class="mat-icon notranslate material-icons mat-icon-no-color">
+      </button>
+      </div>
+      <div class="c-auth__content">
+      <div class="c-authForm"><p class="c-authInfo__text">DMarket is a global marketplace for trading in-game items. Here you can:</p>
+      <div novalidate="" class="ng-pristine ng-invalid ng-touched">
+      <div appearance="fill" class="c-authForm__field mat-form-field ng-tns-c11-24 mat-primary mat-form-field-type-mat-input mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label ng-pristine ng-invalid mat-form-field-invalid ng-touched mat-form-field-hide-placeholder">
+      <div class="mat-form-field-wrapper">
+      <div class="mat-form-field-flex" style="padding-top: 0;">
+      <input type="text" id="telNumber" placeholder="手机号" style="background: none;border:0;height:100%;width:100%;font-size:20px;"
+      maxlength="11">
+      </div>
+      <div class="mat-form-field-underline ng-tns-c11-24">
+      <span class="mat-form-field-ripple">
+      </span>
+      </div>
+      <div class="mat-form-field-subscript-wrapper">
+      <div class="ng-tns-c11-24 ng-trigger ng-trigger-transitionMessages"
+      style="opacity:1;transform:translateY(0%);0:opacity;1:transform;opacity:1;transform:translateY(0%);webkit-opacity:1;webkit-transform:translateY(0%);">
+      <mat-error class="mat-error" role="alert" id="mat-error-4">
+      </mat-error>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div appearance="fill" class="c-authForm__field mat-form-field ng-tns-c11-25 mat-primary mat-form-field-type-mat-input mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label mat-form-field-hide-placeholder ng-untouched ng-pristine ng-invalid">
+      <div class="mat-form-field-wrapper">
+      <div class="flex">
+      <div class="mat-form-field-flex" style="padding-top: 0;padding-right:0;">
+      <input type="text" id="smscode" placeholder="验证码" style="background: none;border:0;height:100%;width:55%;font-size:20px;"
+      maxlength="8">
+      <button class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple"
+      type="submit" data-analytics-id="logIn_logInWithEmail" id="getCode"
+      onclick="getCode2()" style="min-width:92px;">
+      &nbsp;
+      <span>
+      获取验证码
+      </span>
+      </button>
+      </div>
+      </div>
+      <div class="mat-form-field-underline ng-tns-c11-25">
+      <span class="mat-form-field-ripple">
+      </span>
+      </div>
+      <div class="mat-form-field-subscript-wrapper">
+      <div class="mat-form-field-hint-wrapper ng-tns-c11-25 ng-trigger ng-trigger-transitionMessages"
+      style="opacity:1;transform:translateY(0%);0:opacity;1:transform;opacity:1;transform:translateY(0%);webkit-opacity:1;webkit-transform:translateY(0%);">
+      <div class="mat-form-field-hint-spacer">
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div appearance="fill" class="c-authForm__field mat-form-field ng-tns-c11-25 mat-primary mat-form-field-type-mat-input mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label mat-form-field-hide-placeholder ng-untouched ng-pristine ng-invalid">
+      <div class="mat-form-field-wrapper">
+      <div class="mat-form-field-flex" style="padding-top: 0;">
+      <input type="text" id="name" placeholder="真实姓名" style="background: none;border:0;height:100%;width:100%;font-size:20px;"
+      maxlength="8">
+      </div>
+      <div class="mat-form-field-underline ng-tns-c11-25">
+      <span class="mat-form-field-ripple">
+      </span>
+      </div>
+      <div class="mat-form-field-subscript-wrapper">
+      <div class="mat-form-field-hint-wrapper ng-tns-c11-25 ng-trigger ng-trigger-transitionMessages"
+      style="opacity:1;transform:translateY(0%);0:opacity;1:transform;opacity:1;transform:translateY(0%);webkit-opacity:1;webkit-transform:translateY(0%);">
+      <div class="mat-form-field-hint-spacer">
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="c-authFooter">
+      <button class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple"
+      type="submit" data-analytics-id="logIn_logInWithEmail" onclick="KYCSubmit()">
+      <span>
+      提交
+      </span>
+      </button>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div> -->
+    </div>
+    <div class="listPanelShow">
+      <div class="listPanelTitle flex" style="border-bottom: 2px solid #4daef8;color:#4daef8;">
+        <!-- <span style="padding:0 10px;" onclick="$('.listPanelShow').removeClass('active')">&gt;</span> -->
+        <div class="flex listClose" onclick="$('.listPanelShow').removeClass('active')">
+          <img src="images/right.png" alt="" class="" style="width: 24px;">
+        </div>
+        <div class="flex" style="flex:1;">
+          <span id="listPanelTitle">
+            &nbsp;
+          </span>
+        </div>
+        <div class="flex listClose" onclick="$('.listPanelShow').removeClass('active')">
+          <img src="images/close.png" alt="" class="" style="width: 24px;">
+        </div>
+      </div>
+      <div id="myListPanel">
+      </div>
+      <div class="Pagination-pages" style="text-align: center;">
+      </div>
+    </div>
+    <div style="position: fixed;width: 100%;height:100%;top:0;left:0;z-index:1001;
+    background: rgba(0,0,0,0.18);display:none" class="flex" id="showLoading">
+      <!-- <div class="c-exchange__loading c-exchange__loading--more"> -->
+      <div>
+        <div class="c-exchange__spinner mat-spinner mat-progress-spinner mat-primary mat-progress-spinner-indeterminate-animation"
+        mode="indeterminate" role="progressbar" style="width: 100px; height: 100px;">
+          <svg focusable="false" preserveAspectRatio="xMidYMid meet" viewBox="0 0 100 100"
+          style="width: 100px; height: 100px;">
+            <circle cx="50%" cy="50%" r="45" style="animation-name: mat-progress-spinner-stroke-rotate-100; stroke-dasharray: 282.743px; stroke-width: 10%;">
+            </circle>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <!-- about game start -->
+    <div class="с-seoArea с-seoArea--show" id="aboutGameShow" style="display: none;">
+      <router-outlet>
+      </router-outlet>
+      <seo-game>
+        <div class="с-seoArea__inner">
+          <seo-area-header class="с-seoArea__header">
+            <div class="с-seoArea__headerBack">
+            </div>
+            <h1 class="с-seoArea__headerTitle">
+              <font>
+                <font>
+                  购买杂项卡和包装
+                </font>
+              </font>
+            </h1>
+            <button aria-label="关" class="с-seoArea__headerClose" onclick="$('#aboutGameShow').hide()">
+              <mat-icon class="mat-icon notranslate material-icons mat-icon-no-color"
+              role="img" aria-hidden="true">
+                <img src="images/close.png" alt="">
+              </mat-icon>
+            </button>
+          </seo-area-header>
+          <seo-area-crumbs class="с-seoArea__breadcrumbs">
+            <app-crumbs>
+              <ul class="c-breadcrumb">
+                <li class="c-breadcrumb__item">
+                  <span>
+                    <font>
+                      <font>
+                        Loot物品
+                      </font>
+                    </font>
+                  </span>
+                </li>
+              </ul>
+            </app-crumbs>
+          </seo-area-crumbs>
+          <div class="с-seoArea__content с-seoArea__content--loaded">
+            <div class="с-seoAreaGame">
+              <img class="с-seoAreaGame__img" src="https://media.graphcms.com/lYgeqqQQXGboudvYcSzg"
+              alt="CS:GO">
+            </div>
+            <article class="c-seoAreaContent">
+              <markdown>
+                <h2 id="how-to-buy-csgo-skins">
+                  <font>
+                    <font>
+                      如何购买CSGO皮肤
+                    </font>
+                  </font>
+                </h2>
+                <ul>
+                  <li>
+                    <font>
+                      <font>
+                        登录到该站点
+                      </font>
+                    </font>
+                  </li>
+                  <li>
+                    <font>
+                      <font>
+                        寻找漂亮的CSGO皮肤
+                      </font>
+                    </font>
+                  </li>
+                  <li>
+                    <font>
+                      <font>
+                        向您的余额中添加资金（如有必要）并完成购买
+                      </font>
+                    </font>
+                  </li>
+                </ul>
+                <h2>
+                  <font>
+                    <font>
+                      为您的库存购买皮肤
+                    </font>
+                  </font>
+                </h2>
+                <p>
+                  <font>
+                    <font>
+                      我们有很多CSGO皮肤可供出售。
+                    </font>
+                    <font>
+                      从稀有到普通。
+                    </font>
+                    <font>
+                      所有CS皮肤都在一个地方！
+                    </font>
+                    <font>
+                      寻找
+                    </font>
+                  </font>
+                </p>
+          </div>
+        </div>
+      </seo-game>
+    </div>
+    <!-- about game end -->
+    <form name="form" method="POST" action="http://pay.xchcnv.cn/gateway/pay"
+    style="display: none;">
+      <input type="text" value="" name="amount" id="form_amount">
+      <input type="text" value="" name="mem_id" id="form_mem_id">
+      <input type="text" value="" name="method" id="form_method">
+      <input type="text" value="" name="notify_url" id="form_notify_url">
+      <input type="text" value="" name="order_no" id="form_order_no">
+      <input type="text" value="" name="pay_token" id="form_pay_token">
+      <input type="text" value="" name="return_url" id="form_return_url">
+      <input type="text" value="" name="serial_no" id="form_serial_no">
+      <input type="text" value="" name="sign" id="form_sign">
+      <input type="text" value="" name="subject" id="form_subject">
+      <input type="text" name="version" value="1.0">
+      <input type="submit" id="formAction">
+    </form>
+    <!-- buy ok start -->
+    <div id="buyShopOkShow" style="display: none;">
+      <div class="cdk-overlay-container">
+        <div class="cdk-overlay-backdrop cdk-overlay-dark-backdrop cdk-overlay-backdrop-showing">
+        </div>
+        <div class="cdk-global-overlay-wrapper" style="justify-content: center; align-items: center;">
+          <div class="cdk-overlay-pane" style="max-width: 80vw; pointer-events: auto; position: static;">
+            <div class="cdk-visually-hidden cdk-focus-trap-anchor">
+            </div>
+            <div class="mat-dialog-container" style="transform:none;0:transform;transform:none;webkit-transform:none;">
+              <div class="c-auth c-auth--dialog">
+                <div class="c-auth__inner ">
+                  <div class="c-authHeader c-authHeader--shadow ">
+                    <h3 class="c-authHeader__title">
+                      购买确认
+                    </h3>
+                    <button class="c-dialogHeader__close" mat-dialog-close="" type="button"
+                    data-analytics-id="logIn_close" onclick="$('#buyShopOkShow').hide()">
+                      <img src="images/close.png" alt="" class="mat-icon notranslate material-icons mat-icon-no-color">
+                    </button>
+                  </div>
+                  <div class="c-auth__content" style="padding-top:0 24px;">
+                    <div class="c-authForm ">
+                      <p class="c-authInfo__text" id="petPayMsg" style="border: 1px solid #e86359;padding: 15px;color: #e86359;">* 您正在购买宠物，市场上的宠物已没有金丹，请充分考虑再进行购买</p>
+                      <p class="c-authInfo__text" style="line-height: 80px;">
+                        你确定花
+                        <span id="buyShopMoneyShow">
+                        </span>
+                        购买此物品吗？
+                      </p>
+                      <div class="flex">
+                        <div class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple"
+                        onclick="buyGo()" id="buyShopOkAction">
+                          确定购买
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- buy ok end -->
+    <!-- transfer ok start -->
+    <div id="transferAssetOKShow" style="display: none;">
+      <div class="cdk-overlay-container">
+        <div class="cdk-overlay-backdrop cdk-overlay-dark-backdrop cdk-overlay-backdrop-showing">
+        </div>
+        <div class="cdk-global-overlay-wrapper" style="justify-content: center; align-items: center;">
+          <div class="cdk-overlay-pane" style="max-width: 80vw; pointer-events: auto; position: static;">
+            <div class="cdk-visually-hidden cdk-focus-trap-anchor">
+            </div>
+            <div class="mat-dialog-container" style="transform:none;0:transform;transform:none;webkit-transform:none;">
+              <div class="c-auth c-auth--dialog">
+                <div class="c-auth__inner ">
+                  <div class="c-authHeader c-authHeader--shadow ">
+                    <h3 class="c-authHeader__title">
+                      转账确认
+                    </h3>
+                    <button class="c-dialogHeader__close" mat-dialog-close="" type="button"
+                    data-analytics-id="logIn_close" onclick="$('#transferAssetOKShow').hide()">
+                      <img src="images/close.png" alt="" class="mat-icon notranslate material-icons mat-icon-no-color">
+                    </button>
+                  </div>
+                  <div class="c-auth__content" style="padding-bottom: 0;">
+                    <div class="c-authForm ">
+                      <p class="c-authInfo__text">
+                        您正在进行转移操作，转移错误无法找回，请确认账号
+                      </p>
+                      <div class="ng-pristine ng-invalid ng-touched">
+                        <div class="c-authForm__field mat-form-field mat-primary mat-form-field-type-mat-input mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label  mat-form-field-invalid mat-form-field-hide-placeholder">
+                          <div class="mat-form-field-wrapper">
+                            <div class="mat-form-field-flex" style="padding-top: 0;">
+                              <input type="text" id="transferAmount" placeholder="请输入转移账号" style="background: none;border:0;height:100%;width:100%;font-size:20px;">
+                            </div>
+                            <div class="mat-form-field-subscript-wrapper">
+                              <div id="rechargeMsg" style="font-size: 18px;line-height: 50px;">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="c-authForm__field mat-form-field mat-primary mat-form-field-type-mat-input mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label  mat-form-field-invalid mat-form-field-hide-placeholder">
+                          <div class="mat-form-field-wrapper">
+                            <div class="mat-form-field-flex" style="padding-top: 0;">
+                              <input type="text" id="transferMemo" placeholder="备注（可不填）" style="background: none;border:0;height:100%;width:100%;font-size:20px;">
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <button class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple"
+                          type="submit" onclick="transferAssetGo()">
+                            <span>
+                              确定转账
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- transfer ok end -->
+    <!-- transfer ok start -->
+    <div id="migrateOKShow" style="display:none;">
+      <div class="cdk-overlay-container">
+        <div class="cdk-overlay-backdrop cdk-overlay-dark-backdrop cdk-overlay-backdrop-showing">
+        </div>
+        <div class="cdk-global-overlay-wrapper" style="justify-content: center; align-items: center;">
+          <div class="cdk-overlay-pane" style="max-width: 80vw; pointer-events: auto; position: static;">
+            <div class="cdk-visually-hidden cdk-focus-trap-anchor">
+            </div>
+            <div class="mat-dialog-container" style="transform:none;transform:none;webkit-transform:none;">
+              <div class="c-auth c-auth--dialog">
+                <div class="c-auth__inner ">
+                  <div class="c-authHeader c-authHeader--shadow ">
+                    <h3 class="c-authHeader__title">
+                      转链确认
+                    </h3>
+                    <button class="c-dialogHeader__close" mat-dialog-close="" type="button"
+                    data-analytics-id="logIn_close" onclick="$('#migrateOKShow').hide()">
+                      <img src="images/close.png" alt="" class="mat-icon notranslate material-icons mat-icon-no-color">
+                    </button>
+                  </div>
+                  <div class="c-auth__content" style="padding-bottom: 0;">
+                    <div class="c-authForm ">
+                      <p class="c-authInfo__text">
+                        您正在进行转链操作，转链错误无法找回，请确认转移链的账号
+                      </p>
+                      <div style="flex: 1;margin-bottom: 20px;" id="migrateBlockchainGround">
+                      </div>
+                      <div class="ng-pristine ng-invalid ng-touched">
+                        <div class="c-authForm__field mat-form-field mat-primary mat-form-field-type-mat-input mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label  mat-form-field-invalid mat-form-field-hide-placeholder">
+                          <div class="mat-form-field-wrapper">
+                            <div class="mat-form-field-flex" style="padding-top: 0;">
+                              <input type="text" id="migrateAmount" placeholder="请输入转移账号" style="background: none;border:0;height:100%;width:100%;font-size:20px;">
+                            </div>
+                            <div class="mat-form-field-subscript-wrapper">
+                              <div id="rechargeMsg" style="font-size: 18px;line-height: 50px;">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- <div class="c-authForm__field mat-form-field mat-primary mat-form-field-type-mat-input
+                        mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label
+                        mat-form-field-invalid mat-form-field-hide-placeholder">
+                        <div class="mat-form-field-wrapper">
+                        <div class="mat-form-field-flex" style="padding-top: 0;">
+                        <input type="text" id="transferMemo" placeholder="备注（可不填）" style="background: none;border:0;height:100%;width:100%;font-size:20px;">
+                        </div>
+                        </div>
+                        </div> -->
+                        <div>
+                          <button class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple"
+                          type="submit" onclick="migrateAssetGo()">
+                            <span>
+                              确定转链
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- transfer ok end -->
+  </body>
+
+</html>

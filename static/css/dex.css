@@ -1,0 +1,413 @@
+
+.leftBox{
+
+}
+.leftBox .MyDexList{
+	font-size: 16px;
+	color: #fff;
+	padding:12px 8px;
+}
+.dexBtn{
+	line-height: 26px;
+	padding:0 13px;
+	margin-right: 8px;
+	color: #fff;
+	font-size: 16px;
+	display: inline-block;
+	margin-bottom: 5px;
+}
+.dexBtn:hover,
+.dexBtn.active{
+	background: #3d4d43;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.searchDexBox{
+	padding:10px 12px;
+}
+.searchDexBox .searchDex{
+	border:2px solid #89d295;
+	background: #3d4d43;
+	line-height: 30px;
+	padding:0 13px;
+	flex:1;
+}
+.searchDexBox .searchDex input{
+	background: none;
+	border:none;
+	line-height: 30px;
+	flex:1;
+	font-size: 16px;
+	margin-left: 13px;
+}
+.searchDexBox .searchBtn{
+	padding:0 18px;
+	margin-left:12px;
+	line-height: 38px;
+	background: #2a2c2e;
+	cursor: pointer;
+}
+.leftBox .dexTitle,
+.leftBox .dexList{
+	font-size: 16px;
+	color: #fff;
+	line-height: 35px;
+	padding-right: 10px;
+}
+.leftBox .dexList .coin,
+.leftBox .dexTitle .coin{
+	width: 100px;
+}
+.leftBox .dexTitle .newPrice,
+.leftBox .dexList .newPrice{
+	text-align:right;
+	flex: 1;
+}
+
+
+.leftBox .dexAdList{
+	color: #fff;
+	/*padding-bottom: 20px;*/
+}
+.leftBox .dexAdList .item{
+	padding:10px 12px;
+	font-size: 13px;
+	cursor: pointer;
+}
+.leftBox .dexAdList .item.active,
+.leftBox .dexAdList .item:hover{
+	background: #2a2c2e;
+	/*background: rgba(53,53,53,1);*/
+}
+.leftBox .dexAdList .item .content{
+	height:68px;flex:1;margin-left:16px;
+}
+.leftBox .dexAdList .item h3{
+	font-size:18px;
+	line-height: 30px;
+	/*font-weight: bolder;*/
+}
+.leftBox .dexAdList .item .about{
+	height: 38px;
+	line-height: 19px;
+	color: #ccc;
+	overflow: hidden;
+}
+.leftBox .dexAdList .item .contentTag{
+	width: 85px;
+	line-height: 26px;
+	margin:5px 5px 0 0;
+	text-align: center;
+	color: #fff;
+	display: inline-block;
+	background: #3d4d43;
+	border-radius: 3px;
+	float: left;
+}
+
+
+
+.rightBox .dexListBox{
+	border-top:2px solid #2a2c2e;padding:10px;background:#17191a;
+
+}
+
+.rightBox .dexTitle,
+.rightBox .dexList{
+	font-size: 13px;
+	color: #fff;
+	line-height: 35px;
+}
+.rightBox .dexTitle .item,
+.rightBox .dexList .item{
+	border-bottom:1px solid #2a2c2e;
+}
+.rightBox .dexList .item:last-child{
+	/*border-bottom:none;*/
+}
+.rightBox .dexTitle .item{
+	/*padding-top:26px;*/
+	color:#7f7f80;
+}
+.rightBox .dexList .item{
+	padding:10px 0;
+}
+
+
+.rightBox .dexList .owner,
+.rightBox .dexTitle .owner{
+	width: 168px;
+}
+.rightBox .dexList .owner .radius{
+	width: 39px;
+    height: 39px;
+    background: #89d295;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.rightBox .dexList .owner .name{
+	flex:1;
+}
+.rightBox .dexList .num,
+.rightBox .dexTitle .num{
+	flex: 1;
+}
+.rightBox .dexList .orderNum,
+.rightBox .dexTitle .orderNum{
+	width: 130px;
+}
+.rightBox .dexTitle .price,
+.rightBox .dexList .price{
+	flex: 1;
+	text-align:right;
+}
+.rightBox .dexTitle .total,
+.rightBox .dexList .total{
+	width: 180px;
+	text-align:right;
+}
+
+.rightBox .dexList .action,
+.rightBox .dexTitle .action{
+	text-align:right;
+	width: 150px;
+}
+
+.rightBox .dexList .action .blueBtn{
+    /*padding: 0 26px;*/
+    line-height: 38px;
+    /*background: #31383c;*/
+    background: #3c4145;
+    border-radius: 5px;
+    display: inline-block;
+	cursor: pointer;
+	font-size: 15px;
+	min-width: 82px;
+    text-align: center;
+}
+.paginationBox{
+	/*border-top:1px solid #2a2c2e;*/
+	text-align: center;
+
+}
+.paginationBox .pagination{
+	padding:33px 0 0;
+	/*margin:0 auto;*/
+
+}
+.paginationBox .pagination li{
+	line-height: 30px;
+	padding:0 13px;
+	margin-right: 8px;
+	color: #fff;
+	font-size: 16px;
+	display: inline-block;
+	margin-bottom: 5px;
+	background: #2a2c2e;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.paginationBox .pagination li:hover,
+.paginationBox .pagination li.active{
+	background: #3d4d43;
+}
+.paginationBox .pagination li.none{
+	background: none;
+}
+
+.dexEntrustBtn{
+	cursor: pointer;
+	width:80px;
+	height:80px;
+    line-height: 80px;
+    text-align: center;
+    position: fixed;
+    right:18px;
+    bottom:168px;
+	/*background:rgba(158,136,9,.8); */
+	background: #209eff;
+    /*color: #f3f3f0;*/
+    border-radius: 50%;
+    font-size: 15px;
+    margin: 10px auto auto;
+    -webkit-animation: btn-anim4 2s linear infinite;
+    animation: btn-anim4 2s linear infinite;
+    box-shadow: 0 0 5px #4daef8,0 0 10px #4daef8,0 0 15px #4daef8,0 0 30px #4daef8;
+}
+
+@-webkit-keyframes btn-anim4{
+    0% {
+        box-shadow: 0 0 5px #4daef8,
+    }
+
+    50% {
+        box-shadow: 0 0 5px #4daef8,0 0 10px #4daef8
+    }
+
+    75% {
+        box-shadow: 0 0 5px #4daef8,0 0 10px #4daef8,0 0 20px #4daef8
+    }
+
+    to {
+        box-shadow: 0 0 5px #4daef8,0 0 10px #4daef8,0 0 20px #4daef8,0 0 30px #4daef8
+    }
+}
+
+@keyframes btn-anim4 {
+    0% {
+        box-shadow: 0 0 5px #4daef8,
+    }
+
+    50% {
+        box-shadow: 0 0 5px #4daef8,0 0 10px #4daef8
+    }
+
+    75% {
+        box-shadow: 0 0 5px #4daef8,0 0 10px #4daef8,0 0 20px #4daef8
+    }
+
+    to {
+        box-shadow: 0 0 5px #4daef8,0 0 10px #4daef8,0 0 20px #4daef8,0 0 30px #4daef8
+    }
+}
+
+
+.orderTypeBtn{
+	padding:14px;
+	color: #82817d;
+	line-height: normal;
+	border-radius: 5px;
+	margin-right: 18px;
+	display: inline-block;
+	border: 1px solid #82817d;
+	cursor: pointer;
+}
+.orderTypeBtn.active{
+	color: #fff;
+	border: 1px solid #3495f9;
+	background: #3495f9;
+}
+
+
+.rightBox .entrustBtn{
+    padding: 0 26px;
+    line-height: 38px;
+    background:#3495f9; 
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 15px;
+    margin:0 10px;
+}
+
+
+
+.dexSelectOrderBtn{
+	padding:10px 20px;
+	cursor: pointer;
+}
+
+.dexSelectOrderBtn.active{
+	background: #3495f9;color: #fff;
+}
+
+.selecrCoinTag{
+    position: relative;
+    float: left;
+    height:30px;
+    line-height:30px;
+    font-size: 13px;
+    vertical-align: top;
+    padding: 0 40px 0 10px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 1px solid rgba(13,168,139,.18);
+    background: rgba(13,168,139,.18);
+    border-radius: 5px;
+    overflow: hidden;
+}
+.selecrCoinTag b{
+    color: #0da88b;
+	font-weight: 400;
+}
+.selecrCoinTag em{
+	/*e4393c*/
+	/*3495f9*/
+    color: #3495f9;
+    font-style: normal;
+    text-transform:uppercase;
+}
+.selecrCoinTag span{
+    color: #3495f9;
+    display: block;
+    position: absolute;
+    width:30px;
+    height:30px;
+    right: -1px;
+    top: -1px;
+    text-align: center;
+}
+
+.selecrCoinTag:hover {
+    border-color: #3495f9;
+    text-decoration: none;
+    background: rgba(13,168,139,.28)
+}
+
+.selecrCoinTag:hover span {
+    color: #fff;
+    background-color: #3495f9;
+}
+
+
+@media (max-width: 767px) {
+    .rightBox .entrustBtn{
+        font-size: 12px;
+        padding: 0 20px;
+
+        margin:0 0 0 10px;
+    }
+    .c-exchange__inner{
+    	padding:0 5px;
+    }
+    .rightBox .c-assetFilters .c-assetFilters__inner{
+   		margin-top: 0;
+   		margin-bottom: 10px;
+    }
+    .dexListBox{
+    	display: block;
+    	height:100%;
+    	overflow: hidden;
+    }
+    .dexListBox .c-exchangeTabs__item{
+    	width: auto;
+    }
+    .c-exchange__side--user{
+    	margin-top: 0;
+    }
+    .c-assetFilters__item--game{
+    	min-width: 188px
+    }
+    .rightBox .dexList .action, .rightBox .dexTitle .action{
+    	width: 100px;
+    }
+}
+
+@media (min-width: 767px) {
+    .rightBox .c-assetFilters{
+    	display: none;
+    }
+
+
+}
+#myItemLoadingShow,#saleMarketLoadingShow{
+	position: relative;
+}
+
+
+
+/*.MyDexList{
+	color: #fff;
+	padding:12px 8px;
+}*/
