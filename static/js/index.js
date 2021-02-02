@@ -15,7 +15,7 @@ var dexListType = 'priceHigh';
 var dexListData = {};
 var dexPage = 0;
 var dexSize = 6;
-
+var objMsg={}
 
 $(function() {
       // if (location.hostname == "www.xloot_dex.io") {
@@ -440,11 +440,13 @@ function getlistXLootItemRecentSale(itemCode) {
 }
 
 
-function saleMsgShow(id, imgs, contractId) {
-      imgUrl = imgs;
-      itemId = id;
-      nftContractId = contractId;
-      getItem("sale");
+function saleMsgShow(obj) {
+      // imgUrl = imgs;
+      // itemId = id;
+      // nftContractId = contractId;
+      objMsg=obj
+      console.log(obj);
+      panelShow("sale");
       // panelShow("sale");
 }
 
@@ -1378,10 +1380,204 @@ function getHtml(type) {
                   html += '</div></div></div></div></div>';
                   return html;
                   break;
-
             case "sale":
             case "unsale":
             case "buy":
+                  var title = '';
+                  var imgClass = 'skinDetail';
+                  if (type == 'sale') {
+                        title = '上架物品';
+                  } else if (type == 'unsale') {
+                        title = '下架物品';
+                  } else if (type == 'buy') {
+                        title = '购买物品';
+                  }
+                  html += '<div class="cdk-overlay-backdrop cdk-overlay-dark-backdrop cdk-overlay-backdrop-showing"></div>';
+                  html += '  <div class="cdk-global-overlay-wrapper" dir="ltr" style="justify-content: center; align-items: center;">';
+                  html += '    <div id="cdk-overlay-8" class="cdk-overlay-pane" style="max-width: 80vw; pointer-events: auto; position: static;">';
+                  html += '      <div tabindex="0" class="cdk-visually-hidden cdk-focus-trap-anchor" aria-hidden="true"></div>';
+                  html += '      <div aria-modal="true" class="mat-dialog-container ng-tns-c27-23 ng-trigger ng-trigger-dialogContainer" tabindex="-1" id="mat-dialog-5" role="dialog" style="transform:none;0:transform;transform:none;webkit-transform:none;">';
+                  html += '        <div>';
+                  html += '          <div class="c-auth c-auth--dialog">';
+                  html += '            <div class="c-auth__inner">';
+
+
+                  html += '              <div class="c-authHeader c-authHeader--shadow">';
+                  html += '                <h3 class="c-authHeader__title"><span>' + title + '</span></h3>';
+                  html += '                <button class="c-dialogHeader__close" mat-dialog-close="" type="button"';
+                  html += '                data-analytics-id="logIn_close" onclick="$(\'.cdk-overlay-container\').hide()">';
+                  html += '                  <img src="images/close.png" alt="" class="mat-icon notranslate material-icons mat-icon-no-color">';
+                  html += '                </button>';
+                  html += '              </div>';
+
+
+                  html += '<div class="c-dialog__body c-dialog__body--preview" scrollspy="">';
+                  html += '<div class="spiedSection" id="itemsDetails">';
+                  html += '  <div class="c-assetPreview">';
+                  html += '    <div class="c-assetPreview__inner">';
+                  html += '      <div class="c-assetPreview__figure c-assetPreview__figure--dota2-skins">';
+
+                  html += '       <div style="flex:1;">';
+                  html += '         <div class="flex" style="position: relative;">';
+                  html += '          <img class="c-assetPreview__img ' + imgClass + '" src="' + objMsg.imageUrl + '" alt="">';
+                  html += '         </div>';
+                  if (type == 'sale') {
+                    
+                          // html += '                  <div appearance="fill"  style="margin-top:30px;" class="c-authForm__field mat-form-field mat-primary mat-form-field-type-mat-input mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label mat-form-field-invalid mat-form-field-hide-placeholder">';
+
+                          // html += '                    <div class="mat-form-field-wrapper" style="margin: 0 auto;">';
+                          // html += '                      <div class="mat-form-field-flex" style="padding-top: 0;">';
+                          // html += '                        <input type="text" id="lootOnsaleNum" placeholder="请输入上架数量" style="background: none;border:0;height:100%;width:100%;font-size:20px;" maxlength="6">';
+                          // html += '                        <span style="padding-left: 15px;">个</span>';
+                          // html += '                      </div>';
+                          // html += '                    </div>';
+                          // html += '                  </div>';
+                    
+                    html += '                  <div appearance="fill" style="margin-top:30px;" class="c-authForm__field mat-form-field mat-primary mat-form-field-type-mat-input mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label mat-form-field-invalid mat-form-field-hide-placeholder">';
+
+                    html += '                    <div class="mat-form-field-wrapper" style="margin: 0 auto;">';
+                    html += '                      <div class="mat-form-field-flex" style="padding-top: 0;">';
+                    html += '                        <input type="text" id="lootNum" placeholder="请输入出售金额" style="background: none;border:0;height:100%;width:100%;font-size:20px;" maxlength="11">';
+
+                    html += '                        <span style="padding-left: 15px;"></span>';
+                    html += '                        <select>'
+                    html += '                          <option value="EOS">EOS</option>'
+                    html += '                          <option value="LOOT">LOOT</option>'
+                    html += '                          <option value="TIME">TIME</option>'
+                    html += '                          <option value="USDT">USDT</option>'
+
+                    html += '                        </select>'
+                    html += '                      </div>';
+                    html += '                    </div>';
+
+
+
+                    html += '                  </div>';
+
+                    if (getCookie("customerType") != "PC") {
+                                      html += '               <div class="flex" style="margin:0 auto;width:100%;">';
+                                      html += '                  <div style="margin:0 auto;flex:1;" onclick="transferAssetShow()">';
+                                      html += '                    <button class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple" matripple="" type="submit" data-analytics-id="logIn_logInWithEmail">';
+                                      html += '                    <svg t="1584364466165" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1673" width="24" height="24"><path d="M725.333333 377.2672V443.733333H298.666667v-68.266666h330.837333L554.666667 296.891733l47.104-49.493333 121.856 128h1.706666v1.800533zM298.666667 646.7328V580.266667h426.666666v68.266666H394.496L469.333333 727.108267l-47.104 49.493333-121.856-128H298.666667v-1.800533z" fill="#ffffff" p-id="1674"></path><path d="M512 1024a512 512 0 1 1 512-512 512 512 0 0 1-512 512zM512 68.266667a443.733333 443.733333 0 1 0 443.733333 443.733333A443.733333 443.733333 0 0 0 512 68.266667z" fill="#ffffff" p-id="1675"></path></svg>';
+                                      html += '                      &nbsp;&nbsp;&nbsp;<span>转账</span>';
+                                      html += '                    </button>';
+                                      html += '                  </div>';
+                                      html += '                  <div style="margin:0 auto;margin-left: 10px;flex:1;" onclick="saleGo()">';
+                                      html += '                    <button class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple" matripple="" type="submit" data-analytics-id="logIn_logInWithEmail">';
+                                      html += '                    <svg t="1566885363220" class="mat-icon notranslate material-icons mat-icon-no-color" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2873" width="32" height="32"><path d="M207.977931 224.750345l63.770483 387.001379c9.463172 0.494345 18.996966 1.377103 28.495448 1.377104 180.082759 0.070621 360.236138 0.070621 540.354207 0 36.687448 0 45.479724-10.840276 50.846897-47.492414 13.135448-89.935448 28.460138-179.553103 43.04331-269.27669 2.295172-14.230069 6.426483-28.177655 8.015448-42.443034 2.471724-22.457379-11.581793-28.848552-30.861241-28.848552l-140.958897-0.105931h-33.82731l13.170758-54.448552c63.134897 0 124.433655-1.588966 185.661794 0.494345 52.082759 1.730207 73.092414 46.150621 66.030344 92.513103-17.302069 112.993103-35.239724 225.880276-53.106758 338.802759-6.426483 40.536276-43.926069 69.067034-91.171311 69.102345-180.118069 0.141241-360.236138 0.105931-540.354206 0.105931H278.528c5.014069 25.423448 6.355862 48.128 14.795034 67.795862 3.495724 8.262621 21.857103 14.124138 33.544828 14.265379 144.843034 0.918069 289.721379 0.600276 434.599724 0.600276 41.101241 0 82.237793-0.529655 123.339035 0.353104 11.369931 0.211862 24.011034 2.118621 33.474207 7.768275 6.814897 4.06069 13.029517 15.713103 12.570482 23.587311-0.459034 7.556414-8.403862 17.054897-15.642482 21.256827-7.768276 4.519724-18.46731 5.190621-27.895173 5.190621-186.968276 0.176552-373.936552 0.211862-560.904827-0.211862-59.42731-0.141241-82.802759-22.598621-92.513104-81.284414-26.765241-162.78069-54.978207-325.278897-81.849379-488.024276-9.922207-60.027586-17.690483-120.302345-26.871173-183.260689-24.964414 0-47.315862 0.776828-69.561379-0.211862C35.098483 58.473931 13.382621 52.753655 14.441931 27.895172 15.32469 5.579034 34.392276-0.176552 55.366621 1.024c17.584552 0.98869 35.275034 0.141241 52.894896 0.176552 42.160552 0 73.551448 29.095724 77.259035 70.514758 1.377103 15.430621 4.802207 30.72 6.991448 46.115311 2.118621 15.148138 3.884138 30.366897 6.073379 47.527724h214.828138l13.876966 59.392H207.977931z" fill="#ffffff" p-id="2874"></path><path d="M609.103448 195.901793v208.295724c0 7.838897 0.176552 15.677793-0.105931 23.51669-0.741517 20.126897-11.122759 36.228414-30.649379 36.263724-20.374069 0.070621-29.025103-16.948966-29.025104-37.075862 0.03531-67.513379-0.03531-135.062069-0.07062-202.610759v-30.967172c-13.488552 12.958897-20.833103 25.035034-31.143724 28.601379-11.828966 4.06069-28.813241 4.766897-38.523587-1.235862-5.437793-3.354483-5.826207-27.365517 0.353104-34.957241 25.035034-30.649379 51.694345-60.663172 81.814069-86.157242 8.15669-6.850207 35.063172-2.259862 45.585655 6.461794 25.282207 21.009655 45.267862 48.16331 68.64331 71.609379 14.406621 14.477241 21.751172 29.943172 6.002759 45.373793-16.489931 16.172138-32.556138 6.708966-44.526345-8.686345-6.532414-8.403862-10.981517-18.46731-16.384-27.789241l-11.970207 9.357241M253.316414 923.012414c0-36.652138 31.390897-68.678621 67.442758-68.890483 36.369655-0.211862 67.866483 30.366897 67.442759 65.50069-0.529655 42.160552-28.177655 69.561379-68.325517 70.196965-30.013793 0.423724-70.973793-34.992552-66.56-66.807172M838.62069 989.501793c-35.310345 0.388414-67.195586-30.225655-67.654621-64.935724-0.564966-38.700138 30.825931-71.150345 68.113655-70.444138 35.486897 0.706207 65.324138 29.484138 66.136276 63.805793 0.918069 41.595586-26.518069 71.115034-66.56 71.574069" fill="#ffffff" p-id="2875"></path></svg>';
+                                      html += '                      &nbsp;&nbsp;&nbsp;<span>出售</span>';
+                                      html += '                    </button>';
+                                      html += '                  </div>';
+                                      html += '               </div>';
+
+                          
+                    }else{
+                          html += '               <div class="flex" style="margin:10px auto 0;width:100%;">';
+                          html += '                  <div style="margin: 0 auto;flex:1;" onclick="saleGo()">';
+                          html += '                    <button class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple" matripple="" type="submit" data-analytics-id="logIn_logInWithEmail">';
+                          html += '                    <svg t="1566885363220" class="mat-icon notranslate material-icons mat-icon-no-color" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2873" width="32" height="32"><path d="M207.977931 224.750345l63.770483 387.001379c9.463172 0.494345 18.996966 1.377103 28.495448 1.377104 180.082759 0.070621 360.236138 0.070621 540.354207 0 36.687448 0 45.479724-10.840276 50.846897-47.492414 13.135448-89.935448 28.460138-179.553103 43.04331-269.27669 2.295172-14.230069 6.426483-28.177655 8.015448-42.443034 2.471724-22.457379-11.581793-28.848552-30.861241-28.848552l-140.958897-0.105931h-33.82731l13.170758-54.448552c63.134897 0 124.433655-1.588966 185.661794 0.494345 52.082759 1.730207 73.092414 46.150621 66.030344 92.513103-17.302069 112.993103-35.239724 225.880276-53.106758 338.802759-6.426483 40.536276-43.926069 69.067034-91.171311 69.102345-180.118069 0.141241-360.236138 0.105931-540.354206 0.105931H278.528c5.014069 25.423448 6.355862 48.128 14.795034 67.795862 3.495724 8.262621 21.857103 14.124138 33.544828 14.265379 144.843034 0.918069 289.721379 0.600276 434.599724 0.600276 41.101241 0 82.237793-0.529655 123.339035 0.353104 11.369931 0.211862 24.011034 2.118621 33.474207 7.768275 6.814897 4.06069 13.029517 15.713103 12.570482 23.587311-0.459034 7.556414-8.403862 17.054897-15.642482 21.256827-7.768276 4.519724-18.46731 5.190621-27.895173 5.190621-186.968276 0.176552-373.936552 0.211862-560.904827-0.211862-59.42731-0.141241-82.802759-22.598621-92.513104-81.284414-26.765241-162.78069-54.978207-325.278897-81.849379-488.024276-9.922207-60.027586-17.690483-120.302345-26.871173-183.260689-24.964414 0-47.315862 0.776828-69.561379-0.211862C35.098483 58.473931 13.382621 52.753655 14.441931 27.895172 15.32469 5.579034 34.392276-0.176552 55.366621 1.024c17.584552 0.98869 35.275034 0.141241 52.894896 0.176552 42.160552 0 73.551448 29.095724 77.259035 70.514758 1.377103 15.430621 4.802207 30.72 6.991448 46.115311 2.118621 15.148138 3.884138 30.366897 6.073379 47.527724h214.828138l13.876966 59.392H207.977931z" fill="#ffffff" p-id="2874"></path><path d="M609.103448 195.901793v208.295724c0 7.838897 0.176552 15.677793-0.105931 23.51669-0.741517 20.126897-11.122759 36.228414-30.649379 36.263724-20.374069 0.070621-29.025103-16.948966-29.025104-37.075862 0.03531-67.513379-0.03531-135.062069-0.07062-202.610759v-30.967172c-13.488552 12.958897-20.833103 25.035034-31.143724 28.601379-11.828966 4.06069-28.813241 4.766897-38.523587-1.235862-5.437793-3.354483-5.826207-27.365517 0.353104-34.957241 25.035034-30.649379 51.694345-60.663172 81.814069-86.157242 8.15669-6.850207 35.063172-2.259862 45.585655 6.461794 25.282207 21.009655 45.267862 48.16331 68.64331 71.609379 14.406621 14.477241 21.751172 29.943172 6.002759 45.373793-16.489931 16.172138-32.556138 6.708966-44.526345-8.686345-6.532414-8.403862-10.981517-18.46731-16.384-27.789241l-11.970207 9.357241M253.316414 923.012414c0-36.652138 31.390897-68.678621 67.442758-68.890483 36.369655-0.211862 67.866483 30.366897 67.442759 65.50069-0.529655 42.160552-28.177655 69.561379-68.325517 70.196965-30.013793 0.423724-70.973793-34.992552-66.56-66.807172M838.62069 989.501793c-35.310345 0.388414-67.195586-30.225655-67.654621-64.935724-0.564966-38.700138 30.825931-71.150345 68.113655-70.444138 35.486897 0.706207 65.324138 29.484138 66.136276 63.805793 0.918069 41.595586-26.518069 71.115034-66.56 71.574069" fill="#ffffff" p-id="2875"></path></svg>';
+                          html += '                      &nbsp;&nbsp;&nbsp;<span>出售</span>';
+                          html += '                    </button>';
+                          html += '                  </div>';
+                          html += '               </div>';
+                    }
+              } else if (type == 'unsale') {
+                    html += '                  <div style="margin: 0 auto;" onclick="unsaleGo()">';
+                    html += '                    <button class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple" matripple="" type="submit" data-analytics-id="logIn_logInWithEmail">';
+                    html += '                    <svg class="mat-icon notranslate material-icons mat-icon-no-color" t="1566885351029" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2110" width="32" height="32"><path d="M709.12 883.2a64 64 0 1 0 128 0 64 64 0 1 0-128 0zM320 883.2a64 64 0 1 0 128 0 64 64 0 1 0-128 0zM949.243 268.954l15.293-61.169h-171.52v61.44h92.724L802.227 590.08H342.441l-54.18-320.855H409.6v-61.44H277.883l-11.812-69.97h0.169L256 76.375H58.88v61.44h144.876L312.32 780.703v3.937h517.12l20.48-61.44H364.923l-12.104-71.68H849.92v-0.768l99.38-381.783z" fill="#ffffff" p-id="2111"></path><path d="M751.078 355.999L621.583 531.738h-55.5l-129.495-175.74h55.495l78.454 106.466V198.743h46.254v264.192l78.792-106.936z" fill="#ffffff" p-id="2112"></path></svg>';
+                    html += '                      &nbsp;&nbsp;&nbsp;<span>下架</span>';
+                    html += '                    </button>';
+                    html += '                  </div>';
+              } else if (type == 'buy') {
+                    html += '                    <div style="margin: 0 auto;" onclick="buyGoShow()">';
+                    html += '                      <button class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple" type="submit">';
+                    html += '                      <svg class="mat-icon notranslate material-icons mat-icon-no-color" t="1566887889666" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3003" width="32" height="32"><path d="M443.6 755.001c-2.7-3.961-5.76-7.561-9.36-11.161-7.2-7.2-15.3-12.599-24.119-16.199-9.54-3.6-19.44-5.401-29.52-5.401-2.34 0-4.86 0.18-7.561 0.54-2.7 0.361-5.22 0.54-7.561 0.9-2.34 0.361-4.681 0.9-7.2 1.801-2.34 0.9-4.86 1.62-7.2 2.16-3.060 1.26-5.94 2.7-9.001 4.5l-7.2 5.401c-3.060 1.801-5.58 3.961-8.1 6.3-3.6 3.6-6.66 7.38-9.36 11.161-2.7 3.961-4.86 7.92-6.66 12.060-3.6 9.54-5.401 19.26-5.401 29.159s1.801 19.26 5.401 28.26c3.6 8.279 9.001 16.38 16.201 24.119 7.2 6.48 15.3 11.881 24.121 16.201 9.001 3.6 18.72 5.401 29.52 5.401 10.080 0 19.799-1.98 29.159-5.76 9.18-3.959 17.46-9.18 24.66-15.66 7.2-7.74 12.601-15.84 16.201-24.121 4.14-9.001 6.3-18.361 6.3-28.26s-2.16-19.62-6.3-29.161c-2.16-4.32-4.5-8.46-7.020-12.24zM907.46 290.060c-1.801-3.060-4.14-5.58-7.2-8.1-3.060-2.34-6.48-4.5-10.8-6.3-8.279-4.14-20.34-6.3-35.82-6.3h-554.759l-4.5-30.42-3.6-23.22v-4.32c-1.26-6.48-2.16-10.98-2.7-13.5l-4.5-14.4c-1.26-4.679-3.6-9.9-7.2-15.12-2.34-2.34-4.86-4.5-7.561-6.3s-5.58-3.6-8.46-5.401c-6.48-3.060-15.12-4.5-25.92-4.5h-82.26c-5.94 0-11.34 0.9-16.199 2.7s-9.18 4.14-13.5 7.2c-7.2 7.2-10.8 16.201-10.8 26.82 0 2.34 0.18 5.040 0.361 8.1 0.361 3.060 0.72 5.94 1.44 9.001 0.54 3.060 1.62 5.94 3.060 9.001 1.44 3.060 2.88 6.3 3.959 9.9 4.14 5.399 9.001 10.080 14.4 14.4 4.86 3.6 11.34 5.401 19.62 5.401h60.841l34.919 179.82 13.5 68.94 11.7 61.74 9.001 45.719 4.5 23.22c1.26 5.94 3.239 14.58 6.3 25.92 1.801 4.86 3.78 9.18 5.76 13.5 2.16 4.14 4.32 8.1 6.66 11.7 4.679 7.74 10.8 14.039 17.82 18.72 2.34 1.801 4.86 3.060 7.561 3.961 2.7 0.9 5.76 1.62 9.001 2.16 3.239 0.54 6.66 0.9 10.26 0.9h424.98c15.481 0 25.74-3.961 30.42-11.7 5.399-7.74 8.1-16.921 8.1-27.719 0-22.14-13.14-33.12-39.42-33.12h-407.7l-12.599-71.639h425.881c15.479 0 28.62-4.14 39.42-12.601 5.401-4.14 10.26-9.9 14.759-17.46 4.5-7.38 8.46-16.201 12.060-26.46 1.801-5.399 6.48-19.44 14.4-42.119l18.72-52.74 17.1-49.14 10.8-29.52c0.54-1.801 1.079-3.6 1.44-5.401s0.54-3.78 0.9-5.76c0.361-2.16 0.54-4.32 0.54-6.66 0.361-6.66-1.079-12.96-4.679-18.9zM771.561 745.639c-6.48-7.2-14.58-12.601-24.121-16.201-4.681-1.801-9.719-3.060-14.759-3.961-5.040-0.9-10.080-1.44-14.761-1.44-3.6 0-7.020 0.18-10.26 0.54-3.241 0.361-6.48 0.9-9.9 1.801-3.239 0.9-6.48 1.98-9.36 3.060-4.14 1.801-8.279 3.961-12.601 6.66-4.14 2.7-7.74 5.76-10.8 9.36-7.2 7.2-12.601 14.94-16.201 23.22-2.34 4.679-3.961 9.54-4.86 14.4-0.9 4.679-1.44 9.54-1.44 14.4 0 10.080 2.16 19.62 6.3 28.62 3.6 8.279 9.001 16.38 16.201 24.121 5.94 5.94 13.68 10.98 23.22 15.12 9.001 4.14 18.72 6.3 29.52 6.3s20.521-2.16 29.52-6.3c9.54-3.6 17.639-8.64 24.121-15.12 7.2-7.74 12.78-15.84 16.921-24.121 1.801-4.14 3.060-8.82 3.959-13.86s1.44-10.080 1.44-14.759c0-10.080-1.801-19.62-5.401-28.62-3.959-8.46-9.721-16.201-16.74-23.22z" fill="#ffffff" p-id="3004"></path><path d="M545.66 499.94l118.8-133.92-19.44-21.42-101.161 87.84-47.34-36.359-18.54 21.239 67.68 82.62z" fill="#ffffff" p-id="3005"></path></svg>';
+                    html += '                        &nbsp;&nbsp;&nbsp;<span>购买</span>';
+                    html += '                      </button>';
+                    html += '                    </div>';
+              }
+
+                  html += '       </div>';
+                  
+                  html += '     </div>';
+                  html += '   </div>';
+                  html += '    <div class="c-assetPreview__inner">';
+                  html += '      <h3 class="c-assetPreview__title">';
+                  html += '        ' + objMsg.title + '&nbsp';
+                  html += '      </h3>';
+                  html += '        <div class="c-assetPreviewParam">';
+                  html += '          <strong class="c-assetPreviewParam__label">';
+                  html += '            编号:';
+                  html += '          </strong>';
+                  html += '          <span class="c-assetPreviewParam__value c-assetPreviewParam__value--hero">';
+                  html += '            ' + objMsg.id + '';
+                  html += '          </span>';
+                  html += '        </div>';
+                  html += '        <div class="c-assetPreviewParam">';
+                  html += '          <strong class="c-assetPreviewParam__label">';
+                  html += '            等级:';
+                  html += '          </strong>';
+                  html += '          <span class="c-assetPreviewParam__value c-assetPreviewParam__value--hero">';
+                  html += '            ' + objMsg.level+ '';
+                  html += '          </span>';
+                  html += '        </div>';
+                  html += '        <div class="c-assetPreviewParam">';
+                  html += '          <strong class="c-assetPreviewParam__label">';
+                  html += '            评分:';
+                  html += '          </strong>';
+                  html += '          <span class="c-assetPreviewParam__value c-assetPreviewParam__value--hero">';
+                  html += '            ' + objMsg.quality + '';
+                  html += '          </span>';
+                  html += '        </div>';
+                  html += '      <asset-trade-lock>';
+                  html += '      </asset-trade-lock>';
+                  html += '      <asset-params>';
+                  html += '        <div class="c-assetPreviewParam">';
+                  html += '          <strong class="c-assetPreviewParam__label">';
+                  html += '            货主:';
+                  html += '          </strong>';
+                  html += '          <span class="c-assetPreviewParam__value c-assetPreviewParam__value--hero">';
+                  html += '            ' + objMsg.owner + '';
+                  html += '          </span>';
+                  html += '        </div>';
+                  html += '      </asset-params>';
+                  html += '    </div>';
+                  html += '  </div>';
+                  html += '</div>';
+                  html += ' </div>';
+
+
+                  
+                  html += ' <div class="spiedSection" id="salesHistory">';
+                  html += ' <div class="msgline"></div>';
+                  html += '       <asset-sales-history>';
+                  html += '         <last-sales>';
+                  html += '           <p class="c-assetPreview__title">';
+                  html += '             最近交易';
+                  html += '           </p>';
+                  html += '           <table class="c-assetPreview__table" id="saleLastList">';
+                  html += '<tr class="c-assetPreview__row--header">               <td class="c-assetPreview__cell">                 日期               </td>               <td class="c-assetPreview__cell">                 成交价               </td>             </tr>'
+                  html += '<tr class="c-assetPreview__row">               <td class="c-assetPreview__cell">                 --               </td>               <td class="c-assetPreview__cell">                 -               </td>             </tr>'
+    
+                  html += '           </table>';
+                  html += '         </last-sales>';
+                  html += '       </asset-sales-history>';
+                  html += '     </div>';
+                  html += '</div>';
+
+
+            
+              html += '            </div>';
+              html += '          </div>';
+              html += '        </div>';
+              html += '      </div>';
+              html += '    </div>';
+              html += '</div>';
+                  return html;
+                  break;
+            case "sale1":
+            case "unsale1":
+            case "buy1":
                   var title = '';
                   if (type == 'sale') {
                         title = '上架物品';
@@ -4714,10 +4910,10 @@ function getMarketList(page) {
 
       if(nftSaletype == 1){
         console.log("shjjj:", i, dexPage * dexSize, ((dexPage + 1) * dexSize))
-        var tokenid = n.tokenid;
+        var tokenid = n.id;
         var nftcontract = n.nftcontract;
         
-        html += '<div class="c-asset item" style="" id="myItemId_' + tokenid + '" onclick="saleMsgShow(' + tokenid + ',\'' + n.imageUrl +')">';
+        html += '<div class="c-asset item" style="" id="myItemId_' + tokenid + '" onclick="saleMsgShow(' + tokenid + ',\'' + nftcontract +'\',\''+ n.owner +'\')">';
         html += '   <div style="background: #2a2c2e;border-radius: 2px;width:100%;height:100%;">';
         html += '     <div class="flex" style="line-height:17px;padding:0 10px;">';
         html += '      <div style="color: rgba(0, 0, 0,0);text-align: center;position: relative;overflow: hidden;">';
@@ -4752,9 +4948,9 @@ function getMarketList(page) {
         var tokenid = n.id;
         var nftcontract = getCookie("nftcontract") || 'xlootshovel1';
         
-        html += '<div class="c-asset item" style="" id="myItemId_' + tokenid + '" onclick="saleMsgShow(' + tokenid + ',\'' + n.imageUrl +')">';
+        html += "<div class='c-asset item' style='' id='myItemId_" + tokenid + "' onclick='saleMsgShow(" + JSON.stringify(n) + ")'>";
         html += '   <div style="background: #2a2c2e;border-radius: 2px;width:100%;height:100%;">';
-        html += '     <div class="flex" style="line-height:17px;padding:0 10px;">';
+        html += '     <div class="flex" style="line-height:18px;padding:0 10px;">';
         html += '      <div style="color: rgba(0, 0, 0,0);text-align: center;position: relative;overflow: hidden;">';
         html += '        <img class="c-asset__img '+ 'skin' +'" style="height: 153px;max-height: 153px;width:156px;" loading="auto" alt="" src="' + n.imageUrl + '">';
         html += '      <div class="title">'+ n.title +' ( 品质：'+ n.quality +' )</div>';
