@@ -451,12 +451,10 @@ function saleMsgShow(obj) {
 }
 
 
-function unsaleMsgShow(id, imgs, contractId) {
-      imgUrl = imgs;
-      itemId = id;
-      nftContractId = contractId;
-      getItem("unsale");
-      // panelShow("unsale");
+function unsaleMsgShow(obj) {
+      objMsg=obj
+
+      panelShow("unsale");
 }
 
 
@@ -1483,7 +1481,7 @@ function getHtml(type) {
                     }
               } else if (type == 'unsale') {
                     html += '                  <div style="margin: 0 auto;" onclick="unsaleGo()">';
-                    html += '                    <button class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple" matripple="" type="submit" data-analytics-id="logIn_logInWithEmail">';
+                    html += '                    <button style="margin-top:30px;" class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple" matripple="" type="submit" data-analytics-id="logIn_logInWithEmail">';
                     html += '                    <svg class="mat-icon notranslate material-icons mat-icon-no-color" t="1566885351029" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2110" width="32" height="32"><path d="M709.12 883.2a64 64 0 1 0 128 0 64 64 0 1 0-128 0zM320 883.2a64 64 0 1 0 128 0 64 64 0 1 0-128 0zM949.243 268.954l15.293-61.169h-171.52v61.44h92.724L802.227 590.08H342.441l-54.18-320.855H409.6v-61.44H277.883l-11.812-69.97h0.169L256 76.375H58.88v61.44h144.876L312.32 780.703v3.937h517.12l20.48-61.44H364.923l-12.104-71.68H849.92v-0.768l99.38-381.783z" fill="#ffffff" p-id="2111"></path><path d="M751.078 355.999L621.583 531.738h-55.5l-129.495-175.74h55.495l78.454 106.466V198.743h46.254v264.192l78.792-106.936z" fill="#ffffff" p-id="2112"></path></svg>';
                     html += '                      &nbsp;&nbsp;&nbsp;<span>下架</span>';
                     html += '                    </button>';
@@ -4914,7 +4912,7 @@ function getMarketList(page) {
         var nftcontract = getCookie("nftcontract") || 'xlootshovel1';
         console.log(n,'///////');
         
-        html += "<div class='c-asset item' style='' id='myItemId_" + tokenid + "' onclick='saleMsgShow(" + JSON.stringify(n) + ")'>";
+        html += "<div class='c-asset item' style='' id='myItemId_" + tokenid + "' onclick='unsaleMsgShow(" + JSON.stringify(n) + ")'>";
         html += '   <div style="background: #2a2c2e;border-radius: 2px;width:100%;height:100%;">';
         html += '     <div class="flex" style="line-height:17px;padding:0 10px;">';
         html += '      <div style="color: rgba(0, 0, 0,0);text-align: center;position: relative;overflow: hidden;">';
@@ -5073,7 +5071,7 @@ function getNftMsg(obj) {
 
 
         var html = '';
-        html += "<div class='c-asset item' style='' id='myItemId_" + tokenid + "' onclick='saleMsgShow(" + JSON.stringify(obj) + ")'>";
+        html += "<div class='c-asset item' style='' id='myItemId_" + tokenid + "' onclick='unsaleMsgShow(" + JSON.stringify(obj) + ")'>";
         html += '   <div style="background: #2a2c2e;border-radius: 2px;width:100%;height:100%;">';
         html += '     <div class="flex" style="line-height:18px;padding:0 10px;">';
         html += '      <div style="color: rgba(0, 0, 0,0);text-align: center;position: relative;overflow: hidden;">';
