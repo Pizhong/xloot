@@ -1440,7 +1440,7 @@ function getHtml(type) {
                     html += '                        <input type="text" id="lootNum" placeholder="请输入出售金额" style="background: none;border:0;height:100%;width:100%;font-size:20px;" maxlength="11">';
 
                     html += '                        <span style="padding-left: 15px;"></span>';
-                    html += '                        <select>'
+                    html += '                        <select id="select-coin">'
                     html += '                          <option value="EOS">EOS</option>'
                     html += '                          <option value="LOOT">LOOT</option>'
                     html += '                          <option value="TIME">TIME</option>'
@@ -1462,7 +1462,7 @@ function getHtml(type) {
                                       html += '                      &nbsp;&nbsp;&nbsp;<span>转账</span>';
                                       html += '                    </button>';
                                       html += '                  </div>';
-                                      html += '                  <div style="margin:0 auto;margin-left: 10px;flex:1;" onclick="saleGo()">';
+                                      html += '                  <div style="margin:0 auto;margin-left: 10px;flex:1;" onclick="saleNftOk()">';
                                       html += '                    <button class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple" matripple="" type="submit" data-analytics-id="logIn_logInWithEmail">';
                                       html += '                    <svg t="1566885363220" class="mat-icon notranslate material-icons mat-icon-no-color" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2873" width="32" height="32"><path d="M207.977931 224.750345l63.770483 387.001379c9.463172 0.494345 18.996966 1.377103 28.495448 1.377104 180.082759 0.070621 360.236138 0.070621 540.354207 0 36.687448 0 45.479724-10.840276 50.846897-47.492414 13.135448-89.935448 28.460138-179.553103 43.04331-269.27669 2.295172-14.230069 6.426483-28.177655 8.015448-42.443034 2.471724-22.457379-11.581793-28.848552-30.861241-28.848552l-140.958897-0.105931h-33.82731l13.170758-54.448552c63.134897 0 124.433655-1.588966 185.661794 0.494345 52.082759 1.730207 73.092414 46.150621 66.030344 92.513103-17.302069 112.993103-35.239724 225.880276-53.106758 338.802759-6.426483 40.536276-43.926069 69.067034-91.171311 69.102345-180.118069 0.141241-360.236138 0.105931-540.354206 0.105931H278.528c5.014069 25.423448 6.355862 48.128 14.795034 67.795862 3.495724 8.262621 21.857103 14.124138 33.544828 14.265379 144.843034 0.918069 289.721379 0.600276 434.599724 0.600276 41.101241 0 82.237793-0.529655 123.339035 0.353104 11.369931 0.211862 24.011034 2.118621 33.474207 7.768275 6.814897 4.06069 13.029517 15.713103 12.570482 23.587311-0.459034 7.556414-8.403862 17.054897-15.642482 21.256827-7.768276 4.519724-18.46731 5.190621-27.895173 5.190621-186.968276 0.176552-373.936552 0.211862-560.904827-0.211862-59.42731-0.141241-82.802759-22.598621-92.513104-81.284414-26.765241-162.78069-54.978207-325.278897-81.849379-488.024276-9.922207-60.027586-17.690483-120.302345-26.871173-183.260689-24.964414 0-47.315862 0.776828-69.561379-0.211862C35.098483 58.473931 13.382621 52.753655 14.441931 27.895172 15.32469 5.579034 34.392276-0.176552 55.366621 1.024c17.584552 0.98869 35.275034 0.141241 52.894896 0.176552 42.160552 0 73.551448 29.095724 77.259035 70.514758 1.377103 15.430621 4.802207 30.72 6.991448 46.115311 2.118621 15.148138 3.884138 30.366897 6.073379 47.527724h214.828138l13.876966 59.392H207.977931z" fill="#ffffff" p-id="2874"></path><path d="M609.103448 195.901793v208.295724c0 7.838897 0.176552 15.677793-0.105931 23.51669-0.741517 20.126897-11.122759 36.228414-30.649379 36.263724-20.374069 0.070621-29.025103-16.948966-29.025104-37.075862 0.03531-67.513379-0.03531-135.062069-0.07062-202.610759v-30.967172c-13.488552 12.958897-20.833103 25.035034-31.143724 28.601379-11.828966 4.06069-28.813241 4.766897-38.523587-1.235862-5.437793-3.354483-5.826207-27.365517 0.353104-34.957241 25.035034-30.649379 51.694345-60.663172 81.814069-86.157242 8.15669-6.850207 35.063172-2.259862 45.585655 6.461794 25.282207 21.009655 45.267862 48.16331 68.64331 71.609379 14.406621 14.477241 21.751172 29.943172 6.002759 45.373793-16.489931 16.172138-32.556138 6.708966-44.526345-8.686345-6.532414-8.403862-10.981517-18.46731-16.384-27.789241l-11.970207 9.357241M253.316414 923.012414c0-36.652138 31.390897-68.678621 67.442758-68.890483 36.369655-0.211862 67.866483 30.366897 67.442759 65.50069-0.529655 42.160552-28.177655 69.561379-68.325517 70.196965-30.013793 0.423724-70.973793-34.992552-66.56-66.807172M838.62069 989.501793c-35.310345 0.388414-67.195586-30.225655-67.654621-64.935724-0.564966-38.700138 30.825931-71.150345 68.113655-70.444138 35.486897 0.706207 65.324138 29.484138 66.136276 63.805793 0.918069 41.595586-26.518069 71.115034-66.56 71.574069" fill="#ffffff" p-id="2875"></path></svg>';
                                       html += '                      &nbsp;&nbsp;&nbsp;<span>出售</span>';
@@ -1473,7 +1473,7 @@ function getHtml(type) {
                           
                     }else{
                           html += '               <div class="flex" style="margin:10px auto 0;width:100%;">';
-                          html += '                  <div style="margin: 0 auto;flex:1;" onclick="saleGo()">';
+                          html += '                  <div style="margin: 0 auto;flex:1;" onclick="saleNftOk()">';
                           html += '                    <button class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple" matripple="" type="submit" data-analytics-id="logIn_logInWithEmail">';
                           html += '                    <svg t="1566885363220" class="mat-icon notranslate material-icons mat-icon-no-color" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2873" width="32" height="32"><path d="M207.977931 224.750345l63.770483 387.001379c9.463172 0.494345 18.996966 1.377103 28.495448 1.377104 180.082759 0.070621 360.236138 0.070621 540.354207 0 36.687448 0 45.479724-10.840276 50.846897-47.492414 13.135448-89.935448 28.460138-179.553103 43.04331-269.27669 2.295172-14.230069 6.426483-28.177655 8.015448-42.443034 2.471724-22.457379-11.581793-28.848552-30.861241-28.848552l-140.958897-0.105931h-33.82731l13.170758-54.448552c63.134897 0 124.433655-1.588966 185.661794 0.494345 52.082759 1.730207 73.092414 46.150621 66.030344 92.513103-17.302069 112.993103-35.239724 225.880276-53.106758 338.802759-6.426483 40.536276-43.926069 69.067034-91.171311 69.102345-180.118069 0.141241-360.236138 0.105931-540.354206 0.105931H278.528c5.014069 25.423448 6.355862 48.128 14.795034 67.795862 3.495724 8.262621 21.857103 14.124138 33.544828 14.265379 144.843034 0.918069 289.721379 0.600276 434.599724 0.600276 41.101241 0 82.237793-0.529655 123.339035 0.353104 11.369931 0.211862 24.011034 2.118621 33.474207 7.768275 6.814897 4.06069 13.029517 15.713103 12.570482 23.587311-0.459034 7.556414-8.403862 17.054897-15.642482 21.256827-7.768276 4.519724-18.46731 5.190621-27.895173 5.190621-186.968276 0.176552-373.936552 0.211862-560.904827-0.211862-59.42731-0.141241-82.802759-22.598621-92.513104-81.284414-26.765241-162.78069-54.978207-325.278897-81.849379-488.024276-9.922207-60.027586-17.690483-120.302345-26.871173-183.260689-24.964414 0-47.315862 0.776828-69.561379-0.211862C35.098483 58.473931 13.382621 52.753655 14.441931 27.895172 15.32469 5.579034 34.392276-0.176552 55.366621 1.024c17.584552 0.98869 35.275034 0.141241 52.894896 0.176552 42.160552 0 73.551448 29.095724 77.259035 70.514758 1.377103 15.430621 4.802207 30.72 6.991448 46.115311 2.118621 15.148138 3.884138 30.366897 6.073379 47.527724h214.828138l13.876966 59.392H207.977931z" fill="#ffffff" p-id="2874"></path><path d="M609.103448 195.901793v208.295724c0 7.838897 0.176552 15.677793-0.105931 23.51669-0.741517 20.126897-11.122759 36.228414-30.649379 36.263724-20.374069 0.070621-29.025103-16.948966-29.025104-37.075862 0.03531-67.513379-0.03531-135.062069-0.07062-202.610759v-30.967172c-13.488552 12.958897-20.833103 25.035034-31.143724 28.601379-11.828966 4.06069-28.813241 4.766897-38.523587-1.235862-5.437793-3.354483-5.826207-27.365517 0.353104-34.957241 25.035034-30.649379 51.694345-60.663172 81.814069-86.157242 8.15669-6.850207 35.063172-2.259862 45.585655 6.461794 25.282207 21.009655 45.267862 48.16331 68.64331 71.609379 14.406621 14.477241 21.751172 29.943172 6.002759 45.373793-16.489931 16.172138-32.556138 6.708966-44.526345-8.686345-6.532414-8.403862-10.981517-18.46731-16.384-27.789241l-11.970207 9.357241M253.316414 923.012414c0-36.652138 31.390897-68.678621 67.442758-68.890483 36.369655-0.211862 67.866483 30.366897 67.442759 65.50069-0.529655 42.160552-28.177655 69.561379-68.325517 70.196965-30.013793 0.423724-70.973793-34.992552-66.56-66.807172M838.62069 989.501793c-35.310345 0.388414-67.195586-30.225655-67.654621-64.935724-0.564966-38.700138 30.825931-71.150345 68.113655-70.444138 35.486897 0.706207 65.324138 29.484138 66.136276 63.805793 0.918069 41.595586-26.518069 71.115034-66.56 71.574069" fill="#ffffff" p-id="2875"></path></svg>';
                           html += '                      &nbsp;&nbsp;&nbsp;<span>出售</span>';
@@ -4911,17 +4911,17 @@ function getMarketList(page) {
       if(nftSaletype == 1){
         console.log("shjjj:", i, dexPage * dexSize, ((dexPage + 1) * dexSize))
         var tokenid = n.id;
-        var nftcontract = n.nftcontract;
+        var nftcontract = getCookie("nftcontract") || 'xlootshovel1';
+        console.log(n,'///////');
         
-        html += '<div class="c-asset item" style="" id="myItemId_' + tokenid + '" onclick="saleMsgShow(' + tokenid + ',\'' + nftcontract +'\',\''+ n.owner +'\')">';
+        html += "<div class='c-asset item' style='' id='myItemId_" + tokenid + "' onclick='saleMsgShow(" + JSON.stringify(n) + ")'>";
         html += '   <div style="background: #2a2c2e;border-radius: 2px;width:100%;height:100%;">';
         html += '     <div class="flex" style="line-height:17px;padding:0 10px;">';
         html += '      <div style="color: rgba(0, 0, 0,0);text-align: center;position: relative;overflow: hidden;">';
-        html += '        <img class="c-asset__img '+ 'skin' +'" style="height: 153x;max-height: 156px;width:153px;" loading="auto" alt="" src="' + n.imageUrl + '">';
-        html += '      <div class="title">'+ n.title +' ( 品质：'+ n.quality +' )</div>';
-        html += '      <div>合约：' + n.nftcontract + '</div>';
-        html += '      <div >面值：<span class="value">--</span></div>';
-        html += '      <div >拥有者：' + n.owner + '</div>';
+        html += '      <div class="title">---</div>';
+        html += '      <div class="nftcontract">合约：' + nftcontract + '</div>';
+        html += '      <div class="valueBox">面值：<span class="value">--</span></div>';
+        html += '      <div class="owner">拥有者：' + n.owner + '</div>'
         html += '      </div>';
 				html += '     </div>';
 				html += '    </div>';
@@ -5037,6 +5037,80 @@ function getMarketList(page) {
   $(".Pagination").html(html2);
 
 }
+
+function getNftMsg(obj) {
+  console.log(obj,'....................');
+  var contract = obj.nftcontract;
+  var tokenid = obj.tokenid;
+  var api = get_random_api();
+  var scope = obj.nftcontract;
+  
+
+
+  var selfData = {
+    json: true, // Get the response as json
+    code: contract, // Contract that we target
+    scope: dexContractName, // Account that owns the data
+    table: 'tokens', // Table name
+    index_position: 1,          // Table secondary index
+    lower_bound: tokenid, // Table primary key value
+    key_type:'i64',
+    limit: 1, // Here we limit to 1 to get only the single row with primary key equal to 'testacc'
+    reverse: false, // Optional: Get reversed data
+    show_payer: false,
+  }
+
+  $.post(api + "/v1/chain/get_table_rows", JSON.stringify(selfData),
+    function(data, status) {
+      for (x in data["rows"]) {
+        var obj = data["rows"][x];
+        console.log(obj,'obj');
+        var tokenid = obj.id;
+        var nftcontract = obj.owner;
+        // var parvalueHtml = '<div class="parvalue flex"><img src="imgs/' + getTokenImgs(String(obj.parvalue).split(' ')[1]) + '"> ' + String(obj.parvalue).split(' ')[0] + '</div>';
+
+        var parvalueHtml = '<div class="parvalue flex">面值：' + obj.parvalue + '</div>';
+
+
+        var html = '';
+        html += "<div class='c-asset item' style='' id='myItemId_" + tokenid + "' onclick='saleMsgShow(" + JSON.stringify(obj) + ")'>";
+        html += '   <div style="background: #2a2c2e;border-radius: 2px;width:100%;height:100%;">';
+        html += '     <div class="flex" style="line-height:18px;padding:0 10px;">';
+        html += '      <div style="color: rgba(0, 0, 0,0);text-align: center;position: relative;overflow: hidden;">';
+        html += '        <img class="c-asset__img '+ 'skin' +'" style="height: 153px;max-height: 153px;width:156px;" loading="auto" alt="" src="' + obj.imageUrl + '">';
+        html += '      <div class="title">'+ obj.title +' ( 品质：'+ obj.quality +' )</div>';
+        html += '      <div class="nftcontract">合约：' + nftcontract + '</div>';
+        html += '      <div class="valueBox">面值：<span class="value">'+obj.parvalue+'</span></div>';
+        html += '      <div class="owner">拥有者：' + obj.owner + '</div>'
+        html += '      </div>';
+				html += '     </div>';
+				html += '    </div>';
+				html += '</div>';
+        $("#myItem").html(html);
+        if(html == ''){
+          $("#myItem").html('<div class="flex" style="height:150px;font-size: 20px;">没有对应的资产</div>');
+          $(".Pagination").html('');
+          return
+        }
+
+
+
+        // $('.nftMenu .nftName').html("合约："+getURLPara("nftcontract"));
+        // $('.nftMenu .name').html("名称："+obj.title);
+        
+        // $('.curPriceBox .curPrice').html(obj.owner);
+
+
+
+      }
+    }, "json");
+
+
+}
+
+
+
+
 
 function selectContract(num,contractData){
   // if(num == 0){
@@ -5179,6 +5253,55 @@ function transferOk() {
       setTimeout(function() {
         getMyItem(0);
       }, 10000)
+    }).catch(e => {
+      $("#showLoading").hide();
+      eosErrorShow(e);
+    });
+  })
+}
+
+function saleNftOk() {
+  if($("#lootNum").val() == ''){
+    showMsg("请输入出售金额");
+    return
+  }
+  
+  var toUser = saleContractName;
+  var contract = '';
+  var num = 4;
+  var memo = '';
+  var selectCoin=$('#select-coin').val()
+  memo = 'SALE-'+ Number($("#lootNum").val()).toFixed(num) +' '+ selectCoin +'-UCAT'
+
+  // quantity = Number(num).toFixed(4) + " LOOT";
+  checkScatter(function(user) {
+    // $("#showLoading").show();
+    var authorization;
+    const eos = loot.scatter.eos(network, Eos);
+    const account = user.name;
+    authorization = [{
+      actor: account,
+      permission: user.authority
+    }]
+
+
+    eos.transaction({
+      actions: [{
+        account: getCookie("nftcontract"),
+        name: 'transfer',
+        authorization: authorization,
+        data: {
+          id: objMsg.id,
+          from: account,
+          to: toUser,
+          memo: memo
+        }
+      }]
+    }).then(res => {
+      showMsg("上架成功！");
+      $("#showLoading").hide();
+      $('.cdk-overlay-container').hide();
+      $('#transferAssetOKShow').hide();
     }).catch(e => {
       $("#showLoading").hide();
       eosErrorShow(e);

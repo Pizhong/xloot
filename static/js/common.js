@@ -107,6 +107,8 @@ const iostContractName = 'ContractBgWwzLsEb323Gt9cHb1aYVSzKepAQPuVVDHSsLRHSSBe';
 xpetcontractName = "xpetpetstore";
 lootcontractName = "loottokenspx";
 eosNFTcontractName = "xpetnftcore1";
+saleContractName = 'looreception';
+
 chainId = 'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906';
 network = ScatterJS.Network.fromJson({
   blockchain: 'eos',
