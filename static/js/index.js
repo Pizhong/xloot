@@ -44,12 +44,16 @@ function init() {
       loginPanel();
       if(!getCookie('account')){
         $('#panelMsg #my-login').show()
+        $('#phonePanelMsg #my-login').show()
         $('#panelMsg #my-wallet').hide()
+        $('#phonePanelMsg #my-wallet').hide()
         $('#intPanel').show()
       }
       else{
         $('#panelMsg #my-login').hide()
+        $('#phonePanelMsg #my-login').hide()
         $('#panelMsg #my-wallet').show()
+        $('#phonePanelMsg #my-wallet').show()
         $('#intPanel').hide()
       }
 

@@ -955,6 +955,7 @@ function eosSign(eosName) {
     
   }
   $('#panelMsg #my-login').show()
+  $('#phonePanelMsg #my-login').show()
 
   getUserToken(eosName.name);
   
