@@ -5130,3 +5130,58 @@ function getTotalmarket() {
   getDexListData();
   return
 }
+
+
+function transferOk() {
+  if($("#transferAmount").val() == ''){
+    showMsg("请输入转账账号");
+    return
+  }
+  var toUser = $("#transferAmount").val();
+  var toMemo = $("#transferMemo").val();
+  console.log(toUser);
+  console.log(nftcontract);
+  // var contract = '';
+  // $.each(payCoin,function(i,n){
+  //   if(selectCoin == n.coin){
+  //     contract = n.contract;
+  //   }
+  // })
+  // quantity = Number(num).toFixed(4) + " LOOT";
+  checkScatter(function(user) {
+    // $("#showLoading").show();
+    var authorization;
+    const eos = loot.scatter.eos(network, Eos);
+    const account = user.name;
+    authorization = [{
+      actor: account,
+      permission: user.authority
+    }]
+
+
+    eos.transaction({
+      actions: [{
+        account: getCookie('nftcontract'),
+        name: 'transfer',
+        authorization: authorization,
+        data: {
+          id: objMsg.id,
+          from: account,
+          to: toUser,
+          memo: toMemo
+        }
+      }]
+    }).then(res => {
+      showMsg("转账成功！");
+      $("#showLoading").hide();
+      $('.cdk-overlay-container').hide();
+      $('#transferAssetOKShow').hide();
+      setTimeout(function() {
+        getMyItem(0);
+      }, 10000)
+    }).catch(e => {
+      $("#showLoading").hide();
+      eosErrorShow(e);
+    });
+  })
+}
