@@ -6,7 +6,61 @@ var iostSuccessStaus = true;
 var prepareRechargeType;
 var IWallet, target;
 var bindTarget = "IOST";
+var nftcontract = {
+  "lootnftaxe11":{
+    mid: 0,
+    nftcontract: "lootnftaxe11",
+    protocol: "UCAT"
+  },
+  "lootnftarrow":{
+    mid: 0,
+    nftcontract: "lootnftarrow",
+    protocol: "UCAT"
+  },
+  "lootnfthamme":{
+    mid: 0,
+    nftcontract: "lootnfthamme",
+    protocol: "UCAT"
+  },
+  "lootnftsickl":{
+    mid: 0,
+    nftcontract: "lootnftsickl",
+    protocol: "UCAT"
+  },
+  "lootnftspear":{
+    mid: 0,
+    nftcontract: "lootnftspear",
+    protocol: "UCAT"
+  },
+  "lootnftsword":{
+    mid: 0,
+    nftcontract: "lootnftsword",
+    protocol: "UCAT"
+  },
+  "xlootndxbow1":{
+    mid: 0,
+    nftcontract: "xlootndxbow1",
+    protocol: "UCAT"
+  },
+  "xlootshovel1":{
+    mid: 0,
+    nftcontract: "xlootshovel1",
+    protocol: "UCAT"
+  },
+  "xpetartnftcc":{
+    mid: 0,
+    nftcontract: "xpetartnftcc",
+    protocol: "UCAT"
+  },
+  "mhxpetgoldbr":{
+    mid: 0,
+    nftcontract: "mhxpetgoldbr",
+    protocol: "UCAT"
+  }
 
+
+
+};
 ScatterJS.plugins(new ScatterEOS());
 
 var chainId, lootcontractName, network, xpetcontractName;
@@ -26,6 +80,7 @@ var chainId, lootcontractName, network, xpetcontractName;
 // })
 
 //
+var nftContractName, saleContractName , blindBoxContractName;
 
 const API_ENDPOINTS2 = [
   'eospush.tokenpocket.pro',
@@ -47,7 +102,7 @@ function get_random_api2() {
   // console.log(index,node);
   return node;
 }
-const dexContractName = 'Contract3CAQnJQbhfeBfsVqqi76ERsv8YKWexnTuLcjRFrPtbek';
+const dexContractName = 'xlootnftdex1';
 const iostContractName = 'ContractBgWwzLsEb323Gt9cHb1aYVSzKepAQPuVVDHSsLRHSSBe';
 xpetcontractName = "xpetpetstore";
 lootcontractName = "loottokenspx";
@@ -3651,3 +3706,29 @@ function IsPC() {
 //     }
 // }
 
+function getContractsList() {
+  var api = get_random_api();
+  var selfData = {
+    json: true, // Get the response as json
+    code: dexContractName, // Contract that we target
+    scope: dexContractName, // Account that owns the data
+    table: 'contracts', // Table name
+    // index_position: 329,          // Table secondary index
+    // lower_bound: getCookie("account"), // Table primary key value
+    limit: 10, // Here we limit to 1 to get only the single row with primary key equal to 'testacc'
+    reverse: false, // Optional: Get reversed data
+    show_payer: false,
+  }
+  $.post(api + "/v1/chain/get_table_rows", JSON.stringify(selfData),
+    function(data, status) {
+      // var html = '';
+      // $("#") = data["rows"];
+      for (x in data["rows"]) {
+
+        console.log("sdfff:", data["rows"][x]);
+        nftcontract[data["rows"][x].nftcontract] = data["rows"][x];
+
+
+      }
+    }, "json");
+}

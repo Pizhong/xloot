@@ -52,7 +52,7 @@ var cn = {
     'myAssets':'我的资产',
     'node':'节点',
     'selectNode':'选择节点',
-
+    'selectContract':'选择合约',
 
 
     'input':'请输入手机号码!',

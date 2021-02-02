@@ -1134,10 +1134,74 @@ input:-webkit-autofill:active {
     line-height: 45px;
     cursor: pointer;
 }
-
+.title,
 .nftcontract,
 .valueBox,
 .owner{
   color: #fff;
   font-size: 14px;
+}
+
+
+
+.iptSearch{
+  padding:0 26px;
+}
+.el-input {
+    position: relative;
+    font-size: 12px;
+    display: inline-block;
+    width: 100%;
+}
+.el-input__inner {
+    font-size: 14px;
+    height: 45px;
+    border: 0;
+    background: #fafafa;
+    border-radius: 5px;
+    outline: none;
+    padding-left: 15px;
+    color: #606266;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.joinUserInputBtn{
+    min-width: 88px;
+    padding: 0 10px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 18.5px;
+    bottom: 20px;
+    border-radius: 10px;
+    background: #3495f9;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.scroll{
+  overflow: auto;
+  height: 470px;
+  margin-top: 6px;
+  padding:0 26px;
+}
+.scroll .item {
+  color: #fff;
+  height: 78px;
+  border-bottom: 1px solid #f3f3f3;
+  cursor: pointer;
+}
+.scroll .item .coinImg{
+  width: 41px;
+  margin-right:15px;
+}
+.scroll .item .coin{
+  font-size: 20px;
+}
+.scroll .item .contractTip{
+  font-size: 16px;
+  color: #a6a6a6;
+  font-weight: 300;
 }

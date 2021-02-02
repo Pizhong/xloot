@@ -26,7 +26,9 @@ $(function() {
       if(location.href.indexOf("xloot.io") == -1){
             $(".goldLink").show();
       }
-      
+      var nftcontract = getCookie("nftcontract") || nftContractName
+      console.log('nftcontract',nftcontract);
+      $("#mat-select-0 #nftcontractMore").html(nftcontract);
 })
 function init() {
      
@@ -52,6 +54,8 @@ function init() {
       }
 
       getDexListData()
+      getContractsList();
+
 }
 
 function loginPanel() {
@@ -1106,6 +1110,97 @@ function getHtml(type) {
                   html += '      <svg t="1566445356488" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2277" width="48" height="48"><path d="M942.427421 234.839536a17.254917 17.254917 0 1 0-28.988261 18.715833 475.626037 475.626037 0 0 1 76.013661 258.559181c0 263.229511-214.145024 477.386038-477.386038 477.386038s-477.386038-214.156527-477.386038-477.386038 214.145024-477.386038 477.386038-477.386039a475.683553 475.683553 0 0 1 166.659492 29.908523 17.254917 17.254917 0 0 0 12.055436-32.335714 511.964892 511.964892 0 1 0 251.64571 202.538216z" fill="#4daef8" p-id="2278"></path><path d="M796.059711 128.365195a482.807533 482.807533 0 0 1 34.969965 28.562639 17.254917 17.254917 0 1 0 23.064073-25.663813c-11.963409-10.755565-24.571002-21.050999-37.47768-30.621726a17.256067 17.256067 0 1 0-20.556358 27.7229zM385.496215 534.22385L261.088263 751.647308l242.144003 144.12457-117.736051-361.548028zM257.614273 707.187138l117.402456-205.172466-42.32056-129.964036-75.081896 335.136502zM621.370931 503.65964l-108.671467-191.736638-110.385456 192.898469 110.523495 339.381212 108.533428-340.543043zM689.332298 373.074428l-40.721605 127.755406 116.447684 205.460049-75.726079-333.215455zM638.223233 533.407117L522.868361 895.35776l239.072628-143.664439L638.223233 533.407117zM673.423264 340.336099L525.514115 130.263235v153.361703l106.232773 187.457419 41.676376-130.746258zM500.413963 282.865722V129.29696L348.708732 340.175053l43.125789 132.448743 108.579442-189.758074z" fill="#4daef8" p-id="2279"></path></svg>';
                   html += '    </div>';
                   html += '    <span>'+getCookie('eos')+'</span>'
+                  html += '   </div>'
+                  html += '  </div>'
+
+                  html += '</div></div></div></div></div>';
+                  return html;
+                  break;
+            case "myContract":
+                  html += '<div class="cdk-overlay-backdrop cdk-overlay-dark-backdrop cdk-overlay-backdrop-showing"></div>';
+                  html += '      <div class="cdk-global-overlay-wrapper" dir="ltr" style="justify-content: center; align-items: center;">';
+                  html += '        <div id="cdk-overlay-8" class="cdk-overlay-pane" style="max-width: 80vw; pointer-events: auto; position: static;">';
+                  html += '          <div tabindex="0" class="cdk-visually-hidden cdk-focus-trap-anchor" aria-hidden="true"></div>';
+                  html += '          <div aria-modal="true" class="mat-dialog-container ng-tns-c27-23 ng-trigger ng-trigger-dialogContainer"';
+                  html += '          tabindex="-1" id="mat-dialog-5" role="dialog" style="transform:none;0:transform;transform:none;webkit-transform:none;">';
+                  html += '            <div>';
+                  html += '              <div class="c-auth c-auth--dialog">';
+
+
+
+                  html += '<div class="c-auth__inner">';
+                  html += '  <div class="c-authHeader c-authHeader--shadow">';
+                  html += '    <h3 class="c-authHeader__title">';
+                  html += '      <span>' + get_lan("selectContract") + '</span>&nbsp;&nbsp;&nbsp;&nbsp;';
+                  html += '    </h3>';
+                  html += '    <button class="c-dialogHeader__close" mat-dialog-close="" type="button"';
+                  html += '    data-analytics-id="logIn_close" onclick="$(\'.cdk-overlay-container\').hide()">';
+                  html += '      <img src="images/close.png" alt="" class="mat-icon notranslate material-icons mat-icon-no-color">';
+                  html += '    </button>';
+                  html += '  </div>';
+                  html += '  <div class="c-auth__content">';
+                  html += '  <div>';
+                  html += '<div class="iptSearch">';
+                  html += '  <div class="el-input--suffix flex">';
+                  html += '    <input type="text" autocomplete="off" placeholder="请输入您的NFT资产合约名" id="userInputContractBox" class="el-input__inner">';
+                  html += '    <div class="joinUserInputBtn flex" onclick="selectContract(\'select\',\'\')">';
+                  html += '      选择';
+                  html += '    </div>';
+                  html += '  </div>';
+                  html += '</div>';
+                  html += '      <div class="scroll" style="height:405px">';
+
+                  html += '        <div class="item flex" onclick="selectContract(-1,\'\')">';
+                  html += '          <div class="flex">';
+                  // html += '            <img src="imgs/'+ n.nftcontract +'.png" alt="" class="coinImg">';
+                  html += '            <div style="min-width:128px;">';
+                  html += '              <div class="coin">全部</div>';
+                  // html += '              <div class="contractTip">'+ n.protocol +'</div>';
+                  html += '            </div>';
+                  // html += '            <div style="flex:1;padding-left:20px;font-size: 20px;">（数量：'+ n.tokencount +'）</div>';
+                  html += '          </div>';
+                  html += '          <div style="flex:1;"></div>';
+                  html += '        </div>';
+              
+                  $.each(nftcontract,function(i,n){
+              
+                    var imgsTag = 'png';
+                    if(n.nftcontract == 'tennispocket'){
+                      imgsTag = 'jpg';
+                    }
+              
+                    html += '        <div class="item flex" onclick="selectContract('+ n.mid +',\''+ n.nftcontract +'\')">';
+                    html += '          <div class="flex">';
+                    html += '            <img src="images/'+ n.nftcontract +'.'+ imgsTag +'?v='+ new Date().getTime() +'" alt="" class="coinImg">';
+                    html += '            <div style="min-width:128px;">';
+                    html += '              <div class="coin">'+ n.nftcontract +'</div>';
+                    html += '              <div class="contractTip">'+ n.protocol +'</div>';
+                    html += '            </div>';
+                    // html += '            <div style="flex:1;padding-left:20px;font-size: 20px;">（数量：'+ n.tokencount +'）</div>';
+                    html += '          </div>';
+                    html += '          <div style="flex:1;"></div>';
+                    html += '        </div>';
+                  })
+              
+                    // html += '        <div class="item flex" onclick="selectContract(2,\'xlootndxbow1\')">';
+                    // html += '          <div class="flex">';
+                    // html += '            <img src="imgs/xlootndxbow1.png" alt="" class="coinImg">';
+                    // html += '            <div style="min-width:128px;">';
+                    // html += '              <div class="coin">xlootndxbow1</div>';
+                    // html += '              <div class="contractTip">UCAT</div>';
+                    // html += '            </div>';
+                    // // html += '            <div style="flex:1;padding-left:20px;font-size: 20px;">（数量：'+ n.tokencount +'）</div>';
+                    // html += '          </div>';
+                    // html += '          <div style="flex:1;"></div>';
+                    // html += '        </div>';
+              
+              
+              
+                  html += '      </div>';
+              
+                  html += '    </div>';
+                  html += '  </div>';
+                  html += '</div>';
                   html += '   </div>'
                   html += '  </div>'
 
@@ -2986,13 +3081,15 @@ function gameTypeSelect(self, num) {
 function Navtab(type) {
       $(".c-exchangeHeader__inner--user .NavItem").removeClass("active");
       $(".c-exchangeHeader__inner--user .NavItem").eq(type).addClass("active");
-      if (getCookie("token")) {
+      if (getCookie("account")) {
             switch (type) {
                   case 0:
-                        getMyItem(0);
+                        // getMyItem(0);
+                        getUserNft();
                         break;
                   case 1:
-                        getMySaleItem(0);
+                        // getMySaleItem(0);
+                        getTotalmarket()
                         break;
 
             }
@@ -4054,10 +4151,11 @@ function returnRechargeMsg() {
 
 function refresh() {
       checkLogin(function() {
-            if ($(".c-exchangeHeader__inner--user .NavItem").eq(0).hasClass("active") == true) {
-                  getMyItem(0);
+                  if(!getCookie('account')){
+                    eosLogin()
+                  
             } else {
-                  getMySaleItem(0);
+                  // getMySaleItem(0);
             }
       })
 
@@ -4620,7 +4718,7 @@ function getMarketList(page) {
         html += '     <div class="flex" style="line-height:17px;padding:0 10px;">';
         html += '      <div style="color: rgba(0, 0, 0,0);text-align: center;position: relative;overflow: hidden;">';
         html += '        <img class="c-asset__img '+ 'skin' +'" style="height: 153x;max-height: 156px;width:153px;" loading="auto" alt="" src="' + n.imageUrl + '">';
-        html += '      <div>--</div>';
+        html += '      <div class="title">'+ n.title +' ( 品质：'+ n.quality +' )</div>';
         html += '      <div>合约：' + n.nftcontract + '</div>';
         html += '      <div >面值：<span class="value">--</span></div>';
         html += '      <div >拥有者：' + n.owner + '</div>';
@@ -4655,7 +4753,7 @@ function getMarketList(page) {
         html += '     <div class="flex" style="line-height:17px;padding:0 10px;">';
         html += '      <div style="color: rgba(0, 0, 0,0);text-align: center;position: relative;overflow: hidden;">';
         html += '        <img class="c-asset__img '+ 'skin' +'" style="height: 153px;max-height: 153px;width:156px;" loading="auto" alt="" src="' + n.imageUrl + '">';
-        html += '      <div>--</div>';
+        html += '      <div class="title">'+ n.title +' ( 品质：'+ n.quality +' )</div>';
         html += '      <div class="nftcontract">合约：' + nftcontract + '</div>';
         html += '      <div class="valueBox">面值：<span class="value">'+n.parvalue+'</span></div>';
         html += '      <div class="owner">拥有者：' + n.owner + '</div>'
@@ -4738,4 +4836,97 @@ function getMarketList(page) {
   html2 += '</div>'
   $(".Pagination").html(html2);
 
+}
+
+function selectContract(num,contractData){
+  // if(num == 0){
+  //   // nftContractName = "xlootshovel1";
+  //   setCookie("nftcontract",'xlootshovel1');
+  //   $.each(nftcontract,function(i,n){
+  //     if("xlootshovel1" == n.nftcontract){
+  //       setCookie("scope",n.mid);
+  //     }
+  //   })
+    
+  // }else if(num == 1){
+  //   setCookie("nftcontract",'xpetartnftcc');
+  //   $.each(nftcontract,function(i,n){
+  //     if("xpetartnftcc" == n.nftcontract){
+  //       setCookie("scope",n.mid);
+  //     }
+  //   })
+  //   // nftContractName = "xpetartnftcc";
+  // }else if(num == 2){
+  //   setCookie("nftcontract",'xpetartnftcc');
+  //   $.each(nftcontract,function(i,n){
+  //     if("xpetartnftcc" == n.nftcontract){
+  //       setCookie("scope",n.mid);
+  //     }
+  //   })
+  //   // nftContractName = "xpetartnftcc";
+  // }else if(num == -1){
+  //   setCookie("scope",'');
+  //   setCookie("nftcontract",'');
+
+  // }else{
+  //   if($("#userInputContractBox").val() == ''){
+  //     showMsg("请输入您的NFT资产合约名");
+  //     return
+  //   }
+  //   setCookie("nftcontract",$("#userInputContractBox").val())
+
+  // }
+
+  if(num >= 0){
+    setCookie("nftcontract",contractData);
+    setCookie("scope",'');
+    $.each(nftcontract,function(i,n){
+      if(contractData == n.nftcontract){
+        setCookie("scope",n.mid);
+      }
+    })
+  }else if(num == -1){
+    setCookie("scope",'');
+    setCookie("nftcontract",'');
+  }else{
+    if($("#userInputContractBox").val() == ''){
+      showMsg("请输入您的NFT资产合约名");
+      return
+    }
+    setCookie("scope",$("#userInputContractBox").val());
+    setCookie("nftcontract",$("#userInputContractBox").val());
+  }
+
+
+  $('#contractBox').hide();
+  window.location.reload();
+}
+
+function getUserNft() {
+  if(!getCookie("account")){
+    showMsg("请登录");
+    return
+  }
+  myNftListloading = true;
+  
+  mySaleNftMore = true;
+  nftSaletype = 0;
+  dexListType = '';
+  getDexListData();
+  return
+}
+
+function getTotalmarket() {
+  console.log('出售中');
+  if(!getCookie("account")){
+    showMsg("请登录");
+    return
+  }
+  mySaleNftListloading = true;
+  myNftMore = true;
+  nftSaletype = 1;
+  dexListType = 'sale';
+  
+  getDexListData();
+  return
 }
