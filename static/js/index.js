@@ -4944,6 +4944,7 @@ function getMarketList(page) {
   var data = dexListData;
 
   var obj = dexListData.content;
+  console.log(obj,'-------------');
   var html = '';
   var html2 = '';
   var loadHtml = '<div class="flex"><div style="padding:30px;background: rgba(0,0,0,0.7);color:#fff;text-align: center;border-radius: 10px;"><img src="imgs/loading.gif" alt=""><br><div style="margin-top:13px;">加载中...</div></div></div>'
@@ -4959,19 +4960,19 @@ function getMarketList(page) {
         var nftcontract = getCookie("nftcontract") || 'xlootshovel1';
         console.log(n,'///////');
         
-        html += "<div class='c-asset item' style='' id='myItemId_" + tokenid + "' >";
-        html += '   <div style="background: #2a2c2e;border-radius: 2px;width:100%;height:100%;">';
-        html += '     <div class="flex" style="line-height:17px;padding:0 10px;">';
-        html += '      <div style="color: rgba(0, 0, 0,0);text-align: center;position: relative;overflow: hidden;">';
-        // html += '      <div class="price">售价：'+ n.price +'</div>';
-        html += '      <div class="title">---</div>';
-        html += '      <div class="nftcontract">合约：' + nftcontract + '</div>';
-        html += '      <div class="valueBox">面值：<span class="value">--</span></div>';
-        html += '      <div class="owner">拥有者：' + n.owner + '</div>'
-        html += '      </div>';
-				html += '     </div>';
-				html += '    </div>';
-				html += '</div>';
+        // html += "<div class='c-asset item' style='' id='myItemId_" + tokenid + "' >";
+        // html += '   <div style="background: #2a2c2e;border-radius: 2px;width:100%;height:100%;">';
+        // html += '     <div class="flex" style="line-height:17px;padding:0 10px;">';
+        // html += '      <div style="color: rgba(0, 0, 0,0);text-align: center;position: relative;overflow: hidden;">';
+        // // html += '      <div class="price">售价：'+ n.price +'</div>';
+        // html += '      <div class="title">---</div>';
+        // html += '      <div class="nftcontract">合约：' + nftcontract + '</div>';
+        // html += '      <div class="valueBox">面值：<span class="value">--</span></div>';
+        // html += '      <div class="owner">拥有者：' + n.owner + '</div>'
+        // html += '      </div>';
+				// html += '     </div>';
+				// html += '    </div>';
+				// html += '</div>';
 
 
         // html += '<a id="nft_' + tokenid + '" href="nftAssets.html?tokenid=' + tokenid + '&nftcontract=' + nftcontract + '&type=1&owner=' + n.owner + '">';
@@ -5031,7 +5032,7 @@ function getMarketList(page) {
   })
 
   $("#myItem").html(html);
-  if(html == ''){
+  if(obj == ''){
     $("#myItem").html('<div class="flex" style="height:150px;font-size: 20px;">没有对应的资产</div>');
     $(".Pagination").html('');
     return
@@ -5133,8 +5134,10 @@ function getNftMsg(obj) {
 				html += '     </div>';
 				html += '    </div>';
 				html += '</div>';
-        $("#myItem").html(html);
-        if(html == ''){
+        if(html !=''){
+          $("#myItem").append(html);
+        }
+        if(obj == ''){
           $("#myItem").html('<div class="flex" style="height:150px;font-size: 20px;">没有对应的资产</div>');
           $(".Pagination").html('');
           return
@@ -5349,7 +5352,11 @@ function saleNftOk() {
       $("#showLoading").hide();
       $('.cdk-overlay-container').hide();
       $('#transferAssetOKShow').hide();
-      Navtab(1)
+      setTimeout(()=>{
+        window.location.reload()
+        Navtab(1)
+      },500)
+      
       // setTimeout(()=>{
       //   window.location.reload()
       // },1000)
@@ -5403,7 +5410,11 @@ function unsaleNftOk() {
       showMsg("下架成功！");
       // $('#unsaleBox').hide();
     $('.cdk-overlay-container').hide();
-    Navtab(0)
+    setTimeout(()=>{
+      window.location.reload()
+      Navtab(0)
+    },500)
+    
     
     }).catch(e => {
 

@@ -1147,7 +1147,7 @@ input:-webkit-autofill:active {
   position: absolute;
   top: 6px;
   left: 4px;
-  color: #000;
+  color: #3495f9;
   z-index: 99;
   font-size: 10px;
 }
