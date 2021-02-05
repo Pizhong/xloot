@@ -1415,13 +1415,13 @@ function getLootNum() {
 
 function buyGoShow() {
 
-  if(itemMsg.lock == true){
-    showMsg("该资产已锁定，不能购买");
-    return
-  }
-  $("#buyShopMoneyShow").html(itemMsg.salePrice);
+  // if(itemMsg.lock == true){
+  //   showMsg("该资产已锁定，不能购买");
+  //   return
+  // }
+  // $("#buyShopMoneyShow").html(itemMsg.salePrice);
   $("#buyShopOkShow").show();
-  $("#buyShopOkAction").attr('onclick','buyGo()');
+  $("#buyShopOkAction").attr('onclick','buyNftOk()');
 }
 
 // function buyGo() {

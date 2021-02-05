@@ -156,7 +156,7 @@ function getSaleMarket(page) {
               imageUrl=n.imageUrl
             }
 						// console.log("msg:", msg);
-						html += '<div class="c-asset item" style="" id="saleItemId_' + n.id + '" >';
+            html += "<div class='c-asset item' style='' id='saleItemId_" + n.tokenId+ "' onclick='buyMsgShow(" + JSON.stringify(n) + ")'>";
 						html += '    <div style="background: #2a2c2e;border-radius: 2px;width:100%;height:100%;">';
 						html += '      <div class="flex" style="line-height: 18px;padding:0 10px;">';
             html += '      <div style="color: rgba(0, 0, 0,0);text-align: center;position: relative;overflow: hidden;">';
