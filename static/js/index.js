@@ -4417,13 +4417,15 @@ function refresh() {
                   
             } else {
                   // getMySaleItem(0);
+                  // window.location.reload()
+
             }
       })
 
 }
 
 function checkLogin(fun) {
-      if (getCookie("token")) {
+      if (getCookie("account")) {
             fun();
       } else {
             showMsg(get_lan("noLoginShow"));
