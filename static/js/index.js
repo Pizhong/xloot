@@ -3863,14 +3863,13 @@ function withdrawalLootGo(price, serial) {
 
 function getItemExchangeLog(page) {
       // var url = '/api/getItemExchangeLog.do';
-      var url = '/api/listNFTExchangeLog.do';
+      var url = 'api/listDexLog.do';
 
       $.ajax({
             type: 'get',
             url: url,
             data: {
-                  page: page,
-                  size: 10
+                owner:getCookie('account')
             },
             headers: {
                   'Authorization': "BASIC " + getCookie("token")
@@ -3905,21 +3904,22 @@ function getItemExchangeLog(page) {
                               html += '    <tr> ';
 
 
-                              html += '     <td align="center">ID</td> ';
-                              html += '     <td align="center" style="word-break: break-all;">价格</td>';
+                              html += '     <td align="center">合约/NFTID</td> ';
+                              html += '     <td align="center" style="word-break: break-all;">发起人</td>';
                               // html += '     <td align="center">买家</td> ';
-                              html += '     <td align="center">卖家</td> ';
+                              html += '     <td align="center">接收人</td> ';
                               // html += '     <td align="center">类型</td> ';
-                              html += '     <td align="center">游戏</td>';
-                              // html += '     <td align="center">合约</td>';
+                              html += '     <td align="center">动作</td>';
+                              html += '     <td align="center">金额</td>';
 
                               html += '     <td align="center">时间</td> ';
 
                               html += '    </tr>';
                               $.each(obj, function(i, n) {
                                     var fromUser = n.buyer;
-                                    var toUser = n.seller;
-
+                                    var toUser = n.toAcc;
+                                    var price=n.memo.split('-')
+                                    console.log(price,'price');
                                     if (String(fromUser).length > 12) {
                                           fromUser = fromUser.slice(0, 5) + "***" + fromUser.slice(-8)
                                     }
@@ -3927,16 +3927,16 @@ function getItemExchangeLog(page) {
                                           toUser = toUser.slice(0, 5) + "***" + toUser.slice(-8)
                                     }
                                     html += '<tr> ';
-                                    html += ' <td align="center">' + n.nftId + '</td> ';
-                                    html += ' <td align="center" style="color:#4cafff">' + n.quantity + '</td> ';
+                                    html += ' <td align="center">' + n.contract + '</td> ';
+                                    html += ' <td align="center" style="color:#4cafff">' + n.fromAcc + '</td> ';
 
                                     // html += ' <td align="center">' + fromUser + '</td> ';
                                     html += ' <td align="center">' + toUser + '</td> ';
                                     // html += ' <td align="center">' + n.category + '</td> ';
-                                    html += ' <td align="center">' + n.game + '</td> ';
-                                    // html += ' <td align="center">' + n.contract + '</td> ';
+                                    html += ' <td align="center">' + n.act + '</td> ';
+                                    html += ' <td align="center">' + price[3] + '</td> ';
 
-                                    html += ' <td align="center">' + new Date(n.createDate).Format("yyyy/MM/dd hh:mm:ss") + '</td> ';
+                                    html += ' <td align="center">' + new Date(n.lastModifyDate).Format("yyyy/MM/dd hh:mm:ss") + '</td> ';
 
                                     html += '</tr>';
 

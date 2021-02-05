@@ -45,7 +45,7 @@ var cn = {
     'submit':'提交',
     'noLoginShow':'请登录再操作',
     'withdraw':'提现',
-    'transactionRecord':'交易记录',
+    'transactionRecord':'交易历史',
     'rechargeRecord':'充值记录',
     'withdrawalRecord':'提现记录',
     'index':'首页',

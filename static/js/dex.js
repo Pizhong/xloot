@@ -561,12 +561,12 @@ function listDexOrder(page) {
 			page: page,
 			size: 10
 	}
-	if(selectLookSymbol){
-		selfData.symbol = selectLookSymbol;
-	}
-	if(selectLookOrderType){
-		selfData.orderType = selectLookOrderType;
-	}
+	// if(selectLookSymbol){
+	// 	selfData.symbol = selectLookSymbol;
+	// }
+	// if(selectLookOrderType){
+	// 	selfData.orderType = selectLookOrderType;
+	// }
 	$.ajax({
 		type: 'get',
 		url: '/api/listDexOrder.do',
@@ -731,7 +731,7 @@ function selecrCoinTag(){
 
 
 function listMyDexOrder(page) {
-	if (!getCookie("token")) {
+	if (!getCookie("account")) {
     // panelShow(0);
     eosLogin()
 		showMsg("请登录再操作");
@@ -899,7 +899,7 @@ function listMyDexOrder(page) {
 
 
 function listMyDexHistory(page) {
-	if (!getCookie("token")) {
+	if (!getCookie("account")) {
     // panelShow(0);
     eosLogin()
 		showMsg("请登录再操作");
