@@ -1248,3 +1248,16 @@ input:-webkit-autofill:active {
     height: 100%;
     width: 100%;
 }
+
+@media screen and (max-width: 1450px) {
+  #filtert {
+      margin-right: 0 !important;
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+  #filtert {
+    top: 221px !important;
+  }
+}

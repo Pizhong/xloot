@@ -1125,7 +1125,7 @@ function getHtml(type) {
                 case "5":
         
                   html += '<div class="cdk-overlay-backdrop cdk-overlay-transparent-backdrop cdk-overlay-backdrop-showing" onclick="$(\'.cdk-overlay-container\').hide()"></div>';
-                          html += '  <div class="cdk-overlay-connected-position-bounding-box" dir="ltr" style="top: 160px; right: 0; height: 559px; width: 1425px; align-items: flex-end; justify-content: flex-start;margin-right:110px;">';
+                          html += '  <div class="cdk-overlay-connected-position-bounding-box" dir="ltr" style="top: 160px; right: 0; height: 559px; width: 1425px; align-items: flex-end; justify-content: flex-start;margin-right:110px;" id="filtert">';
                           html += '    <div id="cdk-overlay-43" class="cdk-overlay-pane" style="pointer-events: auto; position: static;">';
                           html += '      <div class="mat-menu-panel ng-trigger ng-trigger-transformMenu ng-tns-c5-266 mat-menu-before mat-menu-below c-dropdown__list mat-elevation-z4" role="menu" tabindex="-1" style="transform-origin:right top;0:transform-origin;transform-origin:right top;webkit-transform-origin:right top;">';
                           html += '        <div class="mat-menu-content" style="width:137px;">';
