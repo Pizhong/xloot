@@ -1238,3 +1238,13 @@ input:-webkit-autofill:active {
   background-color:#484b4d ;
   display: inline-block;
 }
+
+.cdk-overlay-container1{
+  position: fixed;
+    z-index: 1000;
+  pointer-events: none;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+}
