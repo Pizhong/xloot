@@ -1213,3 +1213,28 @@ input:-webkit-autofill:active {
   color: #a6a6a6;
   font-weight: 300;
 }
+
+.filter-select{
+  width: 120px;
+  height: 30px;
+  background-color: #484b4d;
+  color: #fff;
+  border-radius: 4px;
+  margin: 5px 0;
+}
+
+.filter-input{
+  width: 50px;
+  height: 30px;
+  background-color: #3d4d43;
+  border: 2px solid #70a67a;
+  display: inline-block;
+  margin: 5px 0;
+}
+
+.toline{
+  width: 8px;
+  height: 4px;
+  background-color:#484b4d ;
+  display: inline-block;
+}

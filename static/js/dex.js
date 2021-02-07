@@ -561,6 +561,7 @@ function listDexOrder(page) {
 			page: page,
 			size: 10
 	}
+  var filter=
 	// if(selectLookSymbol){
 	// 	selfData.symbol = selectLookSymbol;
 	// }

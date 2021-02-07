@@ -1118,6 +1118,76 @@ function getHtml(type) {
                   html += '</div></div></div></div></div>';
                   return html;
                   break;
+                case 5:
+                case "5":
+        
+                  html += '<div class="cdk-overlay-backdrop cdk-overlay-transparent-backdrop cdk-overlay-backdrop-showing" onclick="$(\'.cdk-overlay-container\').hide()"></div>';
+                          html += '  <div class="cdk-overlay-connected-position-bounding-box" dir="ltr" style="top: 159px; right: 113px; height: 921px; width: 1425px; align-items: flex-end; justify-content: flex-start;">';
+                          html += '    <div id="cdk-overlay-43" class="cdk-overlay-pane" style="pointer-events: auto; position: static;">';
+                          html += '      <div class="mat-menu-panel ng-trigger ng-trigger-transformMenu ng-tns-c5-266 mat-menu-before mat-menu-below c-dropdown__list mat-elevation-z4" role="menu" tabindex="-1" style="transform-origin:right top;0:transform-origin;transform-origin:right top;webkit-transform-origin:right top;">';
+                          html += '        <div class="mat-menu-content" style="width:137px;">';
+                          html += '          <div>';
+        
+    
+                          html += '                  <div appearance="fill" class="c-authForm__field mat-form-field mat-primary mat-form-field-type-mat-input mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label mat-form-field-invalid mat-form-field-hide-placeholder">';
+
+                          html += '                    <div class="mat-form-field-wrapper" style="padding:10px;">';
+                       
+                          html += '                      <p>等级</p>'
+                          html += '                        <select id="filter-level" class="filter-select">'
+                          html += '                          <option value="1">1</option>'
+                          html += '                          <option value="2">2</option>'
+                          html += '                          <option value="3">3</option>'
+                          html += '                          <option value="4">4</option>'
+                          html += '                          <option value="5">5</option>'
+                          html += '                        </select>'
+                          html += '                      <p>分类</p>'
+                          html += '                        <select id="filter-classify" class="filter-select">'
+                          html += '                          <option value="SHOVEL">SHOVEL</option>'
+                          html += '                          <option value="SHOVEL">SHOVEL</option>'
+                          html += '                          <option value="SHOVEL">SHOVEL</option>'
+                          html += '                        </select>'
+                          html += '                      <p>价格标的</p>'
+                          html += '                        <select id="filter-price-unit" class="filter-select">'
+                          html += '                          <option value="EOS">EOS</option>'
+                          html += '                          <option value="LOOT">LOOT</option>'
+                          html += '                          <option value="EOS">3</option>'
+                          html += '                          <option value="LOOT">4</option>'
+                          html += '                        </select>'
+
+                          html += '                      <p>价格范围</p>'
+                          html += '                       <input type="text" class="filter-input" id="priceLow" />'
+                          html += '                       <div class="toline"></div>'
+                          html += '                       <input type="text" class="filter-input" id="priceHigh" />'
+
+
+                          html += '                      <p>质量</p>'
+                          html += '                       <input type="text" class="filter-input" id="qualityLow" />'
+                          html += '                       <div class="toline"></div>'
+                          html += '                       <input type="text" class="filter-input" id="qualityHigh" />'
+
+
+                          html += '                       <button style="margin-top:20px;" class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple" type="submit" onclick="getSaleMarket(0)"><span>应用</span></button>'
+                          html += '                       <button style="margin-top:20px;" class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple" type="submit"><span>重置</span></button>'
+                          
+                          html += '                    </div>';
+      
+                         
+      
+                          html += '                  </div>';
+
+
+                          html += '</form>'
+        
+                          html += '            </div>';
+                          html += '          </div>';
+                          html += '        </div>';
+                          html += '      </div>';
+                          html += '    </div>';
+                          html += '  </div>';
+                          return html;
+        
+                          break;
             case "myContract":
                   html += '<div class="cdk-overlay-backdrop cdk-overlay-dark-backdrop cdk-overlay-backdrop-showing"></div>';
                   html += '      <div class="cdk-global-overlay-wrapper" dir="ltr" style="justify-content: center; align-items: center;">';
@@ -1302,6 +1372,7 @@ function getHtml(type) {
                   html += '</div></div></div></div></div>';
                   return html;
                   break;  
+            
             case "forget":
                   html += '<div class="cdk-overlay-backdrop cdk-overlay-dark-backdrop cdk-overlay-backdrop-showing"></div>';
                   html += '      <div class="cdk-global-overlay-wrapper" dir="ltr" style="justify-content: center; align-items: center;">';
@@ -5501,3 +5572,89 @@ function buyNftOk() {
     });
   })
 }
+function getListOrder(page) {
+	$("#saleMarketLoadingShow").show();
+	// var url = '/api/xpet/getSaleMarket.do';
+	var url = '/api/listDexOrder.do';
+  var filters="price:"+$('#priceLow').val()+"-"+$('#priceHigh').val()+"|"+"level:"+$('#filter-level').val()+ "-" +$('#filter-level').val()+"|"+"quality:"+$('#qualityLow').val()+"-"+$('#qualityHigh').val()+"|"+"category:"+$('#filter-classify').val()+"-"+$('#filter-classify').val()+"|"+"asset:"+$('#filter-price-unit').val()+"-"+$('#filter-price-unit').val()
+	// console.log('filters',filters);
+  var selfData = {
+    page: page,
+    size: 10,
+    filter:filters
+}
+	$.ajax({
+		type: 'get',
+		url: url,
+		// data: {
+		//       page: page,
+		//       size: 100,
+		//       game: 'xpet',
+		//       lowPrice: $("#lowPrice").val() || 0,
+		//       highPrice: $("#highPrice").val() || 0
+		// },
+		data: selfData,
+		dataType: 'json',
+		success: function(data) {
+			if (data.code == 200) {
+        var obj = data.object.content;
+        console.log('obj',obj);
+				$("#saleMarketLoadingShow").hide();
+
+				// var obj = csgoData;
+
+				var html = '';
+
+				if (obj == '' || obj == undefined) {
+					// if(page != 0){
+					// 	showMsg("没有更多的商品了");
+					// }
+					Do_not_trigger = false;
+					return
+        }
+        
+				Do_not_trigger = true;
+				$.each(obj, function(i, n) {
+					// if (n.category == "PET") {
+						// var msg = JSON.parse(n.meta);
+						var imgClass = '';
+            imgClass = 'skin';
+            var imageUrl='../images/shovellv1.png'
+            if(n.imageUrl){
+              imageUrl=n.imageUrl
+            }
+						// console.log("msg:", msg);
+            html += "<div class='c-asset item' style='' id='saleItemId_" + n.tokenId+ "' onclick='buyMsgShow(" + JSON.stringify(n) + ")'>";
+						html += '    <div style="background: #2a2c2e;border-radius: 2px;width:100%;height:100%;">';
+						html += '      <div class="flex" style="line-height: 18px;padding:0 10px;">';
+            html += '      <div style="color: rgba(0, 0, 0,0);text-align: center;position: relative;overflow: hidden;">';
+            html += '        <img class="c-asset__img '+ 'skin' +'" style="height: 153px;max-height: 153px;width:156px;" loading="auto" alt="" src="' + imageUrl + '">';
+            html += '      <div class="price">售价：'+ n.quantity+'</div>'
+            html += '      <div class="title">'+ n.name +' ( 品质：'+ n.quality +' )</div>';
+            html += '      <div class="nftcontract">合约：' + n.contract + '</div>';
+            html += '      <div class="valueBox">面值：<span class="value">'+n.parValue+'</span></div>';
+            html += '      <div class="owner">拥有者：' + n.owner + '</div>'
+            html += '      </div>';
+            html += '     </div>';
+            html += '    </div>';
+            html += '</div>';
+				})
+
+				if (page == 0) {
+					$("#getSaleMarket").html(html);
+				} else {
+					$("#getSaleMarket").append(html);
+				}
+
+			} else {
+				alert(data.message);
+			}
+		},
+		error: function(data) {
+			if (data.status == 401) {
+				alert(data.message);
+			}
+		}
+	});
+}
+

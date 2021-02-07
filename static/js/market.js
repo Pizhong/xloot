@@ -110,6 +110,23 @@ function getSaleMarket(page) {
 	$("#saleMarketLoadingShow").show();
 	// var url = '/api/xpet/getSaleMarket.do';
 	var url = '/api/listDexOrder.do';
+  var filters="price:"+$('#priceLow').val()+"-"+$('#priceHigh').val()+"|"+"level:"+$('#filter-level').val()+ "-" +$('#filter-level').val()+"|"+"quality:"+$('#qualityLow').val()+"-"+$('#qualityHigh').val()+"|"+"category:"+$('#filter-classify').val()+"-"+$('#filter-classify').val()+"|"+"asset:"+$('#filter-price-unit').val()+"-"+$('#filter-price-unit').val()
+	console.log('filters',filters);
+  var selfData = {}
+  if($('#priceLow').val()!=undefined){
+    selfData={
+      page: page,
+      size: 10,
+      filter:filters
+    }
+    
+  }
+   else{
+     selfData={
+      page: page,
+      size: 10,
+     }
+   }
 
 	$.ajax({
 		type: 'get',
@@ -121,11 +138,7 @@ function getSaleMarket(page) {
 		//       lowPrice: $("#lowPrice").val() || 0,
 		//       highPrice: $("#highPrice").val() || 0
 		// },
-		data: {
-			page: page,
-			size: 10,
-			
-		},
+		data: selfData,
 		dataType: 'json',
 		success: function(data) {
 			if (data.code == 200) {

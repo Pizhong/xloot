@@ -78,7 +78,8 @@ var cn = {
     'sortBy2':'以前',
     'sortBy3':'从低到高',
     'sortBy4':'从高到低',
-    'unsaleConfirm':'下架确认'
+    'unsaleConfirm':'下架确认',
+    'filter':'过滤'
 };
 var en = {
     'title':'XLOOT (www.xloot_dex.io) - Game Asset Trading Platform',
