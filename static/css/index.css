@@ -959,7 +959,7 @@ input:-webkit-autofill:active {
 }
 .assetlist .item{
 	width:180px;
-	height:230px;
+	height:240px;
 	margin:5px 0 0 5px;
 }
 .myAssetlist .item{
@@ -1268,3 +1268,21 @@ input:-webkit-autofill:active {
   background:linear-gradient(270deg,#0a87ce 1.02%,#72c3f0 99.9%);
   margin: 20px 0;
 }
+
+#nftcontractMore::-webkit-input-placeholder{ /*WebKit browsers*/
+
+  color: #fff;
+  
+  }
+  
+  #nftcontractMore::-moz-input-placeholder{ /*Mozilla Firefox*/
+  
+  color: #fff;
+  
+  }
+  
+  #nftcontractMore::-ms-input-placeholder{ /*Internet Explorer*/ 
+  
+  color: #fff;
+  
+  }

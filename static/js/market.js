@@ -174,7 +174,7 @@ function getSaleMarket(page) {
 						html += '    <div style="background: #2a2c2e;border-radius: 2px;width:100%;height:100%;font-size:14px;">';
 						html += '      <div class="flex" style="line-height: 20px;padding:0 10px;">';
             html += '         <div style="flex:1">'
-            html += '            <span style="color:#89d295;">评分：</span>'
+            html += '            <span style="color:#89d295;">质量：</span>'
             html += '            <span>'+n.quality +'</span>'
             html += '         </div>'
             html += '         <div>'
@@ -189,11 +189,11 @@ function getSaleMarket(page) {
             html += '      </div>'
             html += '          <span>'+ n.quantity+'</span>'
             html += '      </div>'
-            html += '      <div style="color: rgba(0, 0, 0,0);text-align: center;position: relative;overflow: hidden;">';
+            html += '      <div style="color: rgba(0, 0, 0,0);text-align: center;position: relative;overflow: hidden;margin:3px 0;">';
             html += '        <img class="c-asset__img " style="height: 90px;max-height: 90px;" loading="auto" alt="" src="' + imageUrl + '">';
             html += '     </div>';
             html += '     <div class="flex">'
-            html += '       <div class="shopAssetMsgBox" style="padding:5px 12px;">'+n.name+'</div>'
+            html += '       <div class="shopAssetMsgBox" style="padding:5px 12px;width:130px;">'+n.name+'</div>'
             html += '     </div>'
             html += '     <div class="flex" style="flex-wrap:wrap;font-size:14px;flex-wrap: wrap;border-top: 1px solid #000;line-height: 20px;margin-top: 8px;padding-top: 5px;">'
             html += '       <div class="shopMsgBox" style="color:#848484;">合约：<span>'+ n.contract +'</span></div>'

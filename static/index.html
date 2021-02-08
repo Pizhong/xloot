@@ -377,50 +377,10 @@
             <filters class="c-exchange__filters">
               <div class="c-assetFilters">
                 <div class="c-assetFilters__inner">
-                  <filter-game-selector class="c-assetFilters__item c-assetFilters__item--game">
+                  <filter-game-selector class="c-assetFilters__item c-assetFilters__item--game" style="min-width:337px;max-width:337px;">
                     <mat-form-field appearance="fill" class="mat-form-field ng-tns-c11-3 mat-primary mat-form-field-type-mat-select mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label ng-untouched ng-pristine ng-valid mat-form-field-should-float">
-                      <div class="mat-form-field-wrapper" onclick="panelShow('myContract')">
-                        <div class="mat-form-field-flex">
-                          <div class="mat-form-field-infix">
-                            <mat-select class="mat-select ng-tns-c12-4 ng-untouched ng-pristine ng-valid"
-                            disableoptioncentering="" role="listbox" id="mat-select-0" tabindex="0"
-                            aria-labelledby="mat-form-field-label-1" aria-required="false" aria-disabled="false"
-                            aria-invalid="false" aria-multiselectable="false">
-                              <div class="mat-select-trigger" aria-hidden="true" cdk-overlay-origin="">
-                                <div class="mat-select-value">
-                                  <span class="mat-select-value-text ng-tns-c12-4">
-                                    <span class="ng-tns-c12-4">
-                                      <font style="vertical-align: inherit;" id="nftcontractMore">
-                                        &nbsp;
-                                      </font>
-                                    </span>
-                                  </span>
-                                </div>
-                                <div class="mat-select-arrow-wrapper">
-                                  <!-- <div class="mat-select-arrow">
-                                  </div> -->
-                                  <svg class="c-user__arrow mat-icon notranslate material-icons mat-icon-no-color"
-                                  t="1566287544986" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                  p-id="5805" width="128" height="128">
-                                    <path d="M836.802183 342.264666c-8.381992-8.381992-22.351978-8.381992-30.73397 0l-293.369714 293.369713-294.766712-293.369713c-8.381992-8.381992-22.351978-8.381992-30.73397 0-8.381992 8.381992-8.381992 22.351978 0 30.73397l310.133697 308.736698c8.381992 8.381992 22.351978 8.381992 30.73397 0l308.736699-308.736698c8.381992-8.381992 8.381992-22.351978 0-30.73397z"
-                                    fill="#ffffff" p-id="5806">
-                                    </path>
-                                  </svg>
-                                </div>
-                              </div>
-                            </mat-select>
-                            <span class="mat-form-field-label-wrapper">
-                              <label class="mat-form-field-label ng-tns-c11-3" id="mat-form-field-label-1"
-                              for="mat-select-0" aria-owns="mat-select-0">
-                                <mat-label>
-                                  <font style="vertical-align: inherit;" set-lan="game">
-                                    &nbsp;
-                                  </font>
-                                </mat-label>
-                              </label>
-                            </span>
-                          </div>
-                        </div>
+                      <div class="mat-form-field-wrapper">
+                          <input type="text" autocomplete="off" placeholder="请输入您的NFT资产合约名" id="nftcontractMore" lass="el-input__inner" style="height:48px;width:100%;font-size:20px;" class="shopAssetMsgBox">
                         <div class="mat-form-field-underline ng-tns-c11-3">
                           <span class="mat-form-field-ripple">
                           </span>
@@ -466,8 +426,9 @@
                   </div> -->
 
                   <div class="c-assetFilters__item">
-                    <button class="o-filter o-filter--refresh mat-ripple" onclick="refresh()">
-                      <svg t="1566971809618" class="o-filter__icon mat-icon notranslate material-icons mat-icon-no-color"
+                    <button class="o-filter o-filter--refresh mat-ripple"onclick="panelShow('myContract')">
+                      <img src="./images/faj.png" alt="">
+                      <!-- <svg t="1566971809618" class="o-filter__icon mat-icon notranslate material-icons mat-icon-no-color"
                       viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
                       p-id="4252" width="32" height="32">
                         <path d="M834.2 531.9c0 187.7-152.2 339.9-339.9 339.9S154.4 719.7 154.4 531.9c0-187.7 152.2-339.9 339.9-339.9 124.8 0 233.6 67.5 292.7 167.7h63.8c-64.1-132.5-199.4-224.1-356.5-224.1C275.4 135.6 98 313.1 98 531.9s177.4 396.3 396.3 396.3 396.3-177.4 396.3-396.3c0-4.9-0.6-9.7-0.7-14.6 0 0-1.4-28.9-28.7-28.9-30.6 0-27.6 28.9-27.6 28.9 0.1 4.9 0.6 9.7 0.6 14.6z"
@@ -476,7 +437,7 @@
                         <path d="M853.9 101.1C843 100 833.1 108 832 119l-21.6 213.7c-1.1 10.9-11 19-21.9 17.9L574.8 329c-10.9-1.1-20.8 6.9-21.9 17.9l-1.5 14.8c-1.1 10.9 6.9 20.8 17.9 21.9L783 405.2c10.9 1.1 19.9 2 19.9 2s9 0.9 19.9 2l14.8 1.5c10.9 1.1 20.8-6.9 21.9-17.9l27.1-268.3c1.1-10.9-6.9-20.8-17.9-21.9l-14.8-1.5z"
                         fill="#ffffff" p-id="4254">
                         </path>
-                      </svg>
+                      </svg> -->
                     </button>
                   </div>
                   <!-- <div class="c-assetFilters__item">
