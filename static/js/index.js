@@ -35,10 +35,10 @@ function init() {
       var html = '';
       html += '<div>';
       html += '      <div class="c-navigationAuth">';
+      html += '<svg  onclick="panelShow(\'nodePanel\')" style="cursor:pointer;margin-right:8px;" t="1584014587957" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1499" width="28" height="28"><path d="M942.427421 234.839536a17.254917 17.254917 0 1 0-28.988261 18.715833 475.626037 475.626037 0 0 1 76.013661 258.559181c0 263.229511-214.145024 477.386038-477.386038 477.386038s-477.386038-214.156527-477.386038-477.386038 214.145024-477.386038 477.386038-477.386039a475.683553 475.683553 0 0 1 166.659492 29.908523 17.254917 17.254917 0 0 0 12.055436-32.335714 511.964892 511.964892 0 1 0 251.64571 202.538216z" fill="#ffffff" p-id="1500"></path><path d="M796.059711 128.365195a482.807533 482.807533 0 0 1 34.969965 28.562639 17.254917 17.254917 0 1 0 23.064073-25.663813c-11.963409-10.755565-24.571002-21.050999-37.47768-30.621726a17.256067 17.256067 0 1 0-20.556358 27.7229zM385.496215 534.22385L261.088263 751.647308l242.144003 144.12457-117.736051-361.548028zM257.614273 707.187138l117.402456-205.172466-42.32056-129.964036-75.081896 335.136502zM621.370931 503.65964l-108.671467-191.736638-110.385456 192.898469 110.523495 339.381212 108.533428-340.543043zM689.332298 373.074428l-40.721605 127.755406 116.447684 205.460049-75.726079-333.215455zM638.223233 533.407117L522.868361 895.35776l239.072628-143.664439L638.223233 533.407117zM673.423264 340.336099L525.514115 130.263235v153.361703l106.232773 187.457419 41.676376-130.746258zM500.413963 282.865722V129.29696L348.708732 340.175053l43.125789 132.448743 108.579442-189.758074z" fill="#ffffff" p-id="1501"></path></svg>'
       html += '            <div class="c-navigationAuth__authBtn c-navigationAuth__authBtn--signUp" translate="" data-analytics-id="signUp_authTabButtonSignUp" onclick="panelShow(4)" style="display:none;" id="my-wallet">' + getCookie("eos") + '</div>';
       html += '            <div class="c-navigationAuth__authBtn c-navigationAuth__authBtn--logIn" translate="" data-analytics-id="logIn_authTabButtonLogIn" onclick="eosLogin()"  id="my-login">'+ get_lan("login") +'</div>';
       // html += '            <div class="c-navigationAuth__authBtn c-navigationAuth__authBtn--logIn" translate="" data-analytics-id="logIn_authTabButtonLogIn" onclick="panelShow(\'nodePanel\')"  id="setNode">'+  +'</div>';
-      html += '<svg  onclick="panelShow(\'nodePanel\')" style="cursor:pointer;" t="1584014587957" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1499" width="28" height="28"><path d="M942.427421 234.839536a17.254917 17.254917 0 1 0-28.988261 18.715833 475.626037 475.626037 0 0 1 76.013661 258.559181c0 263.229511-214.145024 477.386038-477.386038 477.386038s-477.386038-214.156527-477.386038-477.386038 214.145024-477.386038 477.386038-477.386039a475.683553 475.683553 0 0 1 166.659492 29.908523 17.254917 17.254917 0 0 0 12.055436-32.335714 511.964892 511.964892 0 1 0 251.64571 202.538216z" fill="#ffffff" p-id="1500"></path><path d="M796.059711 128.365195a482.807533 482.807533 0 0 1 34.969965 28.562639 17.254917 17.254917 0 1 0 23.064073-25.663813c-11.963409-10.755565-24.571002-21.050999-37.47768-30.621726a17.256067 17.256067 0 1 0-20.556358 27.7229zM385.496215 534.22385L261.088263 751.647308l242.144003 144.12457-117.736051-361.548028zM257.614273 707.187138l117.402456-205.172466-42.32056-129.964036-75.081896 335.136502zM621.370931 503.65964l-108.671467-191.736638-110.385456 192.898469 110.523495 339.381212 108.533428-340.543043zM689.332298 373.074428l-40.721605 127.755406 116.447684 205.460049-75.726079-333.215455zM638.223233 533.407117L522.868361 895.35776l239.072628-143.664439L638.223233 533.407117zM673.423264 340.336099L525.514115 130.263235v153.361703l106.232773 187.457419 41.676376-130.746258zM500.413963 282.865722V129.29696L348.708732 340.175053l43.125789 132.448743 108.579442-189.758074z" fill="#ffffff" p-id="1501"></path></svg>'
       html += '      </div>';
       html += '</div>';
       $("#panelMsg").html(html);
@@ -1221,13 +1221,14 @@ function getHtml(type) {
                   html += '<div class="ng-pristine ng-invalid ng-touched">'
                   html += '<div class="c-authForm__field mat-form-field mat-primary mat-form-field-type-mat-input mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label  mat-form-field-invalid mat-form-field-hide-placeholder">'
                   html += '<div class="mat-form-field-wrapper">';
-                  html += '  <div class="el-input--suffix flex mat-form-field-flex" style="padding-top:0;">';
-                  html += '    <input type="text" autocomplete="off" placeholder="请输入您的NFT资产合约名" id="userInputContractBox" class="el-input__inner" style="background: none;border:0;height:100%;width:100%;font-size:20px;">';
+                  html += '  <div class="el-input--suffix flex mat-form-field-flex" style="padding-top:0;background-color:transparent;">';
+                  html += '    <input type="text" autocomplete="off" placeholder="请输入您的NFT资产合约名" id="userInputContractBox" class="el-input__inner" style="background-color: var(--ex-field-bg-color);border:0;height:100%;width:100%;font-size:20px;">';
                   html += '    <div class="joinUserInputBtn flex" onclick="selectContract(\'select\',\'\')">';
                   html += '      选择';
                   html += '    </div>';
                   html += '  </div>';
                   html += '</div>';
+                  html += '<div class="warp-line"></div>'
                   html += '      <div class="scroll" style="height:405px">';
 
                   html += '        <div class="item flex" onclick="selectContract(-1,\'\')">';
@@ -1539,6 +1540,55 @@ function getHtml(type) {
                   // html += '             </div>';
                   // html += '          </div>';
                   html += '         </div>';
+                  if (type == 'buy') { 
+                    html += '   <div class="flex" style="margin-top:30px;margin-bottom:18px;">';
+                    html += '         <div class="shopWordMsgBox flex">';
+
+                    html += '               <div style="margin-right:7px;">';
+
+                 
+                          html += '          <svg t="1566445356488" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2277" width="28" height="28">';
+                          html += '            <path d="M942.427421 234.839536a17.254917 17.254917 0 1 0-28.988261 18.715833 475.626037 475.626037 0 0 1 76.013661 258.559181c0 263.229511-214.145024 477.386038-477.386038 477.386038s-477.386038-214.156527-477.386038-477.386038 214.145024-477.386038 477.386038-477.386039a475.683553 475.683553 0 0 1 166.659492 29.908523 17.254917 17.254917 0 0 0 12.055436-32.335714 511.964892 511.964892 0 1 0 251.64571 202.538216z" fill="#89d295" p-id="2278"></path>';
+                          html += '            <path d="M796.059711 128.365195a482.807533 482.807533 0 0 1 34.969965 28.562639 17.254917 17.254917 0 1 0 23.064073-25.663813c-11.963409-10.755565-24.571002-21.050999-37.47768-30.621726a17.256067 17.256067 0 1 0-20.556358 27.7229zM385.496215 534.22385L261.088263 751.647308l242.144003 144.12457-117.736051-361.548028zM257.614273 707.187138l117.402456-205.172466-42.32056-129.964036-75.081896 335.136502zM621.370931 503.65964l-108.671467-191.736638-110.385456 192.898469 110.523495 339.381212 108.533428-340.543043zM689.332298 373.074428l-40.721605 127.755406 116.447684 205.460049-75.726079-333.215455zM638.223233 533.407117L522.868361 895.35776l239.072628-143.664439L638.223233 533.407117zM673.423264 340.336099L525.514115 130.263235v153.361703l106.232773 187.457419 41.676376-130.746258zM500.413963 282.865722V129.29696L348.708732 340.175053l43.125789 132.448743 108.579442-189.758074z" fill="#89d295" p-id="2279"></path>';
+                          html += '          </svg>';
+
+          
+
+
+                    html += '               </div>';
+                    html += '               <span>' +objMsg.quantity + '</span>';
+
+
+
+                    html += '         </div>';
+                    html += '   </div>';
+
+              }
+              if (type == 'unsale') { 
+                html += '   <div class="flex" style="margin-top:30px;margin-bottom:18px;">';
+                html += '         <div class="shopWordMsgBox flex">';
+
+                html += '               <div style="margin-right:7px;">';
+
+             
+                      html += '          <svg t="1566445356488" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2277" width="28" height="28">';
+                      html += '            <path d="M942.427421 234.839536a17.254917 17.254917 0 1 0-28.988261 18.715833 475.626037 475.626037 0 0 1 76.013661 258.559181c0 263.229511-214.145024 477.386038-477.386038 477.386038s-477.386038-214.156527-477.386038-477.386038 214.145024-477.386038 477.386038-477.386039a475.683553 475.683553 0 0 1 166.659492 29.908523 17.254917 17.254917 0 0 0 12.055436-32.335714 511.964892 511.964892 0 1 0 251.64571 202.538216z" fill="#89d295" p-id="2278"></path>';
+                      html += '            <path d="M796.059711 128.365195a482.807533 482.807533 0 0 1 34.969965 28.562639 17.254917 17.254917 0 1 0 23.064073-25.663813c-11.963409-10.755565-24.571002-21.050999-37.47768-30.621726a17.256067 17.256067 0 1 0-20.556358 27.7229zM385.496215 534.22385L261.088263 751.647308l242.144003 144.12457-117.736051-361.548028zM257.614273 707.187138l117.402456-205.172466-42.32056-129.964036-75.081896 335.136502zM621.370931 503.65964l-108.671467-191.736638-110.385456 192.898469 110.523495 339.381212 108.533428-340.543043zM689.332298 373.074428l-40.721605 127.755406 116.447684 205.460049-75.726079-333.215455zM638.223233 533.407117L522.868361 895.35776l239.072628-143.664439L638.223233 533.407117zM673.423264 340.336099L525.514115 130.263235v153.361703l106.232773 187.457419 41.676376-130.746258zM500.413963 282.865722V129.29696L348.708732 340.175053l43.125789 132.448743 108.579442-189.758074z" fill="#89d295" p-id="2279"></path>';
+                      html += '          </svg>';
+
+      
+
+
+                html += '               </div>';
+                html += '               <span>' + salePrice + '</span>';
+
+
+
+                html += '         </div>';
+                html += '   </div>';
+
+          }
+
                   if (type == 'sale') {
                     
                           // html += '                  <div appearance="fill"  style="margin-top:30px;" class="c-authForm__field mat-form-field mat-primary mat-form-field-type-mat-input mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label mat-form-field-invalid mat-form-field-hide-placeholder">';
@@ -1601,14 +1651,14 @@ function getHtml(type) {
                     }
               } else if (type == 'unsale') {
                     html += '                  <div style="margin: 0 auto;" onclick="panelShow(\'unsaleConfirm\')">';
-                    html += '                    <button style="margin-top:30px;" class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple" matripple="" type="submit" data-analytics-id="logIn_logInWithEmail">';
+                    html += '                    <button  class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple" matripple="" type="submit" data-analytics-id="logIn_logInWithEmail">';
                     html += '                    <svg class="mat-icon notranslate material-icons mat-icon-no-color" t="1566885351029" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2110" width="32" height="32"><path d="M709.12 883.2a64 64 0 1 0 128 0 64 64 0 1 0-128 0zM320 883.2a64 64 0 1 0 128 0 64 64 0 1 0-128 0zM949.243 268.954l15.293-61.169h-171.52v61.44h92.724L802.227 590.08H342.441l-54.18-320.855H409.6v-61.44H277.883l-11.812-69.97h0.169L256 76.375H58.88v61.44h144.876L312.32 780.703v3.937h517.12l20.48-61.44H364.923l-12.104-71.68H849.92v-0.768l99.38-381.783z" fill="#ffffff" p-id="2111"></path><path d="M751.078 355.999L621.583 531.738h-55.5l-129.495-175.74h55.495l78.454 106.466V198.743h46.254v264.192l78.792-106.936z" fill="#ffffff" p-id="2112"></path></svg>';
                     html += '                      &nbsp;&nbsp;&nbsp;<span>下架</span>';
                     html += '                    </button>';
                     html += '                  </div>';
               } else if (type == 'buy') {
                     html += '                    <div style="margin: 0 auto;" onclick="buyGoShow()">';
-                    html += '                      <button style="margin-top:30px;" class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple" type="submit">';
+                    html += '                      <button class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple" type="submit">';
                     html += '                      <svg class="mat-icon notranslate material-icons mat-icon-no-color" t="1566887889666" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3003" width="32" height="32"><path d="M443.6 755.001c-2.7-3.961-5.76-7.561-9.36-11.161-7.2-7.2-15.3-12.599-24.119-16.199-9.54-3.6-19.44-5.401-29.52-5.401-2.34 0-4.86 0.18-7.561 0.54-2.7 0.361-5.22 0.54-7.561 0.9-2.34 0.361-4.681 0.9-7.2 1.801-2.34 0.9-4.86 1.62-7.2 2.16-3.060 1.26-5.94 2.7-9.001 4.5l-7.2 5.401c-3.060 1.801-5.58 3.961-8.1 6.3-3.6 3.6-6.66 7.38-9.36 11.161-2.7 3.961-4.86 7.92-6.66 12.060-3.6 9.54-5.401 19.26-5.401 29.159s1.801 19.26 5.401 28.26c3.6 8.279 9.001 16.38 16.201 24.119 7.2 6.48 15.3 11.881 24.121 16.201 9.001 3.6 18.72 5.401 29.52 5.401 10.080 0 19.799-1.98 29.159-5.76 9.18-3.959 17.46-9.18 24.66-15.66 7.2-7.74 12.601-15.84 16.201-24.121 4.14-9.001 6.3-18.361 6.3-28.26s-2.16-19.62-6.3-29.161c-2.16-4.32-4.5-8.46-7.020-12.24zM907.46 290.060c-1.801-3.060-4.14-5.58-7.2-8.1-3.060-2.34-6.48-4.5-10.8-6.3-8.279-4.14-20.34-6.3-35.82-6.3h-554.759l-4.5-30.42-3.6-23.22v-4.32c-1.26-6.48-2.16-10.98-2.7-13.5l-4.5-14.4c-1.26-4.679-3.6-9.9-7.2-15.12-2.34-2.34-4.86-4.5-7.561-6.3s-5.58-3.6-8.46-5.401c-6.48-3.060-15.12-4.5-25.92-4.5h-82.26c-5.94 0-11.34 0.9-16.199 2.7s-9.18 4.14-13.5 7.2c-7.2 7.2-10.8 16.201-10.8 26.82 0 2.34 0.18 5.040 0.361 8.1 0.361 3.060 0.72 5.94 1.44 9.001 0.54 3.060 1.62 5.94 3.060 9.001 1.44 3.060 2.88 6.3 3.959 9.9 4.14 5.399 9.001 10.080 14.4 14.4 4.86 3.6 11.34 5.401 19.62 5.401h60.841l34.919 179.82 13.5 68.94 11.7 61.74 9.001 45.719 4.5 23.22c1.26 5.94 3.239 14.58 6.3 25.92 1.801 4.86 3.78 9.18 5.76 13.5 2.16 4.14 4.32 8.1 6.66 11.7 4.679 7.74 10.8 14.039 17.82 18.72 2.34 1.801 4.86 3.060 7.561 3.961 2.7 0.9 5.76 1.62 9.001 2.16 3.239 0.54 6.66 0.9 10.26 0.9h424.98c15.481 0 25.74-3.961 30.42-11.7 5.399-7.74 8.1-16.921 8.1-27.719 0-22.14-13.14-33.12-39.42-33.12h-407.7l-12.599-71.639h425.881c15.479 0 28.62-4.14 39.42-12.601 5.401-4.14 10.26-9.9 14.759-17.46 4.5-7.38 8.46-16.201 12.060-26.46 1.801-5.399 6.48-19.44 14.4-42.119l18.72-52.74 17.1-49.14 10.8-29.52c0.54-1.801 1.079-3.6 1.44-5.401s0.54-3.78 0.9-5.76c0.361-2.16 0.54-4.32 0.54-6.66 0.361-6.66-1.079-12.96-4.679-18.9zM771.561 745.639c-6.48-7.2-14.58-12.601-24.121-16.201-4.681-1.801-9.719-3.060-14.759-3.961-5.040-0.9-10.080-1.44-14.761-1.44-3.6 0-7.020 0.18-10.26 0.54-3.241 0.361-6.48 0.9-9.9 1.801-3.239 0.9-6.48 1.98-9.36 3.060-4.14 1.801-8.279 3.961-12.601 6.66-4.14 2.7-7.74 5.76-10.8 9.36-7.2 7.2-12.601 14.94-16.201 23.22-2.34 4.679-3.961 9.54-4.86 14.4-0.9 4.679-1.44 9.54-1.44 14.4 0 10.080 2.16 19.62 6.3 28.62 3.6 8.279 9.001 16.38 16.201 24.121 5.94 5.94 13.68 10.98 23.22 15.12 9.001 4.14 18.72 6.3 29.52 6.3s20.521-2.16 29.52-6.3c9.54-3.6 17.639-8.64 24.121-15.12 7.2-7.74 12.78-15.84 16.921-24.121 1.801-4.14 3.060-8.82 3.959-13.86s1.44-10.080 1.44-14.759c0-10.080-1.801-19.62-5.401-28.62-3.959-8.46-9.721-16.201-16.74-23.22z" fill="#ffffff" p-id="3004"></path><path d="M545.66 499.94l118.8-133.92-19.44-21.42-101.161 87.84-47.34-36.359-18.54 21.239 67.68 82.62z" fill="#ffffff" p-id="3005"></path></svg>';
                     html += '                        &nbsp;&nbsp;&nbsp;<span>购买</span>';
                     html += '                      </button>';
@@ -1648,7 +1698,7 @@ function getHtml(type) {
                   html += '        </div>';
                   html += '        <div class="c-assetPreviewParam">';
                   html += '          <strong class="c-assetPreviewParam__label">';
-                  html += '            评分:';
+                  html += '            质量:';
                   html += '          </strong>';
                   html += '          <span class="c-assetPreviewParam__value c-assetPreviewParam__value--hero">';
                   html += '            ' + objMsg.quality + '';
@@ -1665,28 +1715,28 @@ function getHtml(type) {
                   html += '            ' + objMsg.owner + '';
                   html += '          </span>';
                   html += '        </div>';
-                  if(type == 'unsale'){
-                  html += '      <div class="c-assetPreviewParam">'
-                  html += '        <strong class="c-assetPreviewParam__label">'
-                  html += '         售价'
-                  html += '        </strong>'
-                  html += '         <span class="c-assetPreviewParam__value c-assetPreviewParam__value--hero">';
-                  html += '            ' + salePrice + '';
-                  html += '          </span>';
-                  html += '        </div>';
+                  // if(type == 'unsale'){
+                  // html += '      <div class="c-assetPreviewParam">'
+                  // html += '        <strong class="c-assetPreviewParam__label">'
+                  // html += '         售价'
+                  // html += '        </strong>'
+                  // html += '         <span class="c-assetPreviewParam__value c-assetPreviewParam__value--hero">';
+                  // html += '            ' + salePrice + '';
+                  // html += '          </span>';
+                  // html += '        </div>';
 
-                  }
-                  if(type == 'buy'){
-                    html += '      <div class="c-assetPreviewParam">'
-                    html += '        <strong class="c-assetPreviewParam__label">'
-                    html += '         售价'
-                    html += '        </strong>'
-                    html += '         <span class="c-assetPreviewParam__value c-assetPreviewParam__value--hero">';
-                    html += '            ' + objMsg.quantity + '';
-                    html += '          </span>';
-                    html += '        </div>';
+                  // }
+                  // if(type == 'buy'){
+                  //   html += '      <div class="c-assetPreviewParam">'
+                  //   html += '        <strong class="c-assetPreviewParam__label">'
+                  //   html += '         售价'
+                  //   html += '        </strong>'
+                  //   html += '         <span class="c-assetPreviewParam__value c-assetPreviewParam__value--hero">';
+                  //   html += '            ' + objMsg.quantity + '';
+                  //   html += '          </span>';
+                  //   html += '        </div>';
   
-                  }
+                  // }
                   html += '      </asset-params>';
                   html += '    </div>';
                   html += '  </div>';
@@ -5034,6 +5084,14 @@ function getDexListData() {
         dexListData.content[x] = obj;
         // console.log("priceShow:",obj.price);
       }
+      if(data["rows"]==''){
+        $("#myItemMsg p").html('您的仓库中没有对应的物品 ');
+        $("#myItemMsg").show();
+      }
+      else{
+        $("#myItemMsg").hide();
+
+      }
       dexListData.totalElements = data["rows"].length;
       dexListData.size = dexSize;
       dexListData.totalPages = Math.ceil(data["rows"].length / dexSize);
@@ -5099,19 +5157,33 @@ function getMarketList(page) {
         var tokenid = n.id;
         var nftcontract = getCookie("nftcontract") || 'xlootshovel1';
         
-        html += "<div class='c-asset item' style='' id='myItemId_" + tokenid + "' onclick='saleMsgShow(" + JSON.stringify(n) + ")'>";
-        html += '   <div style="background: #2a2c2e;border-radius: 2px;width:100%;height:100%;">';
-        html += '     <div class="flex" style="line-height:18px;padding:0 10px;">';
-        html += '      <div style="color: rgba(0, 0, 0,0);text-align: center;position: relative;overflow: hidden;">';
-        html += '        <img class="c-asset__img '+ 'skin' +'" style="height: 153px;max-height: 153px;width:156px;" loading="auto" alt="" src="' + n.imageUrl + '">';
-        html += '      <div class="title">'+ n.title +' ( 品质：'+ n.quality +' )</div>';
-        html += '      <div class="nftcontract">合约：' + nftcontract + '</div>';
-        html += '      <div class="valueBox">面值：<span class="value">'+n.parvalue+'</span></div>';
-        html += '      <div class="owner">拥有者：' + n.owner + '</div>'
+        html += "<div class='c-asset item' style='' id='saleItemId_" + n.tokenId+ "' onclick='saleMsgShow(" + JSON.stringify(n) + ")'>";
+        html += '    <div style="background: #2a2c2e;border-radius: 2px;width:100%;height:100%;">';
+        html += '      <div class="flex" style="line-height: 39px;padding:0 10px;">';
+        html += '         <div style="flex:1">'
+        html += '            <span style="color:#89d295;">品质：</span>'
+        html += '            <span>'+n.quality +'</span>'
+        html += '         </div>'
+        html += '         <div>'
+        html += '            <span style="color:#89d295;">LV.</span>'
+        html += '            <span>'+n.level +'</span>'
+        html += '         </div>'
         html += '      </div>';
-				html += '     </div>';
-				html += '    </div>';
-				html += '</div>';
+        html += '      <div class="flex" style="height: 39px;">'
+        html += '      <div style="margin-right:7px;">'
+        html += '         <svg t="1584015159513" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1857" width="28" height="28">				<path d="M512.7 1022.5c-68.8 0-135.6-13.5-198.5-40.1-60.7-25.7-115.3-62.5-162.1-109.3C105.2 826.3 68.4 771.7 42.7 711c-26.6-62.9-40-129.7-40-198.5 0-68.8 13.5-135.6 40.1-198.5 25.7-60.7 62.5-115.3 109.3-162.1s101.3-83.7 162-109.4c62.9-26.6 129.7-40 198.6-40S648.3 16 711.2 42.6c60.7 25.7 115.3 62.5 162.1 109.3S956.9 253.3 982.6 314c26.6 62.9 40.1 129.7 40.1 198.5 0 68.8-13.5 135.6-40.1 198.5-25.7 60.7-62.5 115.3-109.3 162.1s-101.4 83.6-162.1 109.3c-62.9 26.6-129.7 40.1-198.5 40.1z m0-980c-259.2 0-470 210.8-470 470s210.8 470 470 470 470-210.8 470-470-210.9-470-470-470z" fill="#89d295" p-id="1858"></path>				<path d="M520.2 193.3l286.5 165-61.5 48-225-132-160.4 100.5 88.5 59 52.7-30.9 62.7 34.9-43.5 36 54 37.4 45-28.4 58.5 28.8-45 31.1 198 105-304.5 183-332.9-186v-85.5L512 746.7l177.7-99.9-106.5-65.1-43.5 30-65.9-40.5 38.2-24-62.4-40-32.5 24.8-70.8-41.2 34.5-21.5-169.5-91.5z" fill="#89d295" p-id="1859"></path>			</svg>'
+       
+        html += '      </div>'
+        html += '          <span>'+ n.parvalue +'</span>'
+        html += '      </div>'
+        html += '      <div style="color: rgba(0, 0, 0,0);text-align: center;position: relative;overflow: hidden;">';
+        html += '        <img class="c-asset__img " style="height: 95px;max-height: 95px;" loading="auto" alt="" src="' + n.imageUrl + '">';
+        html += '     </div>';
+        html += '     <div class="flex">'
+        html += '       <div class="shopAssetMsgBox">'+nftcontract+'</div>'
+        html += '     </div>'
+        html += '    </div>';
+        html += '</div>';
         
 
         // html += '<a id="nft_' + tokenid + '" href="nftAssets.html?tokenid=' + tokenid + '&nftcontract=' + nftcontract + '&type=0&owner=' + n.owner + '">';
@@ -5137,7 +5209,11 @@ function getMarketList(page) {
 
   $("#myItem").html(html);
   if(obj == ''){
-    $("#myItem").html('<div class="flex" style="height:150px;font-size: 20px;">没有对应的资产</div>');
+    // $("#myItem").html('<div class="flex" style="height:150px;font-size: 20px;">没有对应的资产</div>');
+
+    // $("#myItem").html('');
+    // $("#myItemMsg p").html('您的仓库中没有对应的物品 ');
+    // $("#myItemMsg").show();
     $(".Pagination").html('');
     return
   }
@@ -5224,25 +5300,42 @@ function getNftMsg(obj) {
 
 
         var html = '';
-        html += "<div class='c-asset item' style='' id='myItemId_" + tokenid + "' onclick='unsaleMsgShow(" + JSON.stringify(obj) + ",\""+ price+"\")'>";
-        html += '   <div style="background: #2a2c2e;border-radius: 2px;width:100%;height:100%;">';
-        html += '     <div class="flex" style="line-height:18px;padding:0 10px;">';
-        html += '      <div style="color: rgba(0, 0, 0,0);text-align: center;position: relative;overflow: hidden;">';
-        html += '        <img class="c-asset__img '+ 'skin' +'" style="height: 153px;max-height: 153px;width:156px;" loading="auto" alt="" src="' + obj.imageUrl + '">';
-        html += '      <div class="price">售价：'+ price+'</div>'
-        html += '      <div class="title">'+ obj.title +' ( 品质：'+ obj.quality +' )</div>';
-        html += '      <div class="nftcontract">合约：' + nftcontract + '</div>';
-        html += '      <div class="valueBox">面值：<span class="value">'+obj.parvalue+'</span></div>';
-        html += '      <div class="owner">拥有者：' + obj.owner + '</div>'
+        html += "<div class='c-asset item' style='' id='saleItemId_" + tokenid+ "' onclick='unsaleMsgShow(" + JSON.stringify(obj) + ")'>";
+        html += '    <div style="background: #2a2c2e;border-radius: 2px;width:100%;height:100%;">';
+        html += '      <div class="flex" style="line-height: 39px;padding:0 10px;">';
+        html += '         <div style="flex:1">'
+        html += '            <span style="color:#89d295;">品质：</span>'
+        html += '            <span>'+obj.quality +'</span>'
+        html += '         </div>'
+        html += '         <div>'
+        html += '            <span style="color:#89d295;">LV.</span>'
+        html += '            <span>'+obj.level +'</span>'
+        html += '         </div>'
         html += '      </div>';
-				html += '     </div>';
-				html += '    </div>';
-				html += '</div>';
+        html += '      <div class="flex" style="height: 39px;">'
+        html += '      <div style="margin-right:7px;">'
+        html += '         <svg t="1584015159513" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1857" width="28" height="28">				<path d="M512.7 1022.5c-68.8 0-135.6-13.5-198.5-40.1-60.7-25.7-115.3-62.5-162.1-109.3C105.2 826.3 68.4 771.7 42.7 711c-26.6-62.9-40-129.7-40-198.5 0-68.8 13.5-135.6 40.1-198.5 25.7-60.7 62.5-115.3 109.3-162.1s101.3-83.7 162-109.4c62.9-26.6 129.7-40 198.6-40S648.3 16 711.2 42.6c60.7 25.7 115.3 62.5 162.1 109.3S956.9 253.3 982.6 314c26.6 62.9 40.1 129.7 40.1 198.5 0 68.8-13.5 135.6-40.1 198.5-25.7 60.7-62.5 115.3-109.3 162.1s-101.4 83.6-162.1 109.3c-62.9 26.6-129.7 40.1-198.5 40.1z m0-980c-259.2 0-470 210.8-470 470s210.8 470 470 470 470-210.8 470-470-210.9-470-470-470z" fill="#89d295" p-id="1858"></path>				<path d="M520.2 193.3l286.5 165-61.5 48-225-132-160.4 100.5 88.5 59 52.7-30.9 62.7 34.9-43.5 36 54 37.4 45-28.4 58.5 28.8-45 31.1 198 105-304.5 183-332.9-186v-85.5L512 746.7l177.7-99.9-106.5-65.1-43.5 30-65.9-40.5 38.2-24-62.4-40-32.5 24.8-70.8-41.2 34.5-21.5-169.5-91.5z" fill="#89d295" p-id="1859"></path>			</svg>'
+       
+        html += '      </div>'
+        html += '          <span>'+ price+'</span>'
+        html += '      </div>'
+        html += '      <div style="color: rgba(0, 0, 0,0);text-align: center;position: relative;overflow: hidden;">';
+        html += '        <img class="c-asset__img " style="height: 95px;max-height: 95px;" loading="auto" alt="" src="' + obj.imageUrl + '">';
+        html += '     </div>';
+        html += '     <div class="flex">'
+        html += '       <div class="shopAssetMsgBox">'+nftcontract+'</div>'
+        html += '     </div>'
+        html += '    </div>';
+        html += '</div>';
+        
         if(html !=''){
           $("#myItem").append(html);
         }
         if(obj == ''){
           $("#myItem").html('<div class="flex" style="height:150px;font-size: 20px;">没有对应的资产</div>');
+          // $("#myItem").html('');
+					// $("#myItemMsg p").html('您的仓库中没有对应的物品 ');
+          $("#myItemMsg").show();
           $(".Pagination").html('');
           return
         }

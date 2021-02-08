@@ -160,6 +160,7 @@ function getSaleMarket(page) {
         
 				Do_not_trigger = true;
 				$.each(obj, function(i, n) {
+          console.log(obj,'!!!!!!!!!');
 					// if (n.category == "PET") {
 						// var msg = JSON.parse(n.meta);
 						var imgClass = '';
@@ -170,17 +171,34 @@ function getSaleMarket(page) {
             }
 						// console.log("msg:", msg);
             html += "<div class='c-asset item' style='' id='saleItemId_" + n.tokenId+ "' onclick='buyMsgShow(" + JSON.stringify(n) + ")'>";
-						html += '    <div style="background: #2a2c2e;border-radius: 2px;width:100%;height:100%;">';
-						html += '      <div class="flex" style="line-height: 18px;padding:0 10px;">';
-            html += '      <div style="color: rgba(0, 0, 0,0);text-align: center;position: relative;overflow: hidden;">';
-            html += '        <img class="c-asset__img '+ 'skin' +'" style="height: 153px;max-height: 153px;width:156px;" loading="auto" alt="" src="' + imageUrl + '">';
-            html += '      <div class="price">售价：'+ n.quantity+'</div>'
-            html += '      <div class="title">'+ n.name +' ( 品质：'+ n.quality +' )</div>';
-            html += '      <div class="nftcontract">合约：' + n.contract + '</div>';
-            html += '      <div class="valueBox">面值：<span class="value">'+n.parValue+'</span></div>';
-            html += '      <div class="owner">拥有者：' + n.owner + '</div>'
+						html += '    <div style="background: #2a2c2e;border-radius: 2px;width:100%;height:100%;font-size:14px;">';
+						html += '      <div class="flex" style="line-height: 20px;padding:0 10px;">';
+            html += '         <div style="flex:1">'
+            html += '            <span style="color:#89d295;">评分：</span>'
+            html += '            <span>'+n.quality +'</span>'
+            html += '         </div>'
+            html += '         <div>'
+            html += '            <span style="color:#89d295;">LV.</span>'
+            html += '            <span>'+n.level +'</span>'
+            html += '         </div>'
             html += '      </div>';
+            html += '      <div class="flex" style="height: 30px;">'
+            html += '      <div style="margin-right:7px;">'
+            html += '         <svg t="1584015159513" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1857" width="28" height="28">				<path d="M512.7 1022.5c-68.8 0-135.6-13.5-198.5-40.1-60.7-25.7-115.3-62.5-162.1-109.3C105.2 826.3 68.4 771.7 42.7 711c-26.6-62.9-40-129.7-40-198.5 0-68.8 13.5-135.6 40.1-198.5 25.7-60.7 62.5-115.3 109.3-162.1s101.3-83.7 162-109.4c62.9-26.6 129.7-40 198.6-40S648.3 16 711.2 42.6c60.7 25.7 115.3 62.5 162.1 109.3S956.9 253.3 982.6 314c26.6 62.9 40.1 129.7 40.1 198.5 0 68.8-13.5 135.6-40.1 198.5-25.7 60.7-62.5 115.3-109.3 162.1s-101.4 83.6-162.1 109.3c-62.9 26.6-129.7 40.1-198.5 40.1z m0-980c-259.2 0-470 210.8-470 470s210.8 470 470 470 470-210.8 470-470-210.9-470-470-470z" fill="#89d295" p-id="1858"></path>				<path d="M520.2 193.3l286.5 165-61.5 48-225-132-160.4 100.5 88.5 59 52.7-30.9 62.7 34.9-43.5 36 54 37.4 45-28.4 58.5 28.8-45 31.1 198 105-304.5 183-332.9-186v-85.5L512 746.7l177.7-99.9-106.5-65.1-43.5 30-65.9-40.5 38.2-24-62.4-40-32.5 24.8-70.8-41.2 34.5-21.5-169.5-91.5z" fill="#89d295" p-id="1859"></path>			</svg>'
+           
+            html += '      </div>'
+            html += '          <span>'+ n.quantity+'</span>'
+            html += '      </div>'
+            html += '      <div style="color: rgba(0, 0, 0,0);text-align: center;position: relative;overflow: hidden;">';
+            html += '        <img class="c-asset__img " style="height: 90px;max-height: 90px;" loading="auto" alt="" src="' + imageUrl + '">';
             html += '     </div>';
+            html += '     <div class="flex">'
+            html += '       <div class="shopAssetMsgBox" style="padding:5px 12px;">'+n.name+'</div>'
+            html += '     </div>'
+            html += '     <div class="flex" style="flex-wrap:wrap;font-size:14px;flex-wrap: wrap;border-top: 1px solid #000;line-height: 20px;margin-top: 8px;padding-top: 5px;">'
+            html += '       <div class="shopMsgBox" style="color:#848484;">合约：<span>'+ n.contract +'</span></div>'
+            html += '       <div class="shopMsgBox">卖家：<span>'+ n.owner +'</span></div>'
+            html += '     </div>'
             html += '    </div>';
             html += '</div>';
 				})
