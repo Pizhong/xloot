@@ -35,8 +35,10 @@ function init() {
       var html = '';
       html += '<div>';
       html += '      <div class="c-navigationAuth">';
-      html += '            <div class="c-navigationAuth__authBtn c-navigationAuth__authBtn--signUp" translate="" data-analytics-id="signUp_authTabButtonSignUp" onclick="panelShow(4)" style="display:none;" id="my-wallet">' + get_lan("myWallet") + '</div>';
+      html += '            <div class="c-navigationAuth__authBtn c-navigationAuth__authBtn--signUp" translate="" data-analytics-id="signUp_authTabButtonSignUp" onclick="panelShow(4)" style="display:none;" id="my-wallet">' + getCookie("eos") + '</div>';
       html += '            <div class="c-navigationAuth__authBtn c-navigationAuth__authBtn--logIn" translate="" data-analytics-id="logIn_authTabButtonLogIn" onclick="eosLogin()"  id="my-login">'+ get_lan("login") +'</div>';
+      // html += '            <div class="c-navigationAuth__authBtn c-navigationAuth__authBtn--logIn" translate="" data-analytics-id="logIn_authTabButtonLogIn" onclick="panelShow(\'nodePanel\')"  id="setNode">'+  +'</div>';
+      html += '<svg  onclick="panelShow(\'nodePanel\')" style="cursor:pointer;" t="1584014587957" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1499" width="28" height="28"><path d="M942.427421 234.839536a17.254917 17.254917 0 1 0-28.988261 18.715833 475.626037 475.626037 0 0 1 76.013661 258.559181c0 263.229511-214.145024 477.386038-477.386038 477.386038s-477.386038-214.156527-477.386038-477.386038 214.145024-477.386038 477.386038-477.386039a475.683553 475.683553 0 0 1 166.659492 29.908523 17.254917 17.254917 0 0 0 12.055436-32.335714 511.964892 511.964892 0 1 0 251.64571 202.538216z" fill="#ffffff" p-id="1500"></path><path d="M796.059711 128.365195a482.807533 482.807533 0 0 1 34.969965 28.562639 17.254917 17.254917 0 1 0 23.064073-25.663813c-11.963409-10.755565-24.571002-21.050999-37.47768-30.621726a17.256067 17.256067 0 1 0-20.556358 27.7229zM385.496215 534.22385L261.088263 751.647308l242.144003 144.12457-117.736051-361.548028zM257.614273 707.187138l117.402456-205.172466-42.32056-129.964036-75.081896 335.136502zM621.370931 503.65964l-108.671467-191.736638-110.385456 192.898469 110.523495 339.381212 108.533428-340.543043zM689.332298 373.074428l-40.721605 127.755406 116.447684 205.460049-75.726079-333.215455zM638.223233 533.407117L522.868361 895.35776l239.072628-143.664439L638.223233 533.407117zM673.423264 340.336099L525.514115 130.263235v153.361703l106.232773 187.457419 41.676376-130.746258zM500.413963 282.865722V129.29696L348.708732 340.175053l43.125789 132.448743 108.579442-189.758074z" fill="#ffffff" p-id="1501"></path></svg>'
       html += '      </div>';
       html += '</div>';
       $("#panelMsg").html(html);
@@ -872,25 +874,25 @@ function getHtml(type) {
                         // html += '              设置';
                         // html += '</a>';
 
-                        html += '            <div class="c-dropdown__item mat-menu-item" onclick="panelShow(\'Deposit\')">';
-                        html += '              <i class="c-dropdown__icon o-icon" inlinesvg="icon-terms-of-use.svg">';
-                        html += '                <img src="images/wallet.png" alt="" style="height:24px;">';
-                        html += '              </i>';
-                        html += '              充值';
-                        html += '            </div>';
-                        html += '            <div class="c-dropdown__item mat-menu-item" onclick="panelShow(\'WithdrawCoin\')">';
-                        html += '              <i class="c-dropdown__icon o-icon" inlinesvg="icon-logout.svg">';
-                        html += '                <img src="images/withdraw.png" alt="" style="height:24px;">';
-                        html += '              </i>';
-                        html += '              提现';
-                        html += '            </div>';
+                        // html += '            <div class="c-dropdown__item mat-menu-item" onclick="panelShow(\'Deposit\')">';
+                        // html += '              <i class="c-dropdown__icon o-icon" inlinesvg="icon-terms-of-use.svg">';
+                        // html += '                <img src="images/wallet.png" alt="" style="height:24px;">';
+                        // html += '              </i>';
+                        // html += '              充值';
+                        // html += '            </div>';
+                        // html += '            <div class="c-dropdown__item mat-menu-item" onclick="panelShow(\'WithdrawCoin\')">';
+                        // html += '              <i class="c-dropdown__icon o-icon" inlinesvg="icon-logout.svg">';
+                        // html += '                <img src="images/withdraw.png" alt="" style="height:24px;">';
+                        // html += '              </i>';
+                        // html += '              提现';
+                        // html += '            </div>';
 
-                        html += '            <div class="c-dropdown__item mat-menu-item" onclick="getBankFlowLog(0)">';
-                        html += '              <i class="c-dropdown__icon o-icon" inlinesvg="icon-logout.svg">';
-                        html += '                <img src="images/Detail.png" alt="" style="height:24px;">';
-                        html += '              </i>';
-                        html += '              银行流水';
-                        html += '            </div>';
+                        // html += '            <div class="c-dropdown__item mat-menu-item" onclick="getBankFlowLog(0)">';
+                        // html += '              <i class="c-dropdown__icon o-icon" inlinesvg="icon-logout.svg">';
+                        // html += '                <img src="images/Detail.png" alt="" style="height:24px;">';
+                        // html += '              </i>';
+                        // html += '              银行流水';
+                        // html += '            </div>';
                         html += '            <div class="c-dropdown__item mat-menu-item" onclick="getItemExchangeLog(0)">';
                         html += '              <i class="c-dropdown__icon o-icon" inlinesvg="icon-logout.svg">';
                         html += '                <img src="images/record.png" alt="" style="height:24px;">';
@@ -934,29 +936,30 @@ function getHtml(type) {
                         html += '              ' + get_lan("logOut") + '';
                         html += '            </div>';
 
-                        html += '            <div class="c-dropdown__item mat-menu-item" onclick="window.location.href=\'../index.html\'">';
-                        html += '              <i class="c-dropdown__icon o-icon" inlinesvg="icon-logout.svg">';
-                        html += '                <img src="images/exit.png" alt="" style="height:24px;">';
-                        html += '              </i>';
-                        html += '              ' + get_lan("index") + '';
-                        html += '            </div>';
+                        // html += '            <div class="c-dropdown__item mat-menu-item" onclick="window.location.href=\'../index.html\'">';
+                        // html += '              <i class="c-dropdown__icon o-icon" inlinesvg="icon-logout.svg">';
+                        // html += '                <img src="images/exit.png" alt="" style="height:24px;">';
+                        // html += '              </i>';
+                        // html += '              ' + get_lan("index") + '';
+                        // html += '            </div>';
 
-                        html += '            <div class="c-dropdown__item mat-menu-item" onclick="panelShow(\'nodePanel\')">';
-                        html += '              <i class="c-dropdown__icon o-icon" inlinesvg="icon-logout.svg">';
-                        html += '                <img src="images/exit.png" alt="" style="height:24px;">';
-                        html += '              </i>';
-                        html += '              ' + get_lan("node") + '';
-                        html += '            </div>';
-                  } else {
-                        html += '            <button class="c-dropdown__item mat-menu-item" onclick="panelShow(\'forget\')">';
-                        html += '              <i class="c-dropdown__icon o-icon" inlinesvg="icon-language.svg">';
-                        html += '                <img src="images/forget.png" alt="" style="height:24px;">';
-                        html += '              </i>';
-                        html += '              忘记密码';
-                        html += '              <div class="mat-menu-ripple mat-ripple" matripple=""></div>';
-                        html += '            </button>';
+                        // html += '            <div class="c-dropdown__item mat-menu-item" onclick="panelShow(\'nodePanel\')">';
+                        // html += '              <i class="c-dropdown__icon o-icon" inlinesvg="icon-logout.svg">';
+                        // html += '                <img src="images/exit.png" alt="" style="height:24px;">';
+                        // html += '              </i>';
+                        // html += '              ' + get_lan("node") + '';
+                        // html += '            </div>';
+                  } 
+                  // else {
+                  //       html += '            <button class="c-dropdown__item mat-menu-item" onclick="panelShow(\'forget\')">';
+                  //       html += '              <i class="c-dropdown__icon o-icon" inlinesvg="icon-language.svg">';
+                  //       html += '                <img src="images/forget.png" alt="" style="height:24px;">';
+                  //       html += '              </i>';
+                  //       html += '              忘记密码';
+                  //       html += '              <div class="mat-menu-ripple mat-ripple" matripple=""></div>';
+                  //       html += '            </button>';
 
-                  }
+                  // }
 
 
                   html += '          </div>';
@@ -1171,7 +1174,7 @@ function getHtml(type) {
 
 
                           html += '                       <button style="margin-top:20px;" class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple" type="submit" onclick="getSaleMarket(0)"><span>应用</span></button>'
-                          html += '                       <button style="margin-top:20px;" class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple" type="submit"><span>重置</span></button>'
+                          html += '                       <button style="margin-top:20px;" class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple" type="submit" onclick="handleReset()"><span>重置</span></button>'
                           
                           html += '                    </div>';
       
@@ -1213,11 +1216,13 @@ function getHtml(type) {
                   html += '      <img src="images/close.png" alt="" class="mat-icon notranslate material-icons mat-icon-no-color">';
                   html += '    </button>';
                   html += '  </div>';
-                  html += '  <div class="c-auth__content">';
-                  html += '  <div>';
-                  html += '<div class="iptSearch">';
-                  html += '  <div class="el-input--suffix flex">';
-                  html += '    <input type="text" autocomplete="off" placeholder="请输入您的NFT资产合约名" id="userInputContractBox" class="el-input__inner">';
+                  html += '  <div class="c-auth__content" >';
+                  html += '  <div class="c-authForm">';
+                  html += '<div class="ng-pristine ng-invalid ng-touched">'
+                  html += '<div class="c-authForm__field mat-form-field mat-primary mat-form-field-type-mat-input mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label  mat-form-field-invalid mat-form-field-hide-placeholder">'
+                  html += '<div class="mat-form-field-wrapper">';
+                  html += '  <div class="el-input--suffix flex mat-form-field-flex" style="padding-top:0;">';
+                  html += '    <input type="text" autocomplete="off" placeholder="请输入您的NFT资产合约名" id="userInputContractBox" class="el-input__inner" style="background: none;border:0;height:100%;width:100%;font-size:20px;">';
                   html += '    <div class="joinUserInputBtn flex" onclick="selectContract(\'select\',\'\')">';
                   html += '      选择';
                   html += '    </div>';
@@ -1278,7 +1283,9 @@ function getHtml(type) {
                   html += '</div>';
                   html += '   </div>'
                   html += '  </div>'
-
+                  html += '  </div>'
+                  html += '  </div>'
+                  html += '  </div>'
                   html += '</div></div></div></div></div>';
                   return html;
                   break;
@@ -1526,6 +1533,11 @@ function getHtml(type) {
                   html += '       <div style="flex:1;">';
                   html += '         <div class="flex" style="position: relative;">';
                   html += '          <img class="c-assetPreview__img ' + imgClass + '" src="' + objMsg.imageUrl + '" alt="">';
+                  // html += '          <div style="position:absolute;bottom:10px;right:10px;">';
+                  // html += '             <div class="shopWordMsgBox">';
+                  // html += '               <span style="color:#89d295;font-size:19px;margin-right:5px;">Lv.</span>' + objMsg.level + '';
+                  // html += '             </div>';
+                  // html += '          </div>';
                   html += '         </div>';
                   if (type == 'sale') {
                     
@@ -1683,22 +1695,22 @@ function getHtml(type) {
 
 
                   
-                  html += ' <div class="spiedSection" id="salesHistory">';
-                  html += ' <div class="msgline"></div>';
-                  html += '       <asset-sales-history>';
-                  html += '         <last-sales>';
-                  html += '           <p class="c-assetPreview__title">';
-                  html += '             最近交易';
-                  html += '           </p>';
-                  html += '           <table class="c-assetPreview__table" id="saleLastList">';
-                  html += '<tr class="c-assetPreview__row--header">               <td class="c-assetPreview__cell">                 日期               </td>               <td class="c-assetPreview__cell">                 成交价               </td>             </tr>'
-                  html += '<tr class="c-assetPreview__row">               <td class="c-assetPreview__cell">                 --               </td>               <td class="c-assetPreview__cell">                 -               </td>             </tr>'
+                  // html += ' <div class="spiedSection" id="salesHistory">';
+                  // html += ' <div class="msgline"></div>';
+                  // html += '       <asset-sales-history>';
+                  // html += '         <last-sales>';
+                  // html += '           <p class="c-assetPreview__title">';
+                  // html += '             最近交易';
+                  // html += '           </p>';
+                  // html += '           <table class="c-assetPreview__table" id="saleLastList">';
+                  // html += '<tr class="c-assetPreview__row--header">               <td class="c-assetPreview__cell">                 日期               </td>               <td class="c-assetPreview__cell">                 成交价               </td>             </tr>'
+                  // html += '<tr class="c-assetPreview__row">               <td class="c-assetPreview__cell">                 --               </td>               <td class="c-assetPreview__cell">                 -               </td>             </tr>'
     
-                  html += '           </table>';
-                  html += '         </last-sales>';
-                  html += '       </asset-sales-history>';
-                  html += '     </div>';
-                  html += '</div>';
+                  // html += '           </table>';
+                  // html += '         </last-sales>';
+                  // html += '       </asset-sales-history>';
+                  // html += '     </div>';
+                  // html += '</div>';
 
 
             
@@ -5661,3 +5673,14 @@ function getListOrder(page) {
 	});
 }
 
+function handleReset(){
+  $('#priceLow').val('')
+  $('#priceHigh').val('')
+  $('#filter-level').val('')
+  $('#qualityLow').val('')
+  $('#qualityHigh').val('')
+  $('#filter-classify').val('')
+  $('#filter-price-unit').val('')
+
+  
+}

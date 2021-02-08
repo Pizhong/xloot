@@ -1125,7 +1125,7 @@ input:-webkit-autofill:active {
 .nodeSet .btn {
     margin-top: 20px;
     background: #3495f9;
-    border-radius: 8px;
+    /* border-radius: 8px; */
     color: #fff;
     height: 45px;
     min-width: 288px;
@@ -1153,7 +1153,7 @@ input:-webkit-autofill:active {
 }
 
 .iptSearch{
-  padding:0 26px;
+  /* padding:0 26px; */
 }
 .el-input {
     position: relative;
@@ -1166,7 +1166,7 @@ input:-webkit-autofill:active {
     height: 45px;
     border: 0;
     background: #fafafa;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     outline: none;
     padding-left: 15px;
     color: #606266;
@@ -1181,7 +1181,7 @@ input:-webkit-autofill:active {
     line-height: 45px;
     font-size: 18.5px;
     bottom: 20px;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     background: #3495f9;
     color: #fff;
     text-align: center;
@@ -1192,8 +1192,8 @@ input:-webkit-autofill:active {
 .scroll{
   overflow: auto;
   height: 470px;
-  margin-top: 6px;
-  padding:0 26px;
+  margin-top: 27px;
+  /* padding:0 26px; */
 }
 .scroll .item {
   color: #fff;
