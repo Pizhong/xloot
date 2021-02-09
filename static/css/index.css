@@ -1271,6 +1271,10 @@ input:-webkit-autofill:active {
     max-width:350px !important;
     min-width:250px !important;
   }
+  .flat{
+    float:left;
+    margin-right:10px;
+  }
 }
 
 .warp-line{
