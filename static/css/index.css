@@ -1259,9 +1259,17 @@ input:-webkit-autofill:active {
 }
 
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 765px) {
   #filtert {
     top: 221px !important;
+  }
+  #selectMycontract{
+    top: 162px !important;
+    left: 16px !important;
+  }
+  #assetttFilters{
+    max-width:350px !important;
+    min-width:250px !important;
   }
 }
 
@@ -1288,4 +1296,10 @@ input:-webkit-autofill:active {
   
   color: #fff;
   
+  }
+
+  .rotate{
+  transform:rotate(180deg);
+	-ms-transform:rotate(30deg); /* IE 9 */
+	-webkit-transform:rotate(180deg); /* Safari and Chrome */
   }

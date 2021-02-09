@@ -9,6 +9,9 @@ var GENERATION;
 var Do_not_trigger = true ; //是否触发加载
 var buyLootSymbol = "EOS";
 var status=0
+var rotate='up'
+var isFilter=false
+var isSelectContract=false
 listXLootMarketCategory();
 
 
@@ -36,6 +39,10 @@ $(document).ready(function() {
         }
         else if(status==2){
           getSaleMarket(getSaleMarketPage,'selectContract')
+
+        }
+        else if(status==3){
+          getSaleMarket(getSaleMarketPage,'down')
 
         }
         else{
@@ -131,12 +138,43 @@ function getSaleMarket(page,type) {
 	console.log('filters',filters);
   var selfData = {}
   if(type=='up'){
+    if(isFilter){
+      selfData={
+        page: page,
+        size: 10,
+        ordertype:'price',
+        sort:'asc',
+        filter:filters
+    }
+    }else{
     selfData={
       page: page,
       size: 10,
       ordertype:'price',
-      sort:'asc'
+      sort:'asc',
+      contract:selectContract
   }
+  }
+  }
+  else if(type=='down'){
+    if(isFilter){
+      selfData={
+        page: page,
+        size: 10,
+        ordertype:'price',
+        sort:'desc',
+        filter:filters
+    }
+  }else{
+    selfData={
+      page: page,
+      size: 10,
+      ordertype:'price',
+      sort:'desc',
+      contract:selectContract
+  }
+}
+    status=3
   }
   else if(type=='filter'){
     selfData={
@@ -147,6 +185,7 @@ function getSaleMarket(page,type) {
       sort:'asc'
     },
     status=1
+    isFilter=true
   }
   else if(type=='selectContract'){
     selfData={
@@ -157,6 +196,7 @@ function getSaleMarket(page,type) {
       contract:selectContract
     },
     status=2
+    isSelectContract=true
 
   }
   else{
@@ -1130,4 +1170,19 @@ function handleReset(){
   $('#filter-classify').val('')
   $('#filter-price-unit').val('')
   filters=''
+  isFliter=false
 }
+
+function sortPrice(){
+  if(rotate=='up'){
+    $('#arrow').addClass('rotate')
+    rotate='down'
+    getSaleMarket(0,'up')
+  }
+  else{
+    $('#arrow').removeClass('rotate')
+    rotate='up'
+    getSaleMarket(0,'down')
+  }
+}
+
