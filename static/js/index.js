@@ -951,7 +951,7 @@ function getHtml(type) {
 
                         html += '            <div class="c-dropdown__item mat-menu-item" onclick="panelShow(\'nodePanel\')">';
                         html += '              <i class="c-dropdown__icon o-icon" inlinesvg="icon-logout.svg">';
-                        html += '                <img src="images/exit.png" alt="" style="height:24px;">';
+                        html += '                <img src="images/lan.png" alt="" style="height:24px;">';
                         html += '              </i>';
                         html += '              ' + get_lan("node") + '';
                         html += '            </div>';

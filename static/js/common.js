@@ -276,7 +276,7 @@ $(function() {
       html2 += '    </li>';
       html2 += '    <li class="c-sidebar__item" onclick="panelShow(\'nodePanel\')">';
       html2 += '      <i class="c-sidebar__icon o-icon">';
-      html2 += '        <img src="images/exit.png" alt="" style="height:24px;">';
+      html2 += '        <img src="images/lan.png" alt="" style="height:24px;">';
       html2 += '      </i>';
       html2 += '      <span class="c-sidebar__text" translate="">';
       html2 += '        ' + get_lan("setNode") + '';
