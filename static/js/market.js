@@ -8,7 +8,7 @@ var GENERATION;
 // var totalheight = 0;
 var Do_not_trigger = true ; //是否触发加载
 var buyLootSymbol = "EOS";
-
+var status=0
 listXLootMarketCategory();
 
 
@@ -31,7 +31,17 @@ $(document).ready(function() {
 			if (Do_not_trigger) {
 				Do_not_trigger = false;
 				getSaleMarketPage++;
-				getSaleMarket(getSaleMarketPage)
+				if(status==1){
+          getSaleMarket(getSaleMarketPage,'filter')
+        }
+        else if(status==2){
+          getSaleMarket(getSaleMarketPage,'selectContract')
+
+        }
+        else{
+          getSaleMarket(getSaleMarketPage)
+
+        }
 			}
 		}
 	});
@@ -110,7 +120,14 @@ function getSaleMarket(page,type) {
 	$("#saleMarketLoadingShow").show();
 	// var url = '/api/xpet/getSaleMarket.do';
 	var url = '/api/listDexOrder.do';
-  var filters="price:"+$('#priceLow').val()+"-"+$('#priceHigh').val()+"|"+"level:"+$('#filter-level').val()+ "-" +$('#filter-level').val()+"|"+"quality:"+$('#qualityLow').val()+"-"+$('#qualityHigh').val()+"|"+"category:"+$('#filter-classify').val()+"-"+$('#filter-classify').val()+"|"+"asset:"+$('#filter-price-unit').val()+"-"+$('#filter-price-unit').val()
+  var filters
+  if(!$('#priceLow').val()){
+    filter=''
+  }
+  else{
+  filters="price:"+$('#priceLow').val()+"-"+$('#priceHigh').val()+"|"+"level:"+$('#filter-level').val()+ "-" +$('#filter-level').val()+"|"+"quality:"+$('#qualityLow').val()+"-"+$('#qualityHigh').val()+"|"+"category:"+$('#filter-classify').val()+"-"+$('#filter-classify').val()+"|"+"asset:"+$('#filter-price-unit').val()+"-"+$('#filter-price-unit').val()
+  }
+  // filters="price:"+$('#priceLow').val()+"-"+$('#priceHigh').val()+"|"+"level:"+$('#filter-level').val()+ "-" +$('#filter-level').val()+"|"+"quality:"+$('#qualityLow').val()+"-"+$('#qualityHigh').val()+"|"+"category:"+$('#filter-classify').val()+"-"+$('#filter-classify').val()+"|"+"asset:"+$('#filter-price-unit').val()+"-"+$('#filter-price-unit').val()
 	console.log('filters',filters);
   var selfData = {}
   if(type=='up'){
@@ -125,14 +142,32 @@ function getSaleMarket(page,type) {
     selfData={
       page: page,
       size: 10,
-      filter:filters
-    }
+      filter:filters,
+      ordertype:'price',
+      sort:'asc'
+    },
+    status=1
+  }
+  else if(type=='selectContract'){
+    selfData={
+      page: page,
+      size: 10,
+      ordertype:'price',
+      sort:'asc',
+      contract:selectContract
+    },
+    status=2
+
   }
   else{
     selfData={
       page: page,
       size: 10,
+      filter:'',
+      ordertype:'price',
+      sort:'asc'
      }
+     status=0
    }
 
 	$.ajax({
@@ -1085,4 +1120,14 @@ function lootBuyShowGo(){
       eosErrorShow(e);
     });
   })
+}
+function handleReset(){
+  $('#priceLow').val('')
+  $('#priceHigh').val('')
+  $('#filter-level').val('')
+  $('#qualityLow').val('')
+  $('#qualityHigh').val('')
+  $('#filter-classify').val('')
+  $('#filter-price-unit').val('')
+  filters=''
 }

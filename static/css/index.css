@@ -1076,6 +1076,9 @@ input:-webkit-autofill:active {
 	.selectNFTBox{
 		display: block;
 	}
+  #cdk-overlay-43{
+    margin-top: -10vh;
+  }
 }
 	
 .nodeSet{

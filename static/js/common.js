@@ -145,7 +145,7 @@ const EOS_CONFIG = {
 
 $(function() {
   if(!IsPC()){
-    getNavPanel();
+    // getNavPanel();
   }
   $('#getCode').on('click', getCode);
   $('.c-exchangeMobileTabs__arrow').click();
@@ -165,17 +165,9 @@ $(function() {
   }
 
 
-  $("body").on("click", ".c-exchangeMobileTabs__arrow", function() {
-    var has = $(".c-exchangeMobileTabs").hasClass("c-exchangeMobileTabs--headerShow");
-
-    if (has == true) {
-      $(".c-exchangeMobileTabs").removeClass("c-exchangeMobileTabs--headerShow");
-      $(".c-exchangeHeader--main").hide();
-    } else {
-      $(".c-exchangeHeader--main").show();
+  
       $(".c-exchangeMobileTabs").addClass("c-exchangeMobileTabs--headerShow")
-    }
-  })
+
   $("body").on("click", ".c-exchangeMobileTabs__item", function() {
 
 
@@ -202,15 +194,10 @@ $(function() {
     $("#menuPanel").addClass("active");
 
     var html2 = '';
-    if (getCookie("token")) {
-      var account = '';
-      if (getCookie("customerType") == "IOST") {
-        account = getCookie("account");
-      } else if (getCookie("customerType") == "EOS") {
-        account = getCookie("eosAccount");
-      } else {
-        account = getCookie("telNumber");
-      }
+    if (getCookie("account")) {
+      var account = getCookie("account");
+     
+        
       html2 += '<div class="c-sidebar__inner">';
       html2 += '  <div class="c-sidebar__user">';
       html2 += '    <div>';
@@ -227,30 +214,30 @@ $(function() {
 
 
       html2 += '  <ul class="c-sidebar__list">';
-      html2 += '    <li class="c-sidebar__item" onclick="panelShow(\'Deposit\')">';
-      html2 += '      <i class="c-sidebar__icon o-icon">';
-      html2 += '        <img src="images/wallet.png" alt="" style="height:24px;">';
-      html2 += '      </i>';
-      html2 += '      <span class="c-sidebar__text" translate="">';
-      html2 += '        充值';
-      html2 += '      </span>';
-      html2 += '    </li>';
-      html2 += '    <li class="c-sidebar__item" onclick="panelShow(\'WithdrawCoin\')">';
-      html2 += '      <i class="c-sidebar__icon o-icon">';
-      html2 += '        <img src="images/withdraw.png" alt="" style="height:24px;">';
-      html2 += '      </i>';
-      html2 += '      <span class="c-sidebar__text" translate="">';
-      html2 += '        提现';
-      html2 += '      </span>';
-      html2 += '    </li>';
-      html2 += '    <li class="c-sidebar__item" onclick="getBankFlowLog(0)">';
-      html2 += '      <i class="c-sidebar__icon o-icon">';
-      html2 += '        <img src="images/Detail.png" alt="" style="height:24px;">';
-      html2 += '      </i>';
-      html2 += '      <span class="c-sidebar__text" translate="">';
-      html2 += '        银行流水';
-      html2 += '      </span>';
-      html2 += '    </li>';
+      // html2 += '    <li class="c-sidebar__item" onclick="panelShow(\'Deposit\')">';
+      // html2 += '      <i class="c-sidebar__icon o-icon">';
+      // html2 += '        <img src="images/wallet.png" alt="" style="height:24px;">';
+      // html2 += '      </i>';
+      // html2 += '      <span class="c-sidebar__text" translate="">';
+      // html2 += '        充值';
+      // html2 += '      </span>';
+      // html2 += '    </li>';
+      // html2 += '    <li class="c-sidebar__item" onclick="panelShow(\'WithdrawCoin\')">';
+      // html2 += '      <i class="c-sidebar__icon o-icon">';
+      // html2 += '        <img src="images/withdraw.png" alt="" style="height:24px;">';
+      // html2 += '      </i>';
+      // html2 += '      <span class="c-sidebar__text" translate="">';
+      // html2 += '        提现';
+      // html2 += '      </span>';
+      // html2 += '    </li>';
+      // html2 += '    <li class="c-sidebar__item" onclick="getBankFlowLog(0)">';
+      // html2 += '      <i class="c-sidebar__icon o-icon">';
+      // html2 += '        <img src="images/Detail.png" alt="" style="height:24px;">';
+      // html2 += '      </i>';
+      // html2 += '      <span class="c-sidebar__text" translate="">';
+      // html2 += '        银行流水';
+      // html2 += '      </span>';
+      // html2 += '    </li>';
       html2 += '    <li class="c-sidebar__item" onclick="getItemExchangeLog(0)">';
       html2 += '      <i class="c-sidebar__icon o-icon">';
       html2 += '        <img src="images/record.png" alt="" style="height:24px;">';
@@ -287,6 +274,14 @@ $(function() {
       html2 += '        ' + get_lan("logOut") + '';
       html2 += '      </span>';
       html2 += '    </li>';
+      html2 += '    <li class="c-sidebar__item" onclick="panelShow(\'nodePanel\')">';
+      html2 += '      <i class="c-sidebar__icon o-icon">';
+      html2 += '        <img src="images/exit.png" alt="" style="height:24px;">';
+      html2 += '      </i>';
+      html2 += '      <span class="c-sidebar__text" translate="">';
+      html2 += '        ' + get_lan("setNode") + '';
+      html2 += '      </span>';
+      html2 += '    </li>';
       html2 += '  </ul>';
     } else {
 
@@ -295,14 +290,6 @@ $(function() {
       // html2 += '    <div class="o-dmButton o-dmButton--blue o-dmButton--fluid" onclick="panelShow(1)">' + get_lan("signUp") + '</div>';
       html2 += '  </div>';
       html2 += '  <ul class="c-sidebar__list">';
-      html2 += '    <li class="c-sidebar__item" onclick="panelShow(\'forget\')">';
-      html2 += '      <i class="c-sidebar__icon o-icon">';
-      html2 += '        <img src="images/forget.png" alt="" style="height:24px;">';
-      html2 += '      </i>';
-      html2 += '      <span class="c-sidebar__text" translate="">';
-      html2 += '        忘记密码';
-      html2 += '      </span>';
-      html2 += '    </li>';
       html2 += '    <li class="c-sidebar__item" onclick="panelShow(\'about\')">';
       html2 += '      <i class="c-sidebar__icon o-icon">';
       html2 += '        <img src="images/aboutUs.png" alt="" style="height:24px;">';

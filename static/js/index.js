@@ -17,6 +17,7 @@ var dexPage = 0;
 var dexSize = 6;
 var objMsg={}
 var salePrice=0
+var selectContract=''
 $(function() {
       // if (location.hostname == "www.xloot_dex.io") {
             $("#footerMsg").html("掠宝（" + location.origin + "）游戏资产交易平台 版权所有 ©2019-2020");
@@ -36,7 +37,7 @@ function init() {
       html += '<div>';
       html += '      <div class="c-navigationAuth">';
       html += '<svg  onclick="panelShow(\'nodePanel\')" style="cursor:pointer;margin-right:8px;" t="1584014587957" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1499" width="28" height="28"><path d="M942.427421 234.839536a17.254917 17.254917 0 1 0-28.988261 18.715833 475.626037 475.626037 0 0 1 76.013661 258.559181c0 263.229511-214.145024 477.386038-477.386038 477.386038s-477.386038-214.156527-477.386038-477.386038 214.145024-477.386038 477.386038-477.386039a475.683553 475.683553 0 0 1 166.659492 29.908523 17.254917 17.254917 0 0 0 12.055436-32.335714 511.964892 511.964892 0 1 0 251.64571 202.538216z" fill="#ffffff" p-id="1500"></path><path d="M796.059711 128.365195a482.807533 482.807533 0 0 1 34.969965 28.562639 17.254917 17.254917 0 1 0 23.064073-25.663813c-11.963409-10.755565-24.571002-21.050999-37.47768-30.621726a17.256067 17.256067 0 1 0-20.556358 27.7229zM385.496215 534.22385L261.088263 751.647308l242.144003 144.12457-117.736051-361.548028zM257.614273 707.187138l117.402456-205.172466-42.32056-129.964036-75.081896 335.136502zM621.370931 503.65964l-108.671467-191.736638-110.385456 192.898469 110.523495 339.381212 108.533428-340.543043zM689.332298 373.074428l-40.721605 127.755406 116.447684 205.460049-75.726079-333.215455zM638.223233 533.407117L522.868361 895.35776l239.072628-143.664439L638.223233 533.407117zM673.423264 340.336099L525.514115 130.263235v153.361703l106.232773 187.457419 41.676376-130.746258zM500.413963 282.865722V129.29696L348.708732 340.175053l43.125789 132.448743 108.579442-189.758074z" fill="#ffffff" p-id="1501"></path></svg>'
-      html += '            <div class="c-navigationAuth__authBtn c-navigationAuth__authBtn--signUp" translate="" data-analytics-id="signUp_authTabButtonSignUp" onclick="panelShow(4)" style="display:none;" id="my-wallet">' + getCookie("eos") + '</div>';
+      html += '            <div class="c-navigationAuth__authBtn c-navigationAuth__authBtn--signUp" translate="" data-analytics-id="signUp_authTabButtonSignUp" style="display:none;" id="my-wallet">' + getCookie("eos") + '</div>';
       html += '            <div class="c-navigationAuth__authBtn c-navigationAuth__authBtn--logIn" translate="" data-analytics-id="logIn_authTabButtonLogIn" onclick="eosLogin()"  id="my-login">'+ get_lan("login") +'</div>';
       // html += '            <div class="c-navigationAuth__authBtn c-navigationAuth__authBtn--logIn" translate="" data-analytics-id="logIn_authTabButtonLogIn" onclick="panelShow(\'nodePanel\')"  id="setNode">'+  +'</div>';
       html += '      </div>';
@@ -948,12 +949,12 @@ function getHtml(type) {
                         // html += '              ' + get_lan("index") + '';
                         // html += '            </div>';
 
-                        // html += '            <div class="c-dropdown__item mat-menu-item" onclick="panelShow(\'nodePanel\')">';
-                        // html += '              <i class="c-dropdown__icon o-icon" inlinesvg="icon-logout.svg">';
-                        // html += '                <img src="images/exit.png" alt="" style="height:24px;">';
-                        // html += '              </i>';
-                        // html += '              ' + get_lan("node") + '';
-                        // html += '            </div>';
+                        html += '            <div class="c-dropdown__item mat-menu-item" onclick="panelShow(\'nodePanel\')">';
+                        html += '              <i class="c-dropdown__icon o-icon" inlinesvg="icon-logout.svg">';
+                        html += '                <img src="images/exit.png" alt="" style="height:24px;">';
+                        html += '              </i>';
+                        html += '              ' + get_lan("node") + '';
+                        html += '            </div>';
                   } 
                   // else {
                   //       html += '            <button class="c-dropdown__item mat-menu-item" onclick="panelShow(\'forget\')">';
@@ -1131,7 +1132,8 @@ function getHtml(type) {
                   break;
                 case 5:
                 case "5":
-        
+                  //  var top = $(".mat-form-field-wrapper").eq(0).offset().top-12;
+                  // var left = $(".mat-form-field-wrapper").eq(0).offset().left+420;
                   html += '<div class="cdk-overlay-backdrop cdk-overlay-transparent-backdrop cdk-overlay-backdrop-showing" onclick="$(\'.cdk-overlay-container\').hide()"></div>';
                           html += '  <div class="cdk-overlay-connected-position-bounding-box" dir="ltr" style="top: 139px; right: 0; height: 559px; width: 1425px; align-items: flex-end; justify-content: flex-start;margin-right:110px;" id="filtert">';
                           html += '    <div id="cdk-overlay-43" class="cdk-overlay-pane" style="pointer-events: auto; position: static;">';
@@ -1153,11 +1155,12 @@ function getHtml(type) {
                           html += '                          <option value="5">5</option>'
                           html += '                        </select>'
                           html += '                      <p>分类</p>'
-                          html += '                        <select id="filter-classify" class="filter-select">'
-                          html += '                          <option value="SHOVEL">SHOVEL</option>'
-                          html += '                          <option value="SHOVEL">SHOVEL</option>'
-                          html += '                          <option value="SHOVEL">SHOVEL</option>'
-                          html += '                        </select>'
+                          html += '                      <input type="text" id="filter-classify" class="filter-select" style="border:none;" >'
+                          // html += '                        <select id="filter-classify" class="filter-select">'
+                          // html += '                          <option value="SHOVEL">SHOVEL</option>'
+                          // html += '                          <option value="SHOVEL">SHOVEL</option>'
+                          // html += '                          <option value="SHOVEL">SHOVEL</option>'
+                          // html += '                        </select>'
                           html += '                      <p>价格标的</p>'
                           html += '                        <select id="filter-price-unit" class="filter-select">'
                           html += '                          <option value="EOS">EOS</option>'
@@ -1303,7 +1306,7 @@ function getHtml(type) {
                   html += '          <div aria-modal="true" class="mat-dialog-container ng-tns-c27-23 ng-trigger ng-trigger-dialogContainer"';
                   html += '          tabindex="-1" id="mat-dialog-5" role="dialog" style="transform:none;0:transform;transform:none;webkit-transform:none;">';
                   html += '            <div>';
-                  html += '              <div class="c-auth c-auth--dialog">';
+                  html += '              <div class="c-auth c-auth--dialog" style="min-width:480px;">';
 
 
 
@@ -1317,7 +1320,7 @@ function getHtml(type) {
                   html += '      <img src="images/close.png" alt="" class="mat-icon notranslate material-icons mat-icon-no-color">';
                   html += '    </button>';
                   html += '  </div>';
-                  html += '  <div class="c-auth__content">';
+                  html += '  <div class="c-auth__content" style="width:270px;padding:0;min-height:200px;">';
                   html += '  <div class="flex">';
                   html += '  <p>你确定下架此物品？</p>'
                   html += '                  <div style="width:100px;" onclick="unsaleNftOk()">';
@@ -1665,7 +1668,7 @@ function getHtml(type) {
                           html += '               </div>';
                     }
               } else if (type == 'unsale') {
-                    html += '                  <div style="margin: 0 auto;" onclick="panelShow(\'unsaleConfirm\')">';
+                    html += '                  <div style="margin: 0 auto;" onclick="unsaleNftOk()">';
                     html += '                    <button  class="c-authFooter__button c-authFooter__button--fluid o-dmButton o-dmButton--blue mat-ripple" matripple="" type="submit" data-analytics-id="logIn_logInWithEmail">';
                     html += '                    <svg class="mat-icon notranslate material-icons mat-icon-no-color" t="1566885351029" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2110" width="32" height="32"><path d="M709.12 883.2a64 64 0 1 0 128 0 64 64 0 1 0-128 0zM320 883.2a64 64 0 1 0 128 0 64 64 0 1 0-128 0zM949.243 268.954l15.293-61.169h-171.52v61.44h92.724L802.227 590.08H342.441l-54.18-320.855H409.6v-61.44H277.883l-11.812-69.97h0.169L256 76.375H58.88v61.44h144.876L312.32 780.703v3.937h517.12l20.48-61.44H364.923l-12.104-71.68H849.92v-0.768l99.38-381.783z" fill="#ffffff" p-id="2111"></path><path d="M751.078 355.999L621.583 531.738h-55.5l-129.495-175.74h55.495l78.454 106.466V198.743h46.254v264.192l78.792-106.936z" fill="#ffffff" p-id="2112"></path></svg>';
                     html += '                      &nbsp;&nbsp;&nbsp;<span>下架</span>';
@@ -3484,7 +3487,8 @@ function gameTypeSelect(self, num) {
       
       // $('.game-banners').hide();
       // gameType = num;
-      getSaleMarket(0);
+      selectContract=num
+      // getSaleMarket(0,'selectContract');
 
 }
 
@@ -5822,17 +5826,6 @@ function getListOrder(page) {
 	});
 }
 
-function handleReset(){
-  $('#priceLow').val('')
-  $('#priceHigh').val('')
-  $('#filter-level').val('')
-  $('#qualityLow').val('')
-  $('#qualityHigh').val('')
-  $('#filter-classify').val('')
-  $('#filter-price-unit').val('')
-
-  
-}
 
 
 function resolve(){
