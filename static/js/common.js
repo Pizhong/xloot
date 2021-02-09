@@ -266,20 +266,22 @@ $(function() {
       html2 += '        ' + get_lan("about") + '';
       html2 += '      </span>';
       html2 += '    </li>';
-      html2 += '    <li class="c-sidebar__item" onclick="exit()">';
-      html2 += '      <i class="c-sidebar__icon o-icon">';
-      html2 += '        <img src="images/exit.png" alt="" style="height:24px;">';
-      html2 += '      </i>';
-      html2 += '      <span class="c-sidebar__text" translate="">';
-      html2 += '        ' + get_lan("logOut") + '';
-      html2 += '      </span>';
-      html2 += '    </li>';
+     
       html2 += '    <li class="c-sidebar__item" onclick="panelShow(\'nodePanel\')">';
       html2 += '      <i class="c-sidebar__icon o-icon">';
       html2 += '        <img src="images/lan.png" alt="" style="height:24px;">';
       html2 += '      </i>';
       html2 += '      <span class="c-sidebar__text" translate="">';
       html2 += '        ' + get_lan("setNode") + '';
+      html2 += '      </span>';
+      html2 += '    </li>';
+
+      html2 += '    <li class="c-sidebar__item" onclick="exit()">';
+      html2 += '      <i class="c-sidebar__icon o-icon">';
+      html2 += '        <img src="images/exit.png" alt="" style="height:24px;">';
+      html2 += '      </i>';
+      html2 += '      <span class="c-sidebar__text" translate="">';
+      html2 += '        ' + get_lan("logOut") + '';
       html2 += '      </span>';
       html2 += '    </li>';
       html2 += '  </ul>';

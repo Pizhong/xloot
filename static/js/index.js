@@ -935,12 +935,7 @@ function getHtml(type) {
                         html += '              ' + get_lan("about") + '';
                         html += '            </div>';
 
-                        html += '            <div class="c-dropdown__item mat-menu-item" onclick="exit()">';
-                        html += '              <i class="c-dropdown__icon o-icon" inlinesvg="icon-logout.svg">';
-                        html += '                <img src="images/exit.png" alt="" style="height:24px;">';
-                        html += '              </i>';
-                        html += '              ' + get_lan("logOut") + '';
-                        html += '            </div>';
+                     
 
                         // html += '            <div class="c-dropdown__item mat-menu-item" onclick="window.location.href=\'../index.html\'">';
                         // html += '              <i class="c-dropdown__icon o-icon" inlinesvg="icon-logout.svg">';
@@ -954,6 +949,13 @@ function getHtml(type) {
                         html += '                <img src="images/lan.png" alt="" style="height:24px;">';
                         html += '              </i>';
                         html += '              ' + get_lan("node") + '';
+                        html += '            </div>';
+
+                        html += '            <div class="c-dropdown__item mat-menu-item" onclick="exit()">';
+                        html += '              <i class="c-dropdown__icon o-icon" inlinesvg="icon-logout.svg">';
+                        html += '                <img src="images/exit.png" alt="" style="height:24px;">';
+                        html += '              </i>';
+                        html += '              ' + get_lan("logOut") + '';
                         html += '            </div>';
                   } 
                   // else {
