@@ -1261,7 +1261,7 @@ input:-webkit-autofill:active {
 
 @media screen and (max-width: 765px) {
   #filtert {
-    top: 174px !important;
+    top: 229px !important;
   }
   #selectMycontract{
     top: 162px !important;
@@ -1276,7 +1276,11 @@ input:-webkit-autofill:active {
     margin-right:10px;
   }
 }
-
+@media screen and (max-width: 500px) {
+  #filtert {
+    top: 174px !important;
+  }
+  }
 .warp-line{
   width: 100%;
   height: 2px;
