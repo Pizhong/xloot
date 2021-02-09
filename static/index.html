@@ -374,13 +374,13 @@
 
 
           <div class="c-exchange__inner" style="border-top:2px solid #2a2c2e;">
-            <filters class="c-exchange__filters">
+            <filters class="c-exchange__filters" style="height: 64px;">
               <div class="c-assetFilters">
                 <div class="c-assetFilters__inner">
                   <filter-game-selector class="c-assetFilters__item c-assetFilters__item--game" style="min-width:337px;max-width:337px;">
                     <mat-form-field appearance="fill" class="mat-form-field ng-tns-c11-3 mat-primary mat-form-field-type-mat-select mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label ng-untouched ng-pristine ng-valid mat-form-field-should-float">
                       <div class="mat-form-field-wrapper">
-                          <input type="text" autocomplete="off" placeholder="请输入您的NFT资产合约名" id="nftcontractMore" lass="el-input__inner" style="height:48px;width:100%;font-size:20px;" class="shopAssetMsgBox" disabled>
+                          <input type="text" autocomplete="off" placeholder="请输入您的NFT资产合约名" id="nftcontractMore" lass="el-input__inner" style="height:41px;width:100%;font-size:20px;" class="shopAssetMsgBox" disabled>
                         <div class="mat-form-field-underline ng-tns-c11-3">
                           <span class="mat-form-field-ripple">
                           </span>
@@ -426,7 +426,7 @@
                   </div> -->
 
                   <div class="c-assetFilters__item">
-                    <button class="o-filter o-filter--refresh mat-ripple"onclick="panelShow('myContract')">
+                    <button class="o-filter o-filter--refresh mat-ripple"onclick="panelShow('myContract')" style="height: 41px;">
                       <img src="./images/faj.png" alt="">
                       <!-- <svg t="1566971809618" class="o-filter__icon mat-icon notranslate material-icons mat-icon-no-color"
                       viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -629,10 +629,10 @@
         <div class="c-exchange__side c-exchange__side--market c-exchange__side--active rightBox">
           <div class="c-exchange__inner c-exchange__inner--market">
             <filters class="c-exchange__filters">
-              <div class="game-banners">
+              <!-- <div class="game-banners">
                 <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
                   <div class="swiper-wrapper swiper-wrapper--placeholders" style="transform: translate3d(0px, 0px, 0px);overflow-y: hidden;overflow-x: auto;"
-                  id="lootMarketCategory">
+                  id="lootMarketCategory"> -->
                     <!-- <div class="game-banners__container swiper-slide swiper-slide-active"
                     style="margin-right: 4px;" onclick="gameTypeSelect(this,0)">
                     <div class="game-banners__inner game-banners--Game">
@@ -690,10 +690,10 @@
                     <span class="game-banners__subText"> Add game </span>
                     </div>
                     </div> -->
-                  </div>
+                  <!-- </div>
                   <span class="swiper-notification" aria-live="assertive" aria-atomic="true">
                   </span>
-                </div>
+                </div> -->
                 <!-- <button class="game-banners__next game-banners__next--marketSide
                 prevent-game-banners-global-hiding swiper-button-disabled" tabindex="0"
                 role="button" aria-label="Next slide" aria-disabled="true">
@@ -702,12 +702,12 @@
                 >
                 </mat-icon>
                 </button> -->
-              </div>
+              <!-- </div> -->
               <div class="c-assetFilters">
                 <div class="c-assetFilters__inner">
-                  <filter-game-selector class="c-assetFilters__item c-assetFilters__item--game">
+                  <filter-game-selector class="c-assetFilters__item c-assetFilters__item--game" style="max-width: 350px;min-width: 350px;">
                     <mat-form-field class="mat-form-field mat-primary mat-form-field-type-mat-select mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label mat-form-field-should-float">
-                      <div class="mat-form-field-wrapper" onclick="gameTypeShow()">
+                      <div class="mat-form-field-wrapper" onclick="panelShow('myGame')">
                         <div class="mat-form-field-flex">
                           <div class="mat-form-field-infix">
                             <mat-select class="mat-select">
@@ -721,6 +721,7 @@
                                     </span>
                                   </span>
                                 </div>
+                                
                                 <div class="mat-select-arrow-wrapper">
                                   <!-- <div class="mat-select-arrow">
                                   </div> -->
@@ -879,78 +880,28 @@
                   </dm-advanced-filters>
                   </div>
                   </div> -->
-                  <!-- 价格 -->
-                  <!-- <div class="c-assetFilters__item c-assetFilters__item--game selectBoxShow">
-                    <mat-form-field class="mat-form-field mat-primary mat-form-field-type-mat-select mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label mat-form-field-should-float">
+                  <div class="c-assetFilters__item c-assetFilters__item--game selectBoxShow" style="min-width: 50px;">
+                    <mat-form-field style="width: 50px;" class="mat-form-field mat-primary mat-form-field-type-mat-select mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label mat-form-field-should-float">
                       <div class="mat-form-field-wrapper">
-                        <div class="mat-form-field-flex">
-                          <div class="mat-form-field-infix">
-                            <mat-select class="mat-select">
-                              <div class="mat-select-trigger">
-                                <div class="mat-select-value">
-                                  <span class="mat-select-value-text ng-tns-c12-6">
-                                    <span class="ng-tns-c12-6">
-                                      <font class="selectTag" style="vertical-align: inherit;" id="priceTagShow">
-                                        由低到高
-                                      </font>
-                                    </span>
-                                  </span>
-                                </div>
-                                <div class="mat-select-arrow-wrapper">
-                                  <svg class="c-user__arrow mat-icon notranslate material-icons mat-icon-no-color"
-                                  t="1566287544986" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                                  p-id="5805" width="128" height="128">
-                                    <path d="M836.802183 342.264666c-8.381992-8.381992-22.351978-8.381992-30.73397 0l-293.369714 293.369713-294.766712-293.369713c-8.381992-8.381992-22.351978-8.381992-30.73397 0-8.381992 8.381992-8.381992 22.351978 0 30.73397l310.133697 308.736698c8.381992 8.381992 22.351978 8.381992 30.73397 0l308.736699-308.736698c8.381992-8.381992 8.381992-22.351978 0-30.73397z"
-                                    fill="#ffffff" p-id="5806">
-                                    </path>
-                                  </svg>
-                                </div>
-                              </div>
-                            </mat-select>
-                            <span class="mat-form-field-label-wrapper">
-                              <label class="mat-form-field-label ng-tns-c11-5" id="mat-form-field-label-3"
-                              for="mat-select-1" aria-owns="mat-select-1">
-                                <mat-label>
-                                  <font style="vertical-align: inherit;">
-                                    价格
-                                  </font>
-                                </mat-label>
-                              </label>
-                            </span>
-                          </div>
+                        <div class="mat-form-field-flex flex" style="position: relative;padding-top: 0;" onclick="getSaleMarket(0)" >
+                          <img src="./images/faj.png">
                         </div>
-                        <div class="mat-form-field-underline ng-tns-c11-5">
-                          <span class="mat-form-field-ripple">
-                          </span>
-                        </div>
-                        <div class="mat-form-field-subscript-wrapper">
-                          <div class="mat-form-field-hint-wrapper ng-tns-c11-5 ng-trigger ng-trigger-transitionMessages"
-                          style="opacity:1;transform:translateY(0%);0:opacity;1:transform;opacity:1;transform:translateY(0%);webkit-opacity:1;webkit-transform:translateY(0%);">
-                            <div class="mat-form-field-hint-spacer">
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="c-popover selectBox">
-                        <div class="o-select__list">
-                          <div class="o-select__item mat-ripple" onclick="priceTypeSelect(this)">
-                            <strong class="o-select__itemTitle">
-                              <font class="selectTag" style="vertical-align: inherit;">
-                                由低到高
-                              </font>
-                            </strong>
-                          </div>
-                          <div class="o-select__item mat-ripple" onclick="priceTypeSelect(this)">
-                            <strong class="o-select__itemTitle">
-                              <font class="selectTag" style="vertical-align: inherit;">
-                                由高到低
-                              </font>
-                            </strong>
-                          </div>
-                        </div>
+                        
                       </div>
                     </mat-form-field>
-                  </div> -->
+                  </div>
+                  <!-- 价格 -->
+                  <div class="c-assetFilters__item c-assetFilters__item--game selectBoxShow">
+                    <mat-form-field style="width: 75px;" class="mat-form-field mat-primary mat-form-field-type-mat-select mat-form-field-appearance-fill mat-form-field-can-float mat-form-field-has-label mat-form-field-should-float">
+                      <div class="mat-form-field-wrapper">
+                        <div class="mat-form-field-flex flex" style="position: relative;padding-top: 0;justify-content: start;" onclick="getSaleMarket(0,'up')" >
+                          <span>价格&nbsp;&nbsp;</span>
+                          <img src="./images/up.png" style="position: absolute;top: 9px;left:50px;">
+                        </div>
+                        
+                      </div>
+                    </mat-form-field>
+                  </div>
                   <!-- 代数 -->
 
                   <!-- <div class="c-assetFilters__item c-assetFilters__item--game selectBoxShow">

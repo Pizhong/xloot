@@ -61,6 +61,7 @@ var nftcontract = {
 
 
 };
+var nftcontractArray=[]
 ScatterJS.plugins(new ScatterEOS());
 
 var chainId, lootcontractName, network, xpetcontractName;
@@ -3730,8 +3731,9 @@ function getContractsList() {
 
         console.log("sdfff:", data["rows"][x]);
         nftcontract[data["rows"][x].nftcontract] = data["rows"][x];
-
-
+        nftcontractArray.push(data["rows"][x].nftcontract)
+        console.log('ffffffff',nftcontractArray);
       }
     }, "json");
+    
 }
